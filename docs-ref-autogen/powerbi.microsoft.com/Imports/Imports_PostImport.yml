@@ -1,0 +1,303 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.imports.importspostimport
+name: Imports PostImport
+service: Power BI Rest APIs
+groupName: Imports
+apiVersion: v1.0
+summary: Creates a new import using the specified import info
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/imports?datasetDisplayName={datasetDisplayName}
+- content: POST https://api.powerbi.com/v1.0/myorg/imports?datasetDisplayName={datasetDisplayName}&nameConflict={nameConflict}
+  isOptional: true
+uriParameters:
+- name: datasetDisplayName
+  in: query
+  isRequired: true
+  description: The display name of the dataset
+  types:
+  - uid: string
+- name: nameConflict
+  in: query
+  description: Determines what to do if a dataset with the same name already exists
+  types:
+  - uid: ImportConflictHandlerMode
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Import
+- name: 202 Accepted
+  description: Accepted
+  types:
+  - uid: Import
+requestBody:
+- parameters:
+  - name: filePath
+    in: body
+    description: The file path to import
+    types:
+    - uid: string
+  - name: connectionType
+    in: body
+    description: The import connection type
+    types:
+    - uid: string
+  - name: fileUrl
+    in: body
+    description: The SAS url of the temporary blob storage
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ImportConflictHandlerMode
+  description: Determines what to do if a dataset with the same name already exists
+  kind: enum
+  properties:
+  - name: Ignore
+    types:
+    - uid: string
+  - name: Abort
+    types:
+    - uid: string
+  - name: Overwrite
+    types:
+    - uid: string
+- name: Import
+  description: The import object
+  kind: object
+  properties:
+  - name: id
+    description: The import id
+    types:
+    - uid: string
+  - name: name
+    description: The import name name
+    types:
+    - uid: string
+  - name: importState
+    description: The import upload state
+    types:
+    - uid: string
+  - name: reports
+    description: A Power BI Report
+    types:
+    - uid: Report
+      isArray: true
+  - name: datasets
+    description: A Power BI Dataset
+    types:
+    - uid: Dataset
+      isArray: true
+  - name: createdDateTime
+    description: Import creation time
+    types:
+    - uid: string
+  - name: updatedDateTime
+    description: Import last update time
+    types:
+    - uid: string
+- name: ImportInfo
+  description: The import info
+  kind: object
+  properties:
+  - name: filePath
+    description: The file path to import
+    types:
+    - uid: string
+  - name: connectionType
+    description: The import connection type
+    types:
+    - uid: string
+  - name: fileUrl
+    description: The SAS url of the temporary blob storage
+    types:
+    - uid: string
+- name: Report
+  description: A Power BI Report
+  kind: object
+  properties:
+  - name: id
+    description: The report id
+    types:
+    - uid: string
+  - name: name
+    description: The report name
+    types:
+    - uid: string
+  - name: webUrl
+    description: The report web url
+    types:
+    - uid: string
+  - name: embedUrl
+    description: The report embed url
+    types:
+    - uid: string
+  - name: datasetId
+    description: The dataset id
+    types:
+    - uid: string
+- name: Dataset
+  description: A Power BI Dataset
+  kind: object
+  properties:
+  - name: id
+    description: The dataset id
+    types:
+    - uid: string
+  - name: name
+    description: The dataset name
+    types:
+    - uid: string
+  - name: configuredBy
+    description: The dataset owner
+    types:
+    - uid: string
+  - name: defaultRetentionPolicy
+    description: The dataset default data retention policy
+    types:
+    - uid: string
+  - name: addRowsAPIEnabled
+    description: Is Push Dataset
+    types:
+    - uid: boolean
+  - name: tables
+    description: A dataset table
+    types:
+    - uid: Table
+      isArray: true
+  - name: webUrl
+    description: The dataset web url
+    types:
+    - uid: string
+  - name: datasources
+    description: A Power BI datasource
+    types:
+    - uid: Datasource
+      isArray: true
+  - name: defaultMode
+    description: The dataset mode or type
+    types:
+    - uid: DatasetMode
+  - name: IsRefreshable
+    description: Can this dataset be refreshed
+    types:
+    - uid: boolean
+  - name: IsEffectiveIdentityRequired
+    description: Dataset requires effective identity
+    types:
+    - uid: boolean
+  - name: IsEffectiveIdentityRolesRequired
+    description: Dataset requires roles
+    types:
+    - uid: boolean
+  - name: IsOnPremGatewayRequired
+    description: Dataset requires onprem gateway
+    types:
+    - uid: boolean
+- name: Table
+  description: A dataset table
+  kind: object
+  properties:
+  - name: name
+    description: The table name
+    types:
+    - uid: string
+  - name: columns
+    description: A Power BI Column
+    types:
+    - uid: Column
+      isArray: true
+  - name: rows
+    description: A Power BI data row
+    types:
+    - uid: Row
+      isArray: true
+- name: Datasource
+  description: A Power BI datasource
+  kind: object
+  properties:
+  - name: name
+    description: The datasource name
+    types:
+    - uid: string
+  - name: connectionString
+    description: The datasource connection string
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The datasource connection details
+    types:
+    - uid: DatasourceConnectionDetails
+  - name: gatewayId
+    description: The bound gateway id
+    types:
+    - uid: string
+  - name: datasourceId
+    description: The bound datasource id
+    types:
+    - uid: string
+- name: DatasetMode
+  description: The dataset mode or type
+  kind: enum
+  properties:
+  - name: AsAzure
+    types:
+    - uid: string
+  - name: AsOnPrem
+    types:
+    - uid: string
+  - name: Push
+    types:
+    - uid: string
+  - name: Streaming
+    types:
+    - uid: string
+  - name: PushStreaming
+    types:
+    - uid: string
+- name: Column
+  description: A Power BI Column
+  kind: object
+  properties:
+  - name: name
+    description: The column name
+    types:
+    - uid: string
+  - name: dataType
+    description: The column data type
+    types:
+    - uid: string
+- name: Row
+  description: A Power BI data row
+  kind: object
+  properties:
+  - name: id
+    description: The unique row id
+    types:
+    - uid: string
+- name: DatasourceConnectionDetails
+  description: A Power BI datasource connection details
+  kind: object
+  properties:
+  - name: server
+    description: The connection server
+    types:
+    - uid: string
+  - name: database
+    description: The connection database
+    types:
+    - uid: string
+  - name: url
+    description: The connection url
+    types:
+    - uid: string
+examples: []
+security: []

@@ -1,0 +1,65 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.groupsgetgroupusers
+name: Groups GetGroupUsers
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: Get a group users list
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[GroupUserAccessRight]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[GroupUserAccessRight]]
+  description: Odata response wrapper for a Power BI user Access Right for group List
+  kind: object
+  properties:
+  - name: odata.context
+    types:
+    - uid: string
+  - name: value
+    description: A Power BI user Access Right entry for group
+    types:
+    - uid: GroupUserAccessRight
+      isArray: true
+- name: GroupUserAccessRight
+  description: A Power BI user Access Right entry for group
+  kind: object
+  properties:
+  - name: groupUserAccessRight
+    description: Access rights user has for group
+    types:
+    - uid: GroupUserAccessRightEnum
+  - name: emailAddress
+    description: Email address of the user.
+    types:
+    - uid: string
+- name: GroupUserAccessRightEnum
+  description: Access rights user has for group
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: Member
+    types:
+    - uid: string
+  - name: Admin
+    types:
+    - uid: string
+examples: []
+security: []

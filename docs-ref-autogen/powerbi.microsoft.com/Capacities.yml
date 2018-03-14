@@ -1,0 +1,8 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.capacities
+name: Capacities
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.capacities.capacitiesgetcapacities
+  summary: Gets a list of capacities the user has access to

@@ -1,0 +1,22 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.imports
+name: Imports
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.imports.importscreatetemporaryuploadlocation
+  summary: Creates a temporary upload location for large files
+- uid: api.powerbi.com.powerbirestapis.imports.importscreatetemporaryuploadlocationingroup
+  summary: Creates a temporary upload location for large files
+- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportbyid
+  summary: Gets the import metadata for the specifed import id
+- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportbyidingroup
+  summary: Gets the import metadata for the specifed import id
+- uid: api.powerbi.com.powerbirestapis.imports.importsgetimports
+  summary: Returns a list of imports
+- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportsingroup
+  summary: Returns a list of imports for the specified group
+- uid: api.powerbi.com.powerbirestapis.imports.importspostimport
+  summary: Creates a new import using the specified import info
+- uid: api.powerbi.com.powerbirestapis.imports.importspostimportingroup
+  summary: Creates a new import using the specified import info

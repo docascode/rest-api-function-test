@@ -1,0 +1,34 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.reports.reportsexportreportingroup
+name: Reports ExportReportInGroup
+service: Power BI Rest APIs
+groupName: Reports
+apiVersion: v1.0
+summary: Exports the specified report
+consumes: []
+produces:
+- application/zip
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportKey}/Export
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: Exported File
+  types:
+  - uid: file
+requestHeader: []
+definitions: []
+examples: []
+security: []

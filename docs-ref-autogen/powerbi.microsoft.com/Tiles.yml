@@ -1,0 +1,22 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.tiles
+name: Tiles
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsclonetile
+  summary: Clones the specified tile
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsclonetileingroup
+  summary: Clones the specified tile
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettile
+  summary: Get a specified tile in a specified dashboard
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettileingroup
+  summary: Get a specified tile in a specified dashboard in a group
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettiles
+  summary: Get tiles in the specified dashboard
+- uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettilesingroup
+  summary: Get tiles in the specified dashboard in a group
+- uid: api.powerbi.com.powerbirestapis.tiles.tilesgeneratetoken
+  summary: Generate token to view the specified tile
+- uid: api.powerbi.com.powerbirestapis.tiles.tilesgeneratetokeningroup
+  summary: Generate token to view the specified tile

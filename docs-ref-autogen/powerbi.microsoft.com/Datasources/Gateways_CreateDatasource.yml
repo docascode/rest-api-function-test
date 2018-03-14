@@ -1,0 +1,139 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasources.gatewayscreatedatasource
+name: Gateways CreateDatasource
+service: Power BI Rest APIs
+groupName: Datasources
+apiVersion: v1.0
+summary: Create a datasource
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources
+uriParameters:
+- name: gatewayId
+  in: path
+  isRequired: true
+  description: The gateway id
+  types:
+  - uid: string
+responses:
+- name: 201 Created
+  description: Created
+  types:
+  - uid: GatewayDatasource
+requestBody:
+- parameters:
+  - name: dataSourceType
+    in: body
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    in: body
+    description: The connection details
+    types:
+    - uid: string
+  - name: credentialDetails
+    in: body
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+  - name: dataSourceName
+    in: body
+    description: The datasource name
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: CredentialDetails
+  description: The credential details
+  kind: object
+  properties:
+  - name: credentials
+    description: The credentials
+    types:
+    - uid: string
+  - name: credentialType
+    description: The connection type
+    types:
+    - uid: string
+  - name: encryptedConnection
+    description: The encrypted connection
+    types:
+    - uid: string
+  - name: encryptionAlgorithm
+    description: The encryption algorithm
+    types:
+    - uid: string
+  - name: privacyLevel
+    description: The privacy level
+    types:
+    - uid: string
+- name: GatewayDatasource
+  description: A Power BI gateway datasource
+  kind: object
+  properties:
+  - name: id
+    description: The unique id for this gateway datasource
+    types:
+    - uid: string
+  - name: gatewayId
+    description: The associated gateway id
+    types:
+    - uid: string
+  - name: datasourceName
+    description: The datasource name
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The datasource connection details
+    types:
+    - uid: string
+  - name: credentialType
+    description: The datasource credential type
+    types:
+    - uid: string
+  - name: basicCredentials
+    description: The datasource basic credential
+    types:
+    - uid: BasicCredentials
+- name: PublishDatasourceToGatewayRequest
+  description: A Publish Datasource To Gateway Request
+  kind: object
+  properties:
+  - name: dataSourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The connection details
+    types:
+    - uid: string
+  - name: credentialDetails
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+  - name: dataSourceName
+    description: The datasource name
+    types:
+    - uid: string
+- name: BasicCredentials
+  description: Object representing basic authentication credentials
+  kind: object
+  properties:
+  - name: username
+    description: Username required to access the datasource
+    types:
+    - uid: string
+  - name: password
+    description: Password required to access the datasource
+    types:
+    - uid: string
+examples: []
+security: []

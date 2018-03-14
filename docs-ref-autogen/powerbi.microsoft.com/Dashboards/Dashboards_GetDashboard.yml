@@ -1,0 +1,49 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboard
+name: Dashboards GetDashboard
+service: Power BI Rest APIs
+groupName: Dashboards
+apiVersion: v1.0
+summary: Get the specified dashboard
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}
+uriParameters:
+- name: dashboardKey
+  in: path
+  isRequired: true
+  description: The dashboard id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Dashboard
+requestHeader: []
+definitions:
+- name: Dashboard
+  description: A Power BI Dashboard
+  kind: object
+  properties:
+  - name: id
+    description: The dashboard id
+    types:
+    - uid: string
+  - name: displayName
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: isReadOnly
+    description: Is ReadOnly dashboard
+    types:
+    - uid: boolean
+  - name: embedUrl
+    description: The dashboard embed url
+    types:
+    - uid: string
+examples: []
+security: []

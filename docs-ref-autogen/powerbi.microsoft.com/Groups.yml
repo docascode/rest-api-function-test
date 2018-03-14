@@ -1,0 +1,22 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.groups
+name: Groups
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.groups.groupsaddgroupuser
+  summary: Add a group user
+- uid: api.powerbi.com.powerbirestapis.groups.groupsassignmyworkspacetocapacity
+  summary: Assign My Workspace to a capacity
+- uid: api.powerbi.com.powerbirestapis.groups.groupsassigntocapacity
+  summary: Assign a group to a capacity
+- uid: api.powerbi.com.powerbirestapis.groups.groupscreategroup
+  summary: Create new group
+- uid: api.powerbi.com.powerbirestapis.groups.groupsdeletegroup
+  summary: Deletes the specified group
+- uid: api.powerbi.com.powerbirestapis.groups.groupsdeleteuseringroup
+  summary: Deletes the specified group
+- uid: api.powerbi.com.powerbirestapis.groups.groupsgetgroups
+  summary: Returns a list of groups
+- uid: api.powerbi.com.powerbirestapis.groups.groupsgetgroupusers
+  summary: Get a group users list

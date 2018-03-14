@@ -1,0 +1,118 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.reports.reportsgeneratetokenforcreate
+name: Reports GenerateTokenForCreate
+service: Power BI Rest APIs
+groupName: Reports
+apiVersion: v1.0
+summary: Generate token to create a new report on a given dataset
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/reports/GenerateToken
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: EmbedToken
+requestBody:
+- parameters:
+  - name: accessLevel
+    in: body
+    description: The dataset mode or type
+    types:
+    - uid: TokenAccessLevel
+  - name: datasetId
+    in: body
+    description: The dataset Id
+    types:
+    - uid: string
+  - name: allowSaveAs
+    in: body
+    description: Allow SaveAs the report with generated token.
+    types:
+    - uid: boolean
+  - name: identities
+    in: body
+    description: The identity that the generated token should reflect
+    types:
+    - uid: EffectiveIdentity
+      isArray: true
+requestHeader: []
+definitions:
+- name: EffectiveIdentity
+  description: The identity that the generated token should reflect
+  kind: object
+  properties:
+  - name: username
+    description: The effective username reflected by a token for applying RLS rules
+    types:
+    - uid: string
+  - name: roles
+    description: An array of roles reflected by a token when applying RLS rules
+    types:
+    - uid: string
+      isArray: true
+  - name: datasets
+    description: An array of datasets for which this mapping applies to, if not provided - applies to all datasets
+    types:
+    - uid: string
+      isArray: true
+  - name: customData
+    description: The custom data string to be added to the AS connection string
+    types:
+    - uid: string
+- name: EmbedToken
+  description: Power BI Embed Token
+  kind: object
+  properties:
+  - name: token
+    description: Embed token.
+    types:
+    - uid: string
+  - name: tokenId
+    description: Unique token Id.
+    types:
+    - uid: string
+  - name: expiration
+    description: Expiration time of token - in UTC.
+    types:
+    - uid: string
+- name: GenerateTokenRequest
+  description: Power BI Generate Token Request
+  kind: object
+  properties:
+  - name: accessLevel
+    description: The dataset mode or type
+    types:
+    - uid: TokenAccessLevel
+  - name: datasetId
+    description: The dataset Id
+    types:
+    - uid: string
+  - name: allowSaveAs
+    description: Allow SaveAs the report with generated token.
+    types:
+    - uid: boolean
+  - name: identities
+    description: The identity that the generated token should reflect
+    types:
+    - uid: EffectiveIdentity
+      isArray: true
+- name: TokenAccessLevel
+  description: The dataset mode or type
+  kind: enum
+  properties:
+  - name: View
+    types:
+    - uid: string
+  - name: Edit
+    types:
+    - uid: string
+  - name: Create
+    types:
+    - uid: string
+examples: []
+security: []

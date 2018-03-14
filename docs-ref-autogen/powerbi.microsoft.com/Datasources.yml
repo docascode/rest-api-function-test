@@ -1,0 +1,24 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.datasources
+name: Datasources
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysadddatasourceuser
+  summary: Get a datasource user
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewayscreatedatasource
+  summary: Create a datasource
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysdeletedatasource
+  summary: Delete a datasource
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysdeletedatasourceuser
+  summary: Delete a datasource user
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourcebyid
+  summary: Get a datasource by id
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasources
+  summary: Get all datasources of specific gateway
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourcestatusbyid
+  summary: Get a datasource status by id
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourceusers
+  summary: Get a datasource users list
+- uid: api.powerbi.com.powerbirestapis.datasources.gatewaysupdatedatasource
+  summary: Update a datasource credentials

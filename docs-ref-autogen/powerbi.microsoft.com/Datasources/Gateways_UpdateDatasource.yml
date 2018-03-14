@@ -1,0 +1,75 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasources.gatewaysupdatedatasource
+name: Gateways UpdateDatasource
+service: Power BI Rest APIs
+groupName: Datasources
+apiVersion: v1.0
+summary: Update a datasource credentials
+consumes: []
+produces: []
+paths:
+- content: PATCH https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}
+uriParameters:
+- name: gatewayId
+  in: path
+  isRequired: true
+  description: The gateway id
+  types:
+  - uid: string
+- name: datasourceId
+  in: path
+  isRequired: true
+  description: The datasource id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: credentialDetails
+    in: body
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+requestHeader: []
+definitions:
+- name: CredentialDetails
+  description: The credential details
+  kind: object
+  properties:
+  - name: credentials
+    description: The credentials
+    types:
+    - uid: string
+  - name: credentialType
+    description: The connection type
+    types:
+    - uid: string
+  - name: encryptedConnection
+    description: The encrypted connection
+    types:
+    - uid: string
+  - name: encryptionAlgorithm
+    description: The encryption algorithm
+    types:
+    - uid: string
+  - name: privacyLevel
+    description: The privacy level
+    types:
+    - uid: string
+- name: Object
+  kind: object
+  properties: []
+- name: UpdateDatasourceRequest
+  description: An Update Datasource To Gateway Request
+  kind: object
+  properties:
+  - name: credentialDetails
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+examples: []
+security: []

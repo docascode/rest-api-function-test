@@ -1,0 +1,109 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdatedatasourcesingroup
+name: Datasets UpdateDatasourcesInGroup
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Updates the dataset datasources using the specified datasource selectors
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.UpdateDatasources
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: datasetKey
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: updateDetails
+    in: body
+    description: The connection server
+    types:
+    - uid: UpdateDatasourceConnectionRequest
+      isArray: true
+requestHeader: []
+definitions:
+- name: UpdateDatasourceConnectionRequest
+  description: ''
+  kind: object
+  properties:
+  - name: connectionDetails
+    description: ''
+    types:
+    - uid: DatasourceConnectionDetails
+  - name: datasourceSelector
+    description: ''
+    types:
+    - uid: Datasource
+- name: Object
+  kind: object
+  properties: []
+- name: UpdateDatasourcesRequest
+  description: ''
+  kind: object
+  properties:
+  - name: updateDetails
+    description: The connection server
+    types:
+    - uid: UpdateDatasourceConnectionRequest
+      isArray: true
+- name: DatasourceConnectionDetails
+  description: A Power BI datasource connection details
+  kind: object
+  properties:
+  - name: server
+    description: The connection server
+    types:
+    - uid: string
+  - name: database
+    description: The connection database
+    types:
+    - uid: string
+  - name: url
+    description: The connection url
+    types:
+    - uid: string
+- name: Datasource
+  description: A Power BI datasource
+  kind: object
+  properties:
+  - name: name
+    description: The datasource name
+    types:
+    - uid: string
+  - name: connectionString
+    description: The datasource connection string
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The datasource connection details
+    types:
+    - uid: DatasourceConnectionDetails
+  - name: gatewayId
+    description: The bound gateway id
+    types:
+    - uid: string
+  - name: datasourceId
+    description: The bound datasource id
+    types:
+    - uid: string
+examples: []
+security: []

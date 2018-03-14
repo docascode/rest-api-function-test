@@ -1,0 +1,122 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.tiles.dashboardsclonetile
+name: Dashboards CloneTile
+service: Power BI Rest APIs
+groupName: Tiles
+apiVersion: v1.0
+summary: Clones the specified tile
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/Clone
+uriParameters:
+- name: dashboardKey
+  in: path
+  isRequired: true
+  description: The dashboard id
+  types:
+  - uid: string
+- name: tileKey
+  in: path
+  isRequired: true
+  description: The tile id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Tile
+requestBody:
+- parameters:
+  - name: targetDashboardId
+    in: body
+    description: The target dashboard id
+    types:
+    - uid: string
+  - name: targetWorkspaceId
+    in: body
+    description: Optional parameter for specifying the target workspace id
+    types:
+    - uid: string
+  - name: targetReportId
+    in: body
+    description: Optional parameter for specifying the target report id
+    types:
+    - uid: string
+  - name: targetModelId
+    in: body
+    description: Optional parameter for specifying the target associated model (dataset) id
+    types:
+    - uid: string
+  - name: positionConflictAction
+    in: body
+    description: Optional parameter for specifying the action in case of position conflict
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Tile
+  description: A Power BI Tile
+  kind: object
+  properties:
+  - name: id
+    description: The tile id
+    types:
+    - uid: string
+  - name: title
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: rowSpan
+    description: number of rows a tile should span
+    types:
+    - uid: integer
+  - name: colSpan
+    description: number of columns a tile should span
+    types:
+    - uid: integer
+  - name: embedUrl
+    description: The tile embed url
+    types:
+    - uid: string
+  - name: embedData
+    description: The tile embed data
+    types:
+    - uid: string
+  - name: reportId
+    description: The report id
+    types:
+    - uid: string
+  - name: datasetId
+    description: The dataset id
+    types:
+    - uid: string
+- name: CloneTileRequest
+  description: Power BI Clone Tile Request
+  kind: object
+  properties:
+  - name: targetDashboardId
+    description: The target dashboard id
+    types:
+    - uid: string
+  - name: targetWorkspaceId
+    description: Optional parameter for specifying the target workspace id
+    types:
+    - uid: string
+  - name: targetReportId
+    description: Optional parameter for specifying the target report id
+    types:
+    - uid: string
+  - name: targetModelId
+    description: Optional parameter for specifying the target associated model (dataset) id
+    types:
+    - uid: string
+  - name: positionConflictAction
+    description: Optional parameter for specifying the action in case of position conflict
+    types:
+    - uid: string
+examples: []
+security: []

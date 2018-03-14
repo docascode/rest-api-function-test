@@ -1,0 +1,22 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.dashboards
+name: Dashboards
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsadddashboard
+  summary: Add a new empty dashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsadddashboardingroup
+  summary: Add a new empty dashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgeneratetoken
+  summary: Generate token to view the specified dashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgeneratetokeningroup
+  summary: Generate token to view the specified dashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboard
+  summary: Get the specified dashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboardingroup
+  summary: Get the specified dashboard in a group
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboards
+  summary: Gets a list of dashboards
+- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboardsingroup
+  summary: Gets a list of dashboards in a group

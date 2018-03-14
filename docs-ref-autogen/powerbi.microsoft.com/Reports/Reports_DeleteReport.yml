@@ -1,0 +1,30 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.reports.reportsdeletereport
+name: Reports DeleteReport
+service: Power BI Rest APIs
+groupName: Reports
+apiVersion: v1.0
+summary: Deletes the specified report
+consumes: []
+produces: []
+paths:
+- content: DELETE https://api.powerbi.com/v1.0/myorg/reports/{reportKey}
+uriParameters:
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples: []
+security: []

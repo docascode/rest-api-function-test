@@ -1,0 +1,40 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.groupsassignmyworkspacetocapacity
+name: Groups AssignMyWorkspaceToCapacity
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: Assign My Workspace to a capacity
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/AssignToCapacity
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: capacityId
+    in: body
+    description: The capacity id
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: AssignToCapacityRequest
+  description: Power BI Assign to Capacity Request
+  kind: object
+  properties:
+  - name: capacityId
+    description: The capacity id
+    types:
+    - uid: string
+examples: []
+security: []

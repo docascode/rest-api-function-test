@@ -1,0 +1,80 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.datasets
+name: Datasets
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsbindtogateway
+  summary: Bind dataset to gateway
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsbindtogatewayingroup
+  summary: Bind dataset to gateway
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsdeletedatasetbyid
+  summary: Deletes the dataset with the specified id
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsdeletedatasetbyidingroup
+  summary: Deletes the dataset with the specified id
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsdeleterows
+  summary: Deletes all rows from the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsdeleterowsingroup
+  summary: Deletes all rows from the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgeneratetokeningroup
+  summary: Generate token to view the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasetbyid
+  summary: Gets the dataset metadata for the specifeid dataset id
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasetbyidingroup
+  summary: Gets the dataset metadata for the specifeid dataset id
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasets
+  summary: Returns the datasets
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasetsingroup
+  summary: Returns the datasets
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasources
+  summary: Gets a list of datasource for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasourcesasadmin
+  summary: Gets a list of datasource for the specified dataset as Admin
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetdatasourcesingroup
+  summary: Gets a list of datasource for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetgatewaydatasources
+  summary: Gets a list of bound gateway datasources for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetgatewaydatasourcesingroup
+  summary: Gets a list of bound gateway datasources for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetparameters
+  summary: Gets a list of parameters for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetparametersingroup
+  summary: Gets a list of parameters for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetrefreshhistory
+  summary: Gets the dataset refresh history
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgetrefreshhistoryingroup
+  summary: Gets the dataset refresh history
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgettables
+  summary: Gets all tables within the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsgettablesingroup
+  summary: Gets all tables within the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetspostdataset
+  summary: Post a new entity to datasets
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetspostdatasetingroup
+  summary: Post a new entity to datasets
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetspostrows
+  summary: Posts new data rows into the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetspostrowsingroup
+  summary: Posts new data rows into the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsputtable
+  summary: Updates a schema and metadata for the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsputtableingroup
+  summary: Updates a schema and metadata for the specified table
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsrefreshdataset
+  summary: Start a dataset refresh
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsrefreshdatasetingroup
+  summary: Start a dataset refresh
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetssetalldatasetconnections
+  summary: Sets all connections for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetssetalldatasetconnectionsingroup
+  summary: Sets all connections for the specified dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetstakeoveringroup
+  summary: Take Over a dataset
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdatedatasources
+  summary: Updates the dataset datasources using the specified datasource selectors
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdatedatasourcesingroup
+  summary: Updates the dataset datasources using the specified datasource selectors
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdateparameters
+  summary: Updates the dataset parameters
+- uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdateparametersingroup
+  summary: Updates the dataset parameters

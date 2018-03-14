@@ -1,0 +1,14 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.gateways
+name: Gateways
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergateways
+  summary: Gets a list of gateways to bind
+- uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergatewaysingroup
+  summary: Gets a list of gateways to bind
+- uid: api.powerbi.com.powerbirestapis.gateways.gatewaysgetgatewaybyid
+  summary: Returns the specified gateway
+- uid: api.powerbi.com.powerbirestapis.gateways.gatewaysgetgateways
+  summary: Returns a list of gateways

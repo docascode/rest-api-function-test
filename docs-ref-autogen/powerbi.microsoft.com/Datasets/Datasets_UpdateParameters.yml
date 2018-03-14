@@ -1,0 +1,60 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.datasetsupdateparameters
+name: Datasets UpdateParameters
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Updates the dataset parameters
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/Default.UpdateParameters
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: updateDetails
+    in: body
+    isRequired: true
+    description: Power BI dataset parameter update details
+    types:
+    - uid: UpdateDatasetParameterDetails
+      isArray: true
+requestHeader: []
+definitions:
+- name: UpdateDatasetParameterDetails
+  description: Power BI dataset parameter update details
+  kind: object
+  properties:
+  - name: name
+    description: The parameter name
+    types:
+    - uid: string
+  - name: newValue
+    description: The parameter new value
+    types:
+    - uid: string
+- name: Object
+  kind: object
+  properties: []
+- name: UpdateDatasetParametersRequest
+  description: Power BI dataset parameter update request
+  kind: object
+  properties:
+  - name: updateDetails
+    description: Power BI dataset parameter update details
+    types:
+    - uid: UpdateDatasetParameterDetails
+      isArray: true
+examples: []
+security: []

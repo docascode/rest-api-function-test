@@ -1,0 +1,77 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettileingroup
+name: Dashboards GetTileInGroup
+service: Power BI Rest APIs
+groupName: Tiles
+apiVersion: v1.0
+summary: Get a specified tile in a specified dashboard in a group
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: dashboardKey
+  in: path
+  isRequired: true
+  description: The dashboard id
+  types:
+  - uid: string
+- name: tileKey
+  in: path
+  isRequired: true
+  description: The tile id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Tile
+requestHeader: []
+definitions:
+- name: Tile
+  description: A Power BI Tile
+  kind: object
+  properties:
+  - name: id
+    description: The tile id
+    types:
+    - uid: string
+  - name: title
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: rowSpan
+    description: number of rows a tile should span
+    types:
+    - uid: integer
+  - name: colSpan
+    description: number of columns a tile should span
+    types:
+    - uid: integer
+  - name: embedUrl
+    description: The tile embed url
+    types:
+    - uid: string
+  - name: embedData
+    description: The tile embed data
+    types:
+    - uid: string
+  - name: reportId
+    description: The report id
+    types:
+    - uid: string
+  - name: datasetId
+    description: The dataset id
+    types:
+    - uid: string
+examples: []
+security: []

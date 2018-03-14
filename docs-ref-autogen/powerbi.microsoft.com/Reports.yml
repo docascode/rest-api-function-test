@@ -1,0 +1,42 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.reports
+name: Reports
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.reports.reportsclonereport
+  summary: Clones the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsclonereportingroup
+  summary: Clones the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsdeletereport
+  summary: Deletes the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsdeletereportingroup
+  summary: Deletes the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsexportreport
+  summary: Exports the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsexportreportingroup
+  summary: Exports the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgeneratetoken
+  summary: Generate token to view or edit the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgeneratetokenforcreate
+  summary: Generate token to create a new report on a given dataset
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgeneratetokenforcreateingroup
+  summary: Generate token to create a new report on a given dataset
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgeneratetokeningroup
+  summary: Generate token to view or edit the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgetreport
+  summary: Get the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgetreportingroup
+  summary: Get the specified report
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgetreports
+  summary: Gets a list of reports
+- uid: api.powerbi.com.powerbirestapis.reports.reportsgetreportsingroup
+  summary: Gets a list of reports available within the specified group
+- uid: api.powerbi.com.powerbirestapis.reports.reportsrebindreport
+  summary: Rebinds the specified report to requested dataset id
+- uid: api.powerbi.com.powerbirestapis.reports.reportsrebindreportingroup
+  summary: Rebinds the specified report to requested dataset id
+- uid: api.powerbi.com.powerbirestapis.reports.reportsupdatereportcontent
+  summary: Update the report content from a specified source
+- uid: api.powerbi.com.powerbirestapis.reports.reportsupdatereportcontentingroup
+  summary: Update the report content from a specified source

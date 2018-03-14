@@ -1,0 +1,86 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.reports.reportsclonereport
+name: Reports CloneReport
+service: Power BI Rest APIs
+groupName: Reports
+apiVersion: v1.0
+summary: Clones the specified report
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/reports/{reportKey}/Clone
+uriParameters:
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Report
+requestBody:
+- parameters:
+  - name: name
+    in: body
+    description: The requested report name
+    types:
+    - uid: string
+  - name: targetWorkspaceId
+    in: body
+    description: Optional parameter for specifying the target workspace id
+    types:
+    - uid: string
+  - name: targetModelId
+    in: body
+    description: Optional parameter for specifying the target associated model (dataset) id
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Report
+  description: A Power BI Report
+  kind: object
+  properties:
+  - name: id
+    description: The report id
+    types:
+    - uid: string
+  - name: name
+    description: The report name
+    types:
+    - uid: string
+  - name: webUrl
+    description: The report web url
+    types:
+    - uid: string
+  - name: embedUrl
+    description: The report embed url
+    types:
+    - uid: string
+  - name: datasetId
+    description: The dataset id
+    types:
+    - uid: string
+- name: CloneReportRequest
+  description: Power BI Clone Report Request
+  kind: object
+  properties:
+  - name: name
+    description: The requested report name
+    types:
+    - uid: string
+  - name: targetWorkspaceId
+    description: Optional parameter for specifying the target workspace id
+    types:
+    - uid: string
+  - name: targetModelId
+    description: Optional parameter for specifying the target associated model (dataset) id
+    types:
+    - uid: string
+examples: []
+security: []
