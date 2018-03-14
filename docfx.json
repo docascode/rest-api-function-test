@@ -2,22 +2,23 @@
   "build": {
     "content": [
       {
+        "src":"docs-ref-autogen",
         "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
-        ]
+          "**/*.yml",
+          "toc.md"
+          ],
+        "exclude": [ ]        
+      },
+      {
+        "src":"docs-ref-index",
+        "files": [
+          "**/*.md"
+          ],
+        "exclude": [ ]
+        
       }
     ],
+
     "resource": [
       {
         "files": [
@@ -36,7 +37,13 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
-      "extendBreadcrumb": true
+      "extendBreadcrumb": true,
+      "titleSuffix": "Power BI REST API",
+      "author": "eligr",
+      "ms.author": "eligr",
+      "ms.topic": "reference",
+      "ms.devlang": "rest-api",
+      "ms.date": "03/14/2018"
     },
     "fileMetadata": {},
     "template": [],

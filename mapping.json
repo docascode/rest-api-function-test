@@ -5,14 +5,15 @@
   "use_yaml_schema":true,
   "organizations":[
     {
-      "services":[
+        "name":"Power BI",
+        "services":[
         {
           "toc_title": "Power BI Rest APIs",
           "url_group": "powerbi.microsoft.com",
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "./sdk/swaggers/swagger.json"
+              "source": "power-bi-rest-api-source/sdk/swaggers/swaggerV2.json"
             }
           ]
         }
