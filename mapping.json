@@ -9,7 +9,7 @@
         "services":[
         {
           "toc_title": "Power BI Rest APIs",
-          "url_group": "powerbi.microsoft.com",
+          "url_group": "powerbi",
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {

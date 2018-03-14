@@ -7,16 +7,18 @@
           "**/*.yml",
           "toc.md"
           ],
-        "exclude": [ ]        
+        "exclude": [ ],
+        "dest": "api"        
       },
       {
         "src":"docs-ref-index",
         "files": [
           "**/*.md"
           ],
-        "exclude": [ ]
-        
+        "exclude": [ ] ,
+        "dest": "api/power-bi"      
       }
+      
     ],
 
     "resource": [
