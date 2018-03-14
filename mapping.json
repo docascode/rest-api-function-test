@@ -12,7 +12,7 @@
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "sdk/swaggers/swaggerV2.json"
+              "source": "./sdk/swaggers/swagger.json"
             }
           ]
         }
