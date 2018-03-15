@@ -18,21 +18,7 @@
           ],
         "exclude": [ ] ,
         "dest": "api/power-bi"      
-      },
-      {
-
-        "src":".",
-
-        "files": [
-
-          "index.md"
-
-        ],
-
-        "dest":"api/power-bi"
-
       }
-      
     ],
 
     "resource": [
