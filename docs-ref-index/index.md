@@ -1,3 +1,4 @@
+---
 ms.assetid: 
 ms.title: Power BI REST API reference | Microsoft Docs
 ms.service: powerbi
@@ -15,16 +16,15 @@ Power BI REST operations require an Azure Active Directory (AAD) access token. T
 
 ## REST Operation groups
 
-
 |Operation Group  |Description |
 |---------|---------|
-|[Capacity](../docs-ref-autogen/power-bi/Capacities.yml)     | Return capacity objects and assign workspaces to capacity.  |
-|[Dataset](../docs-ref-autogen/power-bi/Datasets.yml)     |    Operations for working with datasets     |
-|[Table]()    |    Operations for working with tables     |
+|[Capacities](../docs-ref-autogen/power-bi/Capacities.yml)     | Return capacity objects and assign workspaces to capacity.  |
+|[Dashboards](../docs-ref-autogen/power-bi/Dashboards.yml)    |  Operations for working with dashboards        |
+|[Datasources](../docs-ref-autogen/power-bi/Datasources.yml)     |    Operations for working with datasources     |
+|[Gateways](../docs-ref-autogen/power-bi/Gateways.yml)     |    Operations for working with gateways      |
+|[Groups](../docs-ref-autogen/power-bi/Groups.yml)     |    Operations for working with groups]      |
+|[Imports](../docs-ref-autogen/power-bi/Imports.yml)     |  Operations for importing data       |
+|[Reports](../docs-ref-autogen/power-bi/Reports.yml)    |   Operations for working with reports      |
 |[Row]()   |     Operations for working with rows    |
-|[Group](../docs-ref-autogen/power-bi/Groups.yml)     |    Operations for working with groups]      |
-|[Import](../docs-ref-autogen/power-bi/Imports.yml)     |  Operations for importing data       |
-|[Dashboard](../docs-ref-autogen/power-bi/Dashboards.yml)    |  Operations for working with dashboards        |
-|[Report](../docs-ref-autogen/power-bi/Reports.yml)    |   Operations for working with reports      |
-|[Datasource](../docs-ref-autogen/power-bi/Datasources.yml)     |    Operations for working with datasources     |
-|[Gateway](../docs-ref-autogen/power-bi/Gateways.yml)     |    Operations for working with gateways      |
+|[Table]()    |    Operations for working with tables     |
+|[Tiles]()    |    Operations for working with tiles     |
