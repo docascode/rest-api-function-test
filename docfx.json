@@ -5,11 +5,18 @@
         "src":"docs-ref-autogen",
         "files": [
           "**.json",
-          "**.yml",
-          "toc.md"
+          "**.yml"
           ],
         "exclude": [ ],
         "dest": "api"        
+      },
+      {
+        "src":"docs-ref-autogen",
+        "files": [
+          "toc.md"
+          ],
+        "exclude": [ ],
+        "dest": "api/power-bi"        
       },
       {
         "src":"docs-ref-index",
