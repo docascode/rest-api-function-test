@@ -16,7 +16,7 @@ operations:
   summary: Get tiles in the specified dashboard
 - uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettilesingroup
   summary: Get tiles in the specified dashboard in a group
-- uid: api.powerbi.com.powerbirestapis.tiles.tilesgeneratetoken
+- uid: api.powerbi.com.powerbirestapis.tiles.generatetoken
   summary: Generate token to view the specified tile
-- uid: api.powerbi.com.powerbirestapis.tiles.tilesgeneratetokeningroup
+- uid: api.powerbi.com.powerbirestapis.tiles.generatetokeningroup
   summary: Generate token to view the specified tile

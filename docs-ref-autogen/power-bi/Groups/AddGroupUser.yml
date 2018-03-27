@@ -1,0 +1,68 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.addgroupuser
+name: Add Group User
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: Add a group user
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: groupUserAccessRight
+    in: body
+    description: Access rights user has for group
+    types:
+    - uid: GroupUserAccessRightEnum
+  - name: emailAddress
+    in: body
+    description: Email address of the user.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: GroupUserAccessRight
+  description: A Power BI user Access Right entry for group
+  kind: object
+  properties:
+  - name: groupUserAccessRight
+    description: Access rights user has for group
+    types:
+    - uid: GroupUserAccessRightEnum
+  - name: emailAddress
+    description: Email address of the user.
+    types:
+    - uid: string
+- name: GroupUserAccessRightEnum
+  description: Access rights user has for group
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: Member
+    types:
+    - uid: string
+  - name: Admin
+    types:
+    - uid: string
+examples: []
+security: []

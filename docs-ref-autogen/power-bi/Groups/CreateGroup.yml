@@ -1,0 +1,62 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.creategroup
+name: Create Group
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: Create new group
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Group
+requestBody:
+- parameters:
+  - name: name
+    in: body
+    description: The name of the new created group.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Group
+  description: A Power BI Group
+  kind: object
+  properties:
+  - name: id
+    description: The group id
+    types:
+    - uid: string
+  - name: name
+    description: The group name
+    types:
+    - uid: string
+  - name: isReadOnly
+    description: Is ReadOnly group
+    types:
+    - uid: boolean
+  - name: isOnDedicatedCapacity
+    description: Is group on dedicated capacity
+    types:
+    - uid: boolean
+  - name: capacityId
+    description: The capacity id
+    types:
+    - uid: string
+- name: GroupCreationRequest
+  description: Power BI Create a new group Request
+  kind: object
+  properties:
+  - name: name
+    description: The name of the new created group.
+    types:
+    - uid: string
+examples: []
+security: []

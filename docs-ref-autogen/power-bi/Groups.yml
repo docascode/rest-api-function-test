@@ -4,19 +4,19 @@ name: Groups
 apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
-- uid: api.powerbi.com.powerbirestapis.groups.groupsaddgroupuser
+- uid: api.powerbi.com.powerbirestapis.groups.addgroupuser
   summary: Add a group user
-- uid: api.powerbi.com.powerbirestapis.groups.groupsassignmyworkspacetocapacity
+- uid: api.powerbi.com.powerbirestapis.groups.assignmyworkspacetocapacity
   summary: Assign My Workspace to a capacity
-- uid: api.powerbi.com.powerbirestapis.groups.groupsassigntocapacity
+- uid: api.powerbi.com.powerbirestapis.groups.assigntocapacity
   summary: Assign a group to a capacity
-- uid: api.powerbi.com.powerbirestapis.groups.groupscreategroup
+- uid: api.powerbi.com.powerbirestapis.groups.creategroup
   summary: Create new group
-- uid: api.powerbi.com.powerbirestapis.groups.groupsdeletegroup
+- uid: api.powerbi.com.powerbirestapis.groups.deletegroup
   summary: Deletes the specified group
-- uid: api.powerbi.com.powerbirestapis.groups.groupsdeleteuseringroup
+- uid: api.powerbi.com.powerbirestapis.groups.deleteuseringroup
   summary: Deletes the specified group
-- uid: api.powerbi.com.powerbirestapis.groups.groupsgetgroups
+- uid: api.powerbi.com.powerbirestapis.groups.getgroups
   summary: Returns a list of groups
-- uid: api.powerbi.com.powerbirestapis.groups.groupsgetgroupusers
+- uid: api.powerbi.com.powerbirestapis.groups.getgroupusers
   summary: Get a group users list

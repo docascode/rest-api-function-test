@@ -1,0 +1,60 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.refreshdataset
+name: Refresh Dataset
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Start a dataset refresh
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/refreshes
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+responses:
+- name: 202 Accepted
+  description: Accepted
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: notifyOption
+    in: body
+    isRequired: true
+    description: mail notification options
+    types:
+    - uid: NotifyOption
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: RefreshRequest
+  description: Power BI Refresh Request
+  kind: object
+  properties:
+  - name: notifyOption
+    description: mail notification options
+    types:
+    - uid: NotifyOption
+- name: NotifyOption
+  description: mail notification options
+  kind: enum
+  properties:
+  - name: NoNotification
+    types:
+    - uid: string
+  - name: MailOnFailure
+    types:
+    - uid: string
+  - name: MailOnCompletion
+    types:
+    - uid: string
+examples: []
+security: []

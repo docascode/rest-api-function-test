@@ -1,0 +1,58 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.dashboards.adddashboard
+name: Add Dashboard
+service: Power BI Rest APIs
+groupName: Dashboards
+apiVersion: v1.0
+summary: Add a new empty dashboard
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/dashboards
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Dashboard
+requestBody:
+- parameters:
+  - name: name
+    in: body
+    description: The name of the new dashboard
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Dashboard
+  description: A Power BI Dashboard
+  kind: object
+  properties:
+  - name: id
+    description: The dashboard id
+    types:
+    - uid: string
+  - name: displayName
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: isReadOnly
+    description: Is ReadOnly dashboard
+    types:
+    - uid: boolean
+  - name: embedUrl
+    description: The dashboard embed url
+    types:
+    - uid: string
+- name: AddDashboardRequest
+  description: Power BI Add Dashboard Request
+  kind: object
+  properties:
+  - name: name
+    description: The name of the new dashboard
+    types:
+    - uid: string
+examples: []
+security: []

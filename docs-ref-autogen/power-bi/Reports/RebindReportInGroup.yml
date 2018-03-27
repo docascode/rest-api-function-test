@@ -1,0 +1,52 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.reports.rebindreportingroup
+name: Rebind Report In Group
+service: Power BI Rest APIs
+groupName: Reports
+apiVersion: v1.0
+summary: Rebinds the specified report to requested dataset id
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportKey}/Rebind
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: datasetId
+    in: body
+    description: The new dataset of the rebinded report
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: RebindReportRequest
+  description: Power BI Rebind Report Request
+  kind: object
+  properties:
+  - name: datasetId
+    description: The new dataset of the rebinded report
+    types:
+    - uid: string
+examples: []
+security: []

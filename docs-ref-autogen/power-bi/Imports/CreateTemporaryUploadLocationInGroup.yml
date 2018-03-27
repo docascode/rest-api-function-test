@@ -1,0 +1,40 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.imports.createtemporaryuploadlocationingroup
+name: Create Temporary Upload Location In Group
+service: Power BI Rest APIs
+groupName: Imports
+apiVersion: v1.0
+summary: Creates a temporary upload location for large files
+consumes: []
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/imports/createTemporaryUploadLocation
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: TemporaryUploadLocation
+requestHeader: []
+definitions:
+- name: TemporaryUploadLocation
+  description: Power BI Update Report Content Request
+  kind: object
+  properties:
+  - name: Url
+    description: The SAS url for the temporary blob storage
+    types:
+    - uid: string
+  - name: ExpirationTime
+    description: The expiration time of the SAS url
+    types:
+    - uid: string
+examples: []
+security: []

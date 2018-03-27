@@ -1,0 +1,30 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.deletedatasetbyid
+name: Delete Dataset By Id
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Deletes the dataset with the specified id
+consumes: []
+produces: []
+paths:
+- content: DELETE https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples: []
+security: []

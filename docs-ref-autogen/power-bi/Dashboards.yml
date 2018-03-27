@@ -4,19 +4,19 @@ name: Dashboards
 apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsadddashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.adddashboard
   summary: Add a new empty dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsadddashboardingroup
+- uid: api.powerbi.com.powerbirestapis.dashboards.adddashboardingroup
   summary: Add a new empty dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgeneratetoken
+- uid: api.powerbi.com.powerbirestapis.dashboards.generatetoken
   summary: Generate token to view the specified dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgeneratetokeningroup
+- uid: api.powerbi.com.powerbirestapis.dashboards.generatetokeningroup
   summary: Generate token to view the specified dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboard
+- uid: api.powerbi.com.powerbirestapis.dashboards.getdashboard
   summary: Get the specified dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboardingroup
+- uid: api.powerbi.com.powerbirestapis.dashboards.getdashboardingroup
   summary: Get the specified dashboard in a group
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboards
+- uid: api.powerbi.com.powerbirestapis.dashboards.getdashboards
   summary: Gets a list of dashboards
-- uid: api.powerbi.com.powerbirestapis.dashboards.dashboardsgetdashboardsingroup
+- uid: api.powerbi.com.powerbirestapis.dashboards.getdashboardsingroup
   summary: Gets a list of dashboards in a group

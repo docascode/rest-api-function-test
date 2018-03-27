@@ -1,0 +1,65 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.getparametersingroup
+name: Get Parameters In Group
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Gets a list of parameters for the specified dataset
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/parameters
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: datasetKey
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[DatasetParameter]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[DatasetParameter]]
+  description: Odata response wrapper for a Power BI dataset parameter list
+  kind: object
+  properties:
+  - name: odata.context
+    types:
+    - uid: string
+  - name: value
+    description: Power BI dataset parameter
+    types:
+    - uid: DatasetParameter
+      isArray: true
+- name: DatasetParameter
+  description: Power BI dataset parameter
+  kind: object
+  properties:
+  - name: name
+    description: The parameter name
+    types:
+    - uid: string
+  - name: type
+    description: The parameter type
+    types:
+    - uid: string
+  - name: currentValue
+    description: The parameter current value
+    types:
+    - uid: string
+  - name: isRequired
+    description: Is dataset parameter required
+    types:
+    - uid: boolean
+examples: []
+security: []

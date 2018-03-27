@@ -1,0 +1,36 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.postrows
+name: Post Rows
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Posts new data rows into the specified table
+consumes: []
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}/rows
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+- name: tableName
+  in: path
+  isRequired: true
+  description: The table name
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples: []
+security: []

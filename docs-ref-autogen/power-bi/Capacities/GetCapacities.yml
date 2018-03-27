@@ -1,0 +1,110 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.capacities.getcapacities
+name: Get Capacities
+service: Power BI Rest APIs
+groupName: Capacities
+apiVersion: v1.0
+summary: Gets a list of capacities the user has access to
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/capacities
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Capacity]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Capacity]]
+  description: Odata response wrapper for a Power BI Capacity List
+  kind: object
+  properties:
+  - name: odata.context
+    types:
+    - uid: string
+  - name: value
+    description: A Power BI capacity
+    types:
+    - uid: Capacity
+      isArray: true
+- name: Capacity
+  description: A Power BI capacity
+  kind: object
+  properties:
+  - name: id
+    description: The capacity id
+    types:
+    - uid: string
+  - name: displayName
+    description: The capacity display name
+    types:
+    - uid: string
+  - name: admins
+    description: An array of capacity admins
+    types:
+    - uid: string
+      isArray: true
+  - name: sku
+    description: The capacity SKU
+    types:
+    - uid: string
+  - name: state
+    description: The capacity state
+    types:
+    - uid: stateEnum
+  - name: capacityUserAccessRight
+    description: Access rights user has for capacity
+    types:
+    - uid: capacityUserAccessRightEnum
+- name: stateEnum
+  description: The capacity state
+  kind: enum
+  properties:
+  - name: NotActivated
+    types:
+    - uid: string
+  - name: Active
+    types:
+    - uid: string
+  - name: Provisioning
+    types:
+    - uid: string
+  - name: ProvisionFailed
+    types:
+    - uid: string
+  - name: PreSuspended
+    types:
+    - uid: string
+  - name: Suspended
+    types:
+    - uid: string
+  - name: Deleting
+    types:
+    - uid: string
+  - name: Deleted
+    types:
+    - uid: string
+  - name: Invalid
+    types:
+    - uid: string
+  - name: UpdatingSku
+    types:
+    - uid: string
+- name: capacityUserAccessRightEnum
+  description: Access rights user has for capacity
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: Assign
+    types:
+    - uid: string
+  - name: Admin
+    types:
+    - uid: string
+examples: []
+security: []

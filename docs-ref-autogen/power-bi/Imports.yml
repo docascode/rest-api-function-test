@@ -4,19 +4,19 @@ name: Imports
 apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
-- uid: api.powerbi.com.powerbirestapis.imports.importscreatetemporaryuploadlocation
+- uid: api.powerbi.com.powerbirestapis.imports.createtemporaryuploadlocation
   summary: Creates a temporary upload location for large files
-- uid: api.powerbi.com.powerbirestapis.imports.importscreatetemporaryuploadlocationingroup
+- uid: api.powerbi.com.powerbirestapis.imports.createtemporaryuploadlocationingroup
   summary: Creates a temporary upload location for large files
-- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportbyid
+- uid: api.powerbi.com.powerbirestapis.imports.getimportbyid
   summary: Gets the import metadata for the specifed import id
-- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportbyidingroup
+- uid: api.powerbi.com.powerbirestapis.imports.getimportbyidingroup
   summary: Gets the import metadata for the specifed import id
-- uid: api.powerbi.com.powerbirestapis.imports.importsgetimports
+- uid: api.powerbi.com.powerbirestapis.imports.getimports
   summary: Returns a list of imports
-- uid: api.powerbi.com.powerbirestapis.imports.importsgetimportsingroup
+- uid: api.powerbi.com.powerbirestapis.imports.getimportsingroup
   summary: Returns a list of imports for the specified group
-- uid: api.powerbi.com.powerbirestapis.imports.importspostimport
+- uid: api.powerbi.com.powerbirestapis.imports.postimport
   summary: Creates a new import using the specified import info
-- uid: api.powerbi.com.powerbirestapis.imports.importspostimportingroup
+- uid: api.powerbi.com.powerbirestapis.imports.postimportingroup
   summary: Creates a new import using the specified import info

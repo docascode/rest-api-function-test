@@ -8,7 +8,7 @@ operations:
   summary: Gets a list of gateways to bind
 - uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergatewaysingroup
   summary: Gets a list of gateways to bind
-- uid: api.powerbi.com.powerbirestapis.gateways.gatewaysgetgatewaybyid
+- uid: api.powerbi.com.powerbirestapis.gateways.getgatewaybyid
   summary: Returns the specified gateway
-- uid: api.powerbi.com.powerbirestapis.gateways.gatewaysgetgateways
+- uid: api.powerbi.com.powerbirestapis.gateways.getgateways
   summary: Returns a list of gateways

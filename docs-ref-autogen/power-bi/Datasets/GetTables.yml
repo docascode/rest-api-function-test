@@ -1,0 +1,79 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.gettables
+name: Get Tables
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Gets all tables within the specified dataset
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/tables
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Table]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Table]]
+  description: Odata response wrapper for a Power BI Table collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: A dataset table
+    types:
+    - uid: Table
+      isArray: true
+- name: Table
+  description: A dataset table
+  kind: object
+  properties:
+  - name: name
+    description: The table name
+    types:
+    - uid: string
+  - name: columns
+    description: A Power BI Column
+    types:
+    - uid: Column
+      isArray: true
+  - name: rows
+    description: A Power BI data row
+    types:
+    - uid: Row
+      isArray: true
+- name: Column
+  description: A Power BI Column
+  kind: object
+  properties:
+  - name: name
+    description: The column name
+    types:
+    - uid: string
+  - name: dataType
+    description: The column data type
+    types:
+    - uid: string
+- name: Row
+  description: A Power BI data row
+  kind: object
+  properties:
+  - name: id
+    description: The unique row id
+    types:
+    - uid: string
+examples: []
+security: []

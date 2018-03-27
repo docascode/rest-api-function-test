@@ -1,0 +1,30 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.deletegroup
+name: Delete Group
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: Deletes the specified group
+consumes: []
+produces: []
+paths:
+- content: DELETE https://api.powerbi.com/v1.0/myorg/groups/{groupId}
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id to delete
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples: []
+security: []

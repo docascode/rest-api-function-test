@@ -1,0 +1,77 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.datasets.getrefreshhistoryingroup
+name: Get Refresh History In Group
+service: Power BI Rest APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: Gets the dataset refresh history
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/refreshes
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/refreshes?$top={$top}
+  isOptional: true
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+- name: $top
+  in: query
+  description: The requested number of entries in the refresh history, if not supported the default is all available entries
+  types:
+  - uid: integer
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Refresh]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Refresh]]
+  description: Odata response wrapper for a Power BI Refresh history
+  kind: object
+  properties:
+  - name: odata.context
+    types:
+    - uid: string
+  - name: value
+    description: A Power BI refresh history entry
+    types:
+    - uid: Refresh
+      isArray: true
+- name: Refresh
+  description: A Power BI refresh history entry
+  kind: object
+  properties:
+  - name: refreshType
+    description: ''
+    types:
+    - uid: string
+  - name: startTime
+    description: ''
+    types:
+    - uid: string
+  - name: endTime
+    description: ''
+    types:
+    - uid: string
+  - name: serviceExceptionJson
+    description: ''
+    types:
+    - uid: string
+  - name: status
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
