@@ -9,7 +9,7 @@
           "toc.md"
           ],
         "exclude": [ ],
-        "dest": "api/power-bi"        
+        "dest": "api"        
       },
       {
         "src":"docs-ref-index",
