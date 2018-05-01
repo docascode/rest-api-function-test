@@ -32,7 +32,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: A Power BI datasource
+    description: The datasource collection
     types:
     - uid: Datasource
       isArray: true

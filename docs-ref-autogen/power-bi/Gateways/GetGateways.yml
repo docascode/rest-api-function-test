@@ -23,10 +23,11 @@ definitions:
   kind: object
   properties:
   - name: odata.context
+    description: ''
     types:
     - uid: string
   - name: value
-    description: A Power BI Gateway
+    description: The Gateways
     types:
     - uid: Gateway
       isArray: true

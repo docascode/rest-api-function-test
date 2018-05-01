@@ -28,10 +28,11 @@ definitions:
   kind: object
   properties:
   - name: odata.context
+    description: ''
     types:
     - uid: string
   - name: value
-    description: Power BI dataset parameter
+    description: The dataset parameter List
     types:
     - uid: DatasetParameter
       isArray: true

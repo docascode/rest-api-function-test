@@ -60,6 +60,10 @@ definitions:
     description: The privacy level
     types:
     - uid: string
+  - name: useCallerAADIdentity
+    description: Should the caller's AAD identity be used for OAuth2 credentials configuration
+    types:
+    - uid: boolean
 - name: Object
   kind: object
   properties: []

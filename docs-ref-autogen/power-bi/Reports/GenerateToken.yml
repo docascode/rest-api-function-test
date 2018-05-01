@@ -42,7 +42,7 @@ requestBody:
     - uid: boolean
   - name: identities
     in: body
-    description: The identity that the generated token should reflect
+    description: The effective identities to use for RLS rules
     types:
     - uid: EffectiveIdentity
       isArray: true
@@ -103,7 +103,7 @@ definitions:
     types:
     - uid: boolean
   - name: identities
-    description: The identity that the generated token should reflect
+    description: The effective identities to use for RLS rules
     types:
     - uid: EffectiveIdentity
       isArray: true

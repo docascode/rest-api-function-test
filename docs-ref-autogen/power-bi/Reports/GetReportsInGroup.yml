@@ -33,7 +33,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: A Power BI Report
+    description: The report collection
     types:
     - uid: Report
       isArray: true

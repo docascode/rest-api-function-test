@@ -1,0 +1,56 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.restoredeletedgroupasadmin
+name: Restore Deleted Group As Admin
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: With an administrative scope, restore a deleted group
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/restore
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- parameters:
+  - name: name
+    in: body
+    description: The new name to give to the deleted group.
+    types:
+    - uid: string
+  - name: emailAddress
+    in: body
+    isRequired: true
+    description: The email address of the owner to give to the deleted group.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: GroupRestoreRequest
+  description: Power BI request to restore a deleted group
+  kind: object
+  properties:
+  - name: name
+    description: The new name to give to the deleted group.
+    types:
+    - uid: string
+  - name: emailAddress
+    description: The email address of the owner to give to the deleted group.
+    types:
+    - uid: string
+examples: []
+security: []

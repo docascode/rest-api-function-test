@@ -10,7 +10,26 @@ produces:
 - application/json
 paths:
 - content: GET https://api.powerbi.com/v1.0/myorg/groups
-uriParameters: []
+- content: GET https://api.powerbi.com/v1.0/myorg/groups?$filter={$filter}&$top={$top}&$skip={$skip}
+  isOptional: true
+uriParameters:
+- name: $filter
+  in: query
+  description: Filters the results, based on a Boolean condition.
+  types:
+  - uid: string
+- name: $top
+  in: query
+  description: Returns only the first n results.
+  types:
+  - uid: integer
+  format: int32
+- name: $skip
+  in: query
+  description: Skips the first n results.
+  types:
+  - uid: integer
+  format: int32
 responses:
 - name: 200 OK
   description: OK
@@ -27,7 +46,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: A Power BI Group
+    description: The groups
     types:
     - uid: Group
       isArray: true
@@ -53,6 +72,51 @@ definitions:
     - uid: boolean
   - name: capacityId
     description: The capacity id
+    types:
+    - uid: string
+  - name: description
+    description: The group description
+    types:
+    - uid: string
+  - name: type
+    description: The type of group
+    types:
+    - uid: string
+  - name: state
+    description: The group state
+    types:
+    - uid: string
+  - name: users
+    description: The users associated to group with their access rights
+    types:
+    - uid: GroupUserAccessRight
+      isArray: true
+- name: GroupUserAccessRight
+  description: A Power BI user Access Right entry for group
+  kind: object
+  properties:
+  - name: groupUserAccessRight
+    description: Access rights user has for group
+    types:
+    - uid: GroupUserAccessRightEnum
+  - name: emailAddress
+    description: Email address of the user.
+    types:
+    - uid: string
+- name: GroupUserAccessRightEnum
+  description: Access rights user has for group
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: Member
+    types:
+    - uid: string
+  - name: Admin
+    types:
+    - uid: string
+  - name: Contributor
     types:
     - uid: string
 examples: []

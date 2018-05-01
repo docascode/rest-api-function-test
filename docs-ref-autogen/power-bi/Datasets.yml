@@ -23,7 +23,7 @@ operations:
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasetbyidingroup
   summary: Gets the dataset metadata for the specifeid dataset id
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasets
-  summary: Returns the datasets
+  summary: "Returns the datasets  \nThe Get Datasets operation returns a JSON list of all Dataset objects. \nRequired scope: Dataset.ReadWrite.All or Dataset.Read.All"
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasetsingroup
   summary: Returns the datasets
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasources
@@ -49,7 +49,7 @@ operations:
 - uid: api.powerbi.com.powerbirestapis.datasets.gettablesingroup
   summary: Gets all tables within the specified dataset
 - uid: api.powerbi.com.powerbirestapis.datasets.postdataset
-  summary: Post a new entity to datasets
+  summary: "Create a new dataset  \nThe Create Dataset operation creates a new Dataset from a JSON schema definition and returns the Dataset ID and the properties of the dataset created. \nRequired scope: Dataset.ReadWrite.All"
 - uid: api.powerbi.com.powerbirestapis.datasets.postdatasetingroup
   summary: Post a new entity to datasets
 - uid: api.powerbi.com.powerbirestapis.datasets.postrows

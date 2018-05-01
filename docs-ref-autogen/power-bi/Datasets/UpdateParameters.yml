@@ -26,7 +26,7 @@ requestBody:
   - name: updateDetails
     in: body
     isRequired: true
-    description: Power BI dataset parameter update details
+    description: The dataset parameter list to update
     types:
     - uid: UpdateDatasetParameterDetails
       isArray: true
@@ -52,7 +52,7 @@ definitions:
   kind: object
   properties:
   - name: updateDetails
-    description: Power BI dataset parameter update details
+    description: The dataset parameter list to update
     types:
     - uid: UpdateDatasetParameterDetails
       isArray: true

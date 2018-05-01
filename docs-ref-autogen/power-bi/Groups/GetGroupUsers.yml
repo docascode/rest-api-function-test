@@ -29,10 +29,11 @@ definitions:
   kind: object
   properties:
   - name: odata.context
+    description: ''
     types:
     - uid: string
   - name: value
-    description: A Power BI user Access Right entry for group
+    description: The user Access Right for group List
     types:
     - uid: GroupUserAccessRight
       isArray: true
@@ -59,6 +60,9 @@ definitions:
     types:
     - uid: string
   - name: Admin
+    types:
+    - uid: string
+  - name: Contributor
     types:
     - uid: string
 examples: []

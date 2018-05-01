@@ -35,10 +35,11 @@ definitions:
   kind: object
   properties:
   - name: odata.context
+    description: ''
     types:
     - uid: string
   - name: value
-    description: A Power BI user Access Right entry for datasource
+    description: The user Access Right for datasource List
     types:
     - uid: UserAccessRight
       isArray: true

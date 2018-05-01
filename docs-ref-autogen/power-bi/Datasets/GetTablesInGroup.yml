@@ -39,7 +39,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: A dataset table
+    description: The Power BI tables
     types:
     - uid: Table
       isArray: true
@@ -52,14 +52,19 @@ definitions:
     types:
     - uid: string
   - name: columns
-    description: A Power BI Column
+    description: The column schema for this table
     types:
     - uid: Column
       isArray: true
   - name: rows
-    description: A Power BI data row
+    description: The data rows within this table
     types:
     - uid: Row
+      isArray: true
+  - name: measures
+    description: The measures within this table
+    types:
+    - uid: Measure
       isArray: true
 - name: Column
   description: A Power BI Column
@@ -79,6 +84,18 @@ definitions:
   properties:
   - name: id
     description: The unique row id
+    types:
+    - uid: string
+- name: Measure
+  description: A Power BI Measure
+  kind: object
+  properties:
+  - name: name
+    description: The measure name
+    types:
+    - uid: string
+  - name: expression
+    description: A valid DAX expression
     types:
     - uid: string
 examples: []

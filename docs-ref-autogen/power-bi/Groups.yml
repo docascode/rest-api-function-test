@@ -6,6 +6,8 @@ service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.powerbirestapis.groups.addgroupuser
   summary: Add a group user
+- uid: api.powerbi.com.powerbirestapis.groups.adduserasadmin
+  summary: With an administrative scope, grant user permissions to the given group
 - uid: api.powerbi.com.powerbirestapis.groups.assignmyworkspacetocapacity
   summary: Assign My Workspace to a capacity
 - uid: api.powerbi.com.powerbirestapis.groups.assigntocapacity
@@ -14,9 +16,17 @@ operations:
   summary: Create new group
 - uid: api.powerbi.com.powerbirestapis.groups.deletegroup
   summary: Deletes the specified group
+- uid: api.powerbi.com.powerbirestapis.groups.deleteuserasadmin
+  summary: With an administrative scope, remove user permissions to the given group
 - uid: api.powerbi.com.powerbirestapis.groups.deleteuseringroup
   summary: Deletes the specified group
 - uid: api.powerbi.com.powerbirestapis.groups.getgroups
   summary: Returns a list of groups
+- uid: api.powerbi.com.powerbirestapis.groups.getgroupsasadmin
+  summary: With an adminstrative scope, returns a list of groups for an organization
 - uid: api.powerbi.com.powerbirestapis.groups.getgroupusers
   summary: Get a group users list
+- uid: api.powerbi.com.powerbirestapis.groups.restoredeletedgroupasadmin
+  summary: With an administrative scope, restore a deleted group
+- uid: api.powerbi.com.powerbirestapis.groups.updategroupasadmin
+  summary: With administrative scope, updates the specified group properties

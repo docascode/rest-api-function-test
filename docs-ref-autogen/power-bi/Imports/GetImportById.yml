@@ -41,12 +41,12 @@ definitions:
     types:
     - uid: string
   - name: reports
-    description: A Power BI Report
+    description: The reports associated with this import
     types:
     - uid: Report
       isArray: true
   - name: datasets
-    description: A Power BI Dataset
+    description: The datasets associated with this import
     types:
     - uid: Dataset
       isArray: true
@@ -107,7 +107,7 @@ definitions:
     types:
     - uid: boolean
   - name: tables
-    description: A dataset table
+    description: The dataset tables
     types:
     - uid: Table
       isArray: true
@@ -115,8 +115,13 @@ definitions:
     description: The dataset web url
     types:
     - uid: string
+  - name: relationships
+    description: The dataset relationships
+    types:
+    - uid: Relationship
+      isArray: true
   - name: datasources
-    description: A Power BI datasource
+    description: The datasources associated with this dataset
     types:
     - uid: Datasource
       isArray: true
@@ -149,15 +154,48 @@ definitions:
     types:
     - uid: string
   - name: columns
-    description: A Power BI Column
+    description: The column schema for this table
     types:
     - uid: Column
       isArray: true
   - name: rows
-    description: A Power BI data row
+    description: The data rows within this table
     types:
     - uid: Row
       isArray: true
+  - name: measures
+    description: The measures within this table
+    types:
+    - uid: Measure
+      isArray: true
+- name: Relationship
+  description: A relationship between tables in a dataset
+  kind: object
+  properties:
+  - name: name
+    description: The relationship name and identifier
+    types:
+    - uid: string
+  - name: crossFilteringBehavior
+    description: The filter direction of the relationship
+    types:
+    - uid: CrossFilteringBehaviorEnum
+  - name: fromTable
+    description: The name of the foreign key table
+    types:
+    - uid: string
+  - name: fromColumn
+    description: The name of the foreign key column
+    types:
+    - uid: string
+  - name: toTable
+    description: The name of the primary key table
+    types:
+    - uid: string
+  - name: toColumn
+    description: The name of the primary key column
+    types:
+    - uid: string
 - name: Datasource
   description: A Power BI datasource
   kind: object
@@ -223,6 +261,31 @@ definitions:
   properties:
   - name: id
     description: The unique row id
+    types:
+    - uid: string
+- name: Measure
+  description: A Power BI Measure
+  kind: object
+  properties:
+  - name: name
+    description: The measure name
+    types:
+    - uid: string
+  - name: expression
+    description: A valid DAX expression
+    types:
+    - uid: string
+- name: CrossFilteringBehaviorEnum
+  description: The filter direction of the relationship
+  kind: enum
+  properties:
+  - name: OneDirection
+    types:
+    - uid: string
+  - name: BothDirections
+    types:
+    - uid: string
+  - name: Automatic
     types:
     - uid: string
 - name: DatasourceConnectionDetails

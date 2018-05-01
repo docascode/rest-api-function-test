@@ -1,0 +1,78 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.features.availablefeaturesgetavailablefeaturebyname
+name: availableFeatures GetAvailableFeatureByName
+service: Power BI Rest APIs
+groupName: Features
+apiVersion: v1.0
+summary: Gets a list of available feature for user by name
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/availableFeatures(featureName='{featureName}')
+uriParameters:
+- name: featureName
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: AvailableFeature
+requestHeader: []
+definitions:
+- name: AvailableFeature
+  description: Power BI Available Feature
+  kind: object
+  properties:
+  - name: name
+    description: Feature name
+    types:
+    - uid: string
+  - name: state
+    description: Feature state
+    types:
+    - uid: FeatureState
+  - name: extendedState
+    description: Feature extended state
+    types:
+    - uid: FeatureExtendedState
+  - name: additionalInfo
+    description: Additional Feature Info
+    types:
+    - uid: AdditionalFeatureInfo
+- name: FeatureState
+  description: Feature state
+  kind: enum
+  properties:
+  - name: Enabled
+    types:
+    - uid: string
+  - name: Disabled
+    types:
+    - uid: string
+- name: FeatureExtendedState
+  description: Feature extended state
+  kind: enum
+  properties:
+  - name: Enabled
+    types:
+    - uid: string
+  - name: DisabledByAdmin
+    types:
+    - uid: string
+  - name: UserNotLicensed
+    types:
+    - uid: string
+- name: AdditionalFeatureInfo
+  description: Additional Feature Info
+  kind: object
+  properties:
+  - name: Usage
+    description: The token usage (in %) from the limitation on shared capacity
+    types:
+    - uid: integer
+examples: []
+security: []

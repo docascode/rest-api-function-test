@@ -42,10 +42,11 @@ definitions:
   kind: object
   properties:
   - name: odata.context
+    description: ''
     types:
     - uid: string
   - name: value
-    description: A Power BI refresh history entry
+    description: The Refresh history list
     types:
     - uid: Refresh
       isArray: true

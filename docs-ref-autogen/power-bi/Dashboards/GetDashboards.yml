@@ -27,7 +27,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: A Power BI Dashboard
+    description: The dashboard collection
     types:
     - uid: Dashboard
       isArray: true

@@ -1,31 +1,60 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.groups.creategroup
-name: Create Group
+uid: api.powerbi.com.powerbirestapis.groups.getgroupsasadmin
+name: Get Groups As Admin
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: Create new group
-consumes:
-- application/json
+summary: With an adminstrative scope, returns a list of groups for an organization
+consumes: []
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups
-uriParameters: []
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/groups
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/groups?$expand={$expand}&$filter={$filter}&$top={$top}&$skip={$skip}
+  isOptional: true
+uriParameters:
+- name: $expand
+  in: query
+  description: Expands related entities inline.
+  types:
+  - uid: string
+- name: $filter
+  in: query
+  description: Filters the results, based on a Boolean condition.
+  types:
+  - uid: string
+- name: $top
+  in: query
+  description: Returns only the first n results.
+  types:
+  - uid: integer
+  format: int32
+- name: $skip
+  in: query
+  description: Skips the first n results.
+  types:
+  - uid: integer
+  format: int32
 responses:
 - name: 200 OK
   description: OK
   types:
-  - uid: Group
-requestBody:
-- parameters:
-  - name: name
-    in: body
-    description: The name of the new created group.
-    types:
-    - uid: string
+  - uid: ODataResponse[List[Group]]
 requestHeader: []
 definitions:
+- name: ODataResponse[List[Group]]
+  description: Odata response wrapper for a Power BI Group list
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: The groups
+    types:
+    - uid: Group
+      isArray: true
 - name: Group
   description: A Power BI Group
   kind: object
@@ -67,14 +96,6 @@ definitions:
     types:
     - uid: GroupUserAccessRight
       isArray: true
-- name: GroupCreationRequest
-  description: Power BI Create a new group Request
-  kind: object
-  properties:
-  - name: name
-    description: The name of the new created group.
-    types:
-    - uid: string
 - name: GroupUserAccessRight
   description: A Power BI user Access Right entry for group
   kind: object

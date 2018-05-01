@@ -1,0 +1,36 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.powerbirestapis.groups.deleteuserasadmin
+name: Delete User As Admin
+service: Power BI Rest APIs
+groupName: Groups
+apiVersion: v1.0
+summary: With an administrative scope, remove user permissions to the given group
+consumes: []
+produces: []
+paths:
+- content: DELETE https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/users/{user}
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The group id
+  types:
+  - uid: string
+- name: user
+  in: path
+  isRequired: true
+  description: The user principal name (UPN) of the user to remove (usually the user's email)
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples: []
+security: []

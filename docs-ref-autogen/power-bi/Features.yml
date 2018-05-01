@@ -1,0 +1,10 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.powerbirestapis.features
+name: Features
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.powerbirestapis.features.availablefeaturesgetavailablefeaturebyname
+  summary: Gets a list of available feature for user by name
+- uid: api.powerbi.com.powerbirestapis.features.availablefeaturesgetavailablefeatures
+  summary: Gets a list of available features for user

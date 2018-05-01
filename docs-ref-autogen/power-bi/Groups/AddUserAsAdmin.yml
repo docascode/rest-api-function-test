@@ -1,15 +1,15 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.groups.addgroupuser
-name: Add Group User
+uid: api.powerbi.com.powerbirestapis.groups.adduserasadmin
+name: Add User As Admin
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: Add a group user
+summary: With an administrative scope, grant user permissions to the given group
 consumes:
 - application/json
 produces: []
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
+- content: POST https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/users
 uriParameters:
 - name: groupId
   in: path
