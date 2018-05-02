@@ -4,7 +4,7 @@ name: Update Parameters
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Updates the dataset parameters
+summary: "Updates the dataset parameters  \nThe **Update Parameters** operation updates the values of the **Parameters**. <br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
