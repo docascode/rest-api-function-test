@@ -4,7 +4,7 @@ name: Put Table
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Updates a schema and metadata for the specified table
+summary: "Updates a schema and metadata for the specified table  \nThe **Update Table Schema** operation updates a **Table** schema. <br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

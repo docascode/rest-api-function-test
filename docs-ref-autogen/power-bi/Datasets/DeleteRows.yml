@@ -4,7 +4,7 @@ name: Delete Rows
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Deletes all rows from the specified table
+summary: "Deletes all rows from the specified table  \nThe **Delete Rows** operation deletes all **Rows** from a **Table** in a **Dataset**. <br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

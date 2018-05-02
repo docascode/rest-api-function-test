@@ -4,7 +4,7 @@ name: Delete Dataset By Id
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Deletes the dataset with the specified id
+summary: "Deletes the dataset with the specified id  \nThe **Delete Dataset** operation deletes the dataset with the specified id.<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
