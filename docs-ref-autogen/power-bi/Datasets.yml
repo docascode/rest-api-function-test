@@ -23,7 +23,7 @@ operations:
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasetbyidingroup
   summary: Gets the dataset metadata for the specifeid dataset id
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasets
-  summary: "Returns the datasets  \nThe Get Datasets operation returns a JSON list of all Dataset objects. <br/> Required scope: Dataset.ReadWrite.All or Dataset.Read.All"
+  summary: "Returns the datasets  \n<p>The <strong>Get Datasets</strong> operation returns a JSON list of all <strong>Dataset</strong> objects.</p><p><strong>Required scope</strong>: Dataset.ReadWrite.All or Dataset.Read.All</p>"
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasetsingroup
   summary: Returns the datasets
 - uid: api.powerbi.com.powerbirestapis.datasets.getdatasources
