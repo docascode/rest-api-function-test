@@ -33,7 +33,7 @@ operations:
 - uid: api.powerbi.com.powerbirestapis.reports.getreportsingroup
   summary: Gets a list of reports available within the specified group
 - uid: api.powerbi.com.powerbirestapis.reports.rebindreport
-  summary: Rebinds the specified report to requested dataset id
+  summary: "Rebinds the specified report to requested dataset id  \nThe **Rebind report** operation will rebind a report to a dataset. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.reports.rebindreportingroup
   summary: Rebinds the specified report to requested dataset id
 - uid: api.powerbi.com.powerbirestapis.reports.updatereportcontent
