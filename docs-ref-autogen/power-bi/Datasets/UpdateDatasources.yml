@@ -4,7 +4,7 @@ name: Update Datasources
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Updates the dataset datasources using the specified datasource selectors  \nThe **Update Datasources** operation changes datasource connection details. <br/>**Note**: For unsupported datasource types, use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master). <br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Updates the dataset datasources using the specified datasource selectors  \nThe **Update Datasources** operation changes datasource connection details. <br/>**Note**: For unsupported datasource types, use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

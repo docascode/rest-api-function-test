@@ -4,7 +4,7 @@ name: Get Refresh History
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets the dataset refresh history  \nThe **Get Refresh History** operation returns a JSON list of **Refresh** entities. <br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gets the dataset refresh history  \nThe **Get Refresh History** operation returns a JSON list of **Refresh** entities. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

@@ -4,7 +4,7 @@ name: Post Rows
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Posts new data rows into the specified table  \nThe **Add Rows** operation adds **Rows** to a **Table** in a **Dataset**. <br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Posts new data rows into the specified table  \nThe **Add Rows** operation adds **Rows** to a **Table** in a **Dataset**. <br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
