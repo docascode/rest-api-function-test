@@ -16,10 +16,6 @@ operations:
   summary: "Exports the specified report  \nThe **Export report** operation returns a PBIX file of the requested report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.reports.exportreportingroup
   summary: Exports the specified report
-- uid: api.powerbi.com.powerbirestapis.reports.generatetoken
-  summary: Generate token to view or edit the specified report
-- uid: api.powerbi.com.powerbirestapis.reports.generatetokenforcreate
-  summary: Generate token to create a new report on a given dataset
 - uid: api.powerbi.com.powerbirestapis.reports.generatetokenforcreateingroup
   summary: Generate token to create a new report on a given dataset
 - uid: api.powerbi.com.powerbirestapis.reports.generatetokeningroup

@@ -8,8 +8,6 @@ operations:
   summary: "Add a new empty dashboard  \nThe **Add Dashboards** operation adds a new blank dashboard. <br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.adddashboardingroup
   summary: Add a new empty dashboard
-- uid: api.powerbi.com.powerbirestapis.dashboards.generatetoken
-  summary: Generate token to view the specified dashboard
 - uid: api.powerbi.com.powerbirestapis.dashboards.generatetokeningroup
   summary: Generate token to view the specified dashboard
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboard

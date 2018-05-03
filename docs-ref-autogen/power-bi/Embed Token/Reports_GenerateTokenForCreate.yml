@@ -1,29 +1,17 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.tiles.generatetoken
-name: Generate Token
+uid: api.powerbi.com.powerbirestapis.embedtoken.reportsgeneratetokenforcreate
+name: Reports GenerateTokenForCreate
 service: Power BI Rest APIs
-groupName: Tiles
+groupName: Embed Token
 apiVersion: v1.0
-summary: Generate token to view the specified tile
+summary: "Generate token to create a new report on a given dataset  \nThe **Reports Generate Token For Create** operation creates embed token to allow report creation. <br/><br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken
-uriParameters:
-- name: dashboardKey
-  in: path
-  isRequired: true
-  description: The dashboard id
-  types:
-  - uid: string
-- name: tileKey
-  in: path
-  isRequired: true
-  description: The tile id
-  types:
-  - uid: string
+- content: POST https://api.powerbi.com/v1.0/myorg/reports/GenerateToken
+uriParameters: []
 responses:
 - name: 200 OK
   description: OK
