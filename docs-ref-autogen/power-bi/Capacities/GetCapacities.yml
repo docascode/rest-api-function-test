@@ -4,7 +4,7 @@ name: Get Capacities
 service: Power BI Rest APIs
 groupName: Capacities
 apiVersion: v1.0
-summary: Gets a list of capacities the user has access to
+summary: "Gets a list of capacities the user has access to  \nThe **Get Capacities** operation returns a JSON list of all **Capacity** objects. <br/> the capacityUserAccessRight can be 'Admin' if the user is the capacity admin or 'Assign' if the user has assignment permissions to the capacity. <br/><br/>**Required scope**: Capacity.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
