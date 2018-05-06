@@ -4,7 +4,7 @@ name: Gateways AddDatasourceUser
 service: Power BI Rest APIs
 groupName: Datasources
 apiVersion: v1.0
-summary: Get a datasource user
+summary: "Get a datasource user  \nThe **Get Datasource User** operation adds the supplied user to a given data source. This user will then have permission to use the data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

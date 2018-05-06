@@ -5,20 +5,20 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysadddatasourceuser
-  summary: Get a datasource user
+  summary: "Get a datasource user  \nThe **Get Datasource User** operation adds the supplied user to a given data source. This user will then have permission to use the data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewayscreatedatasource
-  summary: Create a datasource
+  summary: "Create a datasource  \nThe **Create Datasources** operation creates a new **data source** from a JSON schema definition and returns the **data source** ID and the properties of the data source created. This is specific to a data source for an On-Premises Data Gateway. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysdeletedatasource
-  summary: Delete a datasource
+  summary: "Delete a datasource  \nThe **Delete Datasource** operation deletes the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysdeletedatasourceuser
-  summary: Delete a datasource user
+  summary: "Delete a datasource user  \nThe **Delete Datasource User** operation removes the supplied user from a given data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourcebyid
-  summary: Get a datasource by id
+  summary: "Get a datasource by id  \nThe **Get Datasource By Id** operation returns a JSON object of a **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasources
-  summary: Get all datasources of specific gateway
+  summary: "Get all datasources of specific gateway  \nThe **Get Datasources** operation returns a JSON list of all **data source** objects registered for a gateway. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourcestatusbyid
-  summary: Get a datasource status by id
+  summary: "Get a datasource status by id  \nThe **Get Datasource Status By Id** operation checks the connectivity status of the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysgetdatasourceusers
-  summary: Get a datasource users list
+  summary: "Get a datasource users list  \nThe **Get Datasource Users** operation returns a JSON list which includes users who can make use of the **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.datasources.gatewaysupdatedatasource
-  summary: Update a datasource credentials
+  summary: "Update a datasource credentials  \nThe **Update Datasource** operation updates the credentials for the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

@@ -4,7 +4,7 @@ name: Bind To Gateway In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Bind dataset to gateway
+summary: "Bind dataset to gateway  \nThe **Bind to gateway In Group** operation links a dataset from a **Group** to a gateway. This only supports the On-Premises Data Gateway. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

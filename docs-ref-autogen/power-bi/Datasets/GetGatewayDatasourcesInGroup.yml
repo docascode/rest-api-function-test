@@ -4,7 +4,7 @@ name: Get Gateway Datasources In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Gets a list of bound gateway datasources for the specified dataset
+summary: "Gets a list of bound gateway datasources for the specified dataset  \nThe **Get Gateway Datasources In Group** operation returns a JSON list of all gateway data sources for a dataset from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

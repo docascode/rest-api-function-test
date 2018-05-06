@@ -4,7 +4,7 @@ name: Refresh Dataset In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Start a dataset refresh
+summary: "Start a dataset refresh  \nThe **Refresh Dataset In Group** operation triggers a refresh to occur for the specified dataset from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

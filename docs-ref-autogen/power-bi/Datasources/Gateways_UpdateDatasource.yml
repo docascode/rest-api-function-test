@@ -4,7 +4,7 @@ name: Gateways UpdateDatasource
 service: Power BI Rest APIs
 groupName: Datasources
 apiVersion: v1.0
-summary: Update a datasource credentials
+summary: "Update a datasource credentials  \nThe **Update Datasource** operation updates the credentials for the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

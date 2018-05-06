@@ -4,7 +4,7 @@ name: Generate Token In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Generate token to view the specified dataset
+summary: "Generate token to view the specified dataset  \nThe **Dashboards Generate Token In Group** operation creates embed token to allow view of the specified dashboard from a Group. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

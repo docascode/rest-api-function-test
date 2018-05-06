@@ -4,7 +4,7 @@ name: Delete Report In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: Deletes the specified report
+summary: "Deletes the specified report  \nThe **Delete Report In Group** operation will delete the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

@@ -4,7 +4,7 @@ name: Get Imports In Group
 service: Power BI Rest APIs
 groupName: Imports
 apiVersion: v1.0
-summary: Returns a list of imports for the specified group
+summary: "Returns a list of imports for the specified group  \nThe **Get Imports In Group** operation returns a JSON list of all **Import** objects from a **Group** with there properties. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

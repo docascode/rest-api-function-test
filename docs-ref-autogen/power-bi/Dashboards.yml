@@ -7,14 +7,14 @@ operations:
 - uid: api.powerbi.com.powerbirestapis.dashboards.adddashboard
   summary: "Add a new empty dashboard  \nThe **Add Dashboards** operation adds a new blank dashboard. <br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.adddashboardingroup
-  summary: Add a new empty dashboard
+  summary: "Add a new empty dashboard  \nThe **Add Dashboard In Group** operation adds a new blank dashboard to a **Group**. <br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.generatetokeningroup
-  summary: Generate token to view the specified dashboard
+  summary: "Generate token to view the specified dashboard  \nThe **Tiles Generate Token In Group** operation creates embed token to allow view of the specified tile from a **Group**. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboard
   summary: "Get the specified dashboard  \nThe **Get Dashboard** operation returns a JSON object of a **Dashboard** which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboardingroup
-  summary: Get the specified dashboard in a group
+  summary: "Get the specified dashboard in a group  \nThe **Get Dashboard In Group** operation returns a JSON object of a **Dashboard** from a **Group** which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboards
   summary: "Gets a list of dashboards  \nThe **Get Dashboards** operation returns a JSON list of all Dashboard objects which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboardsingroup
-  summary: Gets a list of dashboards in a group
+  summary: "Gets a list of dashboards in a group  \nThe **Get Dashboards In Group** operation returns a JSON list of all Dashboard objects from a **Group** which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

@@ -4,7 +4,7 @@ name: Take Over In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Take Over a dataset
+summary: "Take Over a dataset  \nThe **Take Over In Group** operation takes ownership of the dataset for the current authorized user. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

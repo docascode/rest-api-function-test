@@ -4,7 +4,7 @@ name: Dashboards GetTileInGroup
 service: Power BI Rest APIs
 groupName: Tiles
 apiVersion: v1.0
-summary: Get a specified tile in a specified dashboard in a group
+summary: "Get a specified tile in a specified dashboard in a group  \nThe **Get Tile In Group** operation returns a JSON object **Tile** from a **Group** which includes an id, title, and embedUrl. All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

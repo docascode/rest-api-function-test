@@ -4,7 +4,7 @@ name: Post Dataset In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: Post a new entity to datasets
+summary: "Post a new entity to datasets  \nThe **Create Dataset In Group** operation creates a new **Dataset** in a **Group** from a JSON schema definition and returns the **Dataset** ID and the properties of the dataset created.<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

@@ -4,7 +4,7 @@ name: Gateways GetDatasourceUsers
 service: Power BI Rest APIs
 groupName: Datasources
 apiVersion: v1.0
-summary: Get a datasource users list
+summary: "Get a datasource users list  \nThe **Get Datasource Users** operation returns a JSON list which includes users who can make use of the **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
