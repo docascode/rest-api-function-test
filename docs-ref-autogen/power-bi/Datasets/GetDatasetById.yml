@@ -246,7 +246,23 @@ definitions:
     description: The connection url
     types:
     - uid: string
-examples: []
+examples:
+- name: mahirExample
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+        "name": "Contoso Sales",
+        "addRowsAPIEnabled": false,
+        "configuredBy": "john@contoso.com",
+        "isRefreshable": true,
+        "isEffectiveIdentityRequired": true,
+        "isEffectiveIdentityRolesRequired": true,
+        "isOnPremGatewayRequired": false
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
