@@ -43,4 +43,11 @@ definitions:
     types:
     - uid: string
 examples: []
-security: []
+security:
+- type: oauth2
+  description: Azure Active Directory OAuth2 Flow.
+  flow: implicit
+  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
+  scopes:
+  - name: user_impersonation
+    description: impersonate your user account
