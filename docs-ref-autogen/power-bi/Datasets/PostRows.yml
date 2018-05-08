@@ -4,8 +4,9 @@ name: Post Rows
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Posts new data rows into the specified table  \nThe **Add Rows** operation adds **Rows** to a **Table** in a **Dataset**. <br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-consumes: []
+summary: "Adds new data rows to the specified table within the specified dataset from \"My Workspace\"  \n<br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+consumes:
+- application/json
 produces: []
 paths:
 - content: POST https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}/rows
@@ -32,7 +33,38 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/tables/Product/rows
+    body: >-
+      {
+        "rows": [
+          {
+            "ProductID": 1,
+            "Name": "Adjustable Race",
+            "Category": "Components",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          },
+          {
+            "ProductID": 2,
+            "Name": "LL Crankarm",
+            "Category": "Components",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          },
+          {
+            "ProductID": 3,
+            "Name": "HL Mountain Frame - Silver",
+            "Category": "Bikes",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

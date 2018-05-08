@@ -5,4 +5,4 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.powerbirestapis.capacities.getcapacities
-  summary: "Returns a list of capacities the user has access to  \n<br/><br/>**Required scope**: Capacity.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Returns a list of capacities the user has access to  \n<br/>**Required scope**: Capacity.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

@@ -4,7 +4,7 @@ name: Get Refresh History
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets the dataset refresh history  \nThe **Get Refresh History** operation returns a JSON list of **Refresh** entities. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns the refresh history of the specified dataset from \"My Workspace\"  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -21,7 +21,7 @@ uriParameters:
   - uid: string
 - name: $top
   in: query
-  description: The requested number of entries in the refresh history, if not supported the default is all available entries
+  description: The requested number of entries in the refresh history, if not provided the default is all available entries
   types:
   - uid: integer
 responses:
@@ -68,7 +68,40 @@ definitions:
     description: ''
     types:
     - uid: string
-examples: []
+examples:
+- name: in progress refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top={$top}
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Unknown"
+          }
+        ]
+      }
+- name: fineshed refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top={$top}
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "endTime": "2017-06-13T09:31:43.153Z",
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Completed"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

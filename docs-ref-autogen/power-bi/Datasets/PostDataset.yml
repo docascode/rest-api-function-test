@@ -4,7 +4,7 @@ name: Post Dataset
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Creates a new dataset  \n<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates a new dataset  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -18,7 +18,7 @@ responses:
   types:
   - uid: Dataset
 - name: 202 Accepted
-  description: Accepted
+  description: Accepted. The request was accepted and dataset creation is in progress.
   types:
   - uid: Object
 requestBody:
@@ -326,6 +326,49 @@ definitions:
     types:
     - uid: string
 examples:
+- name: Push example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/datasets
+    body: >-
+      {
+        "name": "SalesMarketing",
+        "defaultMode": "Push",
+        "tables": [
+          {
+            "name": "Product",
+            "columns": [
+              {
+                "name": "ProductID",
+                "dataType": "Int64"
+              },
+              {
+                "name": "Name",
+                "dataType": "string"
+              },
+              {
+                "name": "Category",
+                "dataType": "string"
+              },
+              {
+                "name": "IsCompete",
+                "dataType": "bool"
+              },
+              {
+                "name": "ManufacturedOn",
+                "dataType": "DateTime"
+              }
+            ]
+          }
+        ]
+      }
+  responses:
+  - statusCode: "201"
+    body: >-
+      {
+        "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+        "name": "SalesMarketing",
+        "defaultRetentionPolicy": "basicFIFO"
+      }
 - name: Azure Analysis Services example
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/datasets

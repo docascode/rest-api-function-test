@@ -5,9 +5,9 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.powerbirestapis.dashboards.adddashboard
-  summary: "Adds a new empty dashboard to **\"My Workspace\"**  \n<br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Adds a new empty dashboard to **\"My Workspace\"**  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.adddashboardingroup
-  summary: "Adds a new empty dashboard to the specified **Workspace**  \n<br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Adds a new empty dashboard to the specified **Workspace**  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.generatetokeningroup
   summary: "Generate token to view the specified dashboard  \nThe **Tiles Generate Token In Group** operation creates embed token to allow view of the specified tile from a **Group**. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.dashboards.getdashboard

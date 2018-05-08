@@ -4,8 +4,9 @@ name: Put Table
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Updates a schema and metadata for the specified table  \nThe **Update Table Schema** operation updates a **Table** schema. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-consumes: []
+summary: "Updates the metdata and schema for the specified table within the specified dataset from \"My Workspace\"  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+consumes:
+- application/json
 produces: []
 paths:
 - content: PUT https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}
@@ -32,7 +33,46 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: PUT https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/tables/Product
+    body: >-
+      {
+        "tableName": "NewProduct",
+        "columns": [
+          {
+            "name": "ProductID",
+            "dataType": "Int64"
+          },
+          {
+            "name": "Name",
+            "dataType": "string"
+          },
+          {
+            "name": "Category",
+            "dataType": "string"
+          },
+          {
+            "name": "IsCompete",
+            "dataType": "bool"
+          },
+          {
+            "name": "ManufacturedOn",
+            "dataType": "DateTime"
+          },
+          {
+            "name": "NewColumn",
+            "dataType": "string"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "name": "NewProduct"
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
