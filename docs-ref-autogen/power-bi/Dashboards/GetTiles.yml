@@ -1,16 +1,16 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.tiles.dashboardsgettile
-name: Dashboards GetTile
+uid: api.powerbi.com.powerbirestapis.dashboards.gettiles
+name: Get Tiles
 service: Power BI Rest APIs
-groupName: Tiles
+groupName: Dashboards
 apiVersion: v1.0
-summary: "Get a specified tile in a specified dashboard  \nThe **Get Tile** operation returns a JSON object **Tile** which includes an id, title, and embedUrl. All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Get tiles in the specified dashboard  \nThe **Get Tiles** operation returns a JSON list of all **Tile** objects from a dashboard which includes an id, title, and embedUrl. All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: GET https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}
+- content: GET https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}/tiles
 uriParameters:
 - name: dashboardKey
   in: path
@@ -18,19 +18,26 @@ uriParameters:
   description: The dashboard id
   types:
   - uid: string
-- name: tileKey
-  in: path
-  isRequired: true
-  description: The tile id
-  types:
-  - uid: string
 responses:
 - name: 200 OK
   description: OK
   types:
-  - uid: Tile
+  - uid: ODataResponse[List[Tile]]
 requestHeader: []
 definitions:
+- name: ODataResponse[List[Tile]]
+  description: Odata response wrapper for a Power BI Tile collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: The tile collection
+    types:
+    - uid: Tile
+      isArray: true
 - name: Tile
   description: A Power BI Tile
   kind: object

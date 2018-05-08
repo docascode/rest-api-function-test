@@ -16,10 +16,6 @@ operations:
   summary: "Exports the specified report  \nThe **Export report** operation returns a PBIX file of the requested report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.reports.exportreportingroup
   summary: "Exports the specified report  \nThe **Export Report In Group** operation returns a PBIX file of the requested report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.generatetokenforcreateingroup
-  summary: "Generate token to create a new report on a given dataset  \nThe **Reports Generate Token For Create In Group** operation creates embed token to allow report creation in a **Group**. <br/><br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.generatetokeningroup
-  summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token In Group** operation creates embed token to allow view or edit of the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.reports.getreport
   summary: "Get the specified report  \nThe **Get Report** operation returns a JSON object of a **Report** which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.powerbirestapis.reports.getreportingroup

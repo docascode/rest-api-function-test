@@ -4,7 +4,7 @@ name: Datasets DiscoverGateways
 service: Power BI Rest APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Gets a list of gateways to bind  \nThe **Discover Gateways** operation returns a JSON object with a list of gateway entities. The response will contain all gateways that the dataset can be bound to. Those gateway have to have all required data sources configured. <br/>This API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of gateways that the specefied dataset from \"My Workspace\" can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -77,7 +77,26 @@ definitions:
     description: The public key  modulus
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.DiscoverGateways
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+            "name": "My_Sample_Gateway",
+            "type": "Resource",
+            "publicKey": {
+              "exponent": "AQAB",
+              "modulus": "o6j2....cLk="
+            }
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

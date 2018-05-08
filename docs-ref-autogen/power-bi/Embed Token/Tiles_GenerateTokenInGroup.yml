@@ -1,27 +1,33 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.generatetokeningroup
-name: Generate Token In Group
+uid: api.powerbi.com.powerbirestapis.embedtoken.tilesgeneratetokeningroup
+name: Tiles GenerateTokenInGroup
 service: Power BI Rest APIs
-groupName: Reports
+groupName: Embed Token
 apiVersion: v1.0
-summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token In Group** operation creates embed token to allow view or edit of the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Generate token to view the specified tile  \nThe **Tiles Generate Token In Group** operation creates embed token to allow view of the specified tile from a **Group**. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportKey}/GenerateToken
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken
 uriParameters:
 - name: groupId
   in: path
   isRequired: true
-  description: The group id
+  description: The workspace id
   types:
   - uid: string
-- name: reportKey
+- name: dashboardKey
   in: path
   isRequired: true
-  description: The report id
+  description: The dashboard id
+  types:
+  - uid: string
+- name: tileKey
+  in: path
+  isRequired: true
+  description: The tile id
   types:
   - uid: string
 responses:

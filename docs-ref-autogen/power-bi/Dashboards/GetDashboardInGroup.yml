@@ -15,7 +15,7 @@ uriParameters:
 - name: groupId
   in: path
   isRequired: true
-  description: The group id
+  description: The workspace id
   types:
   - uid: string
 - name: dashboardKey

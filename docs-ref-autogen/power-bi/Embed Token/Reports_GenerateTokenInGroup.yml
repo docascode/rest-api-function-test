@@ -1,21 +1,27 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.generatetokenforcreateingroup
-name: Generate Token For Create In Group
+uid: api.powerbi.com.powerbirestapis.embedtoken.reportsgeneratetokeningroup
+name: Reports GenerateTokenInGroup
 service: Power BI Rest APIs
-groupName: Reports
+groupName: Embed Token
 apiVersion: v1.0
-summary: "Generate token to create a new report on a given dataset  \nThe **Reports Generate Token For Create In Group** operation creates embed token to allow report creation in a **Group**. <br/><br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token In Group** operation creates embed token to allow view or edit of the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/GenerateToken
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportKey}/GenerateToken
 uriParameters:
 - name: groupId
   in: path
   isRequired: true
-  description: The group id
+  description: The workspace id
+  types:
+  - uid: string
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
   types:
   - uid: string
 responses:

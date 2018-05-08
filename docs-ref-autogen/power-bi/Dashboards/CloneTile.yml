@@ -1,23 +1,17 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.tiles.dashboardsclonetileingroup
-name: Dashboards CloneTileInGroup
+uid: api.powerbi.com.powerbirestapis.dashboards.clonetile
+name: Clone Tile
 service: Power BI Rest APIs
-groupName: Tiles
+groupName: Dashboards
 apiVersion: v1.0
-summary: "Clones the specified tile  \nThe **Clone tile In Group** makes a copy of the requested tile in the target dashboard from a **Group** in the target workspace. <br/><br/> By passing the target report id and target dataset id within the request body, you can rebind the tile to a different report and dataset. <br/><br/> If target report id and target dataset are missing, the following will occur: <br/>    * If you are cloning a tile within the same workspace, the report and dataset links will be cloned from the source tile. <br/>    * If you are cloning a tile within a different workspace, report and dataset links will be rested. The tile will be broken. <br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Clones the specified tile  \nThe **Clone tile** makes a copy of the requested tile in the target dashboard in the target workspace. <br/><br/> By passing the target report id and target dataset id within the request body, you can rebind the tile to a different report and dataset. <br/><br/> If target report id and target dataset are missing, the following will occur: <br/>    * If you are cloning a tile within the same workspace, the report and dataset links will be cloned from the source tile. <br/>    * If you are cloning a tile within a different workspace, report and dataset links will be rested. The tile will be broken. <br/><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/Clone
+- content: POST https://api.powerbi.com/v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/Clone
 uriParameters:
-- name: groupId
-  in: path
-  isRequired: true
-  description: The group id
-  types:
-  - uid: string
 - name: dashboardKey
   in: path
   isRequired: true

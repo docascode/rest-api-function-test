@@ -13,7 +13,7 @@ uriParameters:
 - name: groupId
   in: path
   isRequired: true
-  description: The group id to delete
+  description: The workspace id to delete
   types:
   - uid: string
 responses:
