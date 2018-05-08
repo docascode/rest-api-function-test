@@ -71,7 +71,7 @@ definitions:
 examples:
 - name: in progress refresh example
   request:
-    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top={$top}
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
   responses:
   - statusCode: "200"
     body: >-
@@ -87,7 +87,7 @@ examples:
       }
 - name: fineshed refresh example
   request:
-    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top={$top}
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
   responses:
   - statusCode: "200"
     body: >-
