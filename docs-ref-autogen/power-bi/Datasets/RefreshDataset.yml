@@ -56,7 +56,16 @@ definitions:
   - name: MailOnCompletion
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes
+    body: >-
+      {
+        "notifyOption": "MailOnFailure"
+      }
+  responses:
+  - statusCode: "202"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
