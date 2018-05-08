@@ -4,7 +4,7 @@ name: Get Datasources
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets a list of datasource for the specified dataset  \nThe **Get Datasources** operation returns a JSON list of **Datasource** entities available in the dataset. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gets a list of datasources for the specified dataset from \"My Workspace\"  \n<br/>**Note**:'gatewayId' and 'datasourceId' are only available when the dataset is bound to a gateway. each user have a cloud gateway which cloud data sources are bound to by default.<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -14,6 +14,7 @@ uriParameters:
 - name: datasetKey
   in: path
   isRequired: true
+  description: The dataset id
   types:
   - uid: string
 responses:
@@ -80,7 +81,55 @@ definitions:
     description: The connection url
     types:
     - uid: string
-examples: []
+examples:
+- name: direct query model example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/datasources
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "name": "301",
+            "connectionString": "data source=MyServer.database.windows.net;initial catalog=MyDatabase;persist security info=True;encrypt=True;trustservercertificate=False",
+            "datasourceType": "Sql",
+            "datasourceId": "16a54ccd-620d-4af3-9197-0b8c779a9a6d",
+            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+            "connectionDetails": {
+              "server": "MyServer.database.windows.net",
+              "database": "MyDatabase"
+            }
+          }
+        ]
+      }
+- name: cached model example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/datasources
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "datasourceType": "AnalysisServices",
+            "datasourceId": "f8c56590-43cb-43bf-8daa-233ba2520f55",
+            "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+            "connectionDetails": {
+              "server": "My-As-Server",
+              "database": "My-As-Database"
+            }
+          },
+          {
+            "datasourceType": "Web",
+            "datasourceId": "96e4bb31-7b77-4b6d-8483-d76855639a23",
+            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+            "connectionDetails": {
+              "url": "http://myWebSource.com"
+            }
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

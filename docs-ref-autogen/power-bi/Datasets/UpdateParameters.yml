@@ -4,7 +4,7 @@ name: Update Parameters
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Updates the parameters values for the specified dataset from \"My Workspace\"  \n<br/>You need to refresh the dataset for the new parameters values to be applied. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app). <br/><br/>## Restrictions <br/>- All parameters must exist in the dataset. Names are case-sensitive. <br/>* Maximum of a 100 parameters in request is allowed. <br/>* Values should be of expected Type. <br/>* Cannot pass empty value to an IsRequired parameter. <br/>* List cannot be empty of include multiple occurrences of same parameter. <br/>* Parameters of types 'Any' or 'Binary' cannot be set. <br/>* Parameters may change the actual connection (server and/or database) by not its OnPrem status (i.e., from Cloud to OnPrem, or the other way)."
+summary: "Updates the parameters values for the specified dataset from \"My Workspace\"  \n<br/>**Note**: You need to refresh the dataset for the new parameters values to be applied. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app). <h2>Restrictions</h2><ul><li>All parameters must exist in the dataset. Names are case-sensitive. </li><li> Maximum of a 100 parameters in request is allowed. </li><li> Values should be of expected Type. </li><li> Cannot pass empty value to an IsRequired parameter. </li><li> List cannot be empty or include multiple occurrences of same parameter. </li><li> Parameters of types 'Any' or 'Binary' cannot be set. </li><li> Parameters may not change the actual connection (server and/or database) by not its OnPrem status (from Cloud to OnPrem, or the other way).</li></ul>"
 consumes:
 - application/json
 produces: []
@@ -14,6 +14,7 @@ uriParameters:
 - name: datasetKey
   in: path
   isRequired: true
+  description: The dataset id
   types:
   - uid: string
 responses:
@@ -56,7 +57,25 @@ definitions:
     types:
     - uid: UpdateDatasetParameterDetails
       isArray: true
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.UpdateParameters
+    body: >-
+      {
+        "updateDetails": [
+          {
+            "name": "DatabaseName",
+            "newValue": "NewDB"
+          },
+          {
+            "name": "MaxId",
+            "newValue": "5678"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
