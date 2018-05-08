@@ -4,7 +4,7 @@ name: Get Datasets In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Returns the datasets  \nThe **Get Datasets In Group** operation returns a JSON list of all **Dataset** objects from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of datasets available on the specified workspace.  \n<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -14,7 +14,7 @@ uriParameters:
 - name: groupId
   in: path
   isRequired: true
-  description: The group id
+  description: The workspace id
   types:
   - uid: string
 responses:
@@ -259,7 +259,27 @@ definitions:
     description: The connection url
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+            "name": "Contoso Sales",
+            "addRowsAPIEnabled": false,
+            "configuredBy": "john@contoso.com",
+            "isRefreshable": true,
+            "isEffectiveIdentityRequired": false,
+            "isEffectiveIdentityRolesRequired": false,
+            "isOnPremGatewayRequired": false
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

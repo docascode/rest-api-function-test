@@ -4,7 +4,7 @@ name: Post Dataset
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Create a new dataset  \nThe **Create Dataset** operation creates a new **Dataset** from a JSON schema definition and returns the **Dataset** ID and the properties of the dataset created.<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates a new dataset  \n<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -325,7 +325,30 @@ definitions:
   - name: PushStreaming
     types:
     - uid: string
-examples: []
+examples:
+- name: Azure Analysis Services example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/datasets
+    body: >-
+      {
+        "name": "SalesMarketing",
+        "defaultMode": "AzureAS",
+        "tables": [],
+        "datasources": [
+          {
+            "name": "SalesMarketing",
+            "connectionString": "Data Source=asazure://westcentralus.asazure.windows.net/mypowerbi;Initial Catalog=SalesMarketing;Cube=Model"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "201"
+    body: >-
+      {
+        "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+        "name": "SalesMarketing",
+        "defaultRetentionPolicy": "basicFIFO"
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

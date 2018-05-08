@@ -1,5 +1,8 @@
 # Power BI
 ## [Power BI Rest APIs](../docs-ref-index/index.md)
+### [Available Features](power-bi/AvailableFeatures.yml)
+#### [availableFeatures GetAvailableFeatureByName](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatureByName.yml)
+#### [availableFeatures GetAvailableFeatures](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatures.yml)
 ### [Capacities](power-bi/Capacities.yml)
 #### [Get Capacities](power-bi/Capacities/GetCapacities.yml)
 ### [Dashboards](power-bi/Dashboards.yml)
@@ -63,9 +66,6 @@
 #### [Reports GenerateToken](power-bi/Embed Token/Reports_GenerateToken.yml)
 #### [Reports GenerateTokenForCreate](power-bi/Embed Token/Reports_GenerateTokenForCreate.yml)
 #### [Tiles GenerateToken](power-bi/Embed Token/Tiles_GenerateToken.yml)
-### [Features](power-bi/Features.yml)
-#### [availableFeatures GetAvailableFeatureByName](power-bi/Features/availableFeatures_GetAvailableFeatureByName.yml)
-#### [availableFeatures GetAvailableFeatures](power-bi/Features/availableFeatures_GetAvailableFeatures.yml)
 ### [Gateways](power-bi/Gateways.yml)
 #### [Datasets DiscoverGateways](power-bi/Gateways/Datasets_DiscoverGateways.yml)
 #### [Datasets DiscoverGatewaysInGroup](power-bi/Gateways/Datasets_DiscoverGatewaysInGroup.yml)
