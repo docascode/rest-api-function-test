@@ -4,7 +4,7 @@ name: Get Parameters In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets a list of parameters for the specified dataset  \nThe **Get Parameters In Group** operation returns a JSON list of **Parameter** entities available in the dataset from a **Group**. Caller is assumed to know what their effect is, and on which datasource. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gets a list of parameters for the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -62,7 +62,53 @@ definitions:
     description: Is dataset parameter required
     types:
     - uid: boolean
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/parameters
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "name": "ServerName",
+            "type": "Text",
+            "isRequired": true,
+            "currentValue": "MyTest.database.windows.net"
+          },
+          {
+            "name": "DatabaseName",
+            "type": "Text",
+            "isRequired": true,
+            "currentValue": "MyTestDB"
+          },
+          {
+            "name": "FromDate",
+            "type": "DateTime",
+            "isRequired": true,
+            "currentValue": "2/8/2002 12:00:00 AM"
+          },
+          {
+            "name": "FilterBlanks",
+            "type": "Logical",
+            "isRequired": true,
+            "currentValue": "TRUE"
+          },
+          {
+            "name": "MaxId",
+            "type": "Number",
+            "isRequired": true,
+            "currentValue": "77"
+          },
+          {
+            "name": "AnyParam",
+            "type": "Any",
+            "isRequired": true,
+            "currentValue": "uu63"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

@@ -4,7 +4,7 @@ name: Bind To Gateway In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Bind dataset to gateway  \nThe **Bind to gateway In Group** operation links a dataset from a **Group** to a gateway. This only supports the On-Premises Data Gateway. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Binds the specified dataset from the specified workspace to the specified gateway. This only supports the On-Premises Data Gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -48,7 +48,16 @@ definitions:
     description: The gateway id
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.BindToGateway
+    body: >-
+      {
+        "gatewayObjectId": "1f69e798-5852-4fdd-ab01-33bb14b6e934"
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

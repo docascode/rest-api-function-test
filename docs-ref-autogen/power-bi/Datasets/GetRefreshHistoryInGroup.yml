@@ -4,7 +4,7 @@ name: Get Refresh History In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets the dataset refresh history  \nThe **Get Refresh History In Group** operation returns a JSON list of **Refresh** entities from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns the refresh history of the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -74,7 +74,40 @@ definitions:
     description: ''
     types:
     - uid: string
-examples: []
+examples:
+- name: in progress refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Unknown"
+          }
+        ]
+      }
+- name: completed refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "endTime": "2017-06-13T09:31:43.153Z",
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Completed"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

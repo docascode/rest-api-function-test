@@ -4,7 +4,7 @@ name: Set All Dataset Connections In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Sets all connections for the specified dataset  \nThe **Set All Dataset Connections In Group** operation updates connection strings for each data source in a dataset from a **Group**. The connection strings are updated with the body of the POST call. <br/>**Note**:  To update connection details for SQL Server, Analysis Services, OData Feed, and SharePoint, use [Update Datasources](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updatedatasources?branch=master). For other datasource types use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master). <br/>**Note**: This API only supports SQL DirectQuery datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Updates all connections for the specified dataset from the specified workspace  \n<br/>**Note**:  To update connection details for SQL Server, Analysis Services, OData Feed, and SharePoint, use [Update Datasources](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updatedatasources?branch=master). For other datasource types use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master). <br/>**Note**: This API only supports SQL DirectQuery datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -48,7 +48,12 @@ definitions:
     description: A dataset connection string.
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.SetAllConnections
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

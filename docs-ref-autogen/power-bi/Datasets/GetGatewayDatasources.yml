@@ -82,7 +82,7 @@ definitions:
     types:
     - uid: string
 examples:
-- name: direct query model example
+- name: example
   request:
     uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.GetBoundGatewayDatasources
   responses:

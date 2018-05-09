@@ -4,7 +4,7 @@ name: Delete Dataset By Id In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Deletes the dataset with the specified id  \nThe **Delete Dataset By Id In Group** operation deletes the dataset from a **Group** with the specified id.<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Deletes specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -32,7 +32,12 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

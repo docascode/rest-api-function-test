@@ -4,7 +4,7 @@ name: Get Gateway Datasources In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets a list of bound gateway datasources for the specified dataset  \nThe **Get Gateway Datasources In Group** operation returns a JSON list of all gateway data sources for a dataset from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of gateway datasources for the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -87,7 +87,23 @@ definitions:
     description: Password required to access the datasource
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.GetBoundGatewayDatasources
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "16a54ccd-620d-4af3-9197-0b8c779a9a6d",
+            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+            "datasourceType": "Sql",
+            "connectionDetails": "{\"server\":\"MyServer.database.windows.net\",\"database\":\"MyDatabase\"}"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

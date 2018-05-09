@@ -4,7 +4,7 @@ name: Get Tables In Group
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Gets all tables within the specified dataset  \nThe **Get Tables In Group** operation returns a JSON list of **Tables** for the specified **Dataset** from a **Group**. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of tables tables within the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
