@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreateingroup
 name: Reports GenerateTokenForCreateInGroup
-service: power-bi
+service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
 summary: "Generate token to create a new report on a given dataset  \nThe **Reports Generate Token For Create In Group** operation creates embed token to allow report creation in a **Group**. <br/><br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

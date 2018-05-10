@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasources.gatewaysdeletedatasourceuser
 name: Gateways DeleteDatasourceUser
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasources
 apiVersion: v1.0
 summary: "Delete a datasource user  \nThe **Delete Datasource User** operation removes the supplied user from a given data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

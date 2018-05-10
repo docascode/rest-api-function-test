@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.adddashboard
 name: Add Dashboard
-service: power-bi
+service: Power BI Rest APIs
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Adds a new empty dashboard to **\"My Workspace\"**  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

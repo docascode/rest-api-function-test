@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getrefreshhistoryingroup
 name: Get Refresh History In Group
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Returns the refresh history of the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

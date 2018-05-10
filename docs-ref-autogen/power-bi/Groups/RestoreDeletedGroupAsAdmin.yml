@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.groups.restoredeletedgroupasadmin
 name: Restore Deleted Group As Admin
-service: power-bi
+service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
 summary: With an administrative scope, restore a deleted group

@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.datasources
 name: Datasources
 apiVersion: v1.0
-service: power-bi
+service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.datasources.gatewaysadddatasourceuser
   summary: "Get a datasource user  \nThe **Get Datasource User** operation adds the supplied user to a given data source. This user will then have permission to use the data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

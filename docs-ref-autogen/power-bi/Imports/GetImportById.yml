@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.getimportbyid
 name: Get Import By Id
-service: power-bi
+service: Power BI Rest APIs
 groupName: Imports
 apiVersion: v1.0
 summary: "Gets the import metadata for the specifed import id  \nThe **Get Import by Id** operation returns a JSON body for an Import object with its properties <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

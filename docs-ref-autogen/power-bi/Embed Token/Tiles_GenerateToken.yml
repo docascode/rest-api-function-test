@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetoken
 name: Tiles GenerateToken
-service: power-bi
+service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
 summary: "Generate token to view the specified tile  \nThe **Tiles Generate Token** operation creates embed token to allow view of the specified tile. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

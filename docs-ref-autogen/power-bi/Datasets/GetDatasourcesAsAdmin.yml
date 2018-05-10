@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getdatasourcesasadmin
 name: Get Datasources As Admin
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: Gets a list of datasource for the specified dataset as Admin

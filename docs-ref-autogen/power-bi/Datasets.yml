@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.datasets
 name: Datasets
 apiVersion: v1.0
-service: power-bi
+service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.datasets.bindtogateway
   summary: "Binds the specified dataset from \"My Workspace\" to the specified gateway. This only supports the On-Premises Data Gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

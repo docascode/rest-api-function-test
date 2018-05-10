@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.refreshdataset
 name: Refresh Dataset
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Triggers a refresh to occur for the specified dataset from \"My Workspace\"  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.createtemporaryuploadlocation
 name: Create Temporary Upload Location
-service: power-bi
+service: Power BI Rest APIs
 groupName: Imports
 apiVersion: v1.0
 summary: "Creates a temporary upload location for large files  \nThe **Create Temporary Upload Location** operation creates a temporary blob storage to be used to uploade pbix files larger than 1 GB. <br/>**Note**: uploading large pbix files is only available for workspaces on premium capacity. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

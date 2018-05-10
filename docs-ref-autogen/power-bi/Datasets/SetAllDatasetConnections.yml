@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.setalldatasetconnections
 name: Set All Dataset Connections
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Updates all connections for the specified dataset from \"My Workspace\"  \n<br/>**Note**:  To update connection details for SQL Server, Analysis Services, OData Feed, and SharePoint, use [Update Datasources](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updatedatasources?branch=master). For other datasource types use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master). <br/>**Note**: This API only supports SQL DirectQuery datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

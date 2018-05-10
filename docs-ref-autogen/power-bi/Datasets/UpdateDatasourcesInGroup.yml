@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.updatedatasourcesingroup
 name: Update Datasources In Group
-service: power-bi
+service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Updates the datasources of the specified dataset from the specified workspace  \n<br/>**Note**: For cached models You need to refresh the dataset to get get the data from the new data sources. <br/>**Note**: original datasource and new datasource should have the exact same schema, otherwise refresh will fail. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app). <h2>Restrictions</h2><ul><li>Update datasources supports SQL Server, Analysis Services, OData Feed, and SharePoint datasources. For other datasource types, use [Set Parameters](https://review.docs.microsoft.com/en-us/rest/api/power-bi/datasets/updateparameters?branch=master) </li><li>Changing datasource type is not supported. </li><li>Datasources that contain parameters on the connection string are not supported. </li><li>Datasources which are part of Merged or Joined tables are not supported. </li><li>Changing connection from cloud to on-premises or on-premises to cloud is not supported. </li></ul>"
