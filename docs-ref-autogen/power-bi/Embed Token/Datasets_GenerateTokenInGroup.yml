@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.embedtoken.datasetsgeneratetokeningroup
+uid: api.powerbi.com.power-bi.embedtoken.datasetsgeneratetokeningroup
 name: Datasets GenerateTokenInGroup
-service: Power BI Rest APIs
+service: power-bi
 groupName: Embed Token
 apiVersion: v1.0
 summary: "Generate token to view the specified dataset  \nThe **Dashboards Generate Token In Group** operation creates embed token to allow view of the specified dashboard from a Group. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

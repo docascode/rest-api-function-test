@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.dashboards.getdashboardingroup
+uid: api.powerbi.com.power-bi.dashboards.getdashboardingroup
 name: Get Dashboard In Group
-service: Power BI Rest APIs
+service: power-bi
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Get the specified dashboard in a group  \nThe **Get Dashboard In Group** operation returns a JSON object of a **Dashboard** from a **Group** which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

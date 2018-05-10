@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.getreportingroup
+uid: api.powerbi.com.power-bi.reports.getreportingroup
 name: Get Report In Group
-service: Power BI Rest APIs
+service: power-bi
 groupName: Reports
 apiVersion: v1.0
 summary: "Get the specified report  \nThe **Get Report In Group** operation returns a JSON object of a **Report** from a **Group** which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

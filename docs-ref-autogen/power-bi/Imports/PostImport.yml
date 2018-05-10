@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.imports.postimport
+uid: api.powerbi.com.power-bi.imports.postimport
 name: Post Import
-service: Power BI Rest APIs
+service: power-bi
 groupName: Imports
 apiVersion: v1.0
 summary: "Creates a new import using the specified import info  \nThe **Post Import** operation creates content from either a PBIX, Excel, package file or file path in OneDrive Pro, and returns the ID of the Import created. This allows you to take a package of content, such as a PBIX or Excel file, and import it into a Power BI workspace. The **Imports** API splits the PBIX package into its individual parts including datasets and reports. It will then provide a metadata link between the actual import operation and the objects that were created from it. <br/>**Note**: The operation has the same behavior as if you imported an Excel file through the connect screen in Power BI. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

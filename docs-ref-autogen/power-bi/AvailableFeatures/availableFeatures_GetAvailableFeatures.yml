@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.availablefeatures.availablefeaturesgetavailablefeatures
+uid: api.powerbi.com.power-bi.availablefeatures.availablefeaturesgetavailablefeatures
 name: availableFeatures GetAvailableFeatures
-service: Power BI Rest APIs
+service: power-bi
 groupName: Available Features
 apiVersion: v1.0
 summary: "Gets a list of available features for user  \nThe **Get Available Features** operation returns all the available features for the user.  <br/><br/>**Note**: This API is currently limited to specifying embedded trial usage is on shared capacity. <br/><br/>**Required scope**: AvailableFeatures.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

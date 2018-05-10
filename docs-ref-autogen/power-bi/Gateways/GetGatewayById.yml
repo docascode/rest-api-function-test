@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.gateways.getgatewaybyid
+uid: api.powerbi.com.power-bi.gateways.getgatewaybyid
 name: Get Gateway By Id
-service: Power BI Rest APIs
+service: power-bi
 groupName: Gateways
 apiVersion: v1.0
 summary: "Returns the specified gateway  \nThe **Get Gateways** operation returns a JSON object of a **Gateway** entitiy. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

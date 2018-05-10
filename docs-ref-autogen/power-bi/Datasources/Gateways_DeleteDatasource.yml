@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.datasources.gatewaysdeletedatasource
+uid: api.powerbi.com.power-bi.datasources.gatewaysdeletedatasource
 name: Gateways DeleteDatasource
-service: Power BI Rest APIs
+service: power-bi
 groupName: Datasources
 apiVersion: v1.0
 summary: "Delete a datasource  \nThe **Delete Datasource** operation deletes the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

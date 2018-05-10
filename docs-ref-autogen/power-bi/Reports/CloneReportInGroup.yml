@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.clonereportingroup
+uid: api.powerbi.com.power-bi.reports.clonereportingroup
 name: Clone Report In Group
-service: Power BI Rest APIs
+service: power-bi
 groupName: Reports
 apiVersion: v1.0
 summary: "Clones the specified report  \nThe **Clone report In Group** operations creates a copy of the requested report with the targeted new name within the same workspace by default (created report will be bound to the same original dataset as used by the original report). <br/><br/>In case you wish to clone a given report to a different workspace, please provide within the request the targeted workspace id and corresponding dataset in the targeted workspace (this operation will copy the report and rebind to a different dataset, must have the same model structure to not breaking report visuals). <br/><br/>You can also rebind the clone report to a different dataset within the same workspace, for this please provide the dataset id within the request body. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

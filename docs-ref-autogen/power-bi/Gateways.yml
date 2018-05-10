@@ -1,14 +1,14 @@
 ### YamlMime:RESTOperationGroup
-uid: api.powerbi.com.powerbirestapis.gateways
+uid: api.powerbi.com.power-bi.gateways
 name: Gateways
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: power-bi
 operations:
-- uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergateways
+- uid: api.powerbi.com.power-bi.gateways.datasetsdiscovergateways
   summary: "Returns a list of gateways that the specefied dataset from \"My Workspace\" can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergatewaysingroup
+- uid: api.powerbi.com.power-bi.gateways.datasetsdiscovergatewaysingroup
   summary: "Returns a list of gateways that the specefied dataset from the specified workspace can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.gateways.getgatewaybyid
+- uid: api.powerbi.com.power-bi.gateways.getgatewaybyid
   summary: "Returns the specified gateway  \nThe **Get Gateways** operation returns a JSON object of a **Gateway** entitiy. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.gateways.getgateways
+- uid: api.powerbi.com.power-bi.gateways.getgateways
   summary: "Returns a list of gateways  \nThe **Get Gateways** operation returns a JSON list of **Gateway** entities. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

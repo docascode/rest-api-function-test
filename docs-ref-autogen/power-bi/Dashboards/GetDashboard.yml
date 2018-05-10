@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.dashboards.getdashboard
+uid: api.powerbi.com.power-bi.dashboards.getdashboard
 name: Get Dashboard
-service: Power BI Rest APIs
+service: power-bi
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Get the specified dashboard  \nThe **Get Dashboard** operation returns a JSON object of a **Dashboard** which includes an id and displayName. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

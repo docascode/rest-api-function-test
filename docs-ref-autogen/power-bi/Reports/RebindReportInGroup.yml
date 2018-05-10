@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.rebindreportingroup
+uid: api.powerbi.com.power-bi.reports.rebindreportingroup
 name: Rebind Report In Group
-service: Power BI Rest APIs
+service: power-bi
 groupName: Reports
 apiVersion: v1.0
 summary: "Rebinds the specified report to requested dataset id  \nThe **Rebind report In Group** operation will rebind a report from a **Group** to a dataset. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

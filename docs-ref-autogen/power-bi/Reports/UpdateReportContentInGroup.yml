@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.reports.updatereportcontentingroup
+uid: api.powerbi.com.power-bi.reports.updatereportcontentingroup
 name: Update Report Content In Group
-service: Power BI Rest APIs
+service: power-bi
 groupName: Reports
 apiVersion: v1.0
 summary: "Update the report content from a specified source  \nThe **Update Report Content In Group** operation replaces a target reports content with content from another source report in the same or different workspace. Target report existing pages are updated. Visuals are replaced with visuals from the source report. New pages in the source report that don't exist in the target report are added. Pages deleted in the source report are deleted in the target report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

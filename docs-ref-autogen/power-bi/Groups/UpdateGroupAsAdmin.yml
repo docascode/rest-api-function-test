@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.groups.updategroupasadmin
+uid: api.powerbi.com.power-bi.groups.updategroupasadmin
 name: Update Group As Admin
-service: Power BI Rest APIs
+service: power-bi
 groupName: Groups
 apiVersion: v1.0
 summary: With administrative scope, updates the specified group properties

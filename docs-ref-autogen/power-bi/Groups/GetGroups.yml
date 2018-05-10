@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.groups.getgroups
+uid: api.powerbi.com.power-bi.groups.getgroups
 name: Get Groups
-service: Power BI Rest APIs
+service: power-bi
 groupName: Groups
 apiVersion: v1.0
 summary: "Returns a list of groups  \nThe **Get Groups** operation returns a JSON list of all groups that the user is a member of. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

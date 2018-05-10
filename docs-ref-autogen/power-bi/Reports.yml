@@ -1,34 +1,34 @@
 ### YamlMime:RESTOperationGroup
-uid: api.powerbi.com.powerbirestapis.reports
+uid: api.powerbi.com.power-bi.reports
 name: Reports
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: power-bi
 operations:
-- uid: api.powerbi.com.powerbirestapis.reports.clonereport
+- uid: api.powerbi.com.power-bi.reports.clonereport
   summary: "Clones the specified report  \nThe **Clone report** operations creates a copy of the requested report with the targeted new name within the same workspace by default (created report will be bound to the same original dataset as used by the original report). <br/><br/>In case you wish to clone a given report to a different workspace, please provide within the request the targeted workspace id and corresponding dataset in the targeted workspace (this operation will copy the report and rebind to a different dataset, must have the same model structure to not breaking report visuals). <br/><br/>You can also rebind the clone report to a different dataset within the same workspace, for this please provide the dataset id within the request body. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.clonereportingroup
+- uid: api.powerbi.com.power-bi.reports.clonereportingroup
   summary: "Clones the specified report  \nThe **Clone report In Group** operations creates a copy of the requested report with the targeted new name within the same workspace by default (created report will be bound to the same original dataset as used by the original report). <br/><br/>In case you wish to clone a given report to a different workspace, please provide within the request the targeted workspace id and corresponding dataset in the targeted workspace (this operation will copy the report and rebind to a different dataset, must have the same model structure to not breaking report visuals). <br/><br/>You can also rebind the clone report to a different dataset within the same workspace, for this please provide the dataset id within the request body. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.deletereport
+- uid: api.powerbi.com.power-bi.reports.deletereport
   summary: "Deletes the specified report  \nThe **Delete Report** operation will delete the specified report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.deletereportingroup
+- uid: api.powerbi.com.power-bi.reports.deletereportingroup
   summary: "Deletes the specified report  \nThe **Delete Report In Group** operation will delete the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.exportreport
+- uid: api.powerbi.com.power-bi.reports.exportreport
   summary: "Exports the specified report  \nThe **Export report** operation returns a PBIX file of the requested report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.exportreportingroup
+- uid: api.powerbi.com.power-bi.reports.exportreportingroup
   summary: "Exports the specified report  \nThe **Export Report In Group** operation returns a PBIX file of the requested report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.getreport
+- uid: api.powerbi.com.power-bi.reports.getreport
   summary: "Get the specified report  \nThe **Get Report** operation returns a JSON object of a **Report** which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.getreportingroup
+- uid: api.powerbi.com.power-bi.reports.getreportingroup
   summary: "Get the specified report  \nThe **Get Report In Group** operation returns a JSON object of a **Report** from a **Group** which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.getreports
+- uid: api.powerbi.com.power-bi.reports.getreports
   summary: "**Gets a list of reports**  \nThe **Get Reports** operation returns a JSON list of all **Report** objects which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.getreportsingroup
+- uid: api.powerbi.com.power-bi.reports.getreportsingroup
   summary: "Gets a list of reports available within the specified group  \nThe **Get Reports In Group** operation returns a JSON list of all **Report** objects from a **Group** which includes an id, name, webUrl, and embedUrl. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.rebindreport
+- uid: api.powerbi.com.power-bi.reports.rebindreport
   summary: "Rebinds the specified report to requested dataset id  \nThe **Rebind report** operation will rebind a report to a dataset. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.rebindreportingroup
+- uid: api.powerbi.com.power-bi.reports.rebindreportingroup
   summary: "Rebinds the specified report to requested dataset id  \nThe **Rebind report In Group** operation will rebind a report from a **Group** to a dataset. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.updatereportcontent
+- uid: api.powerbi.com.power-bi.reports.updatereportcontent
   summary: "Update the report content from a specified source  \nThe **Update Report Content** operation replaces a target reports content with content from another source report in the same or different workspace. Target report existing pages are updated. Visuals are replaced with visuals from the source report. New pages in the source report that don't exist in the target report are added. Pages deleted in the source report are deleted in the target report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.reports.updatereportcontentingroup
+- uid: api.powerbi.com.power-bi.reports.updatereportcontentingroup
   summary: "Update the report content from a specified source  \nThe **Update Report Content In Group** operation replaces a target reports content with content from another source report in the same or different workspace. Target report existing pages are updated. Visuals are replaced with visuals from the source report. New pages in the source report that don't exist in the target report are added. Pages deleted in the source report are deleted in the target report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

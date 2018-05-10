@@ -1,32 +1,32 @@
 ### YamlMime:RESTOperationGroup
-uid: api.powerbi.com.powerbirestapis.groups
+uid: api.powerbi.com.power-bi.groups
 name: Groups
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: power-bi
 operations:
-- uid: api.powerbi.com.powerbirestapis.groups.addgroupuser
+- uid: api.powerbi.com.power-bi.groups.addgroupuser
   summary: "Add a group user  \nThe **Add Group User** operation adds a user to a group. <br/>**Note**: *Currently, you can only add admin users*. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.adduserasadmin
+- uid: api.powerbi.com.power-bi.groups.adduserasadmin
   summary: With an administrative scope, grant user permissions to the given group
-- uid: api.powerbi.com.powerbirestapis.groups.assignmyworkspacetocapacity
+- uid: api.powerbi.com.power-bi.groups.assignmyworkspacetocapacity
   summary: "Assign My Workspace to a capacity  \nThe **Assign My Workspace To Capacity** operation assigns **My Workspace** to the capacity specified in the request body. To perform this operation the user must have (admin/assign) permissions to the capacity <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.assigntocapacity
+- uid: api.powerbi.com.power-bi.groups.assigntocapacity
   summary: "Assign a group to a capacity  \nThe **Assign To Capacity** operation assigns the workspace specified in the request uri to the capacity specified in the request body. To perform this operation the user must be a workspace admin and have (admin/assign) permissions to the capacity <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.creategroup
+- uid: api.powerbi.com.power-bi.groups.creategroup
   summary: "Create new group  \nThe **Create Group** operation creates a new group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.deletegroup
+- uid: api.powerbi.com.power-bi.groups.deletegroup
   summary: "Deletes the specified group  \nThe **Delete Group** operation deletes the referenced group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.deleteuserasadmin
+- uid: api.powerbi.com.power-bi.groups.deleteuserasadmin
   summary: With an administrative scope, remove user permissions to the given group
-- uid: api.powerbi.com.powerbirestapis.groups.deleteuseringroup
+- uid: api.powerbi.com.power-bi.groups.deleteuseringroup
   summary: "Deletes the specified group  \nThe **Delete Group User** operation removes a user from a group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.getgroups
+- uid: api.powerbi.com.power-bi.groups.getgroups
   summary: "Returns a list of groups  \nThe **Get Groups** operation returns a JSON list of all groups that the user is a member of. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.getgroupsasadmin
+- uid: api.powerbi.com.power-bi.groups.getgroupsasadmin
   summary: With an adminstrative scope, returns a list of groups for an organization
-- uid: api.powerbi.com.powerbirestapis.groups.getgroupusers
+- uid: api.powerbi.com.power-bi.groups.getgroupusers
   summary: "Get a group users list  \nThe **Get Group Users** operation returns a JSON list of all users that belong to the group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.powerbirestapis.groups.restoredeletedgroupasadmin
+- uid: api.powerbi.com.power-bi.groups.restoredeletedgroupasadmin
   summary: With an administrative scope, restore a deleted group
-- uid: api.powerbi.com.powerbirestapis.groups.updategroupasadmin
+- uid: api.powerbi.com.power-bi.groups.updategroupasadmin
   summary: With administrative scope, updates the specified group properties

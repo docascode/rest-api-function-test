@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.powerbirestapis.gateways.datasetsdiscovergateways
+uid: api.powerbi.com.power-bi.gateways.datasetsdiscovergateways
 name: Datasets DiscoverGateways
-service: Power BI Rest APIs
+service: power-bi
 groupName: Gateways
 apiVersion: v1.0
 summary: "Returns a list of gateways that the specefied dataset from \"My Workspace\" can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
