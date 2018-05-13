@@ -4,7 +4,7 @@ name: Export Report In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Exports the specified report  \nThe **Export Report In Group** operation returns a PBIX file of the requested report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Exports the specified report from the specified workspace to a PBIX file  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/zip

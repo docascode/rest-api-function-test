@@ -1,8 +1,5 @@
 # Power BI
 ## [Power BI Rest APIs](../docs-ref-index/index.md)
-### [Available Features](power-bi/AvailableFeatures.yml)
-#### [availableFeatures GetAvailableFeatureByName](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatureByName.yml)
-#### [availableFeatures GetAvailableFeatures](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatures.yml)
 ### [Capacities](power-bi/Capacities.yml)
 #### [Get Capacities](power-bi/Capacities/GetCapacities.yml)
 ### [Dashboards](power-bi/Dashboards.yml)
@@ -118,3 +115,6 @@
 #### [Rebind Report In Group](power-bi/Reports/RebindReportInGroup.yml)
 #### [Update Report Content](power-bi/Reports/UpdateReportContent.yml)
 #### [Update Report Content In Group](power-bi/Reports/UpdateReportContentInGroup.yml)
+### [available Features](power-bi/availableFeatures.yml)
+#### [Get Available Feature By Name](power-bi/availableFeatures/GetAvailableFeatureByName.yml)
+#### [Get Available Features](power-bi/availableFeatures/GetAvailableFeatures.yml)

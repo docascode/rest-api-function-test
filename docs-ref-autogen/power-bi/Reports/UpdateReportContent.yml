@@ -4,7 +4,7 @@ name: Update Report Content
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Update the report content from a specified source  \nThe **Update Report Content** operation replaces a target reports content with content from another source report in the same or different workspace. Target report existing pages are updated. Visuals are replaced with visuals from the source report. New pages in the source report that don't exist in the target report are added. Pages deleted in the source report are deleted in the target report. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Updates the specified report from \"My Workspace\" to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

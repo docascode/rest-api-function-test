@@ -4,7 +4,7 @@ name: Delete Report In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Deletes the specified report  \nThe **Delete Report In Group** operation will delete the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Deletes the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -32,7 +32,12 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/reports/5b218778-e7a5-4d73-8187-f10824047715
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
