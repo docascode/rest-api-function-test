@@ -4,7 +4,7 @@ name: Get Tile In Group
 service: Power BI Rest APIs
 groupName: Dashboards
 apiVersion: v1.0
-summary: "Get a specified tile in a specified dashboard in a group  \nThe **Get Tile In Group** operation returns a JSON object **Tile** from a **Group** which includes an id, title, and embedUrl. All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns the specified tile within the specified dashboard from the specified workspace  \n**Note**: All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -73,7 +73,22 @@ definitions:
     description: The dataset id
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/69ffaa6c-b36d-4d01-96f5-1ed67c64d4af/tiles/312fbfe9-2eda-44e0-9ed0-ab5dc571bb4b
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "312fbfe9-2eda-44e0-9ed0-ab5dc571bb4b",
+        "title": "SalesMarketingTile",
+        "embedUrl": "https://app.powerbi.com/embed?dashboardId=69ffaa6c-b36d-4d01-96f5-1ed67c64d4af&tileId=312fbfe9-2eda-44e0-9ed0-ab5dc571bb4b&groupId=f089354e-8366-4e18-aea3-4cb4a3a50b48",
+        "rowSpan": 0,
+        "colSpan": 0,
+        "reportId": "5b218778-e7a5-4d73-8187-f10824047715",
+        "datasetId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

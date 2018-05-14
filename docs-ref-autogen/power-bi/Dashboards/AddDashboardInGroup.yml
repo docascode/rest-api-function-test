@@ -4,7 +4,7 @@ name: Add Dashboard In Group
 service: Power BI Rest APIs
 groupName: Dashboards
 apiVersion: v1.0
-summary: "Adds a new empty dashboard to the specified **Workspace**  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates a new empty dashboard on the specified workspace  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -60,7 +60,23 @@ definitions:
     description: The name of the new dashboard
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards
+    body: >-
+      {
+        "name": "SalesMarketing"
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "69ffaa6c-b36d-4d01-96f5-1ed67c64d4af",
+        "displayName": "SalesMarketing",
+        "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=69ffaa6c-b36d-4d01-96f5-1ed67c64d4af&groupId=f089354e-8366-4e18-aea3-4cb4a3a50b48",
+        "isReadOnly": false
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

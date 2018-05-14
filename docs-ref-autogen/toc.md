@@ -1,8 +1,8 @@
 # Power BI
 ## [Power BI Rest APIs](../docs-ref-index/index.md)
 ### [Available Features](power-bi/AvailableFeatures.yml)
-#### [availableFeatures GetAvailableFeatureByName](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatureByName.yml)
-#### [availableFeatures GetAvailableFeatures](power-bi/AvailableFeatures/availableFeatures_GetAvailableFeatures.yml)
+#### [Get Available Feature By Name](power-bi/AvailableFeatures/GetAvailableFeatureByName.yml)
+#### [Get Available Features](power-bi/AvailableFeatures/GetAvailableFeatures.yml)
 ### [Capacities](power-bi/Capacities.yml)
 #### [Get Capacities](power-bi/Capacities/GetCapacities.yml)
 ### [Dashboards](power-bi/Dashboards.yml)

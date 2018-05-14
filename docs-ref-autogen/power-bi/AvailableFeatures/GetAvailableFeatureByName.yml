@@ -1,36 +1,28 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.availablefeatures.availablefeaturesgetavailablefeatures
-name: availableFeatures GetAvailableFeatures
+uid: api.powerbi.com.power-bi.availablefeatures.getavailablefeaturebyname
+name: Get Available Feature By Name
 service: Power BI Rest APIs
 groupName: Available Features
 apiVersion: v1.0
-summary: "Gets a list of available features for user  \nThe **Get Available Features** operation returns all the available features for the user.  <br/><br/>**Note**: This API is currently limited to specifying embedded trial usage is on shared capacity. <br/><br/>**Required scope**: AvailableFeatures.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gets a list of available feature for user by name  \nThe **Get Available Feature By Name** operation returns the available features by the specified name for the user.  <br/><br/>**Note**: This API is currently limited to specifying embedded trial usage is on shared capacity. <br/><br/>**Required scope**: AvailableFeatures.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
 paths:
-- content: GET https://api.powerbi.com/v1.0/myorg/availableFeatures
-uriParameters: []
+- content: GET https://api.powerbi.com/v1.0/myorg/availableFeatures(featureName='{featureName}')
+uriParameters:
+- name: featureName
+  in: path
+  isRequired: true
+  types:
+  - uid: string
 responses:
 - name: 200 OK
   description: OK
   types:
-  - uid: ODataResponse[List[AvailableFeature]]
+  - uid: AvailableFeature
 requestHeader: []
 definitions:
-- name: ODataResponse[List[AvailableFeature]]
-  description: Odata response wrapper for a Power BI Available Features List
-  kind: object
-  properties:
-  - name: odata.context
-    description: ''
-    types:
-    - uid: string
-  - name: features
-    description: The Available Features List
-    types:
-    - uid: AvailableFeature
-      isArray: true
 - name: AvailableFeature
   description: Power BI Available Feature
   kind: object
