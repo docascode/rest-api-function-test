@@ -1,27 +1,21 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokeningroup
-name: Reports GenerateTokenInGroup
+uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreateingroup
+name: Reports GenerateTokenForCreateInGroup
 service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token In Group** operation creates embed token to allow view or edit of the specified report from a **Group**. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Generates an embed token to allow report creation on the specified workspace based on the specified dataset  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportKey}/GenerateToken
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/GenerateToken
 uriParameters:
 - name: groupId
   in: path
   isRequired: true
   description: The workspace id
-  types:
-  - uid: string
-- name: reportKey
-  in: path
-  isRequired: true
-  description: The report id
   types:
   - uid: string
 responses:
@@ -126,7 +120,24 @@ definitions:
   - name: Create
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/reports/GenerateToken
+    body: >-
+      {
+        "accessLevel": "Create",
+        "datasetId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+        "allowSaveAs": true
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "token": "H4sI....AAA=",
+        "tokenId": "49ae3742-54c0-4c29-af52-619ff93b5c80",
+        "expiration": "2018-07-29T17:58:19Z"
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

@@ -1,16 +1,16 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetokeningroup
-name: Tiles GenerateTokenInGroup
+uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetokeningroup
+name: Dashboards GenerateTokenInGroup
 service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: "Generate token to view the specified tile  \nThe **Tiles Generate Token In Group** operation creates embed token to allow view of the specified tile from a **Group**. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Generates an embed token to view the specified dashboard from the specified workspace  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/GenerateToken
 uriParameters:
 - name: groupId
   in: path
@@ -22,12 +22,6 @@ uriParameters:
   in: path
   isRequired: true
   description: The dashboard id
-  types:
-  - uid: string
-- name: tileKey
-  in: path
-  isRequired: true
-  description: The tile id
   types:
   - uid: string
 responses:
@@ -132,7 +126,34 @@ definitions:
   - name: Create
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards/69ffaa6c-b36d-4d01-96f5-1ed67c64d4af/GenerateToken
+    body: >-
+      {
+        "accessLevel": "View",
+        "identities": [
+          {
+            "username": "EffectiveIdentity",
+            "roles": [
+              "Role1"
+            ],
+            "customData": "MyCustomData",
+            "datasets": [
+              "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+            ]
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "token": "H4sI....AAA=",
+        "tokenId": "49ae3742-54c0-4c29-af52-619ff93b5c80",
+        "expiration": "2018-07-29T17:58:19Z"
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
