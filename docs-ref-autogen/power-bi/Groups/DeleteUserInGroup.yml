@@ -4,7 +4,7 @@ name: Delete User In Group
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: "Deletes the specified group  \nThe **Delete Group User** operation removes a user from a group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Deletes the specified user permissions to the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -32,7 +32,12 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users/{user}
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

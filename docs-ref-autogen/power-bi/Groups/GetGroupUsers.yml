@@ -4,7 +4,7 @@ name: Get Group Users
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: "Get a group users list  \nThe **Get Group Users** operation returns a JSON list of all users that belong to the group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a a list of users that has access to the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -65,7 +65,25 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "emailAddress": "john@contoso.com",
+            "groupUserAccessRight": "Admin"
+          },
+          {
+            "emailAddress": "Adam@contoso.com",
+            "groupUserAccessRight": "Member"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

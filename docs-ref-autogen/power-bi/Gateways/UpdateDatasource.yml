@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.datasources.gatewaysupdatedatasource
-name: Gateways UpdateDatasource
+uid: api.powerbi.com.power-bi.gateways.updatedatasource
+name: Update Datasource
 service: Power BI Rest APIs
-groupName: Datasources
+groupName: Gateways
 apiVersion: v1.0
-summary: "Update a datasource credentials  \nThe **Update Datasource** operation updates the credentials for the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Updates the credentials of the specified datasource from the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:

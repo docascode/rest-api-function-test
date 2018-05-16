@@ -1,15 +1,14 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.datasources.gatewaysgetdatasourcestatusbyid
-name: Gateways GetDatasourceStatusById
+uid: api.powerbi.com.power-bi.gateways.deletedatasource
+name: Delete Datasource
 service: Power BI Rest APIs
-groupName: Datasources
+groupName: Gateways
 apiVersion: v1.0
-summary: "Get a datasource status by id  \nThe **Get Datasource Status By Id** operation checks the connectivity status of the referenced **data source**. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Deletes the specified datasource from the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
-produces:
-- application/json
+produces: []
 paths:
-- content: GET https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/status
+- content: DELETE https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}
 uriParameters:
 - name: gatewayId
   in: path
@@ -33,7 +32,12 @@ definitions:
 - name: Object
   kind: object
   properties: []
-examples: []
+examples:
+- name: example
+  request:
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources/252b9de8-d915-4788-aaeb-ec8c2395f970
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.datasources.gatewaysadddatasourceuser
-name: Gateways AddDatasourceUser
+uid: api.powerbi.com.power-bi.gateways.adddatasourceuser
+name: Add Datasource User
 service: Power BI Rest APIs
-groupName: Datasources
+groupName: Gateways
 apiVersion: v1.0
-summary: "Get a datasource user  \nThe **Get Datasource User** operation adds the supplied user to a given data source. This user will then have permission to use the data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gives the specified user permissions to use the specified datasource  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -76,7 +76,17 @@ definitions:
   - name: ReadWrite
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources/252b9de8-d915-4788-aaeb-ec8c2395f970/users
+    body: >-
+      {
+        "emailAddress": "john@contoso.com",
+        "datasourceAccessRight": "Read"
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

@@ -4,7 +4,7 @@ name: Add Group User
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: "Add a group user  \nThe **Add Group User** operation adds a user to a group. <br/>**Note**: *Currently, you can only add admin users*. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gives the specified user permissions to the specified workspace  \n**Note**: Currently only Admin access right is supported. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -67,7 +67,12 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

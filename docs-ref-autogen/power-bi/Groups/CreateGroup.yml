@@ -4,7 +4,7 @@ name: Create Group
 service: Power BI Rest APIs
 groupName: Groups
 apiVersion: v1.0
-summary: "Create new group  \nThe **Create Group** operation creates a new group. <br/><br/> **Groups** are a collection of unified Azure Active Directory groups that the user is a member of and is available in the Power BI service. These are referred to as app workspaces within the Power BI service. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates new workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -103,7 +103,27 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups
+    body: >-
+      {
+        "name": "sample group"
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "f089354e-8366-4e18-aea3-4cb4a3a50b48",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "sample group"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

@@ -4,7 +4,7 @@ name: Get Gateway By Id
 service: Power BI Rest APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Returns the specified gateway  \nThe **Get Gateways** operation returns a JSON object of a **Gateway** entitiy. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -64,7 +64,22 @@ definitions:
     description: The public key  modulus
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+        "name": "My_Sample_Gateway",
+        "type": "Resource",
+        "publicKey": {
+          "exponent": "AQAB",
+          "modulus": "o6j2....cLk="
+        }
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
