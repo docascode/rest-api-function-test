@@ -1,8 +1,8 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.datasets.postdatasetingroup
-name: Post Dataset In Group
+uid: api.powerbi.com.power-bi.pushdatasets.datasetspostdatasetingroup
+name: Datasets PostDatasetInGroup
 service: Power BI Rest APIs
-groupName: Datasets
+groupName: Push Datasets
 apiVersion: v1.0
 summary: "Creates a new dataset on the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:

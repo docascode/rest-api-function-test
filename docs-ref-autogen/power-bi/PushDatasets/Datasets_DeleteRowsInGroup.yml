@@ -1,15 +1,21 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.datasets.deleterows
-name: Delete Rows
+uid: api.powerbi.com.power-bi.pushdatasets.datasetsdeleterowsingroup
+name: Datasets DeleteRowsInGroup
 service: Power BI Rest APIs
-groupName: Datasets
+groupName: Push Datasets
 apiVersion: v1.0
-summary: "Deletes all rows from the specified table within the specified dataset from \"My Workspace\"  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Deletes all rows from the specified table within the specified dataset from the specified workspace  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
-- content: DELETE https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/tables/{tableName}/rows
+- content: DELETE https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows
 uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
 - name: datasetKey
   in: path
   isRequired: true
@@ -35,7 +41,7 @@ definitions:
 examples:
 - name: example
   request:
-    uri: DELETE https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/tables/Product/rows
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/tables/Product/rows
   responses:
   - statusCode: "200"
 security:
