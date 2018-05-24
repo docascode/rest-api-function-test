@@ -26,8 +26,6 @@ operations:
   summary: "Returns a list of datasets from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.datasets.getdatasources
   summary: "Gets a list of datasources for the specified dataset from \"My Workspace\"  \n<br/>**Note**: 'gatewayId' and 'datasourceId' are only available when the dataset is bound to a gateway. each user have a cloud gateway which cloud data sources are bound to by default.<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.datasets.getdatasourcesasadmin
-  summary: Gets a list of datasource for the specified dataset as Admin
 - uid: api.powerbi.com.power-bi.datasets.getdatasourcesingroup
   summary: "Gets a list of datasources for the specified dataset from the specified workspace  \n<br/>**Note**: 'gatewayId' and 'datasourceId' are only available when the dataset is bound to a gateway. each user have a cloud gateway which cloud data sources are bound to by default.<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.datasets.getgatewaydatasources

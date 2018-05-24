@@ -1,0 +1,18 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.power-bi.admin
+name: Admin
+apiVersion: v1.0
+service: Power BI Rest APIs
+operations:
+- uid: api.powerbi.com.power-bi.admin.datasetsgetdatasourcesasadmin
+  summary: Gets a list of datasource for the specified dataset as Admin
+- uid: api.powerbi.com.power-bi.admin.groupsadduserasadmin
+  summary: With an administrative scope, grant user permissions to the given group
+- uid: api.powerbi.com.power-bi.admin.groupsdeleteuserasadmin
+  summary: With an administrative scope, remove user permissions to the given group
+- uid: api.powerbi.com.power-bi.admin.groupsgetgroupsasadmin
+  summary: With an adminstrative scope, returns a list of groups for an organization
+- uid: api.powerbi.com.power-bi.admin.groupsrestoredeletedgroupasadmin
+  summary: With an administrative scope, restore a deleted group
+- uid: api.powerbi.com.power-bi.admin.groupsupdategroupasadmin
+  summary: With administrative scope, updates the specified group properties

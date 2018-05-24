@@ -6,8 +6,6 @@ service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.groups.addgroupuser
   summary: "Gives the specified user permissions to the specified workspace  \n**Note**: Currently only Admin access right is supported. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.adduserasadmin
-  summary: With an administrative scope, grant user permissions to the given group
 - uid: api.powerbi.com.power-bi.groups.assignmyworkspacetocapacity
   summary: "Assign \"My Workspace\" to the specified capacity.  \n**Note**: To perform this operation the user must have (admin/assign) permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.groups.assigntocapacity
@@ -16,17 +14,9 @@ operations:
   summary: "Creates new workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.groups.deletegroup
   summary: "Deletes the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.deleteuserasadmin
-  summary: With an administrative scope, remove user permissions to the given group
 - uid: api.powerbi.com.power-bi.groups.deleteuseringroup
   summary: "Deletes the specified user permissions to the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.groups.getgroups
   summary: "Returns a list of workspaces the user has access to.  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.getgroupsasadmin
-  summary: With an adminstrative scope, returns a list of groups for an organization
 - uid: api.powerbi.com.power-bi.groups.getgroupusers
   summary: "Returns a a list of users that has access to the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.restoredeletedgroupasadmin
-  summary: With an administrative scope, restore a deleted group
-- uid: api.powerbi.com.power-bi.groups.updategroupasadmin
-  summary: With administrative scope, updates the specified group properties

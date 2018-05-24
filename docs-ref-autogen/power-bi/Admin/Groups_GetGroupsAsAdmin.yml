@@ -1,8 +1,8 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.groups.getgroupsasadmin
-name: Get Groups As Admin
+uid: api.powerbi.com.power-bi.admin.groupsgetgroupsasadmin
+name: Groups GetGroupsAsAdmin
 service: Power BI Rest APIs
-groupName: Groups
+groupName: Admin
 apiVersion: v1.0
 summary: With an adminstrative scope, returns a list of groups for an organization
 consumes: []
