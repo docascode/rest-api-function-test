@@ -6,10 +6,6 @@ service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.groups.addgroupuser
   summary: "Gives the specified user permissions to the specified workspace  \n**Note**: Currently only Admin access right is supported. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.assignmyworkspacetocapacity
-  summary: "Assign \"My Workspace\" to the specified capacity.  \n**Note**: To perform this operation the user must have (admin/assign) permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
-- uid: api.powerbi.com.power-bi.groups.assigntocapacity
-  summary: "Assign the specified workspace to the specified capacity  \n**Note**: To perform this operation the user must have (admin/assign) permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.groups.creategroup
   summary: "Creates new workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.groups.deletegroup

@@ -1,8 +1,8 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.groups.assignmyworkspacetocapacity
-name: Assign My Workspace To Capacity
+uid: api.powerbi.com.power-bi.capacities.groupsassignmyworkspacetocapacity
+name: Groups AssignMyWorkspaceToCapacity
 service: Power BI Rest APIs
-groupName: Groups
+groupName: Capacities
 apiVersion: v1.0
 summary: "Assign \"My Workspace\" to the specified capacity.  \n**Note**: To perform this operation the user must have (admin/assign) permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
