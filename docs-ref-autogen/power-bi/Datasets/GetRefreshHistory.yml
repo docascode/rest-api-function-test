@@ -49,23 +49,36 @@ definitions:
   kind: object
   properties:
   - name: refreshType
-    description: ''
+    description: Type of refresh request
     types:
-    - uid: string
+    - uid: RefreshTypeEnum
   - name: startTime
-    description: ''
+    description: DateTime of start
     types:
     - uid: string
   - name: endTime
-    description: ''
+    description: DateTime of termination (may be empty, if refresh is progress)
     types:
     - uid: string
   - name: serviceExceptionJson
-    description: ''
+    description: Json formatted failure exception details, including the cluster, time, Request and Activity IDs (only on error)
     types:
     - uid: string
   - name: status
-    description: ''
+    description: "'Unknown' - unknown completion state, or refresh is in progress. endTime will be empty with this status. <br/>'Completed' - refresh completed successfully <br/> 'Failed' - refresh failed. serviceExceptionJson will contain the error. <br/>'Disabled' - refresh disabled by Selective Refresh"
+    types:
+    - uid: string
+- name: RefreshTypeEnum
+  description: Type of refresh request
+  kind: enum
+  properties:
+  - name: Scheduled
+    types:
+    - uid: string
+  - name: OnDemand
+    types:
+    - uid: string
+  - name: ViaApi
     types:
     - uid: string
 examples:

@@ -33,7 +33,7 @@ requestBody:
   - name: notifyOption
     in: body
     isRequired: true
-    description: mail notification options
+    description: Mail notification options (success and/or failure, or none)
     types:
     - uid: NotifyOption
 requestHeader: []
@@ -46,11 +46,11 @@ definitions:
   kind: object
   properties:
   - name: notifyOption
-    description: mail notification options
+    description: Mail notification options (success and/or failure, or none)
     types:
     - uid: NotifyOption
 - name: NotifyOption
-  description: mail notification options
+  description: Mail notification options (success and/or failure, or none)
   kind: enum
   properties:
   - name: NoNotification
