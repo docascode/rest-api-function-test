@@ -6,7 +6,7 @@ groupName: Imports
 apiVersion: v1.0
 summary: "Creates a new import using the specified import info  \nThe **Post Import** operation creates content from either a PBIX, Excel, package file or file path in OneDrive Pro, and returns the ID of the Import created. This allows you to take a package of content, such as a PBIX or Excel file, and import it into a Power BI workspace. The **Imports** API splits the PBIX package into its individual parts including datasets and reports. It will then provide a metadata link between the actual import operation and the objects that were created from it. <br/>**Note**: The operation has the same behavior as if you imported an Excel file through the connect screen in Power BI. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
-- multipart/form-data
+- application/json
 produces:
 - application/json
 paths:
@@ -34,6 +34,23 @@ responses:
   description: Accepted
   types:
   - uid: Import
+requestBody:
+- parameters:
+  - name: filePath
+    in: body
+    description: The file path to import
+    types:
+    - uid: string
+  - name: connectionType
+    in: body
+    description: The import connection type
+    types:
+    - uid: string
+  - name: fileUrl
+    in: body
+    description: The SAS url of the temporary blob storage
+    types:
+    - uid: string
 requestHeader: []
 definitions:
 - name: ImportConflictHandlerMode
@@ -81,6 +98,22 @@ definitions:
     - uid: string
   - name: updatedDateTime
     description: Import last update time
+    types:
+    - uid: string
+- name: ImportInfo
+  description: The import info
+  kind: object
+  properties:
+  - name: filePath
+    description: The file path to import
+    types:
+    - uid: string
+  - name: connectionType
+    description: The import connection type
+    types:
+    - uid: string
+  - name: fileUrl
+    description: The SAS url of the temporary blob storage
     types:
     - uid: string
 - name: Report
