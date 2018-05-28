@@ -36,7 +36,7 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: Feature name
+    description: The feature name
     types:
     - uid: string
   - name: state

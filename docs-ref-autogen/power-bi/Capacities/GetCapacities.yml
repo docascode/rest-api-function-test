@@ -4,7 +4,7 @@ name: Get Capacities
 service: Power BI Rest APIs
 groupName: Capacities
 apiVersion: v1.0
-summary: "Returns a list of capacities the user has access to  \n<br/>**Required scope**: Capacity.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of capacities the user has access to  \n<br/>**Required scope**: Capacity.Read.All or Capacity.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -44,12 +44,12 @@ definitions:
     types:
     - uid: string
   - name: admins
-    description: An array of capacity admins
+    description: An array of capacity admins, **will be returned only for the capacity admins**
     types:
     - uid: string
       isArray: true
   - name: sku
-    description: The capacity SKU
+    description: The capacity SKU, **will be returned only for the capacity admins**
     types:
     - uid: string
   - name: state
@@ -57,7 +57,7 @@ definitions:
     types:
     - uid: stateEnum
   - name: capacityUserAccessRight
-    description: Access rights user has for capacity
+    description: Access right user has on the capacity
     types:
     - uid: capacityUserAccessRightEnum
 - name: stateEnum
@@ -95,7 +95,7 @@ definitions:
     types:
     - uid: string
 - name: capacityUserAccessRightEnum
-  description: Access rights user has for capacity
+  description: Access right user has on the capacity
   kind: enum
   properties:
   - name: None
@@ -107,7 +107,27 @@ definitions:
   - name: Admin
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/capacities
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "0f084df7-c13d-451b-af5f-ed0c466403b2",
+            "displayName": "MyCapacity",
+            "admins": [
+              "john@contoso.com"
+            ],
+            "sku": "A1",
+            "state": "Active",
+            "capacityUserAccessRight": "Admin"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
