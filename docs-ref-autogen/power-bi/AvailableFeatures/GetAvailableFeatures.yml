@@ -88,6 +88,19 @@ examples:
     uri: GET https://api.powerbi.com/v1.0/myorg/availableFeatures
   responses:
   - statusCode: "200"
+    body: >-
+      {
+        "features": [
+          {
+            "name": "embedTrial",
+            "state": "Enabled",
+            "extendedState": "Enabled",
+            "additionalInfo": {
+              "usage": 65
+            }
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
