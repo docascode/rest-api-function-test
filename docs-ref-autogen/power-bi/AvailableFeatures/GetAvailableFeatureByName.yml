@@ -4,7 +4,7 @@ name: Get Available Feature By Name
 service: Power BI Rest APIs
 groupName: Available Features
 apiVersion: v1.0
-summary: "Returns the specified available feature for user by name  \n**Note**: This API is currently limited to specifying embedded trial usage is on shared capacity. <br/><br/>**Required scope**: None"
+summary: "Returns the specified available feature for user by name  \n<br/>**Required scope**: None"
 consumes: []
 produces:
 - application/json
@@ -14,6 +14,7 @@ uriParameters:
 - name: featureName
   in: path
   isRequired: true
+  description: The feature name
   types:
   - uid: string
 responses:
@@ -32,19 +33,19 @@ definitions:
     types:
     - uid: string
   - name: state
-    description: Feature state
+    description: The feature state
     types:
     - uid: FeatureState
   - name: extendedState
-    description: Feature extended state
+    description: The feature extended state
     types:
     - uid: FeatureExtendedState
   - name: additionalInfo
-    description: Additional Feature Info
+    description: Additional feature information
     types:
     - uid: AdditionalFeatureInfo
 - name: FeatureState
-  description: Feature state
+  description: The feature state
   kind: enum
   properties:
   - name: Enabled
@@ -54,7 +55,7 @@ definitions:
     types:
     - uid: string
 - name: FeatureExtendedState
-  description: Feature extended state
+  description: The feature extended state
   kind: enum
   properties:
   - name: Enabled
@@ -67,14 +68,19 @@ definitions:
     types:
     - uid: string
 - name: AdditionalFeatureInfo
-  description: Additional Feature Info
+  description: Additional feature information
   kind: object
   properties:
   - name: Usage
-    description: The token usage (in %) from the limitation on shared capacity
+    description: The token generation usage (in %) from the limitation on shared capacity
     types:
     - uid: integer
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/availableFeatures(featureName='embedTrial')
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

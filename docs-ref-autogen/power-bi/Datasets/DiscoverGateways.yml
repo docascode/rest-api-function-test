@@ -4,7 +4,7 @@ name: Discover Gateways
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Returns a list of gateways that the specefied dataset from \"My Workspace\" can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of gateways that the specefied dataset from **\"My Workspace\"** can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

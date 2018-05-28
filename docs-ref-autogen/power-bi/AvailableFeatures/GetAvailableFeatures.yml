@@ -4,7 +4,7 @@ name: Get Available Features
 service: Power BI Rest APIs
 groupName: Available Features
 apiVersion: v1.0
-summary: "Returns a list of available features for the user  \n**Note**: This API is currently limited to specifying embedded trial usage is on shared capacity. <br/><br/>**Required scope**: None"
+summary: "Returns a list of available features for the user  \n<br/>**Required scope**: None"
 consumes: []
 produces:
 - application/json
@@ -19,7 +19,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[AvailableFeature]]
-  description: Odata response wrapper for a Power BI Available Features List
+  description: Odata response wrapper for a Power BI Available Features list
   kind: object
   properties:
   - name: odata.context
@@ -40,19 +40,19 @@ definitions:
     types:
     - uid: string
   - name: state
-    description: Feature state
+    description: The feature state
     types:
     - uid: FeatureState
   - name: extendedState
-    description: Feature extended state
+    description: The feature extended state
     types:
     - uid: FeatureExtendedState
   - name: additionalInfo
-    description: Additional Feature Info
+    description: Additional feature information
     types:
     - uid: AdditionalFeatureInfo
 - name: FeatureState
-  description: Feature state
+  description: The feature state
   kind: enum
   properties:
   - name: Enabled
@@ -62,7 +62,7 @@ definitions:
     types:
     - uid: string
 - name: FeatureExtendedState
-  description: Feature extended state
+  description: The feature extended state
   kind: enum
   properties:
   - name: Enabled
@@ -75,14 +75,19 @@ definitions:
     types:
     - uid: string
 - name: AdditionalFeatureInfo
-  description: Additional Feature Info
+  description: Additional feature information
   kind: object
   properties:
   - name: Usage
-    description: The token usage (in %) from the limitation on shared capacity
+    description: The token generation usage (in %) from the limitation on shared capacity
     types:
     - uid: integer
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/availableFeatures
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
