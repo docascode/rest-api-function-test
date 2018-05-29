@@ -7,7 +7,7 @@ operations:
 - uid: api.powerbi.com.power-bi.dashboards.adddashboard
   summary: "Creates a new empty dashboard on **\"My Workspace\"**  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.dashboards.adddashboardingroup
-  summary: "Creates a new empty dashboard on the specified workspace  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Creates a new empty dashboard on the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.dashboards.clonetile
   summary: "Clones the specified tile from **\"My Workspace\"**  \n<br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.dashboards.clonetileingroup
