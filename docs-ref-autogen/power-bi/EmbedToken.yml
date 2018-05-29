@@ -9,7 +9,7 @@ operations:
 - uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetokeningroup
   summary: "Generates an embed token to view the specified dashboard from the specified workspace  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.datasetsgeneratetokeningroup
-  summary: "Generates an embed token to view the specified dataset from the specified workspace  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Generates an embed token to view the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetoken
   summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token** operation creates embed token to allow view or edit of the specified report. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreate
