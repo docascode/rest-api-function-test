@@ -66,6 +66,9 @@ definitions:
   - name: Overwrite
     types:
     - uid: string
+  - name: CreateOrOverwrite
+    types:
+    - uid: string
 - name: Import
   description: The import object
   kind: object

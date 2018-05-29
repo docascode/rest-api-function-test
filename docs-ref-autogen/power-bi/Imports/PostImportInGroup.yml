@@ -30,7 +30,7 @@ uriParameters:
   in: query
   description: Determines what to do if a dataset with the same name already exists
   types:
-  - uid: string
+  - uid: ImportConflictHandlerMode
 responses:
 - name: 200 OK
   description: OK
@@ -59,6 +59,22 @@ requestBody:
     - uid: string
 requestHeader: []
 definitions:
+- name: ImportConflictHandlerMode
+  description: Determines what to do if a dataset with the same name already exists
+  kind: enum
+  properties:
+  - name: Ignore
+    types:
+    - uid: string
+  - name: Abort
+    types:
+    - uid: string
+  - name: Overwrite
+    types:
+    - uid: string
+  - name: CreateOrOverwrite
+    types:
+    - uid: string
 - name: Import
   description: The import object
   kind: object
