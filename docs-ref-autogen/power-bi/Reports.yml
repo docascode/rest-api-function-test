@@ -5,7 +5,7 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.reports.clonereport
-  summary: "Clones the specified report from **\"My Workspace\"**  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+  summary: "Clones the specified report from **\"My Workspace\"**  \n<br/>**Required scope**: Content.Create<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.clonereportingroup
   summary: "Clones the specified report from the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.deletereport

@@ -41,7 +41,7 @@ definitions:
   kind: object
   properties:
   - name: credentials
-    description: The credentials. this depends on the 'credentialType' value, see [Update Datasource Examples](../updatedatasource#examples).
+    description: The credentials. this depends on the 'credentialType' value, see [Update Datasource Examples](./updatedatasource#examples).
     types:
     - uid: string
   - name: credentialType

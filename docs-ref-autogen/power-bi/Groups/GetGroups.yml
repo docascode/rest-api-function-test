@@ -133,6 +133,40 @@ examples:
             "isReadOnly": false,
             "isOnDedicatedCapacity": false,
             "name": "sample group"
+          },
+          {
+            "id": "3d9b93c6-7b6d-4801-a491-1738910904fd",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "markiting group"
+          },
+          {
+            "id": "a2f89923-421a-464e-bf4c-25eab39bb09f",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "contoso"
+          }
+        ]
+      }
+- name: example with filter
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups?$filter=$filter=contains(name,'markiting')%20or%20name%20eq%20'contoso'
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "3d9b93c6-7b6d-4801-a491-1738910904fd",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "markiting group"
+          },
+          {
+            "id": "a2f89923-421a-464e-bf4c-25eab39bb09f",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "contoso"
           }
         ]
       }

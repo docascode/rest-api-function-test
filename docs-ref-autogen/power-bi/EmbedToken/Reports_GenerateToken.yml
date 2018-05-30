@@ -4,7 +4,7 @@ name: Reports GenerateToken
 service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token** operation creates embed token to allow view or edit of the specified report. <br/><br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Generate token to view or edit the specified report  \nThe **Reports Generate Token** operation creates embed token to allow view or edit of the specified report. <br/><br/>**Required scope**: <ul><li>Report.ReadWrite.All or Report.Read.All</li><li>Dataset.ReadWrite.All or Dataset.Read.All</li><li>Content.Create (required only if allowSaveAs specified in [GenerateTokenRequest](./GenerateTokenRequest)</li></ul><br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -27,22 +27,22 @@ requestBody:
 - parameters:
   - name: accessLevel
     in: body
-    description: The dataset mode or type
+    description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
     types:
     - uid: TokenAccessLevel
   - name: datasetId
     in: body
-    description: The dataset Id
+    description: Dataset id for report creation (Only applies when generating EmbedToken for report creation)
     types:
     - uid: string
   - name: allowSaveAs
     in: body
-    description: Allow SaveAs the report with generated token.
+    description: Indicating that an embedded report can be saved as a new report (default value is 'false', only applies when generating EmbedToken for report embedding)
     types:
     - uid: boolean
   - name: identities
     in: body
-    description: The effective identities to use for RLS rules
+    description: List of identities to use for RLS rules (Specifying identities is not supported when generating EmbedToken for dataset embedding)
     types:
     - uid: EffectiveIdentity
       isArray: true
@@ -53,21 +53,21 @@ definitions:
   kind: object
   properties:
   - name: username
-    description: The effective username reflected by a token for applying RLS rules
+    description: The effective username reflected by a token for applying RLS rules (username can be composed of alpha-numerical characters or any of the following characters  '.', '-', '_', '!', '#', '^', '~', '\', '@', username cannot contain spaces and must be up to 256 characters)
     types:
     - uid: string
   - name: roles
-    description: An array of roles reflected by a token when applying RLS rules
+    description: An array of roles reflected by a token when applying RLS rules (identity can contain up to 50 roles, role can be composed of any character besides ',' and must be up to 50 characters)
     types:
     - uid: string
       isArray: true
   - name: datasets
-    description: An array of datasets for which this mapping applies to, if not provided - applies to all datasets
+    description: An array of datasets for which this identity applies to
     types:
     - uid: string
       isArray: true
   - name: customData
-    description: The custom data string to be added to the AS connection string
+    description: The value of customdata to be used for applying RLS rules (Only supported for live connections to Azure Analysis Services)
     types:
     - uid: string
 - name: EmbedToken
@@ -91,24 +91,24 @@ definitions:
   kind: object
   properties:
   - name: accessLevel
-    description: The dataset mode or type
+    description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
     types:
     - uid: TokenAccessLevel
   - name: datasetId
-    description: The dataset Id
+    description: Dataset id for report creation (Only applies when generating EmbedToken for report creation)
     types:
     - uid: string
   - name: allowSaveAs
-    description: Allow SaveAs the report with generated token.
+    description: Indicating that an embedded report can be saved as a new report (default value is 'false', only applies when generating EmbedToken for report embedding)
     types:
     - uid: boolean
   - name: identities
-    description: The effective identities to use for RLS rules
+    description: List of identities to use for RLS rules (Specifying identities is not supported when generating EmbedToken for dataset embedding)
     types:
     - uid: EffectiveIdentity
       isArray: true
 - name: TokenAccessLevel
-  description: The dataset mode or type
+  description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
   kind: enum
   properties:
   - name: View
