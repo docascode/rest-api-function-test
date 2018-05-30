@@ -99,7 +99,7 @@ definitions:
     types:
     - uid: string
   - name: defaultRetentionPolicy
-    description: The dataset default data retention policy
+    description: The dataset default data retention policy, only relevant to Post Dataset API
     types:
     - uid: string
   - name: addRowsAPIEnabled
@@ -107,7 +107,7 @@ definitions:
     types:
     - uid: boolean
   - name: tables
-    description: The dataset tables
+    description: The dataset tables, only relevant to Post Dataset API
     types:
     - uid: Table
       isArray: true
@@ -116,17 +116,17 @@ definitions:
     types:
     - uid: string
   - name: relationships
-    description: The dataset relationships
+    description: The dataset relationships, only relevant to Post Dataset API
     types:
     - uid: Relationship
       isArray: true
   - name: datasources
-    description: The datasources associated with this dataset
+    description: The datasources associated with this dataset, only relevant to Post Dataset API
     types:
     - uid: Datasource
       isArray: true
   - name: defaultMode
-    description: The dataset mode or type
+    description: The dataset mode or type, only relevant to Post Dataset API
     types:
     - uid: DatasetMode
   - name: IsRefreshable
@@ -225,7 +225,7 @@ definitions:
     types:
     - uid: string
 - name: DatasetMode
-  description: The dataset mode or type
+  description: The dataset mode or type, only relevant to Post Dataset API
   kind: enum
   properties:
   - name: AsAzure
