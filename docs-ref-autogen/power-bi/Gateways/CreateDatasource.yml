@@ -52,7 +52,7 @@ definitions:
   kind: object
   properties:
   - name: credentials
-    description: The credentials. this depends on the 'credentialType' value, see [Examples](#examples).
+    description: The credentials. this depends on the 'credentialType' value, see [Update Datasource Examples](../updatedatasource#examples).
     types:
     - uid: string
   - name: credentialType
@@ -64,7 +64,7 @@ definitions:
     types:
     - uid: encryptedConnectionEnum
   - name: encryptionAlgorithm
-    description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource use 'RSA-OAEP' with gateway public key to encrypt credentials
+    description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
     types:
     - uid: encryptionAlgorithmEnum
   - name: privacyLevel
@@ -157,7 +157,7 @@ definitions:
     types:
     - uid: string
 - name: encryptionAlgorithmEnum
-  description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource use 'RSA-OAEP' with gateway public key to encrypt credentials
+  description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
   kind: enum
   properties:
   - name: None
@@ -194,7 +194,12 @@ definitions:
     description: Password required to access the datasource
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
