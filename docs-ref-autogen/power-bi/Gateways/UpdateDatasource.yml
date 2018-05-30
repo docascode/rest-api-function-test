@@ -41,7 +41,7 @@ definitions:
   kind: object
   properties:
   - name: credentials
-    description: The credentials. this depends on the 'credentialType' value, see exaples below.
+    description: The credentials. this depends on the 'credentialType' value, see [Examples](#examples).
     types:
     - uid: string
   - name: credentialType
@@ -153,7 +153,7 @@ examples:
       {
         "credentialDetails": {
           "credentialType": "Windows",
-          "credentials": "",
+          "credentials": "{\"credentialData\":[{\"name\":\"username\", \"value\":\"contoso\\john\"},{\"name\":\"password\", \"value\":\"*****\"}]}",
           "encryptedConnection": "Encrypted",
           "encryptionAlgorithm": "None",
           "privacyLevel": "None"
@@ -168,7 +168,7 @@ examples:
       {
         "credentialDetails": {
           "credentialType": "Anonymous",
-          "credentials": "",
+          "credentials": "{\"credentialData\":\"\"}",
           "encryptedConnection": "Encrypted",
           "encryptionAlgorithm": "None",
           "privacyLevel": "None"
@@ -183,7 +183,7 @@ examples:
       {
         "credentialDetails": {
           "credentialType": "OAuth",
-          "credentials": "",
+          "credentials": "{\"credentialData\":[{\"name\":\"accessToken\", \"value\":\"eyJ0....fwtQ\"}]}",
           "encryptedConnection": "Encrypted",
           "encryptionAlgorithm": "None",
           "privacyLevel": "None"
@@ -198,7 +198,7 @@ examples:
       {
         "credentialDetails": {
           "credentialType": "Key",
-          "credentials": "",
+          "credentials": "{\"credentialData\":[{\"name\":\"key\", \"value\":\"ec....LA=\"}]}",
           "encryptedConnection": "Encrypted",
           "encryptionAlgorithm": "None",
           "privacyLevel": "None"
