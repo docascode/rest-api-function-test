@@ -64,7 +64,7 @@ definitions:
     types:
     - uid: encryptedConnectionEnum
   - name: encryptionAlgorithm
-    description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
+    description: The encryption algorithm, for cloud datasource use 'None', for On-OnPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
     types:
     - uid: encryptionAlgorithmEnum
   - name: privacyLevel
@@ -157,7 +157,7 @@ definitions:
     types:
     - uid: string
 - name: encryptionAlgorithmEnum
-  description: The encryption algorithm, for cloud datasource use 'None', for On-OPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
+  description: The encryption algorithm, for cloud datasource use 'None', for On-OnPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
   kind: enum
   properties:
   - name: None

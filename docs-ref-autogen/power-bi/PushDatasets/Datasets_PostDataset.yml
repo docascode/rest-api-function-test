@@ -369,29 +369,6 @@ examples:
         "name": "SalesMarketing",
         "defaultRetentionPolicy": "basicFIFO"
       }
-- name: Azure Analysis Services example
-  request:
-    uri: POST https://api.powerbi.com/v1.0/myorg/datasets
-    body: >-
-      {
-        "name": "SalesMarketing",
-        "defaultMode": "AzureAS",
-        "tables": [],
-        "datasources": [
-          {
-            "name": "SalesMarketing",
-            "connectionString": "Data Source=asazure://westcentralus.asazure.windows.net/mypowerbi;Initial Catalog=SalesMarketing;Cube=Model"
-          }
-        ]
-      }
-  responses:
-  - statusCode: "201"
-    body: >-
-      {
-        "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
-        "name": "SalesMarketing",
-        "defaultRetentionPolicy": "basicFIFO"
-      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
