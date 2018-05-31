@@ -5,14 +5,14 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.admin.datasetsgetdatasourcesasadmin
-  summary: Gets a list of datasource for the specified dataset as Admin
+  summary: "Returns a list of datasources for the specified dataset for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.Read.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.admin.groupsadduserasadmin
-  summary: With an administrative scope, grant user permissions to the given group
+  summary: "Grant user permissions to the given workspace for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.admin.groupsdeleteuserasadmin
-  summary: With an administrative scope, remove user permissions to the given group
+  summary: "Remove user permissions to the given workspace for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.admin.groupsgetgroupsasadmin
-  summary: With an adminstrative scope, returns a list of groups for an organization
+  summary: "Returns a list of workspaces for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.admin.groupsrestoredeletedgroupasadmin
-  summary: With an administrative scope, restore a deleted group
+  summary: "Restore a deleted workspace for your organization under an adminstrative scope  \n**Note**: This API is currently limited to restoring preview workspaces. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.admin.groupsupdategroupasadmin
-  summary: With administrative scope, updates the specified group properties
+  summary: "Updates the specified workspace properties for your organization under an adminstrative scope  \n**Note**: This API is currently limited to updating preview workspaces and only name and description can be updated, with name unique inside an organization. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

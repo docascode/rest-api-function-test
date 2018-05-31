@@ -4,7 +4,7 @@ name: Groups AddUserAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: With an administrative scope, grant user permissions to the given group
+summary: "Grant user permissions to the given workspace for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -67,7 +67,17 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/admin/groups/206d27ca-94e8-4a69-855b-5c32bdd458a8/users
+    body: >-
+      {
+        "emailAddress": "john@contoso.com",
+        "groupUserAccessRight": "Admin"
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

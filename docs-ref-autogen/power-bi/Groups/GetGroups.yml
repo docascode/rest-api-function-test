@@ -15,7 +15,7 @@ paths:
 uriParameters:
 - name: $filter
   in: query
-  description: Filters the results, based on a Boolean condition.
+  description: Filters the results, based on a boolean condition.
   types:
   - uid: string
 - name: $top

@@ -4,7 +4,7 @@ name: Groups UpdateGroupAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: With administrative scope, updates the specified group properties
+summary: "Updates the specified workspace properties for your organization under an adminstrative scope  \n**Note**: This API is currently limited to updating preview workspaces and only name and description can be updated, with name unique inside an organization. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -143,7 +143,17 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: PATCH https://api.powerbi.com/v1.0/myorg/admin/groups/e2284830-c8dc-416b-b19a-8cdcd2729332
+    body: >-
+      {
+        "name": "Updated Sales Results",
+        "description": "Refreshed sales numbers"
+      }
+  responses:
+  - statusCode: "200"
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

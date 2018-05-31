@@ -4,7 +4,7 @@ name: Groups GetGroupsAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: With an adminstrative scope, returns a list of groups for an organization
+summary: "Returns a list of workspaces for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -20,7 +20,7 @@ uriParameters:
   - uid: string
 - name: $filter
   in: query
-  description: Filters the results, based on a Boolean condition.
+  description: Filters the results, based on a boolean condition.
   types:
   - uid: string
 - name: $top
@@ -124,7 +124,81 @@ definitions:
   - name: Contributor
     types:
     - uid: string
-examples: []
+examples:
+- name: get workspaces with users expanded
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/admin/groups?$expand=users
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "e380d1d0-1fa6-460b-9a90-1a5c6b02414c",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "Sample Group 1",
+            "description": "Sample group",
+            "type": "Workspace",
+            "state": "Active",
+            "users": [
+              {
+                "emailAddress": "john@contoso.com",
+                "groupUserAccessRight": "Admin"
+              }
+            ]
+          },
+          {
+            "id": "183dcf10-47b8-48c4-84aa-f0bf9d5f8fcf",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "Sample Group 2",
+            "description": "Deleted sample group",
+            "type": "Workspace",
+            "state": "Deleted",
+            "users": []
+          }
+        ]
+      }
+- name: get orphaned workspaces
+  request:
+    uri: "GET https://api.powerbi.com/v1.0/myorg/admin/groups?$expand=users&$filter=(not users/any()) or (not users/any(u: u/groupUserAccessRight eq Microsoft.PowerBI.ServiceContracts.Api.GroupUserAccessRight'Admin'))"
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "d5caa808-8c91-400a-911d-06af08dbcc31",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "Orphaned Group",
+            "description": "Sample orphan group",
+            "type": "Workspace",
+            "state": "Active",
+            "users": []
+          }
+        ]
+      }
+- name: get deleted workspaces
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/admin/groups?$filter=state eq 'Deleted'
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "183dcf10-47b8-48c4-84aa-f0bf9d5f8fcf",
+            "isReadOnly": false,
+            "isOnDedicatedCapacity": false,
+            "name": "Sample Group 2",
+            "description": "Deleted sample group",
+            "type": "Workspace",
+            "state": "Deleted"
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.
