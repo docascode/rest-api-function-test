@@ -4,7 +4,7 @@ name: Tiles GenerateToken
 service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: This functionality only available in a workspace context. please use [Tiles GenerateTokenInGroup](./tiles_generatetokeningroup)
+summary: '[!IMPORTANT] This functionality only available in a workspace context. please use [Tiles GenerateTokenInGroup](./tiles_generatetokeningroup)'
 consumes:
 - application/json
 produces:
