@@ -46,6 +46,10 @@ examples:
 - name: example
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.SetAllConnections
+    body: >-
+      {
+        "connectionString": "data source=MyServer.database.windows.net;initial catalog=MyDatabase;persist security info=True;encrypt=True;trustservercertificate=False"
+      }
   responses:
   - statusCode: "200"
 security:

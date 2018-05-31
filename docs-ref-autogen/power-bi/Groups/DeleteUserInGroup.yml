@@ -35,7 +35,7 @@ definitions:
 examples:
 - name: example
   request:
-    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users/{user}
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/users/john@contoso.com
   responses:
   - statusCode: "200"
 security:

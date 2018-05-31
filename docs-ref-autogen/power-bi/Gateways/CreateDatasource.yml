@@ -198,6 +198,19 @@ examples:
 - name: example
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources
+    body: >-
+      {
+        "dataSourceType": "SQL",
+        "connectionDetails": "{\"server\":\"MyServer\",\"database\":\"MyDatabase\"}",
+        "datasourceName": "Sample Datasource",
+        "credentialDetails": {
+          "credentialType": "Windows",
+          "credentials": "AB....EF==",
+          "encryptedConnection": "Encrypted",
+          "encryptionAlgorithm": "RSA-OAEP",
+          "privacyLevel": "None"
+        }
+      }
   responses:
   - statusCode: "200"
 security:
