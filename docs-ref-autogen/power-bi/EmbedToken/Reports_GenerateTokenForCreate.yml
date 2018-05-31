@@ -4,7 +4,7 @@ name: Reports GenerateTokenForCreate
 service: Power BI Rest APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: This functionality only available in a workspace context. please use (Reports GenerateTokenForCreateInGroup)[./reports_generatetokenforcreateingroup]
+summary: This functionality only available in a workspace context. please use [Reports GenerateTokenForCreateInGroup](./reports_generatetokenforcreateingroup)
 consumes:
 - application/json
 produces:

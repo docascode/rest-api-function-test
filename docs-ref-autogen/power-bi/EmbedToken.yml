@@ -5,20 +5,20 @@ apiVersion: v1.0
 service: Power BI Rest APIs
 operations:
 - uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetoken
-  summary: This functionality only available in a workspace context. please use (Dashboards GenerateTokenInGroup)[./dashboards_generatetokeningroup]
+  summary: This functionality only available in a workspace context. please use [Dashboards GenerateTokenInGroup](./dashboards_generatetokeningroup)
 - uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetokeningroup
   summary: "Generates an embed token to view the specified dashboard from the specified workspace  \n<br/>**Required scope**: (all of the below) <ul><li>Dashboard.ReadWrite.All or Dashboard.Read.All</li><li>Report.ReadWrite.All or Report.Read.All </li><li>Dataset.ReadWrite.All or Dataset.Read.All</li></ul> <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.datasetsgeneratetokeningroup
   summary: "Generates an embed token to view the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetoken
-  summary: This functionality only available in a workspace context. please use (Reports GenerateTokenInGroup)[./reports_generatetoken]
+  summary: This functionality only available in a workspace context. please use [Reports GenerateTokenInGroup](./reports_generatetoken)
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreate
-  summary: This functionality only available in a workspace context. please use (Reports GenerateTokenForCreateInGroup)[./reports_generatetokenforcreateingroup]
+  summary: This functionality only available in a workspace context. please use [Reports GenerateTokenForCreateInGroup](./reports_generatetokenforcreateingroup)
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreateingroup
   summary: "Generates an embed token to allow report creation on the specified workspace based on the specified dataset  \n<br/>**Required scope**: (all of the below) <ul><li>Content.Create</li><li>Report.ReadWrite.All or Report.Read.All</li><li>Dataset.ReadWrite.All or Dataset.Read.All</li></ul> <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokeningroup
   summary: "Generates an embed token to view or edit the specified report from the specified workspace  \n<br/>**Required scope**: (all of the below) <ul><li>Report.ReadWrite.All or Report.Read.All</li><li>Dataset.ReadWrite.All or Dataset.Read.All</li><li>Content.Create - required only if allowSaveAs specified in [GenerateTokenRequest](#GenerateTokenRequest)</li></ul> <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetoken
-  summary: This functionality only available in a workspace context. please use (Tiles GenerateTokenInGroup)[./tiles_generatetokeningroup]
+  summary: This functionality only available in a workspace context. please use [Tiles GenerateTokenInGroup](./tiles_generatetokeningroup)
 - uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetokeningroup
   summary: "Generates an embed token to view the specified tile from the specified workspace  \n<br/>**Required scope**: (all of the below) <ul><li>Dashboard.ReadWrite.All or Dashboard.Read.All</li><li>Report.ReadWrite.All or Report.Read.All </li><li>Dataset.ReadWrite.All or Dataset.Read.All</li></ul> <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."

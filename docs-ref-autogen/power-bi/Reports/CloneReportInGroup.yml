@@ -33,17 +33,17 @@ requestBody:
 - parameters:
   - name: name
     in: body
-    description: The requested report name
+    description: The new report name
     types:
     - uid: string
   - name: targetWorkspaceId
     in: body
-    description: Optional parameter for specifying the target workspace id
+    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>if not provided report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
     in: body
-    description: Optional parameter for specifying the target associated model (dataset) id
+    description: Optional parameter for specifying the target associated dataset id. <br/>if not provided report will be associated with the same dataset as the source report.
     types:
     - uid: string
 requestHeader: []
@@ -77,15 +77,15 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The requested report name
+    description: The new report name
     types:
     - uid: string
   - name: targetWorkspaceId
-    description: Optional parameter for specifying the target workspace id
+    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>if not provided report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
-    description: Optional parameter for specifying the target associated model (dataset) id
+    description: Optional parameter for specifying the target associated dataset id. <br/>if not provided report will be associated with the same dataset as the source report.
     types:
     - uid: string
 examples: []
