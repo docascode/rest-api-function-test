@@ -4,7 +4,7 @@ name: Add Datasource User
 service: Power BI Rest APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Gives the specified user permissions to use the specified datasource  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Gives the specified user permissions to use the specified datasource  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

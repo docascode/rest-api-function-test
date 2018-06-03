@@ -4,7 +4,7 @@ name: Update Report Content In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Updates the specified report from the specified workspace to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Updates the specified report from the specified workspace to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

@@ -4,7 +4,7 @@ name: Get Dashboards
 service: Power BI Rest APIs
 groupName: Dashboards
 apiVersion: v1.0
-summary: "Returns a list of dashboards from **\"My Workspace\"**  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns a list of dashboards from **\"My Workspace\"**  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

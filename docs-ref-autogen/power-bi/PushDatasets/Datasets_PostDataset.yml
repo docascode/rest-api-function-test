@@ -4,7 +4,7 @@ name: Datasets PostDataset
 service: Power BI Rest APIs
 groupName: Push Datasets
 apiVersion: v1.0
-summary: "Creates a new dataset on **\"My Workspace\"**  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates a new dataset on **\"My Workspace\"**  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

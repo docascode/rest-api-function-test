@@ -4,7 +4,7 @@ name: Clone Report In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Clones the specified report from the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Clones the specified report from the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:

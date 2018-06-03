@@ -4,7 +4,7 @@ name: Get Report In Group
 service: Power BI Rest APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Returns the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Returns the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json

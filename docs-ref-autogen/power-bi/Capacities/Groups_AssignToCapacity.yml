@@ -4,7 +4,7 @@ name: Groups AssignToCapacity
 service: Power BI Rest APIs
 groupName: Capacities
 apiVersion: v1.0
-summary: "Assigns the specified workspace to the specified capacity.  \n**Note**: To perform this operation the user must be admin on the specified workspace and have admin or assign permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Assigns the specified workspace to the specified capacity.  \n**Note**: To perform this operation the user must be admin on the specified workspace and have admin or assign permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []

@@ -4,7 +4,7 @@ name: Create Datasource
 service: Power BI Rest APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Create a new datasource on the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Create a new datasource on the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
