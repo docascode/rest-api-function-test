@@ -4,7 +4,7 @@ name: Post Import In Group
 service: Power BI Rest APIs
 groupName: Imports
 apiVersion: v1.0
-summary: "Creates new content on the specified workspace from PBIX, Excel or file path in OneDrive Pro  \n<ul><li>To import from OneDrive pro, request Headers should include 'Content-Type: application/json' with [ImportInfo](#importinfo) in the request body </li><li>To import a file, request Headers should include 'Content-Type: multipart/form-data' with the file [encoded as form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body</li></ul> <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates new content on the specified workspace from PBIX, Excel or file path in OneDrive Pro  \n**Note**: To import from OneDrive pro, request Headers should include 'Content-Type: application/json' with [ImportInfo](#importinfo) in the request body.<br/>To import a file, request Headers should include 'Content-Type: multipart/form-data' with the file [encoded as form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
