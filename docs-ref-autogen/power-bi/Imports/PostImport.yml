@@ -17,7 +17,7 @@ uriParameters:
 - name: datasetDisplayName
   in: query
   isRequired: true
-  description: The display name of the dataset
+  description: The display name of the dataset, not supported when importing from OneDrive Pro
   types:
   - uid: string
 - name: nameConflict
@@ -38,17 +38,17 @@ requestBody:
 - parameters:
   - name: filePath
     in: body
-    description: The file path to import
+    description: The OneDrive pro file path to import, can be absolute or relative
     types:
     - uid: string
   - name: connectionType
     in: body
-    description: The import connection type
+    description: The import connection type for OneDrive pro file
     types:
-    - uid: string
+    - uid: connectionTypeEnum
   - name: fileUrl
     in: body
-    description: The SAS url of the temporary blob storage
+    description: The SAS url of the temporary blob storage, used to import pbix files larger than 1 GB.
     types:
     - uid: string
 requestHeader: []
@@ -108,15 +108,15 @@ definitions:
   kind: object
   properties:
   - name: filePath
-    description: The file path to import
+    description: The OneDrive pro file path to import, can be absolute or relative
     types:
     - uid: string
   - name: connectionType
-    description: The import connection type
+    description: The import connection type for OneDrive pro file
     types:
-    - uid: string
+    - uid: connectionTypeEnum
   - name: fileUrl
-    description: The SAS url of the temporary blob storage
+    description: The SAS url of the temporary blob storage, used to import pbix files larger than 1 GB.
     types:
     - uid: string
 - name: Report
@@ -206,6 +206,16 @@ definitions:
     description: Dataset requires onprem gateway
     types:
     - uid: boolean
+- name: connectionTypeEnum
+  description: The import connection type for OneDrive pro file
+  kind: enum
+  properties:
+  - name: import
+    types:
+    - uid: string
+  - name: connect
+    types:
+    - uid: string
 - name: Table
   description: A dataset table
   kind: object

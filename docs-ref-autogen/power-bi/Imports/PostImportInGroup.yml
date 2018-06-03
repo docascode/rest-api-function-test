@@ -4,7 +4,7 @@ name: Post Import In Group
 service: Power BI Rest APIs
 groupName: Imports
 apiVersion: v1.0
-summary: "Creates a new import using the specified import info  \nThe **Post Import In Group** operation creates content in  a **Group** from either a PBIX, Excel, package file or file path in OneDrive Pro, and returns the ID of the Import created. This allows you to take a package of content, such as a PBIX or Excel file, and import it into a Power BI workspace. The **Imports** API splits the PBIX package into its individual parts including datasets and reports. It will then provide a metadata link between the actual import operation and the objects that were created from it. <br/>**Note**: The operation has the same behavior as if you imported an Excel file through the connect screen in Power BI. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
+summary: "Creates new content on the specified workspace from PBIX, Excel or file path in OneDrive Pro  \n<ul><li>To import from OneDrive pro, request Headers should include *Content-Type: application/json* with [ImportInfo](#importinfo) in the request body <li/><li>To import a file, request Headers should include *Content-Type: multipart/form-data* with the file [encoded as form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body<li/><ul/> <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/en-us/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -23,7 +23,7 @@ uriParameters:
 - name: datasetDisplayName
   in: query
   isRequired: true
-  description: The display name of the dataset
+  description: The display name of the dataset, should include file extension
   types:
   - uid: string
 - name: nameConflict
@@ -44,17 +44,17 @@ requestBody:
 - parameters:
   - name: filePath
     in: body
-    description: The file path to import
+    description: The OneDrive pro file path to import, can be absolute or relative
     types:
     - uid: string
   - name: connectionType
     in: body
-    description: The import connection type
+    description: The import connection type for OneDrive pro file
     types:
-    - uid: string
+    - uid: connectionTypeEnum
   - name: fileUrl
     in: body
-    description: The SAS url of the temporary blob storage
+    description: The SAS url of the temporary blob storage, used to import pbix files larger than 1 GB.
     types:
     - uid: string
 requestHeader: []
@@ -114,15 +114,15 @@ definitions:
   kind: object
   properties:
   - name: filePath
-    description: The file path to import
+    description: The OneDrive pro file path to import, can be absolute or relative
     types:
     - uid: string
   - name: connectionType
-    description: The import connection type
+    description: The import connection type for OneDrive pro file
     types:
-    - uid: string
+    - uid: connectionTypeEnum
   - name: fileUrl
-    description: The SAS url of the temporary blob storage
+    description: The SAS url of the temporary blob storage, used to import pbix files larger than 1 GB.
     types:
     - uid: string
 - name: Report
@@ -212,6 +212,16 @@ definitions:
     description: Dataset requires onprem gateway
     types:
     - uid: boolean
+- name: connectionTypeEnum
+  description: The import connection type for OneDrive pro file
+  kind: enum
+  properties:
+  - name: import
+    types:
+    - uid: string
+  - name: connect
+    types:
+    - uid: string
 - name: Table
   description: A dataset table
   kind: object
