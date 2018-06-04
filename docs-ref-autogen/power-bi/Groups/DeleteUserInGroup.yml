@@ -19,7 +19,7 @@ uriParameters:
 - name: user
   in: path
   isRequired: true
-  description: The user email to delete
+  description: The email adress of the user to delete
   types:
   - uid: string
 responses:

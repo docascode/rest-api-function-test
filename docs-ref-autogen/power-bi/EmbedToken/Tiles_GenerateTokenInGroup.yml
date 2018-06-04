@@ -91,7 +91,7 @@ definitions:
     types:
     - uid: string
   - name: tokenId
-    description: Unique token Id.
+    description: Unique token Id, can be used to correlate operations that use this token with the generate operation through audit logs.
     types:
     - uid: string
   - name: expiration

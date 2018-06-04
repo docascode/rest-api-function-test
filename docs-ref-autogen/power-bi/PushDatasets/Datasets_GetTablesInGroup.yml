@@ -67,7 +67,7 @@ definitions:
     - uid: Measure
       isArray: true
 - name: Column
-  description: A Power BI Column
+  description: A dataset column
   kind: object
   properties:
   - name: name
@@ -79,7 +79,7 @@ definitions:
     types:
     - uid: string
 - name: Row
-  description: A Power BI data row
+  description: A data row in a dataset
   kind: object
   properties:
   - name: id
