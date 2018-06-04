@@ -138,7 +138,7 @@ examples:
             "id": "3d9b93c6-7b6d-4801-a491-1738910904fd",
             "isReadOnly": false,
             "isOnDedicatedCapacity": false,
-            "name": "markiting group"
+            "name": "marketing group"
           },
           {
             "id": "a2f89923-421a-464e-bf4c-25eab39bb09f",
@@ -150,7 +150,7 @@ examples:
       }
 - name: example with filter
   request:
-    uri: GET https://api.powerbi.com/v1.0/myorg/groups?$filter=$filter=contains(name,'markiting')%20or%20name%20eq%20'contoso'
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups?$filter=$filter=contains(name,'marketing')%20or%20name%20eq%20'contoso'
   responses:
   - statusCode: "200"
     body: >-
@@ -160,7 +160,7 @@ examples:
             "id": "3d9b93c6-7b6d-4801-a491-1738910904fd",
             "isReadOnly": false,
             "isOnDedicatedCapacity": false,
-            "name": "markiting group"
+            "name": "marketing group"
           },
           {
             "id": "a2f89923-421a-464e-bf4c-25eab39bb09f",

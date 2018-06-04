@@ -32,7 +32,7 @@ requestBody:
 - parameters:
   - name: datasourceAccessRight
     in: body
-    description: Access rights user has for datasource
+    description: The user access rights for the datasource
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
@@ -50,7 +50,7 @@ definitions:
   kind: object
   properties:
   - name: datasourceAccessRight
-    description: Access rights user has for datasource
+    description: The user access rights for the datasource
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
@@ -58,7 +58,7 @@ definitions:
     types:
     - uid: string
 - name: UserAccessRightEnum
-  description: Access rights user has for datasource
+  description: The user access rights for the datasource
   kind: enum
   properties:
   - name: None

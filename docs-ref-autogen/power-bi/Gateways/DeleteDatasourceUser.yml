@@ -4,7 +4,7 @@ name: Delete Datasource User
 service: Power BI Rest APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Delete a datasource user  \nThe **Delete Datasource User** operation removes the supplied user from a given data source. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Removes the specified user from the specified datasource  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
