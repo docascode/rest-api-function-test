@@ -42,11 +42,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The datasource name
+    description: The datasource name, available only for direct query.
     types:
     - uid: string
   - name: connectionString
-    description: The datasource connection string
+    description: The datasource connection string, available only for direct query.
     types:
     - uid: string
   - name: datasourceType
@@ -58,11 +58,11 @@ definitions:
     types:
     - uid: DatasourceConnectionDetails
   - name: gatewayId
-    description: The bound gateway id
+    description: The bound gateway id, empty when not bound to a gateway
     types:
     - uid: string
   - name: datasourceId
-    description: The bound datasource id
+    description: The bound datasource id, empty when not bound to a gateway
     types:
     - uid: string
 - name: DatasourceConnectionDetails

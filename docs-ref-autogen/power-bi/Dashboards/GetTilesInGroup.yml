@@ -73,11 +73,11 @@ definitions:
     types:
     - uid: string
   - name: reportId
-    description: The report id
+    description: The report id, available only for tiles created from a report
     types:
     - uid: string
   - name: datasetId
-    description: The dataset id
+    description: The dataset id, available only for tiles created from a report or using a dataset (i.e. Q&A tiles)
     types:
     - uid: string
 examples:
