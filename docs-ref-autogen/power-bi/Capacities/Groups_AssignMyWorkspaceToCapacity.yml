@@ -4,7 +4,7 @@ name: Groups AssignMyWorkspaceToCapacity
 service: Power BI Rest APIs
 groupName: Capacities
 apiVersion: v1.0
-summary: "Assigns **\"My Workspace\"** to the specified capacity.  \n**Note**: To perform this operation the user must have admin or assign permissions on the capacity. <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Assigns **\"My Workspace\"** to the specified capacity  \n**Note**: To perform this operation the user must have admin or assign permissions on the capacity. To unassign **\"My Workspace\"** from a capacity Empty Guid (00000000-0000-0000-0000-000000000000) should be provided as capacityId.  <br/><br/>**Required scope**: Capacity.ReadWrite.All and Workspace.ReadWrite.All. <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -20,7 +20,7 @@ requestBody:
 - parameters:
   - name: capacityId
     in: body
-    description: The capacity id
+    description: The capacity id. To unassign from capacity use Empty Guid (00000000-0000-0000-0000-000000000000)
     types:
     - uid: string
 requestHeader: []
@@ -33,7 +33,7 @@ definitions:
   kind: object
   properties:
   - name: capacityId
-    description: The capacity id
+    description: The capacity id. To unassign from capacity use Empty Guid (00000000-0000-0000-0000-000000000000)
     types:
     - uid: string
 examples:

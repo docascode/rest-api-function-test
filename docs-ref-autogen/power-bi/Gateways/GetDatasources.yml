@@ -33,7 +33,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: The gateway datasources
+    description: List of gateway datasources
     types:
     - uid: GatewayDatasource
       isArray: true
@@ -42,7 +42,7 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: The unique id for this gateway datasource
+    description: The unique id for this datasource
     types:
     - uid: string
   - name: gatewayId
@@ -50,27 +50,46 @@ definitions:
     types:
     - uid: string
   - name: datasourceName
-    description: The datasource name
+    description: The name of the datasource
     types:
     - uid: string
   - name: datasourceType
-    description: The datasource type
+    description: The type of the datasource
     types:
     - uid: string
   - name: connectionDetails
-    description: The datasource connection details
+    description: Json formatted connection details
     types:
     - uid: string
   - name: credentialType
-    description: The datasource credential type
+    description: Type of the datasoruce credentials
     types:
-    - uid: string
+    - uid: credentialTypeEnum
   - name: basicCredentials
-    description: The datasource basic credential
+    description: '**[Deprecated]** The datasource basic credential'
     types:
     - uid: BasicCredentials
+- name: credentialTypeEnum
+  description: Type of the datasoruce credentials
+  kind: enum
+  properties:
+  - name: Basic
+    types:
+    - uid: string
+  - name: Windows
+    types:
+    - uid: string
+  - name: Anonymous
+    types:
+    - uid: string
+  - name: OAuth
+    types:
+    - uid: string
+  - name: Key
+    types:
+    - uid: string
 - name: BasicCredentials
-  description: Object representing basic authentication credentials
+  description: '**[Deprecated]** Basic credentials for authentication'
   kind: object
   properties:
   - name: username
@@ -94,9 +113,17 @@ examples:
             "id": "252b9de8-d915-4788-aaeb-ec8c2395f970",
             "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
             "datasourceType": "Sql",
-            "connectionDetails": "{\"server\":\"MyServer\",\"database\":\"MyDatabase\"}",
+            "connectionDetails": "{\"server\":\"localSQL\",\"database\":\"salesDB\"}",
             "credentialType": "Windows",
-            "datasourceName": "Sample Datasource"
+            "datasourceName": "SQL Datasource"
+          },
+          {
+            "id": "91f8aec2-4b32-476f-909b-3241999620ec",
+            "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+            "datasourceType": "AnalysisServices",
+            "connectionDetails": "{\"server\":\"localAS\",\"database\":\"marketingDB\"}",
+            "credentialType": "Windows",
+            "datasourceName": "AS Datasource"
           }
         ]
       }

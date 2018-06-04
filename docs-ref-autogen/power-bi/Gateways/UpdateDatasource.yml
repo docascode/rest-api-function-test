@@ -76,7 +76,7 @@ definitions:
     types:
     - uid: CredentialDetails
 - name: credentialTypeEnum
-  description: The credential type
+  description: Type of the datasoruce credentials
   kind: enum
   properties:
   - name: Basic

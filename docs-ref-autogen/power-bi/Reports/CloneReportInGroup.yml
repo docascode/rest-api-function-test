@@ -38,12 +38,12 @@ requestBody:
     - uid: string
   - name: targetWorkspaceId
     in: body
-    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>if not provided report will be cloned within the same workspace as the source report.
+    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided the new report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
     in: body
-    description: Optional parameter for specifying the target associated dataset id. <br/>if not provided report will be associated with the same dataset as the source report.
+    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided the new report will be associated with the same dataset as the source report.
     types:
     - uid: string
 requestHeader: []
@@ -81,11 +81,11 @@ definitions:
     types:
     - uid: string
   - name: targetWorkspaceId
-    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>if not provided report will be cloned within the same workspace as the source report.
+    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided the new report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
-    description: Optional parameter for specifying the target associated dataset id. <br/>if not provided report will be associated with the same dataset as the source report.
+    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided the new report will be associated with the same dataset as the source report.
     types:
     - uid: string
 examples: []

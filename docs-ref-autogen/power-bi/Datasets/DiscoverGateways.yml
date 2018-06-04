@@ -4,7 +4,7 @@ name: Discover Gateways
 service: Power BI Rest APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Returns a list of gateways that the specefied dataset from **\"My Workspace\"** can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of gateways that the specified dataset from **\"My Workspace\"** can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -54,7 +54,7 @@ definitions:
     types:
     - uid: string
   - name: gatewayAnnotation
-    description: The gateway annotation
+    description: Gateway metadata in json format
     types:
     - uid: string
   - name: publicKey
@@ -88,7 +88,7 @@ examples:
         "value": [
           {
             "id": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
-            "name": "My_Sample_Gateway",
+            "name": "ContosoGateway",
             "type": "Resource",
             "publicKey": {
               "exponent": "AQAB",

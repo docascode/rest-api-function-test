@@ -133,7 +133,7 @@ definitions:
     types:
     - uid: string
 examples:
-- name: example
+- name: Generate tile EmbedToken with effective identity
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards/69ffaa6c-b36d-4d01-96f5-1ed67c64d4af/tiles/312fbfe9-2eda-44e0-9ed0-ab5dc571bb4b/GenerateToken
     body: >-
@@ -141,11 +141,37 @@ examples:
         "accessLevel": "View",
         "identities": [
           {
-            "username": "EffectiveIdentity",
+            "username": "john@contoso.com",
             "roles": [
-              "Role1"
+              "sales"
             ],
-            "customData": "MyCustomData",
+            "datasets": [
+              "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+            ]
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "token": "H4sI....AAA=",
+        "tokenId": "49ae3742-54c0-4c29-af52-619ff93b5c80",
+        "expiration": "2018-07-29T17:58:19Z"
+      }
+- name: Generate tile EmbedToken with effective identity (Using CustomData for Azure AS)
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards/69ffaa6c-b36d-4d01-96f5-1ed67c64d4af/tiles/312fbfe9-2eda-44e0-9ed0-ab5dc571bb4b/GenerateToken
+    body: >-
+      {
+        "accessLevel": "View",
+        "identities": [
+          {
+            "username": "john@contoso.com",
+            "customData": "john_contoso.com",
+            "roles": [
+              "sales"
+            ],
             "datasets": [
               "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
             ]

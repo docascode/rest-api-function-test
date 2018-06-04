@@ -41,7 +41,7 @@ definitions:
     types:
     - uid: string
   - name: gatewayAnnotation
-    description: The gateway annotation
+    description: Gateway metadata in json format
     types:
     - uid: string
   - name: publicKey

@@ -39,7 +39,7 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: The gateway datasources
+    description: List of gateway datasources
     types:
     - uid: GatewayDatasource
       isArray: true
@@ -48,7 +48,7 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: The unique id for this gateway datasource
+    description: The unique id for this datasource
     types:
     - uid: string
   - name: gatewayId
@@ -56,27 +56,46 @@ definitions:
     types:
     - uid: string
   - name: datasourceName
-    description: The datasource name
+    description: The name of the datasource
     types:
     - uid: string
   - name: datasourceType
-    description: The datasource type
+    description: The type of the datasource
     types:
     - uid: string
   - name: connectionDetails
-    description: The datasource connection details
+    description: Json formatted connection details
     types:
     - uid: string
   - name: credentialType
-    description: The datasource credential type
+    description: Type of the datasoruce credentials
     types:
-    - uid: string
+    - uid: credentialTypeEnum
   - name: basicCredentials
-    description: The datasource basic credential
+    description: '**[Deprecated]** The datasource basic credential'
     types:
     - uid: BasicCredentials
+- name: credentialTypeEnum
+  description: Type of the datasoruce credentials
+  kind: enum
+  properties:
+  - name: Basic
+    types:
+    - uid: string
+  - name: Windows
+    types:
+    - uid: string
+  - name: Anonymous
+    types:
+    - uid: string
+  - name: OAuth
+    types:
+    - uid: string
+  - name: Key
+    types:
+    - uid: string
 - name: BasicCredentials
-  description: Object representing basic authentication credentials
+  description: '**[Deprecated]** Basic credentials for authentication'
   kind: object
   properties:
   - name: username
