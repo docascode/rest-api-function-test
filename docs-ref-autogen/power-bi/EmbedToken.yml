@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.embedtoken
 name: Embed Token
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetoken
   summary: This functionality only available in a workspace context. please use [Dashboards GenerateTokenInGroup](./dashboards_generatetokeningroup)

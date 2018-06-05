@@ -1,5 +1,5 @@
 # Power BI
-## [Power BI Rest APIs](../docs-ref-index/index.md)
+## [Power BI REST APIs](../docs-ref-index/index.md)
 ### [Admin](power-bi/Admin.yml)
 #### [Datasets GetDatasourcesAsAdmin](power-bi/Admin/Datasets_GetDatasourcesAsAdmin.yml)
 #### [Groups AddUserAsAdmin](power-bi/Admin/Groups_AddUserAsAdmin.yml)

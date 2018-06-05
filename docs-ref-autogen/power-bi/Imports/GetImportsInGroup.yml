@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.getimportsingroup
 name: Get Imports In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0
 summary: "Returns a list of imports from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

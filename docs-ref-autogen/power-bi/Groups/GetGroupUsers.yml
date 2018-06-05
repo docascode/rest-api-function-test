@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.groups.getgroupusers
 name: Get Group Users
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Groups
 apiVersion: v1.0
 summary: "Returns a list of users that has access to the specified workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

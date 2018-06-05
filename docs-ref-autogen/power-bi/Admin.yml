@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.admin
 name: Admin
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.admin.datasetsgetdatasourcesasadmin
   summary: "Returns a list of datasources for the specified dataset for an organization with an administrative scope.  \n<br/>**Required scope**: Tenant.Read.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

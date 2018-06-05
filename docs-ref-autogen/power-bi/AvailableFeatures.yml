@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.availablefeatures
 name: Available Features
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.availablefeatures.getavailablefeaturebyname
   summary: "Returns the specified available feature for user by name  \n<br/>**Required scope**: None"

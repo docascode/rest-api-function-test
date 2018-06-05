@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.groups
 name: Groups
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.groups.addgroupuser
   summary: "Gives the specified user permissions to the specified workspace  \n**Note**: Currently only Admin access right is supported. <br/><br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

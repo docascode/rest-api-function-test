@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.clonetile
 name: Clone Tile
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Clones the specified tile from **\"My Workspace\"**  \n<br/>If target report id and target dataset are missing, the following will occur:<li>If you are cloning a tile within the same workspace, the report and dataset links will be cloned from the source tile.</li><li>If you are cloning a tile within a different workspace, report and dataset links will be rested. The tile will be broken.</li><br/>**Required scope**: Dashboard.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

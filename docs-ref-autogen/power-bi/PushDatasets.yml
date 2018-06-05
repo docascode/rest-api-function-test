@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.pushdatasets
 name: Push Datasets
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.pushdatasets.datasetsdeleterows
   summary: "Deletes all rows from the specified table within the specified dataset from **\"My Workspace\"**  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.createtemporaryuploadlocation
 name: Create Temporary Upload Location
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0
 summary: "Creates a temporary blob storage to be used to import pbix files larger than 1 GB  \nTo import pbix files larger than 1 GB you should create a temporary upload location and upload the pbix file using the SaS url from the response. then call [Post Import](./postimport) and specify 'fileUrl' to be the SaS url in the [Request Body](./postimport#request-body)<br/><br/>**Note**: import large pbix files is only available for workspaces on premium capacity. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

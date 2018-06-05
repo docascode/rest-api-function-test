@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.pushdatasets.datasetsputtableingroup
 name: Datasets PutTableInGroup
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Push Datasets
 apiVersion: v1.0
 summary: "Updates the metdata and schema for the specified table within the specified dataset from the specified workspace  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

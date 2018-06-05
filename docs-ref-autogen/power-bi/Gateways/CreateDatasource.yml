@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.gateways.createdatasource
 name: Create Datasource
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0
 summary: "Create a new datasource on the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

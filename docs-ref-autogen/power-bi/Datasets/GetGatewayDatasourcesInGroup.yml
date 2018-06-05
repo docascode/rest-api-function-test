@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getgatewaydatasourcesingroup
 name: Get Gateway Datasources In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Returns a list of gateway datasources for the specified dataset from the specified workspace  \n<br/>**Note**:you should use the new [Dataset - Get Datasources In Group](./getdatasourcesingroup) API instead<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.gateways
 name: Gateways
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.gateways.adddatasourceuser
   summary: "Gives the specified user permissions to use the specified datasource  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

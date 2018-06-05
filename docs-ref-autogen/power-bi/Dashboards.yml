@@ -2,7 +2,7 @@
 uid: api.powerbi.com.power-bi.dashboards
 name: Dashboards
 apiVersion: v1.0
-service: Power BI Rest APIs
+service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.dashboards.adddashboard
   summary: "Creates a new empty dashboard on **\"My Workspace\"**  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.admin.groupsupdategroupasadmin
 name: Groups UpdateGroupAsAdmin
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
 summary: "Updates the specified workspace properties for an organization with an administrative scope.  \n**Note**: This API is currently limited to updating preview workspaces. Only name and description can be updated, and name must be unique inside an organization.<br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

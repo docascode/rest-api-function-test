@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getdatasetsingroup
 name: Get Datasets In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Returns a list of datasets from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

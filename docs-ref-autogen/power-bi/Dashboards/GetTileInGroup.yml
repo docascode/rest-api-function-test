@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.gettileingroup
 name: Get Tile In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Returns the specified tile within the specified dashboard from the specified workspace  \n**Note**: All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

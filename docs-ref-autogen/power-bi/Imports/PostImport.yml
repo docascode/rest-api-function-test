@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.postimport
 name: Post Import
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0
 summary: "Creates new content on **\"My Workspace\"** from PBIX, Excel or file path in OneDrive Pro  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app). <h3>Notes</h3><ul><li>To import a file, request Headers should include **Content-Type: multipart/form-data** with the file [encoded as form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body </li><li>To import from OneDrive pro, request Headers should include **Content-Type: application/json** with [ImportInfo](#importinfo) in the request body.</li><li>To import pbix files larger than 1 GB see [Create Temporary Upload Location](./createtemporaryuploadlocation), suported only for workspaces on premium capacity.</li></ul>"

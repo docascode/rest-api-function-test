@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetoken
 name: Tiles GenerateToken
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Embed Token
 apiVersion: v1.0
 summary: This functionality only available in a workspace context. please use [Tiles GenerateTokenInGroup](./tiles_generatetokeningroup)

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.adddashboardingroup
 name: Add Dashboard In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0
 summary: "Creates a new empty dashboard on the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

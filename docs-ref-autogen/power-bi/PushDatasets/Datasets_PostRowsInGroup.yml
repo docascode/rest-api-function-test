@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.pushdatasets.datasetspostrowsingroup
 name: Datasets PostRowsInGroup
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Push Datasets
 apiVersion: v1.0
 summary: "Adds new data rows to the specified table within the specified dataset from the specified workspace  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

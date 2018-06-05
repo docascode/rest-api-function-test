@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.getreportingroup
 name: Get Report In Group
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0
 summary: "Returns the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

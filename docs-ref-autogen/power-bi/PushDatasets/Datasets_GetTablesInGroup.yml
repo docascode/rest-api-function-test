@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.pushdatasets.datasetsgettablesingroup
 name: Datasets GetTablesInGroup
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Push Datasets
 apiVersion: v1.0
 summary: "Returns a list of tables tables within the specified dataset from the specified workspace  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

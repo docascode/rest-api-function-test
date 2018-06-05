@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.bindtogateway
 name: Bind To Gateway
-service: Power BI Rest APIs
+service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
 summary: "Binds the specified dataset from **\"My Workspace\"** to the specified gateway. This only supports the On-Premises Data Gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
