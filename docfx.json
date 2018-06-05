@@ -48,6 +48,7 @@
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "titleSuffix": "Power BI REST API",
+      "ms.service": "powerbi",
       "author": "eligr",
       "ms.author": "eligr",
       "ms.topic": "reference",
