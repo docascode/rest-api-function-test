@@ -4,7 +4,7 @@ name: Set All Dataset Connections In Group
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Updates all connections for the specified dataset from the specified workspace  \n<br/>**Note**:  To update connection details for SQL, AS, OData Feed, and SharePoint, use [Update Datasources In Group](./updateparametersingroup). For other datasource types use [Update Parameters In Group](./updateparametersingroup). <br/>**Note**: This API only supports SQL DirectQuery datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Updates all connections for the specified dataset from the specified workspace  \n<br/>**Note**:  To update connection details for SQL, AS, OData Feed, and SharePoint, use [Update Datasources In Group](./rest/api/power-bi/datasets/updatedatasourcesingroup). For other datasource types use [Update Parameters In Group](./rest/api/power-bi/datasets/updateparametersingroup). <br/>**Note**: This API only supports SQL DirectQuery datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
