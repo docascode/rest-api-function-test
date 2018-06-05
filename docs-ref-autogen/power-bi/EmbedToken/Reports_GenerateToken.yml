@@ -4,7 +4,7 @@ name: Reports GenerateToken
 service: Power BI REST APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: This functionality only available in a workspace context. please use [Reports GenerateTokenInGroup](rest/api/power-bi/embedtoken/reports_generatetokeningroup)
+summary: This functionality only available in a workspace context. please use [Reports GenerateTokenInGroup](/rest/api/power-bi/embedtoken/reports_generatetokeningroup)
 consumes:
 - application/json
 produces:
