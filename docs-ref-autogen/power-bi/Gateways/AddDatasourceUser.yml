@@ -37,7 +37,7 @@ requestBody:
     - uid: UserAccessRightEnum
   - name: emailAddress
     in: body
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 requestHeader: []
@@ -46,7 +46,7 @@ definitions:
   kind: object
   properties: []
 - name: UserAccessRight
-  description: A Power BI user Access Right entry for datasource
+  description: A Power BI user access right entry for datasource
   kind: object
   properties:
   - name: datasourceAccessRight
@@ -54,7 +54,7 @@ definitions:
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: UserAccessRightEnum

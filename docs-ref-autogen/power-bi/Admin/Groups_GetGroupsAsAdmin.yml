@@ -4,7 +4,7 @@ name: Groups GetGroupsAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of workspaces for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of workspaces for an organization with an administrative scope.  \n<br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -15,23 +15,23 @@ paths:
 uriParameters:
 - name: $expand
   in: query
-  description: Expands related entities inline.
+  description: Expands related entities inline
   types:
   - uid: string
 - name: $filter
   in: query
-  description: Filters the results, based on a boolean condition.
+  description: Filters the results, based on a boolean condition
   types:
   - uid: string
 - name: $top
   in: query
-  description: Returns only the first n results.
+  description: Returns only the first n results
   types:
   - uid: integer
   format: int32
 - name: $skip
   in: query
-  description: Skips the first n results.
+  description: Skips the first n results
   types:
   - uid: integer
   format: int32
@@ -68,11 +68,11 @@ definitions:
     types:
     - uid: string
   - name: isReadOnly
-    description: Is ReadOnly group
+    description: Is the group read only
     types:
     - uid: boolean
   - name: isOnDedicatedCapacity
-    description: Is group on dedicated capacity
+    description: Is the group on dedicated capacity
     types:
     - uid: boolean
   - name: capacityId
@@ -92,24 +92,24 @@ definitions:
     types:
     - uid: string
   - name: users
-    description: The users associated to group with their access rights
+    description: The users that belong to the group, with their access rights
     types:
     - uid: GroupUserAccessRight
       isArray: true
 - name: GroupUserAccessRight
-  description: A Power BI user Access Right entry for group
+  description: A Power BI user access right entry for group
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for group
+    description: Access rights user has for the group
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for group
+  description: Access rights user has for the group
   kind: enum
   properties:
   - name: None

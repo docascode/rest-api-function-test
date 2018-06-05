@@ -25,7 +25,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[GroupUserAccessRight]]
-  description: Odata response wrapper for a Power BI user Access Right for group List
+  description: Odata response wrapper for a Power BI user access right for group List
   kind: object
   properties:
   - name: odata.context
@@ -33,24 +33,24 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: The user Access Right for group List
+    description: The user access right for group List
     types:
     - uid: GroupUserAccessRight
       isArray: true
 - name: GroupUserAccessRight
-  description: A Power BI user Access Right entry for group
+  description: A Power BI user access right entry for group
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for group
+    description: Access rights user has for the group
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for group
+  description: Access rights user has for the group
   kind: enum
   properties:
   - name: None

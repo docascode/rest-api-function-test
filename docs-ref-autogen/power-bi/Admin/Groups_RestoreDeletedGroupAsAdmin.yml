@@ -4,7 +4,7 @@ name: Groups RestoreDeletedGroupAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Restore a deleted workspace for your organization under an adminstrative scope  \n**Note**: This API is currently limited to restoring preview workspaces. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Restores a deleted workspace for an organization with an administrative scope.  \n**Note**: This API is currently limited to restoring preview workspaces. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -26,13 +26,13 @@ requestBody:
 - parameters:
   - name: name
     in: body
-    description: The new name to give to the deleted group.
+    description: The name for the restored group
     types:
     - uid: string
   - name: emailAddress
     in: body
     isRequired: true
-    description: The email address of the owner to give to the deleted group.
+    description: The email address of the owner for the restored group
     types:
     - uid: string
 requestHeader: []
@@ -45,11 +45,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The new name to give to the deleted group.
+    description: The name for the restored group
     types:
     - uid: string
   - name: emailAddress
-    description: The email address of the owner to give to the deleted group.
+    description: The email address of the owner for the restored group
     types:
     - uid: string
 examples:

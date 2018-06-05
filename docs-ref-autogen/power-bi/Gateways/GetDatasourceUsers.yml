@@ -31,7 +31,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[UserAccessRight]]
-  description: Odata response wrapper for a Power BI user Access Right for datasource List
+  description: Odata response wrapper for a Power BI user access right for datasource List
   kind: object
   properties:
   - name: odata.context
@@ -39,12 +39,12 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: The user Access Right for datasource List
+    description: The user access right for datasource List
     types:
     - uid: UserAccessRight
       isArray: true
 - name: UserAccessRight
-  description: A Power BI user Access Right entry for datasource
+  description: A Power BI user access right entry for datasource
   kind: object
   properties:
   - name: datasourceAccessRight
@@ -52,7 +52,7 @@ definitions:
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: UserAccessRightEnum

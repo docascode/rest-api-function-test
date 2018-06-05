@@ -4,7 +4,7 @@ name: Groups UpdateGroupAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Updates the specified workspace properties for your organization under an adminstrative scope  \n**Note**: This API is currently limited to updating preview workspaces and only name and description can be updated, with name unique inside an organization. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Updates the specified workspace properties for an organization with an administrative scope.  \n**Note**: This API is currently limited to updating preview workspaces. Only name and description can be updated, and name must be unique inside an organization.<br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -35,12 +35,12 @@ requestBody:
     - uid: string
   - name: isReadOnly
     in: body
-    description: Is ReadOnly group
+    description: Is the group read only
     types:
     - uid: boolean
   - name: isOnDedicatedCapacity
     in: body
-    description: Is group on dedicated capacity
+    description: Is the group on dedicated capacity
     types:
     - uid: boolean
   - name: capacityId
@@ -65,22 +65,22 @@ requestBody:
     - uid: string
   - name: users
     in: body
-    description: The users associated to group with their access rights
+    description: The users that belong to the group, with their access rights
     types:
     - uid: GroupUserAccessRight
       isArray: true
 requestHeader: []
 definitions:
 - name: GroupUserAccessRight
-  description: A Power BI user Access Right entry for group
+  description: A Power BI user access right entry for group
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for group
+    description: Access rights user has for the group
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: Object
@@ -99,11 +99,11 @@ definitions:
     types:
     - uid: string
   - name: isReadOnly
-    description: Is ReadOnly group
+    description: Is the group read only
     types:
     - uid: boolean
   - name: isOnDedicatedCapacity
-    description: Is group on dedicated capacity
+    description: Is the group on dedicated capacity
     types:
     - uid: boolean
   - name: capacityId
@@ -123,12 +123,12 @@ definitions:
     types:
     - uid: string
   - name: users
-    description: The users associated to group with their access rights
+    description: The users that belong to the group, with their access rights
     types:
     - uid: GroupUserAccessRight
       isArray: true
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for group
+  description: Access rights user has for the group
   kind: enum
   properties:
   - name: None

@@ -4,7 +4,7 @@ name: Groups AddUserAsAdmin
 service: Power BI Rest APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Grant user permissions to the given workspace for your organization under an adminstrative scope  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delgated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Grants user permissions to the specified workspace for an organization with an administrative scope.  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -26,12 +26,12 @@ requestBody:
 - parameters:
   - name: groupUserAccessRight
     in: body
-    description: Access rights user has for group
+    description: Access rights user has for the group
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
     in: body
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 requestHeader: []
@@ -40,19 +40,19 @@ definitions:
   kind: object
   properties: []
 - name: GroupUserAccessRight
-  description: A Power BI user Access Right entry for group
+  description: A Power BI user access right entry for group
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for group
+    description: Access rights user has for the group
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
-    description: Email address of the user.
+    description: Email address of the user
     types:
     - uid: string
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for group
+  description: Access rights user has for the group
   kind: enum
   properties:
   - name: None
