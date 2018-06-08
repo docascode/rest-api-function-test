@@ -122,7 +122,7 @@ definitions:
 examples:
 - name: example
   request:
-    uri: GET https://api.powerbi.com/v1.0/myorg/groups?
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups
   responses:
   - statusCode: "200"
     body: >-
