@@ -88,7 +88,7 @@ definitions:
   - name: Anonymous
     types:
     - uid: string
-  - name: OAuth
+  - name: OAuth2
     types:
     - uid: string
   - name: Key
@@ -176,13 +176,13 @@ examples:
       }
   responses:
   - statusCode: "200"
-- name: OAuth credentials example
+- name: OAuth2 credentials example
   request:
     uri: PATCH https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources/252b9de8-d915-4788-aaeb-ec8c2395f970
     body: >-
       {
         "credentialDetails": {
-          "credentialType": "OAuth",
+          "credentialType": "OAuth2",
           "credentials": "{\"credentialData\":[{\"name\":\"accessToken\", \"value\":\"eyJ0....fwtQ\"}]}",
           "encryptedConnection": "Encrypted",
           "encryptionAlgorithm": "None",

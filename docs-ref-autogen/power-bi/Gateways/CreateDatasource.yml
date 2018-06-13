@@ -140,7 +140,7 @@ definitions:
   - name: Anonymous
     types:
     - uid: string
-  - name: OAuth
+  - name: OAuth2
     types:
     - uid: string
   - name: Key
