@@ -38,7 +38,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[Refresh]]
-  description: Odata response wrapper for a Power BI Refresh history
+  description: Odata response wrapper for a Power BI refresh history
   kind: object
   properties:
   - name: odata.context

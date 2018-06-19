@@ -4,7 +4,7 @@ name: Groups AddUserAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Grants user permissions to the specified workspace for an organization with an administrative scope.  \n<br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Grants user permissions to the specified workspace for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -26,7 +26,7 @@ requestBody:
 - parameters:
   - name: groupUserAccessRight
     in: body
-    description: Access rights user has for the group
+    description: Access rights user has for the workspace
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
@@ -40,11 +40,11 @@ definitions:
   kind: object
   properties: []
 - name: GroupUserAccessRight
-  description: A Power BI user access right entry for group
+  description: A Power BI user access right entry for workspace
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for the group
+    description: Access rights user has for the workspace
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
@@ -52,19 +52,23 @@ definitions:
     types:
     - uid: string
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for the group
+  description: Access rights user has for the workspace
   kind: enum
   properties:
   - name: None
+    description: Removes permission to content in workspace
     types:
     - uid: string
   - name: Member
+    description: Grants read access to content in workspace
     types:
     - uid: string
   - name: Admin
+    description: Grants administrator rights to workspace
     types:
     - uid: string
   - name: Contributor
+    description: Grants read and write access to content in group
     types:
     - uid: string
 examples:

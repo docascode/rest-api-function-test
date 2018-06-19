@@ -31,7 +31,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[GatewayDatasource]]
-  description: Odata response wrapper for a Power BI Gateway datasource collection
+  description: Odata response wrapper for a Power BI gateway datasource collection
   kind: object
   properties:
   - name: odata.context

@@ -1,0 +1,103 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.power-bi.admin.dashboardsgetdashboardsingroupasadmin
+name: Dashboards GetDashboardsInGroupAsAdmin
+service: Power BI REST APIs
+groupName: Admin
+apiVersion: v1.0
+summary: "Returns a list of dashboards from the specified workspace for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/dashboards
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/dashboards?$filter={$filter}&$top={$top}&$skip={$skip}
+  isOptional: true
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
+- name: $filter
+  in: query
+  description: Filters the results, based on a boolean condition
+  types:
+  - uid: string
+- name: $top
+  in: query
+  description: Returns only the first n results
+  types:
+  - uid: integer
+  format: int32
+- name: $skip
+  in: query
+  description: Skips the first n results
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Dashboard]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Dashboard]]
+  description: Odata response wrapper for a Power BI Dashboard collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: The dashboard collection
+    types:
+    - uid: Dashboard
+      isArray: true
+- name: Dashboard
+  description: A Power BI Dashboard
+  kind: object
+  properties:
+  - name: id
+    description: The dashboard id
+    types:
+    - uid: string
+  - name: displayName
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: isReadOnly
+    description: Is ReadOnly dashboard
+    types:
+    - uid: boolean
+  - name: embedUrl
+    description: The dashboard embed url
+    types:
+    - uid: string
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/admin/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "69ffaa6c-b36d-4d01-96f5-1ed67c64d4af",
+            "displayName": "SalesMarketing",
+            "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=69ffaa6c-b36d-4d01-96f5-1ed67c64d4af&groupId=f089354e-8366-4e18-aea3-4cb4a3a50b48",
+            "isReadOnly": false
+          }
+        ]
+      }
+security:
+- type: oauth2
+  description: Azure Active Directory OAuth2 Flow.
+  flow: implicit
+  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
+  scopes:
+  - name: user_impersonation
+    description: impersonate your user account

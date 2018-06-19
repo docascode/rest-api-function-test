@@ -1,74 +1,60 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.imports.postimport
-name: Post Import
+uid: api.powerbi.com.power-bi.admin.importsgetimportsasadmin
+name: Imports GetImportsAsAdmin
 service: Power BI REST APIs
-groupName: Imports
+groupName: Admin
 apiVersion: v1.0
-summary: "Creates new content on **\"My Workspace\"** from PBIX, Excel or file path in OneDrive for Business  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app). <h3>Notes</h3><ul><li>To import a file, request Headers should include **Content-Type: multipart/form-data** with the file [encoded as form data](https://www.w3.org/TR/html401/interact/forms.html) in the request body </li><li>To import from OneDrive pro, request Headers should include **Content-Type: application/json** with [ImportInfo](/rest/api/power-bi/imports/postimport#importinfo) in the request body.</li><li>To import pbix files larger than 1 GB see [Create Temporary Upload Location](/rest/api/power-bi/imports/createtemporaryuploadlocation), suported only for workspaces on premium capacity.</li></ul>"
-consumes:
-- application/json
+summary: "Returns a list of imports for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
 produces:
 - application/json
 paths:
-- content: POST https://api.powerbi.com/v1.0/myorg/imports?datasetDisplayName={datasetDisplayName}
-- content: POST https://api.powerbi.com/v1.0/myorg/imports?datasetDisplayName={datasetDisplayName}&nameConflict={nameConflict}
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/imports
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/imports?$expand={$expand}&$filter={$filter}&$top={$top}&$skip={$skip}
   isOptional: true
 uriParameters:
-- name: datasetDisplayName
+- name: $expand
   in: query
-  isRequired: true
-  description: The display name of the dataset, should include file extension. not supported when importing from OneDrive Pro
+  description: Expands related entities inline
   types:
   - uid: string
-- name: nameConflict
+- name: $filter
   in: query
-  description: Determines what to do if a dataset with the same name already exists
+  description: Filters the results, based on a boolean condition
   types:
-  - uid: ImportConflictHandlerMode
+  - uid: string
+- name: $top
+  in: query
+  description: Returns only the first n results
+  types:
+  - uid: integer
+  format: int32
+- name: $skip
+  in: query
+  description: Skips the first n results
+  types:
+  - uid: integer
+  format: int32
 responses:
 - name: 200 OK
   description: OK
   types:
-  - uid: Import
-- name: 202 Accepted
-  description: Accepted
-  types:
-  - uid: Import
-requestBody:
-- parameters:
-  - name: filePath
-    in: body
-    description: The OneDrive for Business file path to import, can be absolute or relative
-    types:
-    - uid: string
-  - name: connectionType
-    in: body
-    description: The import connection type for OneDrive for Business file
-    types:
-    - uid: connectionTypeEnum
-  - name: fileUrl
-    in: body
-    description: The shared access signature (SAS) URL of the temporary blob storage, used to import pbix files larger than 1 GB.
-    types:
-    - uid: string
+  - uid: ODataResponse[List[Import]]
 requestHeader: []
 definitions:
-- name: ImportConflictHandlerMode
-  description: Determines what to do if a dataset with the same name already exists
-  kind: enum
+- name: ODataResponse[List[Import]]
+  description: Odata response wrapper for a Power BI Import collection
+  kind: object
   properties:
-  - name: Ignore
+  - name: odata.context
+    description: OData context
     types:
     - uid: string
-  - name: Abort
+  - name: value
+    description: The imports collection
     types:
-    - uid: string
-  - name: Overwrite
-    types:
-    - uid: string
-  - name: CreateOrOverwrite
-    types:
-    - uid: string
+    - uid: Import
+      isArray: true
 - name: Import
   description: The import object
   kind: object
@@ -101,22 +87,6 @@ definitions:
     - uid: string
   - name: updatedDateTime
     description: Import last update time
-    types:
-    - uid: string
-- name: ImportInfo
-  description: The information about the import
-  kind: object
-  properties:
-  - name: filePath
-    description: The OneDrive for Business file path to import, can be absolute or relative
-    types:
-    - uid: string
-  - name: connectionType
-    description: The import connection type for OneDrive for Business file
-    types:
-    - uid: connectionTypeEnum
-  - name: fileUrl
-    description: The shared access signature (SAS) URL of the temporary blob storage, used to import pbix files larger than 1 GB.
     types:
     - uid: string
 - name: Report
@@ -206,16 +176,6 @@ definitions:
     description: Dataset requires on-premises data gateway
     types:
     - uid: boolean
-- name: connectionTypeEnum
-  description: The import connection type for OneDrive for Business file
-  kind: enum
-  properties:
-  - name: import
-    types:
-    - uid: string
-  - name: connect
-    types:
-    - uid: string
 - name: Table
   description: A dataset table
   kind: object
@@ -375,7 +335,41 @@ definitions:
     description: The connection url
     types:
     - uid: string
-examples: []
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/admin/imports
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "82d9a37a-2b45-4221-b012-cb109b8e30c7",
+            "importState": "Succeeded",
+            "createdDateTime": "2018-05-08T14:56:18.477Z",
+            "updatedDateTime": "2018-05-08T14:56:18.477Z",
+            "name": "SalesMarketing",
+            "connectionType": "import",
+            "source": "Upload",
+            "datasets": [
+              {
+                "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                "name": "SalesMarketing",
+                "webUrl": "https://app.powerbi.com/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+              }
+            ],
+            "reports": [
+              {
+                "id": "5b218778-e7a5-4d73-8187-f10824047715",
+                "name": "SalesMarketing",
+                "webUrl": "https://app.powerbi.com/reports/5b218778-e7a5-4d73-8187-f10824047715",
+                "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=5b218778-e7a5-4d73-8187-f10824047715"
+              }
+            ]
+          }
+        ]
+      }
 security:
 - type: oauth2
   description: Azure Active Directory OAuth2 Flow.

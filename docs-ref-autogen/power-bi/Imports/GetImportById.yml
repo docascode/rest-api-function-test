@@ -33,7 +33,7 @@ definitions:
     types:
     - uid: string
   - name: name
-    description: The import name name
+    description: The import name
     types:
     - uid: string
   - name: importState
@@ -83,7 +83,7 @@ definitions:
     types:
     - uid: string
 - name: Dataset
-  description: A Power BI Dataset
+  description: A Power BI dataset
   kind: object
   properties:
   - name: id
@@ -99,7 +99,7 @@ definitions:
     types:
     - uid: string
   - name: defaultRetentionPolicy
-    description: The dataset default data retention policy, only relevant to Post Dataset API
+    description: The dataset default data retention policy, only relevant to post dataset API
     types:
     - uid: string
   - name: addRowsAPIEnabled
@@ -107,7 +107,7 @@ definitions:
     types:
     - uid: boolean
   - name: tables
-    description: The dataset tables, only relevant to Post Dataset API
+    description: The dataset tables, only relevant to post dataset API
     types:
     - uid: Table
       isArray: true
@@ -116,17 +116,17 @@ definitions:
     types:
     - uid: string
   - name: relationships
-    description: The dataset relationships, only relevant to Post Dataset API
+    description: The dataset relationships, only relevant to post dataset API
     types:
     - uid: Relationship
       isArray: true
   - name: datasources
-    description: The datasources associated with this dataset, only relevant to Post Dataset API
+    description: The datasources associated with this dataset, only relevant to post dataset API
     types:
     - uid: Datasource
       isArray: true
   - name: defaultMode
-    description: The dataset mode or type, only relevant to Post Dataset API
+    description: The dataset mode or type, only relevant to post dataset API
     types:
     - uid: DatasetMode
   - name: IsRefreshable
@@ -142,7 +142,7 @@ definitions:
     types:
     - uid: boolean
   - name: IsOnPremGatewayRequired
-    description: Dataset requires onprem gateway
+    description: Dataset requires on-premises data gateway
     types:
     - uid: boolean
 - name: Table
@@ -225,7 +225,7 @@ definitions:
     types:
     - uid: string
 - name: DatasetMode
-  description: The dataset mode or type, only relevant to Post Dataset API
+  description: The dataset mode or type, only relevant to post dataset API
   kind: enum
   properties:
   - name: AsAzure
@@ -264,7 +264,7 @@ definitions:
     types:
     - uid: string
 - name: Measure
-  description: A Power BI Measure
+  description: A Power BI measure
   kind: object
   properties:
   - name: name

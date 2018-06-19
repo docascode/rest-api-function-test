@@ -26,7 +26,7 @@ requestBody:
 - parameters:
   - name: groupUserAccessRight
     in: body
-    description: Access rights user has for the group
+    description: Access rights user has for the workspace
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
@@ -40,11 +40,11 @@ definitions:
   kind: object
   properties: []
 - name: GroupUserAccessRight
-  description: A Power BI user access right entry for group
+  description: A Power BI user access right entry for workspace
   kind: object
   properties:
   - name: groupUserAccessRight
-    description: Access rights user has for the group
+    description: Access rights user has for the workspace
     types:
     - uid: GroupUserAccessRightEnum
   - name: emailAddress
@@ -52,19 +52,23 @@ definitions:
     types:
     - uid: string
 - name: GroupUserAccessRightEnum
-  description: Access rights user has for the group
+  description: Access rights user has for the workspace
   kind: enum
   properties:
   - name: None
+    description: Removes permission to content in workspace
     types:
     - uid: string
   - name: Member
+    description: Grants read access to content in workspace
     types:
     - uid: string
   - name: Admin
+    description: Grants administrator rights to workspace
     types:
     - uid: string
   - name: Contributor
+    description: Grants read and write access to content in group
     types:
     - uid: string
 examples:

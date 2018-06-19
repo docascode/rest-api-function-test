@@ -81,7 +81,7 @@ definitions:
     types:
     - uid: string
 - name: Measure
-  description: A Power BI Measure
+  description: A Power BI measure
   kind: object
   properties:
   - name: name
