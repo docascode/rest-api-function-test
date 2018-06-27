@@ -4,7 +4,7 @@ name: Create Group
 service: Power BI REST APIs
 groupName: Groups
 apiVersion: v1.0
-summary: "Creates new workspace  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Creates new workspace.  \n<br/>**Required scope**: Group.Read.All or Group.ReadWrite.All or Workspace.Read.All or Workspace.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -21,13 +21,13 @@ requestBody:
 - parameters:
   - name: name
     in: body
-    description: The name of the new created group
+    description: The name of the newly created group
     types:
     - uid: string
 requestHeader: []
 definitions:
 - name: Group
-  description: A Power BI Group
+  description: A Power BI group
   kind: object
   properties:
   - name: id
@@ -63,16 +63,16 @@ definitions:
     types:
     - uid: string
   - name: users
-    description: The users that belong to the group, with their access rights
+    description: The users that belong to the group, and their access rights.
     types:
     - uid: GroupUserAccessRight
       isArray: true
 - name: GroupCreationRequest
-  description: Power BI Create a new group Request
+  description: Power BI create a new group request
   kind: object
   properties:
   - name: name
-    description: The name of the new created group
+    description: The name of the newly created group
     types:
     - uid: string
 - name: GroupUserAccessRight
@@ -128,11 +128,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

@@ -4,7 +4,7 @@ name: Datasets PostRowsInGroup
 service: Power BI REST APIs
 groupName: Push Datasets
 apiVersion: v1.0
-summary: "Adds new data rows to the specified table within the specified dataset from the specified workspace  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Adds new data rows to the specified table, within the specified dataset, from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -70,11 +70,4 @@ examples:
       }
   responses:
   - statusCode: "200"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

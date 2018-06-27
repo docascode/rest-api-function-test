@@ -4,7 +4,7 @@ name: Reports GenerateToken
 service: Power BI REST APIs
 groupName: Embed Token
 apiVersion: v1.0
-summary: This functionality only available in a workspace context. please use [Reports GenerateTokenInGroup](/rest/api/power-bi/embedtoken/reports_generatetokeningroup)
+summary: This functionality is only available in a workspace context. Use [Reports GenerateTokenInGroup](/rest/api/power-bi/embedtoken/reports_generatetokeningroup).
 consumes:
 - application/json
 produces:
@@ -27,29 +27,29 @@ requestBody:
 - parameters:
   - name: accessLevel
     in: body
-    description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
+    description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
     types:
     - uid: TokenAccessLevel
   - name: datasetId
     in: body
-    description: Dataset id for report creation (Only applies when generating EmbedToken for report creation)
+    description: Dataset id for report creation. Only applies when generating EmbedToken for report creation.
     types:
     - uid: string
   - name: allowSaveAs
     in: body
-    description: Indicating that an embedded report can be saved as a new report (default value is 'false', only applies when generating EmbedToken for report embedding)
+    description: Indicates an embedded report can be saved as a new report. Default value is 'false'. Only applies when generating EmbedToken for report embedding.
     types:
     - uid: boolean
   - name: identities
     in: body
-    description: List of identities to use for RLS rules (Specifying identities is not supported when generating EmbedToken for dataset embedding)
+    description: List of identities to use for RLS rules. Specifying identities is not supported when generating EmbedToken for dataset embedding.
     types:
     - uid: EffectiveIdentity
       isArray: true
 requestHeader: []
 definitions:
 - name: EffectiveIdentity
-  description: The identity that the generated token should reflect
+  description: The identity the generated token should reflect
   kind: object
   properties:
   - name: username
@@ -62,28 +62,28 @@ definitions:
     - uid: string
       isArray: true
   - name: datasets
-    description: An array of datasets for which this identity applies to
+    description: An array of datasets for which this identity applies
     types:
     - uid: string
       isArray: true
   - name: customData
-    description: The value of customdata to be used for applying RLS rules (Only supported for live connections to Azure Analysis Services)
+    description: The value of customdata to be used for applying RLS rules. Only supported for live connections to Azure Analysis Services.
     types:
     - uid: string
 - name: EmbedToken
-  description: Power BI Embed Token
+  description: Power BI embed token
   kind: object
   properties:
   - name: token
-    description: Embed token.
+    description: Embed token
     types:
     - uid: string
   - name: tokenId
-    description: Unique token Id, can be used to correlate operations that use this token with the generate operation through audit logs.
+    description: Unique token Id. Can be used to correlate operations that use this token with the generate operation through audit logs.
     types:
     - uid: string
   - name: expiration
-    description: Expiration time of token - in UTC.
+    description: Expiration time of token. In UTC.
     types:
     - uid: string
 - name: GenerateTokenRequest
@@ -91,24 +91,24 @@ definitions:
   kind: object
   properties:
   - name: accessLevel
-    description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
+    description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
     types:
     - uid: TokenAccessLevel
   - name: datasetId
-    description: Dataset id for report creation (Only applies when generating EmbedToken for report creation)
+    description: Dataset id for report creation. Only applies when generating EmbedToken for report creation.
     types:
     - uid: string
   - name: allowSaveAs
-    description: Indicating that an embedded report can be saved as a new report (default value is 'false', only applies when generating EmbedToken for report embedding)
+    description: Indicates an embedded report can be saved as a new report. Default value is 'false'. Only applies when generating EmbedToken for report embedding.
     types:
     - uid: boolean
   - name: identities
-    description: List of identities to use for RLS rules (Specifying identities is not supported when generating EmbedToken for dataset embedding)
+    description: List of identities to use for RLS rules. Specifying identities is not supported when generating EmbedToken for dataset embedding.
     types:
     - uid: EffectiveIdentity
       isArray: true
 - name: TokenAccessLevel
-  description: Required access level for EmbedToken Generation ('Edit' only applies when generating EmbedToken for report embedding, 'Create' only applies when generating EmbedToken for report creation)
+  description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
   kind: enum
   properties:
   - name: View
@@ -121,11 +121,4 @@ definitions:
     types:
     - uid: string
 examples: []
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

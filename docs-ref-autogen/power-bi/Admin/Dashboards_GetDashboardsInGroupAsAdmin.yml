@@ -4,7 +4,7 @@ name: Dashboards GetDashboardsInGroupAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of dashboards from the specified workspace for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of dashboards from the specified workspace.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -44,7 +44,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[Dashboard]]
-  description: Odata response wrapper for a Power BI Dashboard collection
+  description: Odata response wrapper for a Power BI dashboard collection
   kind: object
   properties:
   - name: odata.context
@@ -57,7 +57,7 @@ definitions:
     - uid: Dashboard
       isArray: true
 - name: Dashboard
-  description: A Power BI Dashboard
+  description: A Power BI dashboard
   kind: object
   properties:
   - name: id
@@ -93,11 +93,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

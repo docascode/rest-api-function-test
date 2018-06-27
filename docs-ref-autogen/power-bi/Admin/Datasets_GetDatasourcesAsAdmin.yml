@@ -4,7 +4,7 @@ name: Datasets GetDatasourcesAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of datasources for the specified dataset for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of datasources for the specified dataset.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -41,11 +41,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The datasource name, available only for direct query.
+    description: The datasource name. Available only for DirectQuery.
     types:
     - uid: string
   - name: connectionString
-    description: The datasource connection string, available only for direct query.
+    description: The datasource connection string. Available only for DirectQuery.
     types:
     - uid: string
   - name: datasourceType
@@ -57,11 +57,11 @@ definitions:
     types:
     - uid: DatasourceConnectionDetails
   - name: gatewayId
-    description: The bound gateway id, empty when not bound to a gateway
+    description: The bound gateway id. Empty when not bound to a gateway.
     types:
     - uid: string
   - name: datasourceId
-    description: The bound datasource id, empty when not bound to a gateway
+    description: The bound datasource id. Empty when not bound to a gateway.
     types:
     - uid: string
 - name: DatasourceConnectionDetails
@@ -102,11 +102,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

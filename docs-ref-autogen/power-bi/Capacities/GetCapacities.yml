@@ -4,7 +4,7 @@ name: Get Capacities
 service: Power BI REST APIs
 groupName: Capacities
 apiVersion: v1.0
-summary: "Returns a list of capacities the user has access to  \n<br/>**Required scope**: Capacity.Read.All or Capacity.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of capacities the user has access to.  \n<br/>**Required scope**: Capacity.Read.All or Capacity.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -19,7 +19,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[Capacity]]
-  description: Odata response wrapper for a Power BI Capacity List
+  description: Odata response wrapper for a Power BI capacity list
   kind: object
   properties:
   - name: odata.context
@@ -44,12 +44,12 @@ definitions:
     types:
     - uid: string
   - name: admins
-    description: An array of capacity admins, **will be returned only for the capacity admins**
+    description: An array of capacity admins.
     types:
     - uid: string
       isArray: true
   - name: sku
-    description: The capacity SKU, **will be returned only for the capacity admins**
+    description: The capacity SKU.
     types:
     - uid: string
   - name: state
@@ -128,11 +128,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

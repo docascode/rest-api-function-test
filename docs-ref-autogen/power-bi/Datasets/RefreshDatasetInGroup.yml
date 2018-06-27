@@ -4,7 +4,7 @@ name: Refresh Dataset In Group
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Triggers a refresh to occur for the specified dataset from the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Triggers a refresh for the specified dataset from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -42,7 +42,7 @@ definitions:
   kind: object
   properties: []
 - name: RefreshRequest
-  description: Power BI Refresh Request
+  description: Power BI refresh request
   kind: object
   properties:
   - name: notifyOption
@@ -72,11 +72,4 @@ examples:
       }
   responses:
   - statusCode: "202"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

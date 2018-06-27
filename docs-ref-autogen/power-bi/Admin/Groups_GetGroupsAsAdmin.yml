@@ -4,7 +4,7 @@ name: Groups GetGroupsAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of workspaces for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of workspaces for the organization.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -20,7 +20,7 @@ uriParameters:
   - uid: string
 - name: $filter
   in: query
-  description: Filters the results, based on a boolean condition
+  description: Filters the results based on a boolean condition
   types:
   - uid: string
 - name: $top
@@ -43,7 +43,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[Group]]
-  description: Odata response wrapper for a Power BI Group list
+  description: Odata response wrapper for a Power BI group list
   kind: object
   properties:
   - name: odata.context
@@ -56,7 +56,7 @@ definitions:
     - uid: Group
       isArray: true
 - name: Group
-  description: A Power BI Group
+  description: A Power BI group
   kind: object
   properties:
   - name: id
@@ -92,7 +92,7 @@ definitions:
     types:
     - uid: string
   - name: users
-    description: The users that belong to the group, with their access rights
+    description: The users that belong to the group, and their access rights.
     types:
     - uid: GroupUserAccessRight
       isArray: true
@@ -203,11 +203,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

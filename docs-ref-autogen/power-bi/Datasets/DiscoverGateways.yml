@@ -4,7 +4,7 @@ name: Discover Gateways
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Returns a list of gateways that the specified dataset from **\"My Workspace\"** can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of gateways which the specified dataset from **\"My Workspace\"** can be bound to.  \nThis API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -33,12 +33,12 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: The Gateways
+    description: The gateways
     types:
     - uid: Gateway
       isArray: true
 - name: Gateway
-  description: A Power BI Gateway
+  description: A Power BI gateway
   kind: object
   properties:
   - name: id
@@ -66,7 +66,7 @@ definitions:
     types:
     - uid: string
 - name: GatewayPublicKey
-  description: A Power BI Gateway Public Key
+  description: A Power BI gateway public key
   kind: object
   properties:
   - name: exponent
@@ -97,11 +97,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

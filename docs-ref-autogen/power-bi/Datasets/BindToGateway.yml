@@ -35,7 +35,7 @@ definitions:
   kind: object
   properties: []
 - name: BindToGatewayRequest
-  description: The Bind dataset to gateway request
+  description: The bind dataset to gateway request
   kind: object
   properties:
   - name: gatewayObjectId
@@ -52,11 +52,4 @@ examples:
       }
   responses:
   - statusCode: "200"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

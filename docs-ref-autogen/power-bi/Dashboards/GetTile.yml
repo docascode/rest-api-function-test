@@ -4,7 +4,7 @@ name: Get Tile
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0
-summary: "Returns the specified tile within the specified dashboard from **\"My Workspace\"**  \n**Note**: All tile types are supported, except for \"model tiles\": which include datasets and live tiles that include an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns the specified tile within the specified dashboard from **\"My Workspace\"**.  \n**Note**: All tile types are supported except for \"model tiles\", which include datasets and live tiles that contain an entire report page. <br/><br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -32,7 +32,7 @@ responses:
 requestHeader: []
 definitions:
 - name: Tile
-  description: A Power BI Tile
+  description: A Power BI tile
   kind: object
   properties:
   - name: id
@@ -60,11 +60,11 @@ definitions:
     types:
     - uid: string
   - name: reportId
-    description: The report id, available only for tiles created from a report
+    description: The report id. Available only for tiles created from a report.
     types:
     - uid: string
   - name: datasetId
-    description: The dataset id, available only for tiles created from a report or using a dataset (i.e. Q&A tiles)
+    description: The dataset id. Available only for tiles created from a report or using a dataset; for example, Q&A tiles.
     types:
     - uid: string
 examples:
@@ -83,11 +83,4 @@ examples:
         "reportId": "5b218778-e7a5-4d73-8187-f10824047715",
         "datasetId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

@@ -4,7 +4,7 @@ name: Datasets PostDatasetInGroup
 service: Power BI REST APIs
 groupName: Push Datasets
 apiVersion: v1.0
-summary: "Creates a new dataset on the specified workspace  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Creates a new dataset in the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -47,7 +47,7 @@ requestBody:
     - uid: string
   - name: defaultRetentionPolicy
     in: body
-    description: The dataset default data retention policy, only relevant to post dataset API
+    description: The dataset default data retention policy. Only relevant to the PostDataset API.
     types:
     - uid: string
   - name: addRowsAPIEnabled
@@ -58,7 +58,7 @@ requestBody:
   - name: tables
     in: body
     isRequired: true
-    description: The dataset tables, only relevant to post dataset API
+    description: The dataset tables. Only relevant to the PostDataset API.
     types:
     - uid: Table
       isArray: true
@@ -69,19 +69,19 @@ requestBody:
     - uid: string
   - name: relationships
     in: body
-    description: The dataset relationships, only relevant to post dataset API
+    description: The dataset relationships. Only relevant to the PostDataset API.
     types:
     - uid: Relationship
       isArray: true
   - name: datasources
     in: body
-    description: The datasources associated with this dataset, only relevant to post dataset API
+    description: The datasources associated with this dataset. Only relevant to the PostDataset API.
     types:
     - uid: Datasource
       isArray: true
   - name: defaultMode
     in: body
-    description: The dataset mode or type, only relevant to post dataset API
+    description: The dataset mode or type. Only relevant to the PostDataset API.
     types:
     - uid: DatasetMode
   - name: IsRefreshable
@@ -101,7 +101,7 @@ requestBody:
     - uid: boolean
   - name: IsOnPremGatewayRequired
     in: body
-    description: Dataset requires on-premises data gateway
+    description: Dataset requires an On-premises Data Gateway
     types:
     - uid: boolean
 requestHeader: []
@@ -162,11 +162,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The datasource name, available only for direct query.
+    description: The datasource name. Available only for DirectQuery.
     types:
     - uid: string
   - name: connectionString
-    description: The datasource connection string, available only for direct query.
+    description: The datasource connection string. Available only for DirectQuery.
     types:
     - uid: string
   - name: datasourceType
@@ -178,11 +178,11 @@ definitions:
     types:
     - uid: DatasourceConnectionDetails
   - name: gatewayId
-    description: The bound gateway id, empty when not bound to a gateway
+    description: The bound gateway id. Empty when not bound to a gateway.
     types:
     - uid: string
   - name: datasourceId
-    description: The bound datasource id, empty when not bound to a gateway
+    description: The bound datasource id. Empty when not bound to a gateway.
     types:
     - uid: string
 - name: Dataset
@@ -202,7 +202,7 @@ definitions:
     types:
     - uid: string
   - name: defaultRetentionPolicy
-    description: The dataset default data retention policy, only relevant to post dataset API
+    description: The dataset default data retention policy. Only relevant to the PostDataset API.
     types:
     - uid: string
   - name: addRowsAPIEnabled
@@ -210,7 +210,7 @@ definitions:
     types:
     - uid: boolean
   - name: tables
-    description: The dataset tables, only relevant to post dataset API
+    description: The dataset tables. Only relevant to the PostDataset API.
     types:
     - uid: Table
       isArray: true
@@ -219,17 +219,17 @@ definitions:
     types:
     - uid: string
   - name: relationships
-    description: The dataset relationships, only relevant to post dataset API
+    description: The dataset relationships. Only relevant to the PostDataset API.
     types:
     - uid: Relationship
       isArray: true
   - name: datasources
-    description: The datasources associated with this dataset, only relevant to post dataset API
+    description: The datasources associated with this dataset. Only relevant to the PostDataset API.
     types:
     - uid: Datasource
       isArray: true
   - name: defaultMode
-    description: The dataset mode or type, only relevant to post dataset API
+    description: The dataset mode or type. Only relevant to the PostDataset API.
     types:
     - uid: DatasetMode
   - name: IsRefreshable
@@ -245,7 +245,7 @@ definitions:
     types:
     - uid: boolean
   - name: IsOnPremGatewayRequired
-    description: Dataset requires on-premises data gateway
+    description: Dataset requires an On-premises Data Gateway
     types:
     - uid: boolean
 - name: Object
@@ -313,7 +313,7 @@ definitions:
     types:
     - uid: string
 - name: DatasetMode
-  description: The dataset mode or type, only relevant to post dataset API
+  description: The dataset mode or type. Only relevant to the PostDataset API.
   kind: enum
   properties:
   - name: AsAzure
@@ -375,11 +375,4 @@ examples:
         "name": "SalesMarketing",
         "defaultRetentionPolicy": "basicFIFO"
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

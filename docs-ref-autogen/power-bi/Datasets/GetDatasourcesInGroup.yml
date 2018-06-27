@@ -4,7 +4,7 @@ name: Get Datasources In Group
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Returns a list of datasources for the specified dataset from the specified workspace  \n<br/>**Note**: 'gatewayId' and 'datasourceId' are only available when the dataset is bound to a gateway. each user have a cloud gateway which cloud data sources are bound to by default.<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of datasources for the specified dataset from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -47,11 +47,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The datasource name, available only for direct query.
+    description: The datasource name. Available only for DirectQuery.
     types:
     - uid: string
   - name: connectionString
-    description: The datasource connection string, available only for direct query.
+    description: The datasource connection string. Available only for DirectQuery.
     types:
     - uid: string
   - name: datasourceType
@@ -63,11 +63,11 @@ definitions:
     types:
     - uid: DatasourceConnectionDetails
   - name: gatewayId
-    description: The bound gateway id, empty when not bound to a gateway
+    description: The bound gateway id. Empty when not bound to a gateway.
     types:
     - uid: string
   - name: datasourceId
-    description: The bound datasource id, empty when not bound to a gateway
+    description: The bound datasource id. Empty when not bound to a gateway.
     types:
     - uid: string
 - name: DatasourceConnectionDetails
@@ -135,11 +135,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

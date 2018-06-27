@@ -4,7 +4,7 @@ name: Bind To Gateway In Group
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0
-summary: "Binds the specified dataset from the specified workspace to the specified gateway. This only supports the On-Premises Data Gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Binds the specified dataset from the specified workspace to the specified gateway. Only supported for the On-Premises Data Gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -41,7 +41,7 @@ definitions:
   kind: object
   properties: []
 - name: BindToGatewayRequest
-  description: The Bind dataset to gateway request
+  description: The bind dataset to gateway request
   kind: object
   properties:
   - name: gatewayObjectId
@@ -58,11 +58,4 @@ examples:
       }
   responses:
   - statusCode: "200"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

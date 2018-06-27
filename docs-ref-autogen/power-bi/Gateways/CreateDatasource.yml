@@ -4,7 +4,7 @@ name: Create Datasource
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Create a new datasource on the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Creates a new datasource on the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -52,7 +52,7 @@ definitions:
   kind: object
   properties:
   - name: credentials
-    description: The credentials. this depends on the 'credentialType' value, see [Update Datasource Examples](/rest/api/power-bi/gateways/updatedatasource#examples).
+    description: The credentials. Depends on the 'credentialType' value. See [Update Datasource Examples](/rest/api/power-bi/gateways/updatedatasource#examples).
     types:
     - uid: string
   - name: credentialType
@@ -64,11 +64,11 @@ definitions:
     types:
     - uid: encryptedConnectionEnum
   - name: encryptionAlgorithm
-    description: The encryption algorithm, for cloud datasource use 'None', for On-OnPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
+    description: The encryption algorithm. For cloud datasource, use 'None'. For on-premises datasource, use gateway public key with 'RSA-OAEP' algorithm.
     types:
     - uid: encryptionAlgorithmEnum
   - name: privacyLevel
-    description: The privacy level, relevant when combinig data from multiple sources
+    description: The privacy level. Relevant when combining data from multiple sources.
     types:
     - uid: privacyLevelEnum
   - name: useCallerAADIdentity
@@ -96,7 +96,7 @@ definitions:
     types:
     - uid: string
   - name: connectionDetails
-    description: Json formatted connection details
+    description: Connection details in json format
     types:
     - uid: string
   - name: credentialType
@@ -108,7 +108,7 @@ definitions:
     types:
     - uid: BasicCredentials
 - name: PublishDatasourceToGatewayRequest
-  description: A Publish Datasource To Gateway Request
+  description: A publish datasource to gateway request
   kind: object
   properties:
   - name: dataSourceType
@@ -157,7 +157,7 @@ definitions:
     types:
     - uid: string
 - name: encryptionAlgorithmEnum
-  description: The encryption algorithm, for cloud datasource use 'None', for On-OnPrem datasource encrypt using gateway public key with 'RSA-OAEP' algorithm
+  description: The encryption algorithm. For cloud datasource, use 'None'. For on-premises datasource, use gateway public key with 'RSA-OAEP' algorithm.
   kind: enum
   properties:
   - name: None
@@ -167,7 +167,7 @@ definitions:
     types:
     - uid: string
 - name: privacyLevelEnum
-  description: The privacy level, relevant when combinig data from multiple sources
+  description: The privacy level. Relevant when combining data from multiple sources.
   kind: enum
   properties:
   - name: None
@@ -213,11 +213,4 @@ examples:
       }
   responses:
   - statusCode: "200"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

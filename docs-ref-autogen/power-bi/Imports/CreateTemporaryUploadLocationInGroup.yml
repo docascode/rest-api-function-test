@@ -4,7 +4,7 @@ name: Create Temporary Upload Location In Group
 service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0
-summary: "Creates a temporary blob storage to be used to import pbix files larger than 1 GB  \nTo import pbix files larger than 1 GB you should create a temporary upload location and upload the pbix file using the shared access signature (SAS) URL from the response. then call [Post Import In Group](/rest/api/power-bi/imports/postimportingroup) and specify 'fileUrl' to be the SAS URL in the [Request Body](/rest/api/power-bi/imports/postimportingroup#request-body)<br/><br/>**Note**: import large pbix files is only available for workspaces on premium capacity. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Creates a temporary blob storage used to import .pbix files larger than 1 GB.  \nTo import .pbix files larger than 1 GB, create a temporary upload location and upload the .pbix file using the shared access signature (SAS) url from the response, and then call [Post Import In Group](/rest/api/power-bi/imports/postimportingroup) and specify 'fileUrl' to be the SAS url in the [Request Body](/rest/api/power-bi/imports/postimportingroup#request-body).<br/><br/>**Note**: Import large .pbix files is only available for workspaces on premium capacity. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -25,23 +25,16 @@ responses:
 requestHeader: []
 definitions:
 - name: TemporaryUploadLocation
-  description: Power BI Update Report Content Request
+  description: Power BI update report content request
   kind: object
   properties:
   - name: Url
-    description: The shared access signature (SAS) URL for the temporary blob storage
+    description: The shared access signature (SAS) url for the temporary blob storage
     types:
     - uid: string
   - name: ExpirationTime
-    description: The expiration time of the shared access signature (SAS) URL
+    description: The expiration time of the shared access signature (SAS) url
     types:
     - uid: string
 examples: []
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

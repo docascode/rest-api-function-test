@@ -5,30 +5,30 @@ apiVersion: v1.0
 service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.reports.clonereport
-  summary: "Clones the specified report from **\"My Workspace\"**  \n<br/>**Required scope**: Content.Create<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Clones the specified report from **\"My Workspace\"**.  \n<br/>**Required scope**: Content.Create<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.clonereportingroup
-  summary: "Clones the specified report from the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Clones the specified report from the specified workspace.  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.deletereport
-  summary: "Deletes the specified report from **\"My Workspace\"**  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Deletes the specified report from **\"My Workspace\"**.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.deletereportingroup
-  summary: "Deletes the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Deletes the specified report from the specified workspace.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.exportreport
-  summary: "Exports the specified report from **\"My Workspace\"** to a PBIX file  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Exports the specified report from **\"My Workspace\"** to a .pbix file.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.exportreportingroup
-  summary: "Exports the specified report from the specified workspace to a PBIX file  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Exports the specified report from the specified workspace to a .pbix file.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.getreport
-  summary: "Returns the specified report from **\"My Workspace\"**  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Returns the specified report from **\"My Workspace\"**.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.getreportingroup
-  summary: "Returns the specified report from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Returns the specified report from the specified workspace.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.getreports
-  summary: "Returns a list of reports from **\"My Workspace\"**  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Returns a list of reports from **\"My Workspace\"**.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.getreportsingroup
-  summary: "Returns a list of reports from the specified workspace  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Returns a list of reports from the specified workspace.  \n<br/>**Required scope**: Report.ReadWrite.All or Report.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.rebindreport
-  summary: "Rebinds the specified report from **\"My Workspace\"** workspace to the requested dataset  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Rebinds the specified report from **\"My Workspace\"** to the requested dataset.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.rebindreportingroup
-  summary: "Rebinds the specified report from the specified workspace to the requested dataset  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Rebinds the specified report from the specified workspace to the requested dataset.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.updatereportcontent
-  summary: "Updates the specified report from **\"My Workspace\"** to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Updates the specified report from **\"My Workspace\"** to have the same content as the report in the request body.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.reports.updatereportcontentingroup
-  summary: "Updates the specified report from the specified workspace to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Updates the specified report from the specified workspace to have the same content as the specified report in the request body.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

@@ -4,7 +4,7 @@ name: Clone Report In Group
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Clones the specified report from the specified workspace  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Clones the specified report from the specified workspace.  \n<br/>**Required scope**: Content.Create <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -38,18 +38,18 @@ requestBody:
     - uid: string
   - name: targetWorkspaceId
     in: body
-    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided the new report will be cloned within the same workspace as the source report.
+    description: Optional parameter for specifying the target workspace id. Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided, the new report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
     in: body
-    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided the new report will be associated with the same dataset as the source report.
+    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided, the new report will be associated with the same dataset as the source report.
     types:
     - uid: string
 requestHeader: []
 definitions:
 - name: Report
-  description: A Power BI Report
+  description: A Power BI report
   kind: object
   properties:
   - name: id
@@ -73,7 +73,7 @@ definitions:
     types:
     - uid: string
 - name: CloneReportRequest
-  description: Power BI Clone Report Request
+  description: Power BI clone report request
   kind: object
   properties:
   - name: name
@@ -81,19 +81,12 @@ definitions:
     types:
     - uid: string
   - name: targetWorkspaceId
-    description: Optional parameter for specifying the target workspace id, Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided the new report will be cloned within the same workspace as the source report.
+    description: Optional parameter for specifying the target workspace id. Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided, the new report will be cloned within the same workspace as the source report.
     types:
     - uid: string
   - name: targetModelId
-    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided the new report will be associated with the same dataset as the source report.
+    description: Optional parameter for specifying the target associated dataset id. <br/>If not provided, the new report will be associated with the same dataset as the source report.
     types:
     - uid: string
 examples: []
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

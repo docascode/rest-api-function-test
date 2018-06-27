@@ -4,7 +4,7 @@ name: Get Available Feature By Name
 service: Power BI REST APIs
 groupName: Available Features
 apiVersion: v1.0
-summary: "Returns the specified available feature for user by name  \n<br/>**Required scope**: None"
+summary: "Returns the specified available feature for user by name.  \n<br/>**Required scope**: None"
 consumes: []
 produces:
 - application/json
@@ -25,7 +25,7 @@ responses:
 requestHeader: []
 definitions:
 - name: AvailableFeature
-  description: Power BI Available Feature
+  description: Power BI available feature
   kind: object
   properties:
   - name: name
@@ -90,11 +90,4 @@ examples:
           "usage": 65
         }
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

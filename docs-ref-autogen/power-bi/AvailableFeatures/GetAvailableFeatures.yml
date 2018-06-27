@@ -19,7 +19,7 @@ responses:
 requestHeader: []
 definitions:
 - name: ODataResponse[List[AvailableFeature]]
-  description: Odata response wrapper for a Power BI Available Features list
+  description: Odata response wrapper for a Power BI available features list
   kind: object
   properties:
   - name: odata.context
@@ -27,12 +27,12 @@ definitions:
     types:
     - uid: string
   - name: features
-    description: The Available Features List
+    description: The available features list
     types:
     - uid: AvailableFeature
       isArray: true
 - name: AvailableFeature
-  description: Power BI Available Feature
+  description: Power BI available feature
   kind: object
   properties:
   - name: name
@@ -101,11 +101,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

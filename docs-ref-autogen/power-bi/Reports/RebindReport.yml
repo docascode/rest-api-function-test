@@ -4,7 +4,7 @@ name: Rebind Report
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Rebinds the specified report from **\"My Workspace\"** workspace to the requested dataset  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Rebinds the specified report from **\"My Workspace\"** to the requested dataset.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -35,7 +35,7 @@ definitions:
   kind: object
   properties: []
 - name: RebindReportRequest
-  description: Power BI Rebind Report Request
+  description: Power BI rebind report request
   kind: object
   properties:
   - name: datasetId
@@ -43,11 +43,4 @@ definitions:
     types:
     - uid: string
 examples: []
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

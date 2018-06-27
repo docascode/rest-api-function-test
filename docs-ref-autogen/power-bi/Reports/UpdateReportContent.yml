@@ -4,7 +4,7 @@ name: Update Report Content
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0
-summary: "Updates the specified report from **\"My Workspace\"** to have the same content as the specified report in the request body  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Updates the specified report from **\"My Workspace\"** to have the same content as the report in the request body.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces:
@@ -50,7 +50,7 @@ definitions:
     types:
     - uid: string
 - name: Report
-  description: A Power BI Report
+  description: A Power BI report
   kind: object
   properties:
   - name: id
@@ -74,7 +74,7 @@ definitions:
     types:
     - uid: string
 - name: UpdateReportContentRequest
-  description: Power BI Update Report Content Request
+  description: Power BI update report content request
   kind: object
   properties:
   - name: sourceType
@@ -86,11 +86,4 @@ definitions:
     types:
     - uid: SourceReport
 examples: []
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

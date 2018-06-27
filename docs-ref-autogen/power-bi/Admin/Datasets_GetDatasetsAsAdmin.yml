@@ -4,7 +4,7 @@ name: Datasets GetDatasetsAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of datasets for an organization.  \n**Note:** You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of datasets for the organization.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -67,7 +67,7 @@ definitions:
     types:
     - uid: string
   - name: defaultRetentionPolicy
-    description: The dataset default data retention policy, only relevant to post dataset API
+    description: The dataset default data retention policy. Only relevant to the PostDataset API.
     types:
     - uid: string
   - name: addRowsAPIEnabled
@@ -75,7 +75,7 @@ definitions:
     types:
     - uid: boolean
   - name: tables
-    description: The dataset tables, only relevant to post dataset API
+    description: The dataset tables. Only relevant to the PostDataset API.
     types:
     - uid: Table
       isArray: true
@@ -84,17 +84,17 @@ definitions:
     types:
     - uid: string
   - name: relationships
-    description: The dataset relationships, only relevant to post dataset API
+    description: The dataset relationships. Only relevant to the PostDataset API.
     types:
     - uid: Relationship
       isArray: true
   - name: datasources
-    description: The datasources associated with this dataset, only relevant to post dataset API
+    description: The datasources associated with this dataset. Only relevant to the PostDataset API.
     types:
     - uid: Datasource
       isArray: true
   - name: defaultMode
-    description: The dataset mode or type, only relevant to post dataset API
+    description: The dataset mode or type. Only relevant to the PostDataset API.
     types:
     - uid: DatasetMode
   - name: IsRefreshable
@@ -110,7 +110,7 @@ definitions:
     types:
     - uid: boolean
   - name: IsOnPremGatewayRequired
-    description: Dataset requires on-premises data gateway
+    description: Dataset requires an On-premises Data Gateway
     types:
     - uid: boolean
 - name: Table
@@ -169,11 +169,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: The datasource name, available only for direct query.
+    description: The datasource name. Available only for DirectQuery.
     types:
     - uid: string
   - name: connectionString
-    description: The datasource connection string, available only for direct query.
+    description: The datasource connection string. Available only for DirectQuery.
     types:
     - uid: string
   - name: datasourceType
@@ -185,15 +185,15 @@ definitions:
     types:
     - uid: DatasourceConnectionDetails
   - name: gatewayId
-    description: The bound gateway id, empty when not bound to a gateway
+    description: The bound gateway id. Empty when not bound to a gateway.
     types:
     - uid: string
   - name: datasourceId
-    description: The bound datasource id, empty when not bound to a gateway
+    description: The bound datasource id. Empty when not bound to a gateway.
     types:
     - uid: string
 - name: DatasetMode
-  description: The dataset mode or type, only relevant to post dataset API
+  description: The dataset mode or type. Only relevant to the PostDataset API.
   kind: enum
   properties:
   - name: AsAzure
@@ -293,11 +293,4 @@ examples:
           }
         ]
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

@@ -4,7 +4,7 @@ name: Groups UpdateGroupAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Updates the specified workspace properties for an organization.  \n**Note**: This API is currently limited to updating workspaces in the new workspace experiences preview. Only name and description can be updated, and name must be unique inside an organization. You must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Updates the specified workspace properties.  \n**Note**: This API is currently limited to updating workspaces in the new workspace experiences preview. Only name and description can be updated, and name must be unique inside an organization. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -65,7 +65,7 @@ requestBody:
     - uid: string
   - name: users
     in: body
-    description: The users that belong to the group, with their access rights
+    description: The users that belong to the group, and their access rights.
     types:
     - uid: GroupUserAccessRight
       isArray: true
@@ -87,7 +87,7 @@ definitions:
   kind: object
   properties: []
 - name: Group
-  description: A Power BI Group
+  description: A Power BI group
   kind: object
   properties:
   - name: id
@@ -123,7 +123,7 @@ definitions:
     types:
     - uid: string
   - name: users
-    description: The users that belong to the group, with their access rights
+    description: The users that belong to the group, and their access rights.
     types:
     - uid: GroupUserAccessRight
       isArray: true
@@ -158,11 +158,4 @@ examples:
       }
   responses:
   - statusCode: "200"
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

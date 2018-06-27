@@ -4,7 +4,7 @@ name: Get Datasource By Id
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Returns the specified datasource from the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns the specified datasource from the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -51,7 +51,7 @@ definitions:
     types:
     - uid: string
   - name: connectionDetails
-    description: Json formatted connection details
+    description: Connection details in json format
     types:
     - uid: string
   - name: credentialType
@@ -108,11 +108,4 @@ examples:
         "credentialType": "Windows",
         "datasourceName": "Sample Datasource"
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []

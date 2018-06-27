@@ -4,7 +4,7 @@ name: Get Gateway By Id
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Returns the specified gateway  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -25,7 +25,7 @@ responses:
 requestHeader: []
 definitions:
 - name: Gateway
-  description: A Power BI Gateway
+  description: A Power BI gateway
   kind: object
   properties:
   - name: id
@@ -53,7 +53,7 @@ definitions:
     types:
     - uid: string
 - name: GatewayPublicKey
-  description: A Power BI Gateway Public Key
+  description: A Power BI gateway public key
   kind: object
   properties:
   - name: exponent
@@ -80,11 +80,4 @@ examples:
           "modulus": "o6j2....cLk="
         }
       }
-security:
-- type: oauth2
-  description: Azure Active Directory OAuth2 Flow.
-  flow: implicit
-  authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize?resource=https%3a%2f%2fanalysis.windows.net%2fpowerbi%2fapi
-  scopes:
-  - name: user_impersonation
-    description: impersonate your user account
+security: []
