@@ -60,6 +60,10 @@ definitions:
     description: Access right user has on the capacity
     types:
     - uid: capacityUserAccessRightEnum
+  - name: region
+    description: The Azure region where the capacity is provisioned
+    types:
+    - uid: string
 - name: stateEnum
   description: The capacity state
   kind: enum
@@ -124,6 +128,7 @@ examples:
             ],
             "sku": "A1",
             "state": "Active",
+            "region": "West Central US",
             "capacityUserAccessRight": "Admin"
           }
         ]
