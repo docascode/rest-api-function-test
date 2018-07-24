@@ -29,7 +29,8 @@ responses:
   types:
   - uid: Object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: datasetId
     in: body
     description: The new dataset of the rebinded report

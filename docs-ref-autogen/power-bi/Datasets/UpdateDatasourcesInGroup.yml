@@ -28,7 +28,8 @@ responses:
   types:
   - uid: Object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: updateDetails
     in: body
     description: The connection server

@@ -22,7 +22,8 @@ responses:
   types:
   - uid: Object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: id
     in: body
     description: The workspace id

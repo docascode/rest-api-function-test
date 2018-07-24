@@ -35,7 +35,8 @@ responses:
   types:
   - uid: Import
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: filePath
     in: body
     description: The OneDrive for Business file path to import, can be absolute or relative

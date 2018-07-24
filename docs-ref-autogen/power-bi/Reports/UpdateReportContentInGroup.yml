@@ -30,7 +30,8 @@ responses:
   types:
   - uid: Report
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: sourceType
     in: body
     description: The source type for the content update

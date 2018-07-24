@@ -23,7 +23,8 @@ responses:
   types:
   - uid: Object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: groupUserAccessRight
     in: body
     description: Access rights user has for the workspace

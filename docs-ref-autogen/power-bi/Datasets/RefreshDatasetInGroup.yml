@@ -29,7 +29,8 @@ responses:
   types:
   - uid: Object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: notifyOption
     in: body
     isRequired: true

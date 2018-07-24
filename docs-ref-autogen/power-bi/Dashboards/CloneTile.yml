@@ -30,7 +30,8 @@ responses:
   types:
   - uid: Tile
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: targetDashboardId
     in: body
     description: The target dashboard id

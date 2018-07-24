@@ -21,7 +21,7 @@ operations:
 - uid: api.powerbi.com.power-bi.datasets.getdatasetbyidingroup
   summary: "Returns the specified dataset from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.datasets.getdatasets
-  summary: "Returns a list of datasets from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Returns a list of datasets from **\"My Workspace\"** .  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.datasets.getdatasetsingroup
   summary: "Returns a list of datasets from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.datasets.getdatasources

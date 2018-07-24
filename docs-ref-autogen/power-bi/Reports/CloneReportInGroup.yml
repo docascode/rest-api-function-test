@@ -30,7 +30,8 @@ responses:
   types:
   - uid: Report
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: name
     in: body
     description: The new report name

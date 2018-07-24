@@ -24,7 +24,8 @@ responses:
   types:
   - uid: GatewayDatasource
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: dataSourceType
     in: body
     description: The datasource type

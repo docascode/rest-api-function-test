@@ -30,7 +30,8 @@ responses:
   types:
   - uid: EmbedToken
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: accessLevel
     in: body
     description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
