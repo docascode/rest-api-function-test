@@ -4,7 +4,6 @@
       {
         "src":"docs-ref-autogen",
         "files": [
-          "**.json",
           "**.yml"
           ],
         "exclude": [ ],
