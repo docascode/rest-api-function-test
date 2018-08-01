@@ -46,6 +46,7 @@
     "globalMetadata": {
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
       "extendBreadcrumb": true,
+      "rest_product": "{Power BI}",
       "titleSuffix": "Power BI REST API",
       "ms.service": "powerbi",
       "author": "eligr",
@@ -55,7 +56,11 @@
       "ms.date": "03/14/2018",
       "feedback_system": "None"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "searchScope": {
+        "structured/**.yml": ["Power BI", "REST"]
+      }
+    },
     "template": [],
     "dest": "powerbi-rest-api",
     "markdownEngineName": "markdig"
