@@ -46,7 +46,7 @@
     "globalMetadata": {
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "rest_product": "{Power BI}",
+      "rest_product": "Power BI",
       "titleSuffix": "Power BI REST API",
       "ms.service": "powerbi",
       "author": "eligr",
