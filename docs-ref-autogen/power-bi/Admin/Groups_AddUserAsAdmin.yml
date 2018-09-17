@@ -4,7 +4,7 @@ name: Groups AddUserAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Grants user permissions to the specified workspace.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Grants user permissions to the specified workspace.  \n**Note:** This API is currently limited to updating workspaces in the new workspace experience. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -35,6 +35,21 @@ requestBody:
     description: Email address of the user
     types:
     - uid: string
+  - name: displayName
+    in: body
+    description: Display name of the principal
+    types:
+    - uid: string
+  - name: identifier
+    in: body
+    description: Identifier of the principal
+    types:
+    - uid: string
+  - name: principalType
+    in: body
+    description: The principal type
+    types:
+    - uid: PrincipalType
 requestHeader: []
 definitions:
 - name: Object
@@ -52,6 +67,18 @@ definitions:
     description: Email address of the user
     types:
     - uid: string
+  - name: displayName
+    description: Display name of the principal
+    types:
+    - uid: string
+  - name: identifier
+    description: Identifier of the principal
+    types:
+    - uid: string
+  - name: principalType
+    description: The principal type
+    types:
+    - uid: PrincipalType
 - name: GroupUserAccessRightEnum
   description: Access rights user has for the workspace
   kind: enum
@@ -72,8 +99,20 @@ definitions:
     description: Grants read and write access to content in group
     types:
     - uid: string
+- name: PrincipalType
+  description: The principal type
+  kind: enum
+  properties:
+  - name: User
+    description: User principal type
+    types:
+    - uid: string
+  - name: Group
+    description: Group principal type
+    types:
+    - uid: string
 examples:
-- name: example
+- name: Example
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/admin/groups/206d27ca-94e8-4a69-855b-5c32bdd458a8/users
     body: >-

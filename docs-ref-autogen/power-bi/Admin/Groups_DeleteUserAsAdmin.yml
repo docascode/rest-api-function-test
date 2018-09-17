@@ -4,7 +4,7 @@ name: Groups DeleteUserAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Removes user permissions to the specified workspace.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Removes user permissions to the specified workspace.  \n**Note:** This API is currently limited to updating workspaces in the new workspace experience. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces: []
 paths:
@@ -33,7 +33,7 @@ definitions:
   kind: object
   properties: []
 examples:
-- name: example
+- name: Example
   request:
     uri: DELETE https://api.powerbi.com/v1.0/myorg/admin/groups/f7d76f5a-7190-43c6-bf12-7a135c6c2d69/users/john@contoso.com
   responses:

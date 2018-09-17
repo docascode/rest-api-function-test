@@ -73,12 +73,15 @@ definitions:
   kind: enum
   properties:
   - name: Scheduled
+    description: Refresh was triggered by the dataset refresh schedule setting
     types:
     - uid: string
   - name: OnDemand
+    description: Refresh was triggered interactively threw Power BI portal
     types:
     - uid: string
   - name: ViaApi
+    description: Refresh was triggered by an Api call
     types:
     - uid: string
 examples:

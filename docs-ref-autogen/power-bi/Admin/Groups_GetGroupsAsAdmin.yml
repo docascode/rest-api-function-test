@@ -4,7 +4,7 @@ name: Groups GetGroupsAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Returns a list of workspaces for the organization.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Returns a list of workspaces for the organization.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All or Tenant.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes: []
 produces:
 - application/json
@@ -108,6 +108,18 @@ definitions:
     description: Email address of the user
     types:
     - uid: string
+  - name: displayName
+    description: Display name of the principal
+    types:
+    - uid: string
+  - name: identifier
+    description: Identifier of the principal
+    types:
+    - uid: string
+  - name: principalType
+    description: The principal type
+    types:
+    - uid: PrincipalType
 - name: GroupUserAccessRightEnum
   description: Access rights user has for the workspace
   kind: enum
@@ -128,8 +140,20 @@ definitions:
     description: Grants read and write access to content in group
     types:
     - uid: string
+- name: PrincipalType
+  description: The principal type
+  kind: enum
+  properties:
+  - name: User
+    description: User principal type
+    types:
+    - uid: string
+  - name: Group
+    description: Group principal type
+    types:
+    - uid: string
 examples:
-- name: get workspaces with users expanded
+- name: Get workspaces with users expanded (only applicable for workspaces in the new workspace experience)
   request:
     uri: GET https://api.powerbi.com/v1.0/myorg/admin/groups?$expand=users
   responses:
@@ -164,7 +188,7 @@ examples:
           }
         ]
       }
-- name: get orphaned workspaces
+- name: Get orphaned workspaces (only applicable for workspaces in the new workspace experience)
   request:
     uri: "GET https://api.powerbi.com/v1.0/myorg/admin/groups?$expand=users&$filter=(not users/any()) or (not users/any(u: u/groupUserAccessRight eq Microsoft.PowerBI.ServiceContracts.Api.GroupUserAccessRight'Admin'))"
   responses:
@@ -184,7 +208,7 @@ examples:
           }
         ]
       }
-- name: get deleted workspaces
+- name: Get deleted workspaces (only applicable for workspaces in the new workspace experience)
   request:
     uri: GET https://api.powerbi.com/v1.0/myorg/admin/groups?$filter=state eq 'Deleted'
   responses:

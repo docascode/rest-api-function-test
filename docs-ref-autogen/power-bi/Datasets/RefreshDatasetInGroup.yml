@@ -55,12 +55,15 @@ definitions:
   kind: enum
   properties:
   - name: NoNotification
+    description: No notification will be sent
     types:
     - uid: string
   - name: MailOnFailure
+    description: Mail notification will be sent on refresh failure
     types:
     - uid: string
   - name: MailOnCompletion
+    description: Mail notification will be sent on refresh completion, including either failure and success
     types:
     - uid: string
 examples:

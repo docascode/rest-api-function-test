@@ -48,7 +48,7 @@ definitions:
   kind: object
   properties:
   - name: datasourceAccessRight
-    description: The user access rights for the datasource
+    description: The user access rights for the datasource. <br/>Only Read permission is supported.
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
@@ -56,22 +56,27 @@ definitions:
     types:
     - uid: string
 - name: UserAccessRightEnum
-  description: The user access rights for the datasource
+  description: The user access rights for the datasource. <br/>Only Read permission is supported.
   kind: enum
   properties:
   - name: None
+    description: Removes permission to access the datasource. Only applies when updating user permissions.
     types:
     - uid: string
   - name: Read
+    description: Indicates that datasets owned by the user has read access to this datasource.
     types:
     - uid: string
   - name: Write
+    description: Not Supported
     types:
     - uid: string
   - name: Admin
+    description: Not Supported
     types:
     - uid: string
   - name: ReadWrite
+    description: Not Supported
     types:
     - uid: string
 examples:

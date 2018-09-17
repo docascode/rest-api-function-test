@@ -22,7 +22,7 @@ requestBody:
   parameters:
   - name: accessLevel
     in: body
-    description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
+    description: Required access level for EmbedToken generation
     types:
     - uid: TokenAccessLevel
   - name: datasetId
@@ -44,7 +44,7 @@ requestBody:
 requestHeader: []
 definitions:
 - name: EffectiveIdentity
-  description: The identity the generated token should reflect
+  description: The identity the generated token should reflect, for more details see this [article](https://docs.microsoft.com/power-bi/developer/embedded-row-level-security)
   kind: object
   properties:
   - name: username
@@ -86,7 +86,7 @@ definitions:
   kind: object
   properties:
   - name: accessLevel
-    description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
+    description: Required access level for EmbedToken generation
     types:
     - uid: TokenAccessLevel
   - name: datasetId
@@ -103,16 +103,19 @@ definitions:
     - uid: EffectiveIdentity
       isArray: true
 - name: TokenAccessLevel
-  description: Required access level for EmbedToken generation. 'Edit' only applies when generating EmbedToken for report embedding. 'Create' only applies when generating EmbedToken for report creation.
+  description: Required access level for EmbedToken generation
   kind: enum
   properties:
   - name: View
+    description: Indicates that the generated EmbedToken should grant only Viewing permissions
     types:
     - uid: string
   - name: Edit
+    description: Indicates that the generated EmbedToken should grant Viewing and Editing permissions, only applies when generating EmbedToken for report embedding
     types:
     - uid: string
   - name: Create
+    description: Indicates that the generated EmbedToken should grant Creation permissions, only applies when generating EmbedToken for report creation
     types:
     - uid: string
 examples: []

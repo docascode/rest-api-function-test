@@ -4,7 +4,7 @@ name: Add Datasource User
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0
-summary: "Grants the specified user the permissions required to use the specified datasource.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Grants or updates the permissions required to use the specified datasource for the specified user.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -33,7 +33,7 @@ requestBody:
   parameters:
   - name: datasourceAccessRight
     in: body
-    description: The user access rights for the datasource
+    description: The user access rights for the datasource. <br/>Only Read permission is supported.
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
@@ -51,7 +51,7 @@ definitions:
   kind: object
   properties:
   - name: datasourceAccessRight
-    description: The user access rights for the datasource
+    description: The user access rights for the datasource. <br/>Only Read permission is supported.
     types:
     - uid: UserAccessRightEnum
   - name: emailAddress
@@ -59,22 +59,27 @@ definitions:
     types:
     - uid: string
 - name: UserAccessRightEnum
-  description: The user access rights for the datasource
+  description: The user access rights for the datasource. <br/>Only Read permission is supported.
   kind: enum
   properties:
   - name: None
+    description: Removes permission to access the datasource. Only applies when updating user permissions.
     types:
     - uid: string
   - name: Read
+    description: Indicates that datasets owned by the user has read access to this datasource.
     types:
     - uid: string
   - name: Write
+    description: Not Supported
     types:
     - uid: string
   - name: Admin
+    description: Not Supported
     types:
     - uid: string
   - name: ReadWrite
+    description: Not Supported
     types:
     - uid: string
 examples:

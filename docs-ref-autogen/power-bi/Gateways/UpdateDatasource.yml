@@ -65,6 +65,10 @@ definitions:
     description: Should the caller's AAD identity be used for OAuth2 credentials configuration
     types:
     - uid: boolean
+  - name: useEndUserOAuth2Credentials
+    description: Should the end-user OAuth2 credentials be used for connecting to the datasource in DirectQuery mode. Only supported for Direct Query to SQL Azure.
+    types:
+    - uid: boolean
 - name: Object
   kind: object
   properties: []

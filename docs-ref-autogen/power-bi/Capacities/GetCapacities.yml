@@ -69,33 +69,43 @@ definitions:
   kind: enum
   properties:
   - name: NotActivated
+    description: Not Supported
     types:
     - uid: string
   - name: Active
+    description: Capacity ready for use
     types:
     - uid: string
   - name: Provisioning
+    description: Capacity in activation process
     types:
     - uid: string
   - name: ProvisionFailed
+    description: Capacity failed to provisioned
     types:
     - uid: string
   - name: PreSuspended
+    description: Not Supported
     types:
     - uid: string
   - name: Suspended
+    description: Capacity suspended for use
     types:
     - uid: string
   - name: Deleting
+    description: Capacity in process of being deleted
     types:
     - uid: string
   - name: Deleted
+    description: Capacity has been deleted and is not available
     types:
     - uid: string
   - name: Invalid
+    description: Capacity can not be used
     types:
     - uid: string
   - name: UpdatingSku
+    description: Capacity Sku change is in progress
     types:
     - uid: string
 - name: capacityUserAccessRightEnum
@@ -103,12 +113,15 @@ definitions:
   kind: enum
   properties:
   - name: None
+    description: User doesn't have access to the capacity
     types:
     - uid: string
   - name: Assign
+    description: User can assign workspaces to the capacity
     types:
     - uid: string
   - name: Admin
+    description: User has administrator rights on the capacity
     types:
     - uid: string
 examples:

@@ -60,7 +60,7 @@ requestBody:
     - uid: string
   - name: positionConflictAction
     in: body
-    description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used.
+    description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used. <br/>If there is no conflict, clone tile to same position as in source.
     types:
     - uid: positionConflictActionEnum
 requestHeader: []
@@ -122,17 +122,19 @@ definitions:
     types:
     - uid: string
   - name: positionConflictAction
-    description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used.
+    description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used. <br/>If there is no conflict, clone tile to same position as in source.
     types:
     - uid: positionConflictActionEnum
 - name: positionConflictActionEnum
-  description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used.
+  description: Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used. <br/>If there is no conflict, clone tile to same position as in source.
   kind: enum
   properties:
   - name: Tail
+    description: Tile will be added at the end of the chosen dashboard
     types:
     - uid: string
   - name: Abort
+    description: In a case of position conflict, the request will be aborted
     types:
     - uid: string
 examples: []

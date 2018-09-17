@@ -4,7 +4,7 @@ name: Groups RestoreDeletedGroupAsAdmin
 service: Power BI REST APIs
 groupName: Admin
 apiVersion: v1.0
-summary: "Restores a deleted workspace.  \n**Note**: This API is currently limited to restoring workspaces in the new workspace experiences preview. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+summary: "Restores a deleted workspace.  \n**Note**: This API is currently limited to restoring workspaces in the new workspace experience. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 consumes:
 - application/json
 produces: []
@@ -54,7 +54,7 @@ definitions:
     types:
     - uid: string
 examples:
-- name: example
+- name: Example
   request:
     uri: POST https://api.powerbi.com/v1.0/myorg/admin/groups/3bec11ee-48a9-490c-8e4d-1ebba90d491a/restore
     body: >-

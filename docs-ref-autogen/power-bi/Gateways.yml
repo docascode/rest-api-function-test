@@ -5,7 +5,7 @@ apiVersion: v1.0
 service: Power BI REST APIs
 operations:
 - uid: api.powerbi.com.power-bi.gateways.adddatasourceuser
-  summary: "Grants the specified user the permissions required to use the specified datasource.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+  summary: "Grants or updates the permissions required to use the specified datasource for the specified user.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.gateways.createdatasource
   summary: "Creates a new datasource on the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.power-bi.gateways.deletedatasource

@@ -283,12 +283,15 @@ definitions:
   kind: enum
   properties:
   - name: OneDirection
+    description: For filtering purposes, filter will be applied on the table where values are being aggregated
     types:
     - uid: string
   - name: BothDirections
+    description: For filtering purposes, both tables are treated as if they're a single table
     types:
     - uid: string
   - name: Automatic
+    description: Cross filtering behavior defined automatically
     types:
     - uid: string
 - name: DatasourceConnectionDetails
@@ -312,18 +315,23 @@ definitions:
   kind: enum
   properties:
   - name: AsAzure
+    description: Creates a dataset with a live connection to Azure Analysis Service
     types:
     - uid: string
   - name: AsOnPrem
+    description: Creates a dataset with a live connection to On-premise Analysis Service
     types:
     - uid: string
   - name: Push
+    description: Creates a dataset which allows programmatic access for pushing data into PowerBI, [learn more](https://docs.microsoft.com/power-bi/developer/walkthrough-push-data)
     types:
     - uid: string
   - name: Streaming
+    description: Creates a dataset which supports data streaming, [learn more](https://docs.microsoft.com/power-bi/service-real-time-streaming)
     types:
     - uid: string
   - name: PushStreaming
+    description: Creates a dataset which supports data streaming and allows programmatic access for pushing data into Power BI
     types:
     - uid: string
 examples:

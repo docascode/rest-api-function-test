@@ -103,6 +103,18 @@ definitions:
     description: Email address of the user
     types:
     - uid: string
+  - name: displayName
+    description: Display name of the principal
+    types:
+    - uid: string
+  - name: identifier
+    description: Identifier of the principal
+    types:
+    - uid: string
+  - name: principalType
+    description: The principal type
+    types:
+    - uid: PrincipalType
 - name: GroupUserAccessRightEnum
   description: Access rights user has for the workspace
   kind: enum
@@ -121,6 +133,18 @@ definitions:
     - uid: string
   - name: Contributor
     description: Grants read and write access to content in group
+    types:
+    - uid: string
+- name: PrincipalType
+  description: The principal type
+  kind: enum
+  properties:
+  - name: User
+    description: User principal type
+    types:
+    - uid: string
+  - name: Group
+    description: Group principal type
     types:
     - uid: string
 examples:
