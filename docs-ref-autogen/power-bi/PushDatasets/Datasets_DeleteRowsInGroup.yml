@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.pushdatasets.datasetsdeleterowsingroup
+uid: api.powerbi.com.power-bi.pushdatasets.datasets_deleterowsingroup
 name: Datasets DeleteRowsInGroup
 service: Power BI REST APIs
 groupName: Push Datasets

@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.refreshdataset
-name: Refresh Dataset
+name: Datasets RefreshDataset
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

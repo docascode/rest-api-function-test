@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.setalldatasetconnections
-name: Set All Dataset Connections
+name: Datasets SetAllDatasetConnections
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.groupsdeleteuserasadmin
+uid: api.powerbi.com.power-bi.admin.groups_deleteuserasadmin
 name: Groups DeleteUserAsAdmin
 service: Power BI REST APIs
 groupName: Admin

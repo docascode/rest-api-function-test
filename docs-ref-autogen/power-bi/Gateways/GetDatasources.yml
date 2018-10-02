@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.gateways.getdatasources
-name: Get Datasources
+name: Gateways GetDatasources
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0

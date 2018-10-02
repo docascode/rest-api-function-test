@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getparametersingroup
-name: Get Parameters In Group
+name: Datasets GetParametersInGroup
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

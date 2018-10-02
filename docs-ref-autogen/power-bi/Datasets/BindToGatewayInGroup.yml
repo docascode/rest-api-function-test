@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.bindtogatewayingroup
-name: Bind To Gateway In Group
+name: Datasets BindToGatewayInGroup
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

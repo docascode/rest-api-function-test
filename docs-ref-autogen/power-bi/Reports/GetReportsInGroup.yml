@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.getreportsingroup
-name: Get Reports In Group
+name: Reports GetReportsInGroup
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

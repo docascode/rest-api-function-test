@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.datasetsgetdatasourcesasadmin
+uid: api.powerbi.com.power-bi.admin.datasets_getdatasourcesasadmin
 name: Datasets GetDatasourcesAsAdmin
 service: Power BI REST APIs
 groupName: Admin

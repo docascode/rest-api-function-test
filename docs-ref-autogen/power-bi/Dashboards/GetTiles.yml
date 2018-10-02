@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.gettiles
-name: Get Tiles
+name: Dashboards GetTiles
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0

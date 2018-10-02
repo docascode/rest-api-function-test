@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.exportreportingroup
-name: Export Report In Group
+name: Reports ExportReportInGroup
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getparameters
-name: Get Parameters
+name: Datasets GetParameters
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

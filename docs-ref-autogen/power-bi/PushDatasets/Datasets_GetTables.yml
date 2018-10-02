@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.pushdatasets.datasetsgettables
+uid: api.powerbi.com.power-bi.pushdatasets.datasets_gettables
 name: Datasets GetTables
 service: Power BI REST APIs
 groupName: Push Datasets

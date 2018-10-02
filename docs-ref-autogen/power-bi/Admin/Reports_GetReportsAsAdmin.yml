@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.reportsgetreportsasadmin
+uid: api.powerbi.com.power-bi.admin.reports_getreportsasadmin
 name: Reports GetReportsAsAdmin
 service: Power BI REST APIs
 groupName: Admin

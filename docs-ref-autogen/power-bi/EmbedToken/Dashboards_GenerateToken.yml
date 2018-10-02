@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.embedtoken.dashboardsgeneratetoken
+uid: api.powerbi.com.power-bi.embedtoken.dashboards_generatetoken
 name: Dashboards GenerateToken
 service: Power BI REST APIs
 groupName: Embed Token

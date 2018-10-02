@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.rebindreport
-name: Rebind Report
+name: Reports RebindReport
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

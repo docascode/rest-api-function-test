@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.groups.addgroupuser
-name: Add Group User
+name: Groups AddGroupUser
 service: Power BI REST APIs
 groupName: Groups
 apiVersion: v1.0

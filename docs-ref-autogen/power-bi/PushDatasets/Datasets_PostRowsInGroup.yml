@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.pushdatasets.datasetspostrowsingroup
+uid: api.powerbi.com.power-bi.pushdatasets.datasets_postrowsingroup
 name: Datasets PostRowsInGroup
 service: Power BI REST APIs
 groupName: Push Datasets

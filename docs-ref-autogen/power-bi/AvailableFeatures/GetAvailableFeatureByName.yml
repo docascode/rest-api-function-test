@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.availablefeatures.getavailablefeaturebyname
-name: Get Available Feature By Name
+name: AvailableFeatures GetAvailableFeatureByName
 service: Power BI REST APIs
 groupName: Available Features
 apiVersion: v1.0

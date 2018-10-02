@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.importsgetimportsasadmin
+uid: api.powerbi.com.power-bi.admin.imports_getimportsasadmin
 name: Imports GetImportsAsAdmin
 service: Power BI REST APIs
 groupName: Admin

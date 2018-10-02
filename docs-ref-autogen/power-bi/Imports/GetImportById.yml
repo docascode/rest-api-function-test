@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.getimportbyid
-name: Get Import By Id
+name: Imports GetImportById
 service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0

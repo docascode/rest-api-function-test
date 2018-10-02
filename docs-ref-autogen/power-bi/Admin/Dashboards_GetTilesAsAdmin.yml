@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.dashboardsgettilesasadmin
+uid: api.powerbi.com.power-bi.admin.dashboards_gettilesasadmin
 name: Dashboards GetTilesAsAdmin
 service: Power BI REST APIs
 groupName: Admin

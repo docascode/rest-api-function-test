@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.embedtoken.reportsgeneratetokenforcreate
+uid: api.powerbi.com.power-bi.embedtoken.reports_generatetokenforcreate
 name: Reports GenerateTokenForCreate
 service: Power BI REST APIs
 groupName: Embed Token

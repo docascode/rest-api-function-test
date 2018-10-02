@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.capacities.getcapacities
-name: Get Capacities
+name: Capacities GetCapacities
 service: Power BI REST APIs
 groupName: Capacities
 apiVersion: v1.0

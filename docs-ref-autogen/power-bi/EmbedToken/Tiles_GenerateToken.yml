@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.embedtoken.tilesgeneratetoken
+uid: api.powerbi.com.power-bi.embedtoken.tiles_generatetoken
 name: Tiles GenerateToken
 service: Power BI REST APIs
 groupName: Embed Token

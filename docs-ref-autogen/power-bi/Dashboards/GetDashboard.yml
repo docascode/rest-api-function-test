@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.getdashboard
-name: Get Dashboard
+name: Dashboards GetDashboard
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0

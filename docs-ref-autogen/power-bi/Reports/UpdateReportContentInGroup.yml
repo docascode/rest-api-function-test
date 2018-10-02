@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.updatereportcontentingroup
-name: Update Report Content In Group
+name: Reports UpdateReportContentInGroup
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

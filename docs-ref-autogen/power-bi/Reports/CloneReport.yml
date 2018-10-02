@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.clonereport
-name: Clone Report
+name: Reports CloneReport
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

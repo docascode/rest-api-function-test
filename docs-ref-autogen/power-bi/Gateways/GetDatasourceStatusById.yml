@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.gateways.getdatasourcestatusbyid
-name: Get Datasource Status By Id
+name: Gateways GetDatasourceStatusById
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0

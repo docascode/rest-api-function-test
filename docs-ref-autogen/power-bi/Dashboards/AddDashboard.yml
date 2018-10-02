@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.adddashboard
-name: Add Dashboard
+name: Dashboards AddDashboard
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0

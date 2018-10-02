@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getrefreshhistory
-name: Get Refresh History
+name: Datasets GetRefreshHistory
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

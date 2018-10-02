@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.deletedatasetbyidingroup
-name: Delete Dataset By Id In Group
+name: Datasets DeleteDatasetByIdInGroup
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

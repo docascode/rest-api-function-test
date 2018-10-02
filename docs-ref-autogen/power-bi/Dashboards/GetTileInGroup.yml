@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.gettileingroup
-name: Get Tile In Group
+name: Dashboards GetTileInGroup
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0

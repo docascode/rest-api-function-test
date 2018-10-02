@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.gateways.deletedatasource
-name: Delete Datasource
+name: Gateways DeleteDatasource
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0

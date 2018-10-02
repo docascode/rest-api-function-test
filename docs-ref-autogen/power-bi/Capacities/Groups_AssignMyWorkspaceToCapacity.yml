@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.capacities.groupsassignmyworkspacetocapacity
+uid: api.powerbi.com.power-bi.capacities.groups_assignmyworkspacetocapacity
 name: Groups AssignMyWorkspaceToCapacity
 service: Power BI REST APIs
 groupName: Capacities

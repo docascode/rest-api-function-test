@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.gateways.getgatewaybyid
-name: Get Gateway By Id
+name: Gateways GetGatewayById
 service: Power BI REST APIs
 groupName: Gateways
 apiVersion: v1.0

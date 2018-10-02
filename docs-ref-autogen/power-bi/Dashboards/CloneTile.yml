@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.dashboards.clonetile
-name: Clone Tile
+name: Dashboards CloneTile
 service: Power BI REST APIs
 groupName: Dashboards
 apiVersion: v1.0

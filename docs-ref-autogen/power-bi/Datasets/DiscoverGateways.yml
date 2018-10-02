@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.discovergateways
-name: Discover Gateways
+name: Datasets DiscoverGateways
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

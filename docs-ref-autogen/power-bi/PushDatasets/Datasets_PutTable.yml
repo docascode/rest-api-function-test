@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.pushdatasets.datasetsputtable
+uid: api.powerbi.com.power-bi.pushdatasets.datasets_puttable
 name: Datasets PutTable
 service: Power BI REST APIs
 groupName: Push Datasets

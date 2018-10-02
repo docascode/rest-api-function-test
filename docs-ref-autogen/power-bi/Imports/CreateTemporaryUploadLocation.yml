@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.createtemporaryuploadlocation
-name: Create Temporary Upload Location
+name: Imports CreateTemporaryUploadLocation
 service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0

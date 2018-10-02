@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.imports.postimportingroup
-name: Post Import In Group
+name: Imports PostImportInGroup
 service: Power BI REST APIs
 groupName: Imports
 apiVersion: v1.0

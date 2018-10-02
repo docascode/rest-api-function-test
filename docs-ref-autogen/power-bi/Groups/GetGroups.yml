@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.groups.getgroups
-name: Get Groups
+name: Groups GetGroups
 service: Power BI REST APIs
 groupName: Groups
 apiVersion: v1.0

@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getdatasourcesingroup
-name: Get Datasources In Group
+name: Datasets GetDatasourcesInGroup
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.datasets.getrefreshhistoryingroup
-name: Get Refresh History In Group
+name: Datasets GetRefreshHistoryInGroup
 service: Power BI REST APIs
 groupName: Datasets
 apiVersion: v1.0

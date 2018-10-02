@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.groupsrestoredeletedgroupasadmin
+uid: api.powerbi.com.power-bi.admin.groups_restoredeletedgroupasadmin
 name: Groups RestoreDeletedGroupAsAdmin
 service: Power BI REST APIs
 groupName: Admin

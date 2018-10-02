@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: api.powerbi.com.power-bi.reports.getreport
-name: Get Report
+name: Reports GetReport
 service: Power BI REST APIs
 groupName: Reports
 apiVersion: v1.0

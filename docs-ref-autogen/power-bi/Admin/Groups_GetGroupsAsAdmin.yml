@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.groupsgetgroupsasadmin
+uid: api.powerbi.com.power-bi.admin.groups_getgroupsasadmin
 name: Groups GetGroupsAsAdmin
 service: Power BI REST APIs
 groupName: Admin

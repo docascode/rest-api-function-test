@@ -1,5 +1,5 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.power-bi.admin.dashboardsgetdashboardsingroupasadmin
+uid: api.powerbi.com.power-bi.admin.dashboards_getdashboardsingroupasadmin
 name: Dashboards GetDashboardsInGroupAsAdmin
 service: Power BI REST APIs
 groupName: Admin
