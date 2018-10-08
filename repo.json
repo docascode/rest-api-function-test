@@ -1,9 +1,4 @@
 {
 	"repo": [
-		{
-			"url": "https://powerbi.visualstudio.com/Embedded/_git/PowerBI-CSharp",
-			"branch": "dev",
-			"name": "power-bi-rest-api-source"
-		}
 	]
 }

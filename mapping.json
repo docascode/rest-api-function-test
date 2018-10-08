@@ -7,15 +7,15 @@
   "remove_tag_from_operationId": true,
   "organizations":[
     {
-        "name":"Power BI",
+        "name":"Function Test",
         "services":[
         {
-          "toc_title": "Power BI REST APIs",
-          "url_group": "power-bi",
+          "toc_title": "Function Test REST APIs",
+          "url_group": "function-test",
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "power-bi-rest-api-source/sdk/swaggers/swaggerV2.json"
+              "source": "test/swaggerV2.json"
             }
           ]
         }
