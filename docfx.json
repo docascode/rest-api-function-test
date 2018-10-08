@@ -1,0 +1,68 @@
+{
+  "build": {
+    "content": [
+      {
+        "src":"docs-ref-autogen",
+        "files": [
+          "**.yml"
+          ],
+        "exclude": [ ],
+        "dest": "api"        
+      },
+      {
+        "src":"docs-ref-autogen",
+        "files": [
+          "toc.md"
+          ],
+        "exclude": [ ],
+        "dest": "api/function-test"        
+      },
+      {
+        "src":"docs-ref-index",
+        "files": [
+          "**/*.md"
+          ],
+        "exclude": [ ] ,
+        "dest": "api/function-test"      
+      }
+    ],
+
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "breadcrumb_path": "/rest/breadcrumb/toc.json",
+      "extendBreadcrumb": true,
+      "rest_product": "Function Test",
+      "titleSuffix": "REST API Function Test",
+      "ms.service": "function-test",
+      "author": "eligr",
+      "ms.author": "eligr",
+      "ms.topic": "reference",
+      "ms.devlang": "function-test",
+      "ms.date": "03/14/2018",
+      "feedback_system": "None"
+    },
+    "fileMetadata": {
+      "searchScope": {
+        "docs-ref-autogen/**.yml": ["Function Test", "REST"]
+      }
+    },
+    "template": [],
+    "dest": "rest-api-function-test",
+    "markdownEngineName": "markdig"
+  }
+}
