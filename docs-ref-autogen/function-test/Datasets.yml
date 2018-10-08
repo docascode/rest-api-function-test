@@ -20,8 +20,6 @@ operations:
   summary: "Returns the specified dataset from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.getdatasetbyidingroup
   summary: "Returns the specified dataset from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
-- uid: api.powerbi.com.function-test.datasets.getdatasets
-  summary: "Returns a list of datasets from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.getdatasetsingroup
   summary: "Returns a list of datasets from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.getdatasources
@@ -40,6 +38,8 @@ operations:
   summary: "Returns the refresh history of the specified dataset from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.getrefreshhistoryingroup
   summary: "Returns the refresh history of the specified dataset from the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.datasets.mydefinetitle
+  summary: "Returns a list of datasets from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.refreshdataset
   summary: "Triggers a refresh for the specified dataset from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
 - uid: api.powerbi.com.function-test.datasets.refreshdatasetingroup

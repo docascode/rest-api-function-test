@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: api.powerbi.com.function-test.datasets.getdatasets
-name: Datasets GetDatasets
+uid: api.powerbi.com.function-test.datasets.mydefinetitle
+name: my Define Title
 service: Function Test REST APIs
 groupName: Datasets
 apiVersion: v1.0
