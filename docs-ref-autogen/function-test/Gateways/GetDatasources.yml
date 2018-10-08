@@ -1,0 +1,130 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.gateways.getdatasources
+name: Gateways GetDatasources
+service: Function Test REST APIs
+groupName: Gateways
+apiVersion: v1.0
+summary: "Returns a list of datasources from the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources
+uriParameters:
+- name: gatewayId
+  in: path
+  isRequired: true
+  description: The gateway id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[GatewayDatasource]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[GatewayDatasource]]
+  description: Odata response wrapper for a Power BI gateway datasource collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: List of gateway datasources
+    types:
+    - uid: GatewayDatasource
+      isArray: true
+- name: GatewayDatasource
+  description: A Power BI gateway datasource
+  kind: object
+  properties:
+  - name: id
+    description: The unique id for this datasource
+    types:
+    - uid: string
+  - name: gatewayId
+    description: The associated gateway id
+    types:
+    - uid: string
+  - name: datasourceName
+    description: The name of the datasource
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The type of the datasource
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: Connection details in json format
+    types:
+    - uid: string
+  - name: credentialType
+    description: Type of the datasoruce credentials
+    types:
+    - uid: credentialTypeEnum
+  - name: basicCredentials
+    description: '**[Deprecated]** The datasource basic credential'
+    types:
+    - uid: BasicCredentials
+- name: credentialTypeEnum
+  description: Type of the datasoruce credentials
+  kind: enum
+  properties:
+  - name: Basic
+    types:
+    - uid: string
+  - name: Windows
+    types:
+    - uid: string
+  - name: Anonymous
+    types:
+    - uid: string
+  - name: OAuth2
+    types:
+    - uid: string
+  - name: Key
+    types:
+    - uid: string
+- name: BasicCredentials
+  description: '**[Deprecated]** Basic credentials for authentication'
+  kind: object
+  properties:
+  - name: username
+    description: Username required to access the datasource
+    types:
+    - uid: string
+  - name: password
+    description: Password required to access the datasource
+    types:
+    - uid: string
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "252b9de8-d915-4788-aaeb-ec8c2395f970",
+            "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+            "datasourceType": "Sql",
+            "connectionDetails": "{\"server\":\"localSQL\",\"database\":\"salesDB\"}",
+            "credentialType": "Windows",
+            "datasourceName": "SQL Datasource"
+          },
+          {
+            "id": "91f8aec2-4b32-476f-909b-3241999620ec",
+            "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+            "datasourceType": "AnalysisServices",
+            "connectionDetails": "{\"server\":\"localAS\",\"database\":\"marketingDB\"}",
+            "credentialType": "Windows",
+            "datasourceName": "AS Datasource"
+          }
+        ]
+      }
+security: []

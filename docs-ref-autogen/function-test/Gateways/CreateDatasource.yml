@@ -1,0 +1,221 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.gateways.createdatasource
+name: Gateways CreateDatasource
+service: Function Test REST APIs
+groupName: Gateways
+apiVersion: v1.0
+summary: "Creates a new datasource on the specified gateway.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources
+uriParameters:
+- name: gatewayId
+  in: path
+  isRequired: true
+  description: The gateway id
+  types:
+  - uid: string
+responses:
+- name: 201 Created
+  description: Created
+  types:
+  - uid: GatewayDatasource
+requestBody:
+- name: default
+  parameters:
+  - name: dataSourceType
+    in: body
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    in: body
+    description: The connection details
+    types:
+    - uid: string
+  - name: credentialDetails
+    in: body
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+  - name: dataSourceName
+    in: body
+    description: The datasource name
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: CredentialDetails
+  description: The credential details
+  kind: object
+  properties:
+  - name: credentials
+    description: The credentials. Depends on the 'credentialType' value. See [Update Datasource Examples](/rest/api/power-bi/gateways/updatedatasource#examples).
+    types:
+    - uid: string
+  - name: credentialType
+    description: The credential type
+    types:
+    - uid: credentialTypeEnum
+  - name: encryptedConnection
+    description: Should Power BI allow fallback to unencrypted if the target server doesn't support encryption
+    types:
+    - uid: encryptedConnectionEnum
+  - name: encryptionAlgorithm
+    description: The encryption algorithm. For cloud datasource, use 'None'. For on-premises datasource, use gateway public key with 'RSA-OAEP' algorithm.
+    types:
+    - uid: encryptionAlgorithmEnum
+  - name: privacyLevel
+    description: The privacy level. Relevant when combining data from multiple sources.
+    types:
+    - uid: privacyLevelEnum
+  - name: useCallerAADIdentity
+    description: Should the caller's AAD identity be used for OAuth2 credentials configuration
+    types:
+    - uid: boolean
+  - name: useEndUserOAuth2Credentials
+    description: Should the end-user OAuth2 credentials be used for connecting to the datasource in DirectQuery mode. Only supported for Direct Query to SQL Azure.
+    types:
+    - uid: boolean
+- name: GatewayDatasource
+  description: A Power BI gateway datasource
+  kind: object
+  properties:
+  - name: id
+    description: The unique id for this datasource
+    types:
+    - uid: string
+  - name: gatewayId
+    description: The associated gateway id
+    types:
+    - uid: string
+  - name: datasourceName
+    description: The name of the datasource
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The type of the datasource
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: Connection details in json format
+    types:
+    - uid: string
+  - name: credentialType
+    description: Type of the datasoruce credentials
+    types:
+    - uid: credentialTypeEnum
+  - name: basicCredentials
+    description: '**[Deprecated]** The datasource basic credential'
+    types:
+    - uid: BasicCredentials
+- name: PublishDatasourceToGatewayRequest
+  description: A publish datasource to gateway request
+  kind: object
+  properties:
+  - name: dataSourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The connection details
+    types:
+    - uid: string
+  - name: credentialDetails
+    description: The credential details
+    types:
+    - uid: CredentialDetails
+  - name: dataSourceName
+    description: The datasource name
+    types:
+    - uid: string
+- name: credentialTypeEnum
+  description: Type of the datasoruce credentials
+  kind: enum
+  properties:
+  - name: Basic
+    types:
+    - uid: string
+  - name: Windows
+    types:
+    - uid: string
+  - name: Anonymous
+    types:
+    - uid: string
+  - name: OAuth2
+    types:
+    - uid: string
+  - name: Key
+    types:
+    - uid: string
+- name: encryptedConnectionEnum
+  description: Should Power BI allow fallback to unencrypted if the target server doesn't support encryption
+  kind: enum
+  properties:
+  - name: Encrypted
+    types:
+    - uid: string
+  - name: NotEncrypted
+    types:
+    - uid: string
+- name: encryptionAlgorithmEnum
+  description: The encryption algorithm. For cloud datasource, use 'None'. For on-premises datasource, use gateway public key with 'RSA-OAEP' algorithm.
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: RSA-OAEP
+    types:
+    - uid: string
+- name: privacyLevelEnum
+  description: The privacy level. Relevant when combining data from multiple sources.
+  kind: enum
+  properties:
+  - name: None
+    types:
+    - uid: string
+  - name: Public
+    types:
+    - uid: string
+  - name: Organizational
+    types:
+    - uid: string
+  - name: Private
+    types:
+    - uid: string
+- name: BasicCredentials
+  description: '**[Deprecated]** Basic credentials for authentication'
+  kind: object
+  properties:
+  - name: username
+    description: Username required to access the datasource
+    types:
+    - uid: string
+  - name: password
+    description: Password required to access the datasource
+    types:
+    - uid: string
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources
+    body: >-
+      {
+        "dataSourceType": "SQL",
+        "connectionDetails": "{\"server\":\"MyServer\",\"database\":\"MyDatabase\"}",
+        "datasourceName": "Sample Datasource",
+        "credentialDetails": {
+          "credentialType": "Windows",
+          "credentials": "AB....EF==",
+          "encryptedConnection": "Encrypted",
+          "encryptionAlgorithm": "RSA-OAEP",
+          "privacyLevel": "None"
+        }
+      }
+  responses:
+  - statusCode: "200"
+security: []

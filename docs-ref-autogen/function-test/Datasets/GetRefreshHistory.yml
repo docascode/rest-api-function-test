@@ -1,0 +1,121 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.datasets.getrefreshhistory
+name: Datasets GetRefreshHistory
+service: Function Test REST APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: "Returns the refresh history of the specified dataset from **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/refreshes
+- content: GET https://api.powerbi.com/v1.0/myorg/datasets/{datasetKey}/refreshes?$top={$top}
+  isOptional: true
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+- name: $top
+  in: query
+  description: The requested number of entries in the refresh history. If not provided, the default is all available entries.
+  types:
+  - uid: integer
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Refresh]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Refresh]]
+  description: Odata response wrapper for a Power BI refresh history
+  kind: object
+  properties:
+  - name: odata.context
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: The Refresh history list
+    types:
+    - uid: Refresh
+      isArray: true
+- name: Refresh
+  description: A Power BI refresh history entry
+  kind: object
+  properties:
+  - name: refreshType
+    description: Type of refresh request
+    types:
+    - uid: RefreshTypeEnum
+  - name: startTime
+    description: DateTime of start
+    types:
+    - uid: string
+  - name: endTime
+    description: DateTime of termination (may be empty if refresh is progress)
+    types:
+    - uid: string
+  - name: serviceExceptionJson
+    description: Failure exception details in json format. Includes cluster, time, Request, and Activity IDs (only on error).
+    types:
+    - uid: string
+  - name: status
+    description: "'Unknown' - Unknown completion state or refresh is in progress. endTime will be empty with this status. <br/>'Completed' - refresh completed successfully <br/> 'Failed' - Refresh failed. serviceExceptionJson will contain the error. <br/>'Disabled' - Refresh disabled by Selective Refresh."
+    types:
+    - uid: string
+- name: RefreshTypeEnum
+  description: Type of refresh request
+  kind: enum
+  properties:
+  - name: Scheduled
+    description: Refresh was triggered by the dataset refresh schedule setting
+    types:
+    - uid: string
+  - name: OnDemand
+    description: Refresh was triggered interactively threw Power BI portal
+    types:
+    - uid: string
+  - name: ViaApi
+    description: Refresh was triggered by an Api call
+    types:
+    - uid: string
+examples:
+- name: in progress refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Unknown"
+          }
+        ]
+      }
+- name: completed refresh example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/refreshes?$top=1
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "endTime": "2017-06-13T09:31:43.153Z",
+            "Id": "823456",
+            "refreshType": "ViaApi",
+            "startTime": "2017-06-13T09:25:43.153Z",
+            "status": "Completed"
+          }
+        ]
+      }
+security: []

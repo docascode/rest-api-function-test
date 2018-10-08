@@ -1,0 +1,48 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.gateways.deletedatasourceuser
+name: Gateways DeleteDatasourceUser
+service: Function Test REST APIs
+groupName: Gateways
+apiVersion: v1.0
+summary: "Removes the specified user from the specified datasource.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes:
+- application/json
+produces: []
+paths:
+- content: DELETE https://api.powerbi.com/v1.0/myorg/gateways/{gatewayId}/datasources/{datasourceId}/users/{emailAdress}
+uriParameters:
+- name: gatewayId
+  in: path
+  isRequired: true
+  description: The gateway id
+  types:
+  - uid: string
+- name: datasourceId
+  in: path
+  isRequired: true
+  description: The datasource id
+  types:
+  - uid: string
+- name: emailAdress
+  in: path
+  isRequired: true
+  description: The user's email address
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples:
+- name: example
+  request:
+    uri: DELETE https://api.powerbi.com/v1.0/myorg/gateways/1f69e798-5852-4fdd-ab01-33bb14b6e934/datasources/252b9de8-d915-4788-aaeb-ec8c2395f970/users/john@contoso.com
+  responses:
+  - statusCode: "200"
+security: []

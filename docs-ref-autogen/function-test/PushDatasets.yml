@@ -1,0 +1,26 @@
+### YamlMime:RESTOperationGroup
+uid: api.powerbi.com.function-test.pushdatasets
+name: Push Datasets
+apiVersion: v1.0
+service: Function Test REST APIs
+operations:
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_deleterows
+  summary: "Deletes all rows from the specified table within the specified dataset from **\"My Workspace\"**.  \n<br/>**Note**: this API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_deleterowsingroup
+  summary: "Deletes all rows from the specified table, within the specified dataset, from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_gettables
+  summary: "Returns a list of tables tables within the specified dataset from **\"My Workspace\"**.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_gettablesingroup
+  summary: "Returns a list of tables within the specified dataset from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_postdataset
+  summary: "Creates a new dataset on **\"My Workspace\"**.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_postdatasetingroup
+  summary: "Creates a new dataset in the specified workspace.  \n<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_postrows
+  summary: "Adds new data rows to the specified table within the specified dataset from **\"My Workspace\"**.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_postrowsingroup
+  summary: "Adds new data rows to the specified table, within the specified dataset, from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_puttable
+  summary: "Updates the metadata and schema for the specified table within the specified dataset from **\"My Workspace\"**.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+- uid: api.powerbi.com.function-test.pushdatasets.datasets_puttableingroup
+  summary: "Updates the metadata and schema for the specified table, within the specified dataset, from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."

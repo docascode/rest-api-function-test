@@ -1,0 +1,85 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.datasets.updateparametersingroup
+name: Datasets UpdateParametersInGroup
+service: Function Test REST APIs
+groupName: Datasets
+apiVersion: v1.0
+summary: "Updates the parameters values for the specified dataset from the specified workspace.  \n<br/>**Important**: The dataset must be refreshed for the new parameter values to be applied. Wait 30 minutes for the update parameters operation to complete before refreshing.<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app). <h2>Restrictions</h2><ul><li>All parameters must exist in the dataset. Names are case-sensitive. </li><li>Datasets with SQL, Oracle, Teradata & SapHana Direct Query connections are not supported. </li><li>Datasets with Analysis Services Live connections are not supported. </li><li> Maximum of 100 parameters in request is allowed. </li><li> Values should be of expected type. </li><li> An empty value is not permitted for the IsRequired parameter. </li><li> List cannot be empty or include multiple occurrences of same parameter. </li><li> Parameters of types 'Any' or 'Binary' cannot be set. </li></ul>"
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/Default.UpdateParameters
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
+- name: datasetKey
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- name: default
+  parameters:
+  - name: updateDetails
+    in: body
+    isRequired: true
+    description: The dataset parameter list to update
+    types:
+    - uid: UpdateDatasetParameterDetails
+      isArray: true
+requestHeader: []
+definitions:
+- name: UpdateDatasetParameterDetails
+  description: Power BI dataset parameter update details
+  kind: object
+  properties:
+  - name: name
+    description: The parameter name
+    types:
+    - uid: string
+  - name: newValue
+    description: The parameter new value
+    types:
+    - uid: string
+- name: Object
+  kind: object
+  properties: []
+- name: UpdateDatasetParametersRequest
+  description: Power BI dataset parameter update request
+  kind: object
+  properties:
+  - name: updateDetails
+    description: The dataset parameter list to update
+    types:
+    - uid: UpdateDatasetParameterDetails
+      isArray: true
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/Default.UpdateParameters
+    body: >-
+      {
+        "updateDetails": [
+          {
+            "name": "DatabaseName",
+            "newValue": "NewDB"
+          },
+          {
+            "name": "MaxId",
+            "newValue": "5678"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
+security: []

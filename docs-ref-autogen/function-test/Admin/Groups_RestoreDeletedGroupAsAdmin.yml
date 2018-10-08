@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.admin.groups_restoredeletedgroupasadmin
+name: Groups RestoreDeletedGroupAsAdmin
+service: Function Test REST APIs
+groupName: Admin
+apiVersion: v1.0
+summary: "Restores a deleted workspace.  \n**Note**: This API is currently limited to restoring workspaces in the new workspace experience. The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.ReadWrite.All<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/admin/groups/{groupId}/restore
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- name: default
+  parameters:
+  - name: name
+    in: body
+    description: The name of the group to be restored.
+    types:
+    - uid: string
+  - name: emailAddress
+    in: body
+    isRequired: true
+    description: The email address of the owner of the group to be restored.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: GroupRestoreRequest
+  description: Power BI request to restore a deleted group
+  kind: object
+  properties:
+  - name: name
+    description: The name of the group to be restored.
+    types:
+    - uid: string
+  - name: emailAddress
+    description: The email address of the owner of the group to be restored.
+    types:
+    - uid: string
+examples:
+- name: Example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/admin/groups/3bec11ee-48a9-490c-8e4d-1ebba90d491a/restore
+    body: >-
+      {
+        "name": "Restored Workspace",
+        "emailAddress": "john@contoso.com"
+      }
+  responses:
+  - statusCode: "200"
+security: []

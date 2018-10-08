@@ -1,0 +1,149 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.capacities.getcapacities
+name: Capacities GetCapacities
+service: Function Test REST APIs
+groupName: Capacities
+apiVersion: v1.0
+summary: "Returns a list of capacities the user has access to.  \n<br/>**Required scope**: Capacity.Read.All or Capacity.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/capacities
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Capacity]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Capacity]]
+  description: Odata response wrapper for a Power BI capacity list
+  kind: object
+  properties:
+  - name: odata.context
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: The Capacity List
+    types:
+    - uid: Capacity
+      isArray: true
+- name: Capacity
+  description: A Power BI capacity
+  kind: object
+  properties:
+  - name: id
+    description: The capacity id
+    types:
+    - uid: string
+  - name: displayName
+    description: The capacity display name
+    types:
+    - uid: string
+  - name: admins
+    description: An array of capacity admins.
+    types:
+    - uid: string
+      isArray: true
+  - name: sku
+    description: The capacity SKU.
+    types:
+    - uid: string
+  - name: state
+    description: The capacity state
+    types:
+    - uid: stateEnum
+  - name: capacityUserAccessRight
+    description: Access right user has on the capacity
+    types:
+    - uid: capacityUserAccessRightEnum
+  - name: region
+    description: The Azure region where the capacity is provisioned
+    types:
+    - uid: string
+- name: stateEnum
+  description: The capacity state
+  kind: enum
+  properties:
+  - name: NotActivated
+    description: Not Supported
+    types:
+    - uid: string
+  - name: Active
+    description: Capacity ready for use
+    types:
+    - uid: string
+  - name: Provisioning
+    description: Capacity in activation process
+    types:
+    - uid: string
+  - name: ProvisionFailed
+    description: Capacity failed to provisioned
+    types:
+    - uid: string
+  - name: PreSuspended
+    description: Not Supported
+    types:
+    - uid: string
+  - name: Suspended
+    description: Capacity suspended for use
+    types:
+    - uid: string
+  - name: Deleting
+    description: Capacity in process of being deleted
+    types:
+    - uid: string
+  - name: Deleted
+    description: Capacity has been deleted and is not available
+    types:
+    - uid: string
+  - name: Invalid
+    description: Capacity can not be used
+    types:
+    - uid: string
+  - name: UpdatingSku
+    description: Capacity Sku change is in progress
+    types:
+    - uid: string
+- name: capacityUserAccessRightEnum
+  description: Access right user has on the capacity
+  kind: enum
+  properties:
+  - name: None
+    description: User doesn't have access to the capacity
+    types:
+    - uid: string
+  - name: Assign
+    description: User can assign workspaces to the capacity
+    types:
+    - uid: string
+  - name: Admin
+    description: User has administrator rights on the capacity
+    types:
+    - uid: string
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/capacities
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "0f084df7-c13d-451b-af5f-ed0c466403b2",
+            "displayName": "MyCapacity",
+            "admins": [
+              "john@contoso.com"
+            ],
+            "sku": "A1",
+            "state": "Active",
+            "region": "West Central US",
+            "capacityUserAccessRight": "Admin"
+          }
+        ]
+      }
+security: []

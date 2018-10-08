@@ -1,0 +1,105 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.admin.datasets_getdatasourcesasadmin
+name: Datasets GetDatasourcesAsAdmin
+service: Function Test REST APIs
+groupName: Admin
+apiVersion: v1.0
+summary: "Returns a list of datasources for the specified dataset.  \n**Note:** The user must have administrator rights (such as Office 365 Global Administrator or Power BI Service Administrator) to call this API. <br/><br/>**Required scope**: Tenant.Read.All<br/>Application only and delegated permissions are supported.<br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/admin/datasets/{datasetKey}/datasources
+uriParameters:
+- name: datasetKey
+  in: path
+  isRequired: true
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Datasource]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Datasource]]
+  description: Odata response wrapper for a Power BI datasource collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: The datasource collection
+    types:
+    - uid: Datasource
+      isArray: true
+- name: Datasource
+  description: A Power BI datasource
+  kind: object
+  properties:
+  - name: name
+    description: The datasource name. Available only for DirectQuery.
+    types:
+    - uid: string
+  - name: connectionString
+    description: The datasource connection string. Available only for DirectQuery.
+    types:
+    - uid: string
+  - name: datasourceType
+    description: The datasource type
+    types:
+    - uid: string
+  - name: connectionDetails
+    description: The datasource connection details
+    types:
+    - uid: DatasourceConnectionDetails
+  - name: gatewayId
+    description: The bound gateway id. Empty when not bound to a gateway.
+    types:
+    - uid: string
+  - name: datasourceId
+    description: The bound datasource id. Empty when not bound to a gateway.
+    types:
+    - uid: string
+- name: DatasourceConnectionDetails
+  description: A Power BI datasource connection details
+  kind: object
+  properties:
+  - name: server
+    description: The connection server
+    types:
+    - uid: string
+  - name: database
+    description: The connection database
+    types:
+    - uid: string
+  - name: url
+    description: The connection url
+    types:
+    - uid: string
+examples:
+- name: Example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/admin/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/datasources
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "name": "301",
+            "connectionString": "data source=MyServer.database.windows.net;initial catalog=MyDatabase;persist security info=True;encrypt=True;trustservercertificate=False",
+            "datasourceType": "Sql",
+            "datasourceId": "16a54ccd-620d-4af3-9197-0b8c779a9a6d",
+            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+            "connectionDetails": {
+              "server": "MyServer.database.windows.net",
+              "database": "MyDatabase"
+            }
+          }
+        ]
+      }
+security: []

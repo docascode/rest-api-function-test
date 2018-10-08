@@ -1,0 +1,104 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.availablefeatures.getavailablefeatures
+name: AvailableFeatures GetAvailableFeatures
+service: Function Test REST APIs
+groupName: Available Features
+apiVersion: v1.0
+summary: "Returns a list of available features for the user  \n<br/>**Required scope**: None"
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/availableFeatures
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[AvailableFeature]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[AvailableFeature]]
+  description: Odata response wrapper for a Power BI available features list
+  kind: object
+  properties:
+  - name: odata.context
+    description: ''
+    types:
+    - uid: string
+  - name: features
+    description: The available features list
+    types:
+    - uid: AvailableFeature
+      isArray: true
+- name: AvailableFeature
+  description: Power BI available feature
+  kind: object
+  properties:
+  - name: name
+    description: The feature name
+    types:
+    - uid: string
+  - name: state
+    description: The feature state
+    types:
+    - uid: FeatureState
+  - name: extendedState
+    description: The feature extended state
+    types:
+    - uid: FeatureExtendedState
+  - name: additionalInfo
+    description: Additional feature information
+    types:
+    - uid: AdditionalFeatureInfo
+- name: FeatureState
+  description: The feature state
+  kind: enum
+  properties:
+  - name: Enabled
+    types:
+    - uid: string
+  - name: Disabled
+    types:
+    - uid: string
+- name: FeatureExtendedState
+  description: The feature extended state
+  kind: enum
+  properties:
+  - name: Enabled
+    types:
+    - uid: string
+  - name: DisabledByAdmin
+    types:
+    - uid: string
+  - name: UserNotLicensed
+    types:
+    - uid: string
+- name: AdditionalFeatureInfo
+  description: Additional feature information
+  kind: object
+  properties:
+  - name: Usage
+    description: The token generation usage (in %) from the limitation on shared capacity
+    types:
+    - uid: integer
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/availableFeatures
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "features": [
+          {
+            "name": "embedTrial",
+            "state": "Enabled",
+            "extendedState": "Enabled",
+            "additionalInfo": {
+              "usage": 65
+            }
+          }
+        ]
+      }
+security: []

@@ -1,0 +1,73 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.pushdatasets.datasets_postrowsingroup
+name: Datasets PostRowsInGroup
+service: Function Test REST APIs
+groupName: Push Datasets
+apiVersion: v1.0
+summary: "Adds new data rows to the specified table, within the specified dataset, from the specified workspace.  \n<br/>**Note**: This API supports only Push datasets. <br/><br/>**REST API Limitations:** See [Power BI REST API limitations](https://msdn.microsoft.com/library/dn950053.aspx). <br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetKey}/tables/{tableName}/rows
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
+- name: datasetKey
+  in: path
+  isRequired: true
+  description: The dataset id
+  types:
+  - uid: string
+- name: tableName
+  in: path
+  isRequired: true
+  description: The table name
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+examples:
+- name: example
+  request:
+    uri: POST https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/datasets/cfafbeb1-8037-4d0c-896e-a46fb27ff229/tables/Product/rows
+    body: >-
+      {
+        "rows": [
+          {
+            "ProductID": 1,
+            "Name": "Adjustable Race",
+            "Category": "Components",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          },
+          {
+            "ProductID": 2,
+            "Name": "LL Crankarm",
+            "Category": "Components",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          },
+          {
+            "ProductID": 3,
+            "Name": "HL Mountain Frame - Silver",
+            "Category": "Bikes",
+            "IsCompete": true,
+            "ManufacturedOn": "07/30/2014"
+          }
+        ]
+      }
+  responses:
+  - statusCode: "200"
+security: []

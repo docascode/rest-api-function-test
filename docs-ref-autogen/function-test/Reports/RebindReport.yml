@@ -1,0 +1,47 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.reports.rebindreport
+name: Reports RebindReport
+service: Function Test REST APIs
+groupName: Reports
+apiVersion: v1.0
+summary: "Rebinds the specified report from **\"My Workspace\"** to the requested dataset.  \n<br/>**Required scope**: Report.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST https://api.powerbi.com/v1.0/myorg/reports/{reportKey}/Rebind
+uriParameters:
+- name: reportKey
+  in: path
+  isRequired: true
+  description: The report id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Object
+requestBody:
+- name: default
+  parameters:
+  - name: datasetId
+    in: body
+    description: The new dataset of the rebinded report
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: Object
+  kind: object
+  properties: []
+- name: RebindReportRequest
+  description: Power BI rebind report request
+  kind: object
+  properties:
+  - name: datasetId
+    description: The new dataset of the rebinded report
+    types:
+    - uid: string
+examples: []
+security: []

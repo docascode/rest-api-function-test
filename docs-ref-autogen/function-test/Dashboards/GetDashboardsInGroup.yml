@@ -1,0 +1,77 @@
+### YamlMime:RESTOperation
+uid: api.powerbi.com.function-test.dashboards.getdashboardsingroup
+name: Dashboards GetDashboardsInGroup
+service: Function Test REST APIs
+groupName: Dashboards
+apiVersion: v1.0
+summary: "Returns a list of dashboards from the specified workspace.  \n<br/>**Required scope**: Dashboard.ReadWrite.All or Dashboard.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app)."
+consumes: []
+produces:
+- application/json
+paths:
+- content: GET https://api.powerbi.com/v1.0/myorg/groups/{groupId}/dashboards
+uriParameters:
+- name: groupId
+  in: path
+  isRequired: true
+  description: The workspace id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ODataResponse[List[Dashboard]]
+requestHeader: []
+definitions:
+- name: ODataResponse[List[Dashboard]]
+  description: Odata response wrapper for a Power BI dashboard collection
+  kind: object
+  properties:
+  - name: odata.context
+    description: OData context
+    types:
+    - uid: string
+  - name: value
+    description: The dashboard collection
+    types:
+    - uid: Dashboard
+      isArray: true
+- name: Dashboard
+  description: A Power BI dashboard
+  kind: object
+  properties:
+  - name: id
+    description: The dashboard id
+    types:
+    - uid: string
+  - name: displayName
+    description: The dashboard display name
+    types:
+    - uid: string
+  - name: isReadOnly
+    description: Is ReadOnly dashboard
+    types:
+    - uid: boolean
+  - name: embedUrl
+    description: The dashboard embed url
+    types:
+    - uid: string
+examples:
+- name: example
+  request:
+    uri: GET https://api.powerbi.com/v1.0/myorg/groups/f089354e-8366-4e18-aea3-4cb4a3a50b48/dashboards
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "value": [
+          {
+            "id": "69ffaa6c-b36d-4d01-96f5-1ed67c64d4af",
+            "displayName": "SalesMarketing",
+            "embedUrl": "https://app.powerbi.com/dashboardEmbed?dashboardId=69ffaa6c-b36d-4d01-96f5-1ed67c64d4af&groupId=f089354e-8366-4e18-aea3-4cb4a3a50b48",
+            "isReadOnly": false
+          }
+        ]
+      }
+security: []
