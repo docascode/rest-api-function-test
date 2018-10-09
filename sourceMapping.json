@@ -1,3 +1,18 @@
 {
+  "Datasets/BindToGateway.yml": null,
+  "Datasets/DeleteDatasetById.yml": null,
+  "Datasets/DiscoverGateways.yml": null,
+  "Datasets/GetDatasetById.yml": null,
+  "Datasets/GetDatasets.yml": null,
+  "Datasets/GetDatasources.yml": null,
+  "Datasets/GetGatewayDatasources.yml": null,
+  "Datasets/GetParameters.yml": null,
+  "Datasets/GetRefreshHistory.yml": null,
+  "Datasets/RefreshDataset.yml": null,
+  "Datasets/SetAllDatasetConnections.yml": null,
+  "Datasets/UpdateDatasources.yml": null,
+  "Datasets/UpdateParameters.yml": null
+}
+{
   "ResourceSkus/ListSkus.yml": null
 }
