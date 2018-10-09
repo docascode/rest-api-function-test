@@ -1,0 +1,8 @@
+### YamlMime:RESTOperationGroup
+uid: management.azure.com.function-test.resourceskus
+name: Resource Skus
+apiVersion: 2018-04-19
+service: Function Test REST APIs
+operations:
+- uid: management.azure.com.function-test.resourceskus.listskus
+  summary: "Get supported SKUs  \nThe skus action returns the list of SKUs that DMS supports."
