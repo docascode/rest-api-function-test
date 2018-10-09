@@ -1,24 +1,24 @@
 {
-  "target_api_root_dir":"docs-ref-autogen",
-  "is_operation_level":true,
-  "is_grouped_by_tag":true,
-  "use_yaml_schema":true,
+  "target_api_root_dir": "docs-ref-autogen",
+  "is_operation_level": true,
+  "is_grouped_by_tag": true,
+  "use_yaml_schema": true,
   "use_service_url_group": true,
   "remove_tag_from_operationId": true,
-  "organizations":[
+  "organizations": [
     {
-        "name":"Function Test",
-        "services":[
+      "name": "Function Test",
+      "services": [
         {
           "toc_title": "Function Test REST APIs",
           "url_group": "function-test",
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "test/test-remove-tag.json",
+              "source": "test/test-remove-tag.json"
             },
             {
-              "source": "test/test-x-operationTitle.json",
+              "source": "test/test-x-operationTitle.json"
             }
           ]
         }
