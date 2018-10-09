@@ -15,7 +15,10 @@
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "test/swaggerV2.json"
+              "source": "test/test-remove-tag.json",
+            },
+            {
+              "source": "test/test-x-operationTitle.json",
             }
           ]
         }
