@@ -1,18 +1,18 @@
 {
-  "Datasets/BindToGateway.yml": null,
-  "Datasets/DeleteDatasetById.yml": null,
-  "Datasets/DiscoverGateways.yml": null,
-  "Datasets/GetDatasetById.yml": null,
-  "Datasets/GetDatasets.yml": null,
-  "Datasets/GetDatasources.yml": null,
-  "Datasets/GetGatewayDatasources.yml": null,
-  "Datasets/GetParameters.yml": null,
-  "Datasets/GetRefreshHistory.yml": null,
-  "Datasets/RefreshDataset.yml": null,
-  "Datasets/SetAllDatasetConnections.yml": null,
-  "Datasets/UpdateDatasources.yml": null,
-  "Datasets/UpdateParameters.yml": null
+  "Datasets/BindToGateway.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/DeleteDatasetById.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/DiscoverGateways.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetDatasetById.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetDatasets.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetDatasources.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetGatewayDatasources.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetParameters.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/GetRefreshHistory.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/RefreshDataset.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/SetAllDatasetConnections.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/UpdateDatasources.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1",
+  "Datasets/UpdateParameters.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L1"
 }
 {
-  "ResourceSkus/ListSkus.yml": null
+  "ResourceSkus/ListSkus.yml": "https://github.com/docascode/rest-api-function-test-repo/blob/master/test-x-operationTitle.json#L1"
 }
