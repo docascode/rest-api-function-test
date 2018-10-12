@@ -3,7 +3,8 @@
 		{
 			"url": "https://github.com/docascode/rest-api-function-test-repo",
 			"branch": "master",
-			"name": "test"
+			"name": "test",
+			"enable_view_code": false
 		}
 	]
 }
