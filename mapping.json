@@ -26,11 +26,12 @@
           "toc_title": "Azure Blockchain Workbench",
           "url_group": "azure-blockchain-workbench",
           "service_index": "docs-ref-index/index.md",
-          "swagger_files": [{
-            "source": "test/test_files/swagger.yaml"
-          }]
-        }]
-      }
+          "swagger_files": [
+            {
+              "source": "test/test_files/swagger.yaml"
+            }
+          ]
+        }
       ]
     }
   ]
