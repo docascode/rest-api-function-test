@@ -1,0 +1,18 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.contracts
+name: Contracts
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.contracts.contractactionget
+  summary: Gets the action matching the specified action ID. Users get the action if the user can take the action given the current state of the specified smart contract instance and the user's associated application role or smart contract instance role.
+- uid: azure-blockchain-workbench.contracts.contractactionpost
+  summary: Executes an action for the specified smart contract instance and action ID. Users are only able to execute the action given the current state of the specified smart contract instance and the user's associated application role or smart contract instance role.
+- uid: azure-blockchain-workbench.contracts.contractactionsget
+  summary: Lists all actions, which can be taken by the given user and current state of the specified smart contract instance. Users get all applicable actions if the user has an associated application role or is associated with a smart contract instance role for the current state of the specified smart contract instance.
+- uid: azure-blockchain-workbench.contracts.contractget
+  summary: Gets the smart contract instance matching a specific contract ID. Users who are Workbench administrators get the smart contract instance. Non-Workbench administrators get the smart contract instance if they have at least one associated application role or is associated with the smart contract instance.
+- uid: azure-blockchain-workbench.contracts.contractpost
+  summary: Creates a new smart contract instance for the specified workflow ID. Users are only able to create a new smart contract instance if the user is associated with an application role, which can initiate a smart contract instance for the workflow.
+- uid: azure-blockchain-workbench.contracts.get
+  summary: Lists the smart contract instances of the specified workflow. Users who are Workbench administrators get all smart contract instances. Non-Workbench administrators get all smart contract instances for which they have at least one associated application role or is associated with a smart contract instance role.

@@ -1,0 +1,8 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.graphproxy
+name: Graph Proxy
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.graphproxy.-usersget
+  summary: Represents a proxy method to the Azure Active Directory Graph API for users. See https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list for more details.

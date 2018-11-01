@@ -1,0 +1,10 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.capabilities
+name: Capabilities
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.capabilities.cancreatecontract
+  summary: Checks if user has capability to create new smart contract instance for a specific workflow ID.
+- uid: azure-blockchain-workbench.capabilities.get
+  summary: List all capabilities the user can perform within Workbench. Checked capabilities include ability to add blockchain applications, add smart contract implementations, add or edit user role assignments, and add new users.

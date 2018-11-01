@@ -106,4 +106,4 @@ examples:
       }
 security: []
 metadata:
-  source_url: https://github.com/docascode/rest-api-function-test-repo/blob/master/test-remove-tag.json#L307
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L307

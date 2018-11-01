@@ -1,0 +1,109 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.roleassignmentget
+name: Role Assignment Get
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Get a role assignment of the specified blockchain application matching a specific user role assignment ID. Users who are Workbench administrators get the role assignment. Non-Workbench administrators get the role assignment if they are associated in the application.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/applications/{applicationId}/roleAssignments/{roleAssignmentId}
+uriParameters:
+- name: applicationId
+  in: path
+  isRequired: true
+  description: The id of the configuration
+  types:
+  - uid: integer
+  format: int32
+- name: roleAssignmentId
+  in: path
+  isRequired: true
+  description: The id of the role assignment
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: RoleAssignment
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: RoleAssignment
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: applicationRoleId
+    description: ''
+    types:
+    - uid: integer
+  - name: user
+    description: ''
+    types:
+    - uid: User
+- name: User
+  kind: object
+  properties:
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: provisioningStatus
+    description: ''
+    types:
+    - uid: integer
+  - name: externalID
+    description: ''
+    types:
+    - uid: string
+  - name: firstName
+    description: ''
+    types:
+    - uid: string
+  - name: lastName
+    description: ''
+    types:
+    - uid: string
+  - name: emailAddress
+    description: ''
+    types:
+    - uid: string
+  - name: userChainMappings
+    description: ''
+    types:
+    - uid: UserChainMapping
+      isArray: true
+- name: UserChainMapping
+  kind: object
+  properties:
+  - name: userChainMappingID
+    description: ''
+    types:
+    - uid: integer
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionID
+    description: ''
+    types:
+    - uid: integer
+  - name: chainIdentifier
+    description: ''
+    types:
+    - uid: string
+  - name: chainBalance
+    description: ''
+    types:
+    - uid: number
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L326

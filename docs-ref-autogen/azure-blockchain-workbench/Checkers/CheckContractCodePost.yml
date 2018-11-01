@@ -1,0 +1,34 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.checkers.checkcontractcodepost
+name: Check Contract Code Post
+service: Azure Blockchain Workbench
+groupName: Checkers
+apiVersion: v1
+summary: Check if the application smart contract implementation file is valid for Workbench.
+consumes:
+- multipart/form-data
+produces: []
+paths:
+- content: POST /api/v1/checkers/checkContractCode
+- content: POST /api/v1/checkers/checkContractCode?ledgerId={ledgerId}
+  isOptional: true
+uriParameters:
+- name: ledgerId
+  in: query
+  description: The index of the chain type.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: integer
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L803

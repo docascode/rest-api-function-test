@@ -1,0 +1,40 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.applications
+name: Applications
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.applications.applicationdelete
+  summary: 'Deletes the specified blockchain application. This method can only be performed by users who are Workbench administrators. NOTE: Currently not implemented.'
+- uid: azure-blockchain-workbench.applications.applicationdisable
+  summary: Disables the specified blockchain application. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.applicationenable
+  summary: Enables the specified blockchain application. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.applicationget
+  summary: Gets the blockchain application matching a specific application ID. Users who are Workbench administrators get the blockchain application. Non-Workbench administrators get the blockchain application if they have at least one associated application role or is associated with a smart contract instance role.
+- uid: azure-blockchain-workbench.applications.contractcodedelete
+  summary: 'Deletes the specified blockchain smart contract implementation of a specific blockchain application. This method can only be performed by users who are Workbench administrators. NOTE: not currently implemented'
+- uid: azure-blockchain-workbench.applications.contractcodeget
+  summary: Get the blockchain smart contract implementation matching a specific contract code id. Users who are Workbench administrators get the specified smart contract implementation. Non-Workbench administrators get the smart contract implementation if they have at least one associated application role or is associated with a smart contract instance role.
+- uid: azure-blockchain-workbench.applications.contractcodepost
+  summary: Uploads one or more smart contracts (ex. .sol or .zip), representing the implementation of the specified blockchain application. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.contractcodesget
+  summary: List all blockchain smart contract implementations of the specified blockchain application. Users who are Workbench administrators get all smart contract implementations. Non-Workbench administrators get all smart contract implementations for which they have at least one associated application role or is associated with a smart contract instance role.
+- uid: azure-blockchain-workbench.applications.get
+  summary: Lists all blockchain applications to which a user has access in Workbench. Users who are Workbench administrators get all blockchain applications. Non-Workbench administrators get all blockchain applications for which they have at least one associated application role or an associated smart contract instance role.
+- uid: azure-blockchain-workbench.applications.post
+  summary: Creates a new blockchain application. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.roleassignmentdelete
+  summary: Deletes the specified role assignment. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.roleassignmentget
+  summary: Get a role assignment of the specified blockchain application matching a specific user role assignment ID. Users who are Workbench administrators get the role assignment. Non-Workbench administrators get the role assignment if they are associated in the application.
+- uid: azure-blockchain-workbench.applications.roleassignmentput
+  summary: Updates the specified role assignment. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.roleassignmentsget
+  summary: List all role assignments of the specified blockchain application. Users who are Workbench administrators get all role assignments. Non-Workbench administrators get all their role assignments. Roles are specified in the Workbench application configuration and can be retrieved from GET /applications/{applicationID}. Also, user information can be retrieved from GET /users/{userID}.
+- uid: azure-blockchain-workbench.applications.roleassignmentspost
+  summary: Creates a user-to-role mapping in the specified blockchain application. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.applications.workflowget
+  summary: Get a workflow matching a specific workflow ID. Users who are Workbench administrators get the workflow. Non-Workbench administrators get the workflow if they have at least one associated application role or is associated with a smart contract instance role.
+- uid: azure-blockchain-workbench.applications.workflowsget
+  summary: List all workflows of the specified blockchain application. Users who are Workbench administrators get all workflows. Non-Workbench administrators get all workflows for which they have at least one associated application role or are associated with a smart contract instance role.

@@ -1,0 +1,8 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.ledgers
+name: Ledgers
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.ledgers.get
+  summary: Lists the supported blockchain types, such as Ethereum or Hyperledger Fabric.

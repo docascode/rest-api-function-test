@@ -1,0 +1,87 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.users.userget
+name: User Get
+service: Azure Blockchain Workbench
+groupName: Users
+apiVersion: v1
+summary: Gets the user matching a specific user ID.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/users/{userId}
+uriParameters:
+- name: userId
+  in: path
+  isRequired: true
+  description: The id of the user.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: User
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: User
+  kind: object
+  properties:
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: provisioningStatus
+    description: ''
+    types:
+    - uid: integer
+  - name: externalID
+    description: ''
+    types:
+    - uid: string
+  - name: firstName
+    description: ''
+    types:
+    - uid: string
+  - name: lastName
+    description: ''
+    types:
+    - uid: string
+  - name: emailAddress
+    description: ''
+    types:
+    - uid: string
+  - name: userChainMappings
+    description: ''
+    types:
+    - uid: UserChainMapping
+      isArray: true
+- name: UserChainMapping
+  kind: object
+  properties:
+  - name: userChainMappingID
+    description: ''
+    types:
+    - uid: integer
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionID
+    description: ''
+    types:
+    - uid: integer
+  - name: chainIdentifier
+    description: ''
+    types:
+    - uid: string
+  - name: chainBalance
+    description: ''
+    types:
+    - uid: number
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1586

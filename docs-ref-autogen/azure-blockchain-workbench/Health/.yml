@@ -1,0 +1,23 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.health
+name: ''
+service: Azure Blockchain Workbench
+groupName: Health
+apiVersion: v1
+summary: Returns the health of the system. See https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring for more details.
+consumes: []
+produces: []
+paths:
+- content: GET /api/health
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1428

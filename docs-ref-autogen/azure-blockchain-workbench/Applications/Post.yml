@@ -1,0 +1,26 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.post
+name: Post
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Creates a new blockchain application. This method can only be performed by users who are Workbench administrators.
+consumes:
+- multipart/form-data
+produces: []
+paths:
+- content: POST /api/v1/applications
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: integer
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L64

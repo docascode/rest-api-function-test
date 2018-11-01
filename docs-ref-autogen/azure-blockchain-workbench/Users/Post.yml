@@ -1,0 +1,71 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.users.post
+name: Post
+service: Azure Blockchain Workbench
+groupName: Users
+apiVersion: v1
+summary: Adds a user to the blockchain consortium. This method can only be performed by users who are Workbench administrators.
+consumes:
+- application/json-patch+json
+- application/json
+- text/json
+- application/*+json
+produces: []
+paths:
+- content: POST /api/v1/users
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: integer
+- name: 204 No Content
+  description: No Content
+requestBody:
+- name: default
+  parameters:
+  - name: externalID
+    in: body
+    description: ''
+    types:
+    - uid: string
+  - name: firstName
+    in: body
+    description: ''
+    types:
+    - uid: string
+  - name: lastName
+    in: body
+    description: ''
+    types:
+    - uid: string
+  - name: emailAddress
+    in: body
+    description: ''
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: UserInput
+  kind: object
+  properties:
+  - name: externalID
+    description: ''
+    types:
+    - uid: string
+  - name: firstName
+    description: ''
+    types:
+    - uid: string
+  - name: lastName
+    description: ''
+    types:
+    - uid: string
+  - name: emailAddress
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1545

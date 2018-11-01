@@ -1,0 +1,10 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.checkers
+name: Checkers
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.checkers.checkapplicationpost
+  summary: Checks if the supplied application configuration file is valid for Workbench.
+- uid: azure-blockchain-workbench.checkers.checkcontractcodepost
+  summary: Check if the application smart contract implementation file is valid for Workbench.

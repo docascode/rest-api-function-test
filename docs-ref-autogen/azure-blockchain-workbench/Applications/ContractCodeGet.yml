@@ -1,0 +1,137 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.contractcodeget
+name: Contract Code Get
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Get the blockchain smart contract implementation matching a specific contract code id. Users who are Workbench administrators get the specified smart contract implementation. Non-Workbench administrators get the smart contract implementation if they have at least one associated application role or is associated with a smart contract instance role.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/applications/contractCode/{contractCodeId}
+uriParameters:
+- name: contractCodeId
+  in: path
+  isRequired: true
+  description: The id of the contract code
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: FileStreamResult
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: FileStreamResult
+  kind: object
+  properties:
+  - name: fileStream
+    description: ''
+    types:
+    - uid: Stream
+  - name: contentType
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: string
+  - name: fileDownloadName
+    description: ''
+    types:
+    - uid: string
+  - name: lastModified
+    description: ''
+    types:
+    - uid: string
+  - name: entityTag
+    description: ''
+    types:
+    - uid: EntityTagHeaderValue
+- name: Stream
+  kind: object
+  properties:
+  - name: canRead
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+  - name: canSeek
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+  - name: canTimeout
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+  - name: canWrite
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+  - name: length
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: integer
+  - name: position
+    description: ''
+    types:
+    - uid: integer
+  - name: readTimeout
+    description: ''
+    types:
+    - uid: integer
+  - name: writeTimeout
+    description: ''
+    types:
+    - uid: integer
+- name: EntityTagHeaderValue
+  kind: object
+  properties:
+  - name: tag
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: StringSegment
+  - name: isWeak
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+- name: StringSegment
+  kind: object
+  properties:
+  - name: buffer
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: string
+  - name: offset
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: integer
+  - name: length
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: integer
+  - name: value
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: string
+  - name: hasValue
+    isReadyOnly: true
+    description: ''
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L649

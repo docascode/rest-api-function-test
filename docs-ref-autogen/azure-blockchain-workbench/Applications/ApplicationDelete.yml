@@ -1,0 +1,27 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.applicationdelete
+name: Application Delete
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: 'Deletes the specified blockchain application. This method can only be performed by users who are Workbench administrators. NOTE: Currently not implemented.'
+consumes: []
+produces: []
+paths:
+- content: DELETE /api/v1/applications/{applicationId}
+uriParameters:
+- name: applicationId
+  in: path
+  isRequired: true
+  description: The id of the application.
+  types:
+  - uid: string
+responses:
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L132

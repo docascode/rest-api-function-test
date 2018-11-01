@@ -1,0 +1,83 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.contracts.contractpost
+name: Contract Post
+service: Azure Blockchain Workbench
+groupName: Contracts
+apiVersion: v1
+summary: Creates a new smart contract instance for the specified workflow ID. Users are only able to create a new smart contract instance if the user is associated with an application role, which can initiate a smart contract instance for the workflow.
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST /api/v1/contracts
+- content: POST /api/v1/contracts?workflowId={workflowId}&contractCodeId={contractCodeId}&connectionId={connectionId}
+  isOptional: true
+uriParameters:
+- name: workflowId
+  in: query
+  description: The id of the workflow.
+  types:
+  - uid: integer
+  format: int32
+- name: contractCodeId
+  in: query
+  description: The id of the smart contract implementation.
+  types:
+  - uid: integer
+  format: int32
+- name: connectionId
+  in: query
+  description: The id of the blockchain connection.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: WorkflowActionInput
+- name: 204 No Content
+  description: No Content
+requestBody:
+- name: default
+  parameters:
+  - name: workflowFunctionID
+    in: body
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowActionParameters
+    in: body
+    description: ''
+    types:
+    - uid: ContractActionParameter
+      isArray: true
+requestHeader: []
+definitions:
+- name: ContractActionParameter
+  kind: object
+  properties:
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: string
+- name: WorkflowActionInput
+  kind: object
+  properties:
+  - name: workflowFunctionID
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowActionParameters
+    description: ''
+    types:
+    - uid: ContractActionParameter
+      isArray: true
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1165

@@ -1,0 +1,51 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.connections.connectionget
+name: Connection Get
+service: Azure Blockchain Workbench
+groupName: Connections
+apiVersion: v1
+summary: Gets the connected blockchain network matching a specific connection ID.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/ledgers/connections/{connectionId}
+uriParameters:
+- name: connectionId
+  in: path
+  isRequired: true
+  description: The id of the connection.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Connection
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: Connection
+  kind: object
+  properties:
+  - name: connectionID
+    description: ''
+    types:
+    - uid: integer
+  - name: ledgerID
+    description: ''
+    types:
+    - uid: integer
+  - name: endpointURL
+    description: ''
+    types:
+    - uid: string
+  - name: fundingAccount
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L896

@@ -1,0 +1,80 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.contracts.contractactionget
+name: Contract Action Get
+service: Azure Blockchain Workbench
+groupName: Contracts
+apiVersion: v1
+summary: Gets the action matching the specified action ID. Users get the action if the user can take the action given the current state of the specified smart contract instance and the user's associated application role or smart contract instance role.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/contracts/{contractId}/actions/{actionId}
+uriParameters:
+- name: contractId
+  in: path
+  isRequired: true
+  description: The id of the contract.
+  types:
+  - uid: integer
+  format: int32
+- name: actionId
+  in: path
+  isRequired: true
+  description: The id of the action.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: WorkflowStateTransition
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: WorkflowStateTransition
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowFunctionId
+    description: ''
+    types:
+    - uid: integer
+  - name: currStateId
+    description: ''
+    types:
+    - uid: integer
+  - name: allowedRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: allowedInstanceRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: function
+    description: ''
+    types:
+    - uid: string
+  - name: currentState
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1353

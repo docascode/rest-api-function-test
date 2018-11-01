@@ -1,0 +1,261 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.workflowget
+name: Workflow Get
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Get a workflow matching a specific workflow ID. Users who are Workbench administrators get the workflow. Non-Workbench administrators get the workflow if they have at least one associated application role or is associated with a smart contract instance role.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/applications/workflows/{workflowId}
+uriParameters:
+- name: workflowId
+  in: path
+  isRequired: true
+  description: The id of the workflow
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Workflow
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: Workflow
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: applicationId
+    description: ''
+    types:
+    - uid: integer
+  - name: constructorId
+    description: ''
+    types:
+    - uid: integer
+  - name: startStateId
+    description: ''
+    types:
+    - uid: integer
+  - name: initiators
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: properties
+    description: ''
+    types:
+    - uid: WorkflowProperty
+      isArray: true
+  - name: constructor
+    description: ''
+    types:
+    - uid: WorkflowFunction
+  - name: functions
+    description: ''
+    types:
+    - uid: WorkflowFunction
+      isArray: true
+  - name: startState
+    description: ''
+    types:
+    - uid: WorkflowState
+  - name: states
+    description: ''
+    types:
+    - uid: WorkflowState
+      isArray: true
+- name: WorkflowProperty
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: type
+    description: ''
+    types:
+    - uid: WorkflowDataType
+- name: WorkflowFunction
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: parameters
+    description: ''
+    types:
+    - uid: WorkflowFunctionParameter
+      isArray: true
+  - name: workflowId
+    description: ''
+    types:
+    - uid: integer
+- name: WorkflowState
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: percentComplete
+    description: ''
+    types:
+    - uid: integer
+  - name: value
+    description: ''
+    types:
+    - uid: integer
+  - name: style
+    description: ''
+    types:
+    - uid: string
+  - name: workflowStateTransitions
+    description: ''
+    types:
+    - uid: WorkflowStateTransition
+      isArray: true
+- name: WorkflowDataType
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: elementType
+    description: ''
+    types:
+    - uid: WorkflowDataType
+  - name: elementTypeId
+    description: ''
+    types:
+    - uid: integer
+- name: WorkflowFunctionParameter
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: type
+    description: ''
+    types:
+    - uid: WorkflowDataType
+- name: WorkflowStateTransition
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowFunctionId
+    description: ''
+    types:
+    - uid: integer
+  - name: currStateId
+    description: ''
+    types:
+    - uid: integer
+  - name: allowedRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: allowedInstanceRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: function
+    description: ''
+    types:
+    - uid: string
+  - name: currentState
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L507

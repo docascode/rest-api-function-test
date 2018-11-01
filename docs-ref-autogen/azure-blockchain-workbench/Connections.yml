@@ -1,0 +1,18 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.connections
+name: Connections
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.connections.blockget
+  summary: Gets the block matching a specific block ID.
+- uid: azure-blockchain-workbench.connections.blocksget
+  summary: Lists the blocks for a connected blockchain network.
+- uid: azure-blockchain-workbench.connections.connectionget
+  summary: Gets the connected blockchain network matching a specific connection ID.
+- uid: azure-blockchain-workbench.connections.get
+  summary: Lists the connected blockchain networks.
+- uid: azure-blockchain-workbench.connections.transactionget
+  summary: Gets the transaction matching a specific transaction ID.
+- uid: azure-blockchain-workbench.connections.transactionsget
+  summary: Lists the transactions for a connected blockchain network.

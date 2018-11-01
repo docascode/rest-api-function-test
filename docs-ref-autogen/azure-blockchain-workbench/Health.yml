@@ -1,0 +1,8 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.health
+name: Health
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.health
+  summary: Returns the health of the system. See https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring for more details.

@@ -1,0 +1,44 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.capabilities.get
+name: Get
+service: Azure Blockchain Workbench
+groupName: Capabilities
+apiVersion: v1
+summary: List all capabilities the user can perform within Workbench. Checked capabilities include ability to add blockchain applications, add smart contract implementations, add or edit user role assignments, and add new users.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/capabilities
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Capabilities
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: Capabilities
+  kind: object
+  properties:
+  - name: canUploadApplication
+    description: ''
+    types:
+    - uid: boolean
+  - name: canUploadContractCode
+    description: ''
+    types:
+    - uid: boolean
+  - name: canModifyRoleAssignments
+    description: ''
+    types:
+    - uid: boolean
+  - name: canProvisionUser
+    description: ''
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L709

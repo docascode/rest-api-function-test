@@ -1,0 +1,66 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.ledgers.get
+name: Get
+service: Azure Blockchain Workbench
+groupName: Ledgers
+apiVersion: v1
+summary: Lists the supported blockchain types, such as Ethereum or Hyperledger Fabric.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/ledgers
+- content: GET /api/v1/ledgers?top={top}&skip={skip}
+  isOptional: true
+uriParameters:
+- name: top
+  in: query
+  description: The maximum number of items to return.
+  types:
+  - uid: integer
+  format: int32
+- name: skip
+  in: query
+  description: The number of items to skip before returning.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: LedgerList
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: LedgerList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: ledgers
+    description: ''
+    types:
+    - uid: Ledger
+      isArray: true
+- name: Ledger
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1449

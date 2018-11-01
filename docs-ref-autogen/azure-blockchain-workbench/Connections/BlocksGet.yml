@@ -1,0 +1,81 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.connections.blocksget
+name: Blocks Get
+service: Azure Blockchain Workbench
+groupName: Connections
+apiVersion: v1
+summary: Lists the blocks for a connected blockchain network.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/ledgers/connections/{connectionId}/blocks
+- content: GET /api/v1/ledgers/connections/{connectionId}/blocks?top={top}&skip={skip}
+  isOptional: true
+uriParameters:
+- name: connectionId
+  in: path
+  isRequired: true
+  description: The id of the connection.
+  types:
+  - uid: integer
+  format: int32
+- name: top
+  in: query
+  description: The maximum number of items to return.
+  types:
+  - uid: integer
+  format: int32
+- name: skip
+  in: query
+  description: The number of items to skip before returning.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: BlockList
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: BlockList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: blocks
+    description: ''
+    types:
+    - uid: Block
+      isArray: true
+- name: Block
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionId
+    description: ''
+    types:
+    - uid: integer
+  - name: timestamp
+    description: ''
+    types:
+    - uid: string
+  - name: blockNumber
+    description: ''
+    types:
+    - uid: integer
+  - name: blockHash
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L930

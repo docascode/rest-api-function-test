@@ -1,0 +1,77 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.contracts.contractactionpost
+name: Contract Action Post
+service: Azure Blockchain Workbench
+groupName: Contracts
+apiVersion: v1
+summary: Executes an action for the specified smart contract instance and action ID. Users are only able to execute the action given the current state of the specified smart contract instance and the user's associated application role or smart contract instance role.
+consumes:
+- application/json
+produces: []
+paths:
+- content: POST /api/v1/contracts/{contractId}/actions
+uriParameters:
+- name: contractId
+  in: path
+  isRequired: true
+  description: The id of the contract.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: LedgerActionOutput
+- name: 204 No Content
+  description: No Content
+requestBody:
+- name: default
+  parameters:
+  - name: workflowFunctionID
+    in: body
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowActionParameters
+    in: body
+    description: ''
+    types:
+    - uid: ContractActionParameter
+      isArray: true
+requestHeader: []
+definitions:
+- name: ContractActionParameter
+  kind: object
+  properties:
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: string
+- name: LedgerActionOutput
+  kind: object
+  properties:
+  - name: transactionID
+    description: ''
+    types:
+    - uid: string
+- name: WorkflowActionInput
+  kind: object
+  properties:
+  - name: workflowFunctionID
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowActionParameters
+    description: ''
+    types:
+    - uid: ContractActionParameter
+      isArray: true
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1308

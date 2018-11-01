@@ -1,0 +1,32 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.capabilities.cancreatecontract
+name: Can Create Contract
+service: Azure Blockchain Workbench
+groupName: Capabilities
+apiVersion: v1
+summary: Checks if user has capability to create new smart contract instance for a specific workflow ID.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/capabilities/canCreateContract/{workflowId}
+uriParameters:
+- name: workflowId
+  in: path
+  isRequired: true
+  description: The id of the workflow.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: boolean
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L733

@@ -1,0 +1,107 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.get
+name: Get
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Lists all blockchain applications to which a user has access in Workbench. Users who are Workbench administrators get all blockchain applications. Non-Workbench administrators get all blockchain applications for which they have at least one associated application role or an associated smart contract instance role.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/applications
+- content: GET /api/v1/applications?top={top}&skip={skip}&enabled={enabled}
+  isOptional: true
+uriParameters:
+- name: top
+  in: query
+  description: The maximum number of entries to return in the result set.
+  types:
+  - uid: integer
+  format: int32
+- name: skip
+  in: query
+  description: The number of entries to skip in the result set.
+  types:
+  - uid: integer
+  format: int32
+- name: enabled
+  in: query
+  description: A Boolean for whether to filter the result set to only enabled applications.
+  types:
+  - uid: boolean
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ApplicationList
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: ApplicationList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: applications
+    description: ''
+    types:
+    - uid: Application
+      isArray: true
+- name: Application
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
+  - name: createdByUserId
+    description: ''
+    types:
+    - uid: integer
+  - name: createdDtTm
+    description: ''
+    types:
+    - uid: string
+  - name: enabled
+    description: ''
+    types:
+    - uid: boolean
+  - name: applicationRoles
+    description: ''
+    types:
+    - uid: ApplicationRole
+      isArray: true
+- name: ApplicationRole
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: description
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L17

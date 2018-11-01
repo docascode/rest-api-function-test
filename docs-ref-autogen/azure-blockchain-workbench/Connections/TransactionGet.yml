@@ -1,0 +1,74 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.connections.transactionget
+name: Transaction Get
+service: Azure Blockchain Workbench
+groupName: Connections
+apiVersion: v1
+summary: Gets the transaction matching a specific transaction ID.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/ledgers/connections/{connectionId}/transactions/{transactionId}
+uriParameters:
+- name: connectionId
+  in: path
+  isRequired: true
+  description: The connectionId of the transaction.
+  types:
+  - uid: integer
+  format: int32
+- name: transactionId
+  in: path
+  isRequired: true
+  description: The id of the transaction.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: Transaction
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: Transaction
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionId
+    description: ''
+    types:
+    - uid: integer
+  - name: transactionHash
+    description: ''
+    types:
+    - uid: string
+  - name: blockID
+    description: ''
+    types:
+    - uid: integer
+  - name: from
+    description: ''
+    types:
+    - uid: string
+  - name: to
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: number
+  - name: isAppBuilderTx
+    description: ''
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1075

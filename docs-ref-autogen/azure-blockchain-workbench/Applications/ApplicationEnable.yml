@@ -1,0 +1,30 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.applications.applicationenable
+name: Application Enable
+service: Azure Blockchain Workbench
+groupName: Applications
+apiVersion: v1
+summary: Enables the specified blockchain application. This method can only be performed by users who are Workbench administrators.
+consumes: []
+produces: []
+paths:
+- content: PATCH /api/v1/applications/{applicationId}/enable
+uriParameters:
+- name: applicationId
+  in: path
+  isRequired: true
+  description: The id of the application.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L159

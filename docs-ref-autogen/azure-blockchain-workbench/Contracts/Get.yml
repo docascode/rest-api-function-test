@@ -1,0 +1,200 @@
+### YamlMime:RESTOperation
+uid: azure-blockchain-workbench.contracts.get
+name: Get
+service: Azure Blockchain Workbench
+groupName: Contracts
+apiVersion: v1
+summary: Lists the smart contract instances of the specified workflow. Users who are Workbench administrators get all smart contract instances. Non-Workbench administrators get all smart contract instances for which they have at least one associated application role or is associated with a smart contract instance role.
+consumes: []
+produces: []
+paths:
+- content: GET /api/v1/contracts
+- content: GET /api/v1/contracts?top={top}&skip={skip}&workflowId={workflowId}
+  isOptional: true
+uriParameters:
+- name: top
+  in: query
+  description: The maximum number of items to return.
+  types:
+  - uid: integer
+  format: int32
+- name: skip
+  in: query
+  description: The number of items to skip before returning.
+  types:
+  - uid: integer
+  format: int32
+- name: workflowId
+  in: query
+  description: The ID of the associated workflow.
+  types:
+  - uid: integer
+  format: int32
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ContractList
+- name: 204 No Content
+  description: No Content
+requestHeader: []
+definitions:
+- name: ContractList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: contracts
+    description: ''
+    types:
+    - uid: Contract
+      isArray: true
+- name: Contract
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: provisioningStatus
+    description: ''
+    types:
+    - uid: integer
+  - name: timestamp
+    description: ''
+    types:
+    - uid: string
+  - name: connectionID
+    description: ''
+    types:
+    - uid: integer
+  - name: ledgerIdentifier
+    description: ''
+    types:
+    - uid: string
+  - name: deployedByUserId
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowId
+    description: ''
+    types:
+    - uid: integer
+  - name: contractCodeId
+    description: ''
+    types:
+    - uid: integer
+  - name: contractProperties
+    description: ''
+    types:
+    - uid: ContractProperty
+      isArray: true
+  - name: transactions
+    description: ''
+    types:
+    - uid: Transaction
+      isArray: true
+  - name: contractActions
+    description: ''
+    types:
+    - uid: ContractAction
+      isArray: true
+- name: ContractProperty
+  kind: object
+  properties:
+  - name: workflowPropertyId
+    description: ''
+    types:
+    - uid: integer
+  - name: value
+    description: ''
+    types:
+    - uid: string
+- name: Transaction
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionId
+    description: ''
+    types:
+    - uid: integer
+  - name: transactionHash
+    description: ''
+    types:
+    - uid: string
+  - name: blockID
+    description: ''
+    types:
+    - uid: integer
+  - name: from
+    description: ''
+    types:
+    - uid: string
+  - name: to
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: number
+  - name: isAppBuilderTx
+    description: ''
+    types:
+    - uid: boolean
+- name: ContractAction
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: userId
+    description: ''
+    types:
+    - uid: integer
+  - name: provisioningStatus
+    description: ''
+    types:
+    - uid: integer
+  - name: timestamp
+    description: ''
+    types:
+    - uid: string
+  - name: parameters
+    description: ''
+    types:
+    - uid: ContractActionParameter
+      isArray: true
+  - name: workflowFunctionId
+    description: ''
+    types:
+    - uid: integer
+  - name: transactionId
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowStateId
+    description: ''
+    types:
+    - uid: integer
+- name: ContractActionParameter
+  kind: object
+  properties:
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1117

@@ -1,0 +1,16 @@
+### YamlMime:RESTOperationGroup
+uid: azure-blockchain-workbench.users
+name: Users
+apiVersion: v1
+service: Azure Blockchain Workbench
+operations:
+- uid: azure-blockchain-workbench.users.get
+  summary: "Get Users  \nLists all users within the connected blockchain consortium."
+- uid: azure-blockchain-workbench.users.meget
+  summary: Returns the current user.
+- uid: azure-blockchain-workbench.users.post
+  summary: Adds a user to the blockchain consortium. This method can only be performed by users who are Workbench administrators.
+- uid: azure-blockchain-workbench.users.userdelete
+  summary: 'Deletes the specified user. This method can only be performed by users who are Workbench administrators. NOTE: Not currently implemented.'
+- uid: azure-blockchain-workbench.users.userget
+  summary: Gets the user matching a specific user ID.
