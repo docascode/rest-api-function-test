@@ -1,7 +1,7 @@
 {
 	"repo": [
 		{
-			"url": "https://github.com/docascode/rest-api-function-test-repo",
+			"url": "https://github.com/docascode/rest-api-function-test",
 			"branch": "master",
 			"name": "test",
 			"enable_view_code": true

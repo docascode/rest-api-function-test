@@ -15,13 +15,22 @@
           "service_index": "docs-ref-index/index.md",
           "swagger_files": [
             {
-              "source": "test/test-remove-tag.json"
+              "source": "test/test_files/test-remove-tag.json"
             },
             {
-              "source": "test/test-x-operationTitle.json"
+              "source": "test/test_files/test-x-operationTitle.json"
             }
           ]
-        }
+        },
+        {
+          "toc_title": "Azure Blockchain Workbench",
+          "url_group": "azure-blockchain-workbench",
+          "service_index": "docs-ref-index/index.md",
+          "swagger_files": [{
+            "source": "test/test_files/swagger.yaml"
+          }]
+        }]
+      }
       ]
     }
   ]

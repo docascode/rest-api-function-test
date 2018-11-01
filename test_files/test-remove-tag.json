@@ -1,0 +1,2514 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1.0",
+        "title": "Power BI Client"
+    },
+    "host": "api.powerbi.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+
+    ],
+    "produces": [
+
+    ],
+    "paths": {
+        "/v1.0/myorg/datasets": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns a list of datasets from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetDatasets",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[Dataset]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {},
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                                            "name": "SalesMarketing",
+                                            "addRowsAPIEnabled": false,
+                                            "configuredBy": "john@contoso.com",
+                                            "isRefreshable": true,
+                                            "isEffectiveIdentityRequired": false,
+                                            "isEffectiveIdentityRolesRequired": false,
+                                            "isOnPremGatewayRequired": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetDatasetById",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Dataset"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "id": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                                    "name": "SalesMarketing",
+                                    "addRowsAPIEnabled": false,
+                                    "configuredBy": "john@contoso.com",
+                                    "isRefreshable": true,
+                                    "isEffectiveIdentityRequired": true,
+                                    "isEffectiveIdentityRolesRequired": true,
+                                    "isOnPremGatewayRequired": false
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Deletes the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_DeleteDatasetById",
+                "consumes": [
+
+                ],
+                "produces": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/refreshes": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns the refresh history of the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetRefreshHistory",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "$top",
+                        "description": "The requested number of entries in the refresh history. If not provided, the default is all available entries.",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[Refresh]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "in progress refresh example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "$top": 1
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "Id": "823456",
+                                            "refreshType": "ViaApi",
+                                            "startTime": "2017-06-13T09:25:43.153Z",
+                                            "status": "Unknown"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "completed refresh example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "$top": 1
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "endTime": "2017-06-13T09:31:43.153Z",
+                                            "Id": "823456",
+                                            "refreshType": "ViaApi",
+                                            "startTime": "2017-06-13T09:25:43.153Z",
+                                            "status": "Completed"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Triggers a refresh for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_RefreshDataset",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "refreshRequest",
+                        "in": "body",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/RefreshRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "refreshRequest": {
+                                "notifyOption": "MailOnFailure"
+                            }
+                        },
+                        "responses": {
+                            "202": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/parameters": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns a list of parameters for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetParameters",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[DatasetParameter]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "name": "ServerName",
+                                            "type": "Text",
+                                            "isRequired": true,
+                                            "currentValue": "MyTest.database.windows.net"
+                                        },
+                                        {
+                                            "name": "DatabaseName",
+                                            "type": "Text",
+                                            "isRequired": true,
+                                            "currentValue": "MyTestDB"
+                                        },
+                                        {
+                                            "name": "FromDate",
+                                            "type": "DateTime",
+                                            "isRequired": true,
+                                            "currentValue": "2/8/2002 12:00:00 AM"
+                                        },
+                                        {
+                                            "name": "FilterBlanks",
+                                            "type": "Logical",
+                                            "isRequired": true,
+                                            "currentValue": "TRUE"
+                                        },
+                                        {
+                                            "name": "MaxId",
+                                            "type": "Number",
+                                            "isRequired": true,
+                                            "currentValue": "77"
+                                        },
+                                        {
+                                            "name": "AnyParam",
+                                            "type": "Any",
+                                            "isRequired": true,
+                                            "currentValue": "uu63"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.UpdateParameters": {
+            "post": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Updates the parameters values for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Important**: The dataset must be refreshed for new parameters values to be applied. Wait 30 minutes for the update parameters operation to complete before refreshing.<br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app). <h2>Restrictions</h2><ul><li>All parameters must exist in the dataset. Names are case-sensitive. </li><li>Datasets with SQL, Oracle, Teradata & SapHana Direct Query connections are not supported. </li><li>Datasets with Analysis Services Live connections are not supported. </li><li> Maximum of a 100 parameters in request is allowed. </li><li> Values should be of expected Type. </li><li> Cannot pass empty value to an IsRequired parameter. </li><li> List cannot be empty or include multiple occurrences of same parameter. </li><li> Parameters of types 'Any' or 'Binary' cannot be set. </li></ul>",
+                "operationId": "Datasets_UpdateParameters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateDatasetParametersRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateDatasetParametersRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "updateDatasetParametersRequest": {
+                                "updateDetails": [
+                                    {
+                                        "name": "DatabaseName",
+                                        "newValue": "NewDB"
+                                    },
+                                    {
+                                        "name": "MaxId",
+                                        "newValue": "5678"
+                                    }
+                                ]
+                            }
+                        },
+                        "responses": {
+                            "200": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/datasources": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns a list of datasources for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetDatasources",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[Datasource]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "direct query model example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "name": "301",
+                                            "connectionString": "data source=MyServer.database.windows.net;initial catalog=MyDatabase;persist security info=True;encrypt=True;trustservercertificate=False",
+                                            "datasourceType": "Sql",
+                                            "datasourceId": "16a54ccd-620d-4af3-9197-0b8c779a9a6d",
+                                            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+                                            "connectionDetails": {
+                                                "server": "MyServer.database.windows.net",
+                                                "database": "MyDatabase"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "cached model example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "datasourceType": "AnalysisServices",
+                                            "datasourceId": "f8c56590-43cb-43bf-8daa-233ba2520f55",
+                                            "gatewayId": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+                                            "connectionDetails": {
+                                                "server": "My-As-Server",
+                                                "database": "My-As-Database"
+                                            }
+                                        },
+                                        {
+                                            "datasourceType": "Web",
+                                            "datasourceId": "96e4bb31-7b77-4b6d-8483-d76855639a23",
+                                            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+                                            "connectionDetails": {
+                                                "url": "http://myWebSource.com"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.UpdateDatasources": {
+            "post": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Updates the datasources of the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Important**:<ul><li>The original datasource and the new datasource must have the exact same schema.</li><li>For cached models, the dataset must be refreshed to get the data from the new data sources. Wait 30 minutes for the update datasources operation to complete before refreshing.</li></ul><br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app). <h2>Restrictions</h2><ul><li>Update datasources supports SQL Server, Azure SQL Server, Analysis Services, Azure Analysis Services, OData Feed, and SharePoint datasources. For other datasource types, use [Update Parameters](/rest/api/power-bi/datasets/updateparameters) </li><li>Changing datasource type is not supported. </li><li>Datasources that contain parameters on the connection string are not supported. </li><li>Datasources which are part of Merged or Joined tables are not supported. </li></ul>",
+                "operationId": "Datasets_UpdateDatasources",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateDatasourcesRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateDatasourcesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "updateDatasourcesRequest": {
+                                "updateDetails": [
+                                    {
+                                        "datasourceSelector": {
+                                            "datasourceType": "Sql",
+                                            "connectionDetails": {
+                                                "server": "My-Sql-Server",
+                                                "database": "My-Sql-Database"
+                                            }
+                                        },
+                                        "connectionDetails": {
+                                            "server": "New-Sql-Server",
+                                            "database": "New-Sql-Database"
+                                        }
+                                    },
+                                    {
+                                        "datasourceSelector": {
+                                            "datasourceType": "OData",
+                                            "connectionDetails": {
+                                                "url": "http://services.odata.org/V4/Northwind/Northwind.svc"
+                                            }
+                                        },
+                                        "connectionDetails": {
+                                            "url": "http://services.odata.org/V4/Odata/Northwind.svc"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "responses": {
+                            "200": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.SetAllConnections": {
+            "post": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Updates all connections for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Note**:<ul><li>To update connection details for SQL, AS, OData Feed, and SharePoint, use [Update Datasources](/rest/api/power-bi/datasets/updatedatasources). For other datasource types, use [Update Parameters](/rest/api/power-bi/datasets/updateparameters).</li><li>This API only supports SQL DirectQuery datasets.</li></ul><br/><br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_SetAllDatasetConnections",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "in": "path",
+                        "description": "The dataset id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "description": "The body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ConnectionDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "parameters": {
+                                "connectionString": "data source=MyServer.database.windows.net;initial catalog=MyDatabase;persist security info=True;encrypt=True;trustservercertificate=False"
+                            }
+                        },
+                        "responses": {
+                            "200": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.BindToGateway": {
+            "post": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Binds the specified dataset from **\"My Workspace\"** to the specified gateway. This only supports the On-Premises Data Gateway.",
+                "description": "<br/>**Required scope**: Dataset.ReadWrite.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_BindToGateway",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "in": "path",
+                        "description": "The dataset id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "bindToGatewayRequest",
+                        "in": "body",
+                        "description": "The bind to gateway request",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/BindToGatewayRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+                            "bindToGatewayRequest": {
+                                "gatewayObjectId": "1f69e798-5852-4fdd-ab01-33bb14b6e934"
+                            }
+                        },
+                        "responses": {
+                            "200": {}
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.GetBoundGatewayDatasources": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns a list of gateway datasources for the specified dataset from **\"My Workspace\"**.",
+                "description": "<br/>**Note**: Use the new [Dataset - Get Datasources](/rest/api/power-bi/datasets/getdatasources) API instead.<br/><br/>**Required scope**: Dataset.ReadWrite.All or Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_GetGatewayDatasources",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[GatewayDatasource]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "id": "16a54ccd-620d-4af3-9197-0b8c779a9a6d",
+                                            "gatewayId": "7f1c4e55-544b-403f-b132-da0d3a024674",
+                                            "datasourceType": "Sql",
+                                            "connectionDetails": "{\"server\":\"MyServer.database.windows.net\",\"database\":\"MyDatabase\"}"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v1.0/myorg/datasets/{datasetKey}/Default.DiscoverGateways": {
+            "get": {
+                "tags": [
+                    "Datasets"
+                ],
+                "summary": "Returns a list of gateways which the specified dataset from **\"My Workspace\"** can be bound to.",
+                "description": "This API is relevant only for datasets that have at least one on-premises connection. <br/>For datasets with cloud-only connections, it will return an empty list. <br/><br/>**Required scope**: Dataset.Read.All <br/>To set the permissions scope, see [Register an app](https://docs.microsoft.com/power-bi/developer/register-app).",
+                "operationId": "Datasets_DiscoverGateways",
+                "consumes": [
+
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "datasetKey",
+                        "description": "The dataset id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ODataResponse[List[Gateway]]"
+                        }
+                    }
+                },
+                "x-ms-examples": {
+                    "example": {
+                        "parameters": {
+                            "datasetKey": "cfafbeb1-8037-4d0c-896e-a46fb27ff229"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "id": "1f69e798-5852-4fdd-ab01-33bb14b6e934",
+                                            "name": "ContosoGateway",
+                                            "type": "Resource",
+                                            "publicKey": {
+                                                "exponent": "AQAB",
+                                                "modulus": "o6j2....cLk="
+                                            }
+                                        }
+
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Import": {
+            "description": "The import object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The import id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The import name"
+                },
+                "importState": {
+                    "type": "string",
+                    "description": "The import upload state"
+                },
+                "reports": {
+                    "type": "array",
+                    "description": "The reports associated with this import",
+                    "items": {
+                        "$ref": "#/definitions/Report"
+                    }
+                },
+                "datasets": {
+                    "type": "array",
+                    "description": "The datasets associated with this import",
+                    "items": {
+                        "$ref": "#/definitions/Dataset"
+                    }
+                },
+                "createdDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Import creation time"
+                },
+                "updatedDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Import last update time"
+                }
+            }
+        },
+        "ImportInfo": {
+            "description": "The information about the import",
+            "properties": {
+                "filePath": {
+                    "type": "string",
+                    "description": "The OneDrive for Business file path to import, can be absolute or relative"
+                },
+                "connectionType": {
+                    "type": "string",
+                    "description": "The import connection type for OneDrive for Business file",
+                    "enum": [
+                        "import",
+                        "connect"
+                    ],
+                    "x-ms-enum": {
+                        "name": "connectionTypeEnum",
+                        "modelAsString": true
+                    }
+                },
+                "fileUrl": {
+                    "type": "string",
+                    "description": "The shared access signature (SAS) url of the temporary blob storage, used to import .pbix files larger than 1 GB."
+                }
+            }
+        },
+        "Object": {
+            "properties": {
+
+            }
+        },
+        "ODataResponse[List[Dataset]]": {
+            "description": "A dataset odata list wrapper",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The datasets",
+                    "items": {
+                        "$ref": "#/definitions/Dataset"
+                    }
+                }
+            }
+        },
+        "Dataset": {
+            "required": [
+                "name",
+                "tables"
+            ],
+            "description": "A Power BI dataset",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The dataset id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The dataset name"
+                },
+                "configuredBy": {
+                    "type": "string",
+                    "description": "The dataset owner"
+                },
+                "defaultRetentionPolicy": {
+                    "type": "string",
+                    "description": "The dataset default data retention policy. Only relevant to the PostDataset API."
+                },
+                "addRowsAPIEnabled": {
+                    "type": "boolean",
+                    "description": "Whether dataset allows adding new rows"
+                },
+                "tables": {
+                    "type": "array",
+                    "description": "The dataset tables. Only relevant to the PostDataset API.",
+                    "items": {
+                        "$ref": "#/definitions/Table"
+                    }
+                },
+                "webUrl": {
+                    "type": "string",
+                    "description": "The dataset web url"
+                },
+                "relationships": {
+                    "type": "array",
+                    "description": "The dataset relationships. Only relevant to the PostDataset API.",
+                    "items": {
+                        "$ref": "#/definitions/Relationship"
+                    }
+                },
+                "datasources": {
+                    "type": "array",
+                    "description": "The datasources associated with this dataset. Only relevant to the PostDataset API.",
+                    "items": {
+                        "$ref": "#/definitions/Datasource"
+                    }
+                },
+                "defaultMode": {
+                    "type": "string",
+                    "description": "The dataset mode or type. Only relevant to the PostDataset API.",
+                    "enum": [
+                        "AsAzure",
+                        "AsOnPrem",
+                        "Push",
+                        "Streaming",
+                        "PushStreaming"
+                    ],
+                    "x-ms-enum": {
+                        "name": "DatasetMode",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "AsAzure",
+                                "description": "Creates a dataset with a live connection to Azure Analysis Service"
+                            },
+                            {
+                                "value": "AsOnPrem",
+                                "description": "Creates a dataset with a live connection to On-premise Analysis Service"
+                            },
+                            {
+                                "value": "Push",
+                                "description": "Creates a dataset which allows programmatic access for pushing data into PowerBI, [learn more](https://docs.microsoft.com/power-bi/developer/walkthrough-push-data)"
+                            },
+                            {
+                                "value": "Streaming",
+                                "description": "Creates a dataset which supports data streaming, [learn more](https://docs.microsoft.com/power-bi/service-real-time-streaming)"
+                            },
+                            {
+                                "value": "PushStreaming",
+                                "description": "Creates a dataset which supports data streaming and allows programmatic access for pushing data into Power BI"
+                            }
+                        ]
+                    }
+                },
+                "IsRefreshable": {
+                    "type": "boolean",
+                    "description": "Can this dataset be refreshed"
+                },
+                "IsEffectiveIdentityRequired": {
+                    "type": "boolean",
+                    "description": "Dataset requires effective identity"
+                },
+                "IsEffectiveIdentityRolesRequired": {
+                    "type": "boolean",
+                    "description": "Dataset requires roles"
+                },
+                "IsOnPremGatewayRequired": {
+                    "type": "boolean",
+                    "description": "Dataset requires an On-premises Data Gateway"
+                }
+            }
+        },
+        "Table": {
+            "required": [
+                "name",
+                "columns"
+            ],
+            "description": "A dataset table",
+            "properties": {
+                "name": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20\\x23\\x2D\\x30-\\x39\\x40-\\x5A\\x5E-\\x5F\\x61-\\x7A\\x7E-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]{1,100}$",
+                    "type": "string",
+                    "description": "The table name"
+                },
+                "columns": {
+                    "type": "array",
+                    "description": "The column schema for this table",
+                    "items": {
+                        "$ref": "#/definitions/Column"
+                    }
+                },
+                "rows": {
+                    "type": "array",
+                    "description": "The data rows within this table",
+                    "items": {
+                        "$ref": "#/definitions/Row"
+                    }
+                },
+                "measures": {
+                    "type": "array",
+                    "description": "The measures within this table",
+                    "items": {
+                        "$ref": "#/definitions/Measure"
+                    }
+                }
+            }
+        },
+        "Relationship": {
+            "required": [
+                "name",
+                "fromTable",
+                "fromColumn",
+                "toTable",
+                "toColumn"
+            ],
+            "description": "A relationship between tables in a dataset",
+            "properties": {
+                "name": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20\\x23\\x2D\\x30-\\x39\\x40-\\x5A\\x5E-\\x5F\\x61-\\x7A\\x7E-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]{1,100}$",
+                    "type": "string",
+                    "description": "The relationship name and identifier"
+                },
+                "crossFilteringBehavior": {
+                    "type": "string",
+                    "description": "The filter direction of the relationship",
+                    "enum": [
+                        "OneDirection",
+                        "BothDirections",
+                        "Automatic"
+                    ],
+                    "x-ms-enum": {
+                        "name": "CrossFilteringBehaviorEnum",
+                        "modelAsString": false,
+                        "values": [
+                            {
+                                "value": "OneDirection",
+                                "description": "For filtering purposes, filter will be applied on the table where values are being aggregated"
+                            },
+                            {
+                                "value": "BothDirections",
+                                "description": "For filtering purposes, both tables are treated as if they're a single table"
+                            },
+                            {
+                                "value": "Automatic",
+                                "description": "Cross filtering behavior defined automatically"
+                            }
+                        ]
+                    },
+                    "default": "OneDirection"
+                },
+                "fromTable": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20\\x23\\x2D\\x30-\\x39\\x40-\\x5A\\x5E-\\x5F\\x61-\\x7A\\x7E-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]{1,100}$",
+                    "type": "string",
+                    "description": "The name of the foreign key table"
+                },
+                "fromColumn": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]+$",
+                    "type": "string",
+                    "description": "The name of the foreign key column"
+                },
+                "toTable": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20\\x23\\x2D\\x30-\\x39\\x40-\\x5A\\x5E-\\x5F\\x61-\\x7A\\x7E-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]{1,100}$",
+                    "type": "string",
+                    "description": "The name of the primary key table"
+                },
+                "toColumn": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]+$",
+                    "type": "string",
+                    "description": "The name of the primary key column"
+                }
+            }
+        },
+        "Datasource": {
+            "description": "A Power BI datasource",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The datasource name. Available only for DirectQuery."
+                },
+                "connectionString": {
+                    "type": "string",
+                    "description": "The datasource connection string. Available only for DirectQuery."
+                },
+                "datasourceType": {
+                    "type": "string",
+                    "description": "The datasource type"
+                },
+                "connectionDetails": {
+                    "$ref": "#/definitions/DatasourceConnectionDetails",
+                    "description": "The datasource connection details"
+                },
+                "gatewayId": {
+                    "type": "string",
+                    "description": "The bound gateway id. Empty when not bound to a gateway."
+                },
+                "datasourceId": {
+                    "type": "string",
+                    "description": "The bound datasource id. Empty when not bound to a gateway."
+                }
+            }
+        },
+        "DatasourceConnectionDetails": {
+            "description": "A Power BI datasource connection details",
+            "properties": {
+                "server": {
+                    "type": "string",
+                    "description": "The connection server"
+                },
+                "database": {
+                    "type": "string",
+                    "description": "The connection database"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The connection url"
+                }
+            }
+        },
+        "UpdateDatasourcesRequest": {
+            "description": "",
+            "properties": {
+                "updateDetails": {
+                    "type": "array",
+                    "description": "The connection server",
+                    "items": {
+                        "$ref": "#/definitions/UpdateDatasourceConnectionRequest"
+                    }
+                }
+            }
+        },
+        "UpdateDatasourceConnectionRequest": {
+            "description": "",
+            "properties": {
+                "connectionDetails": {
+                    "$ref": "#/definitions/DatasourceConnectionDetails",
+                    "description": ""
+                },
+                "datasourceSelector": {
+                    "$ref": "#/definitions/Datasource",
+                    "description": ""
+                }
+            }
+        },
+        "Column": {
+            "required": [
+                "name",
+                "dataType"
+            ],
+            "description": "A dataset column",
+            "properties": {
+                "name": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]+$",
+                    "type": "string",
+                    "description": "The column name"
+                },
+                "dataType": {
+                    "type": "string",
+                    "description": "The column data type"
+                }
+            }
+        },
+        "Row": {
+            "description": "A data row in a dataset",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The unique row id"
+                }
+            }
+        },
+        "Measure": {
+            "required": [
+                "name",
+                "expression"
+            ],
+            "description": "A Power BI measure",
+            "properties": {
+                "name": {
+                    "pattern": "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]+$",
+                    "type": "string",
+                    "description": "The measure name"
+                },
+                "expression": {
+                    "type": "string",
+                    "description": "A valid DAX expression"
+                }
+            }
+        },
+        "ODataResponse[List[Table]]": {
+            "description": "Odata response wrapper for a Power BI table collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The Power BI tables",
+                    "items": {
+                        "$ref": "#/definitions/Table"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[GatewayDatasource]]": {
+            "description": "Odata response wrapper for a Power BI gateway datasource collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "List of gateway datasources",
+                    "items": {
+                        "$ref": "#/definitions/GatewayDatasource"
+                    }
+                }
+            }
+        },
+        "GatewayDatasource": {
+            "description": "A Power BI gateway datasource",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The unique id for this datasource"
+                },
+                "gatewayId": {
+                    "type": "string",
+                    "description": "The associated gateway id"
+                },
+                "datasourceName": {
+                    "type": "string",
+                    "description": "The name of the datasource"
+                },
+                "datasourceType": {
+                    "type": "string",
+                    "description": "The type of the datasource"
+                },
+                "connectionDetails": {
+                    "type": "string",
+                    "description": "Connection details in json format"
+                },
+                "credentialType": {
+                    "type": "string",
+                    "description": "Type of the datasoruce credentials",
+                    "enum": [
+                        "Basic",
+                        "Windows",
+                        "Anonymous",
+                        "OAuth2",
+                        "Key"
+                    ],
+                    "x-ms-enum": {
+                        "name": "credentialTypeEnum",
+                        "modelAsString": true
+                    }
+                },
+                "basicCredentials": {
+                    "$ref": "#/definitions/BasicCredentials",
+                    "description": "**[Deprecated]** The datasource basic credential"
+                }
+            }
+        },
+        "BasicCredentials": {
+            "description": "**[Deprecated]** Basic credentials for authentication",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "description": "Username required to access the datasource"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Password required to access the datasource"
+                }
+            }
+        },
+        "ODataResponse[List[Datasource]]": {
+            "description": "Odata response wrapper for a Power BI datasource collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The datasource collection",
+                    "items": {
+                        "$ref": "#/definitions/Datasource"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Report]]": {
+            "description": "Odata response wrapper for a Power BI report collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The report collection",
+                    "items": {
+                        "$ref": "#/definitions/Report"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Dashboard]]": {
+            "description": "Odata response wrapper for a Power BI dashboard collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The dashboard collection",
+                    "items": {
+                        "$ref": "#/definitions/Dashboard"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Tile]]": {
+            "description": "Odata response wrapper for a Power BI tile collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The tile collection",
+                    "items": {
+                        "$ref": "#/definitions/Tile"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Import]]": {
+            "description": "Odata response wrapper for a Power BI import collection",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The imports collection",
+                    "items": {
+                        "$ref": "#/definitions/Import"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Group]]": {
+            "description": "Odata response wrapper for a Power BI group list",
+            "properties": {
+                "odata.context": {
+                    "type": "string",
+                    "description": "OData context"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The groups",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Gateway]]": {
+            "description": "Odata response wrapper for a Power BI gateways list",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The gateways",
+                    "items": {
+                        "$ref": "#/definitions/Gateway"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[Refresh]]": {
+            "description": "Odata response wrapper for a Power BI refresh history",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The Refresh history list",
+                    "items": {
+                        "$ref": "#/definitions/Refresh"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[UserAccessRight]]": {
+            "description": "Odata response wrapper for a Power BI user access right for datasource List",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The user access right for datasource List",
+                    "items": {
+                        "$ref": "#/definitions/UserAccessRight"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[GroupUserAccessRight]]": {
+            "description": "Odata response wrapper for a Power BI user access right for group List",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The user access right for group List",
+                    "items": {
+                        "$ref": "#/definitions/GroupUserAccessRight"
+                    }
+                }
+            }
+        },
+        "Report": {
+            "description": "A Power BI report",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The report id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The report name"
+                },
+                "webUrl": {
+                    "type": "string",
+                    "description": "The report web url"
+                },
+                "embedUrl": {
+                    "type": "string",
+                    "description": "The report embed url"
+                },
+                "datasetId": {
+                    "type": "string",
+                    "description": "The dataset id"
+                }
+            }
+        },
+        "Dashboard": {
+            "description": "A Power BI dashboard",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The dashboard id"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The dashboard display name"
+                },
+                "isReadOnly": {
+                    "type": "boolean",
+                    "description": "Is ReadOnly dashboard"
+                },
+                "embedUrl": {
+                    "type": "string",
+                    "description": "The dashboard embed url"
+                }
+            }
+        },
+        "Tile": {
+            "description": "A Power BI tile",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The tile id"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The dashboard display name"
+                },
+                "rowSpan": {
+                    "type": "integer",
+                    "description": "number of rows a tile should span"
+                },
+                "colSpan": {
+                    "type": "integer",
+                    "description": "number of columns a tile should span"
+                },
+                "embedUrl": {
+                    "type": "string",
+                    "description": "The tile embed url"
+                },
+                "embedData": {
+                    "type": "string",
+                    "description": "The tile embed data"
+                },
+                "reportId": {
+                    "type": "string",
+                    "description": "The report id. Available only for tiles created from a report."
+                },
+                "datasetId": {
+                    "type": "string",
+                    "description": "The dataset id. Available only for tiles created from a report or using a dataset; for example, Q&A tiles."
+                }
+            }
+        },
+        "Group": {
+            "description": "A Power BI group",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The workspace id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The group name"
+                },
+                "isReadOnly": {
+                    "type": "boolean",
+                    "description": "Is the group read only"
+                },
+                "isOnDedicatedCapacity": {
+                    "type": "boolean",
+                    "description": "Is the group on dedicated capacity"
+                },
+                "capacityId": {
+                    "type": "string",
+                    "description": "The capacity id"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The group description"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of group"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The group state"
+                },
+                "users": {
+                    "type": "array",
+                    "description": "The users that belong to the group, and their access rights.",
+                    "items": {
+                        "$ref": "#/definitions/GroupUserAccessRight"
+                    }
+                }
+            }
+        },
+        "GatewayPublicKey": {
+            "description": "A Power BI gateway public key",
+            "properties": {
+                "exponent": {
+                    "type": "string",
+                    "description": "The public key exponent"
+                },
+                "modulus": {
+                    "type": "string",
+                    "description": "The public key  modulus"
+                }
+            }
+        },
+        "Gateway": {
+            "description": "A Power BI gateway",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The gateway id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The gateway name"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The gateway type"
+                },
+                "gatewayAnnotation": {
+                    "type": "string",
+                    "description": "Gateway metadata in json format"
+                },
+                "publicKey": {
+                    "$ref": "#/definitions/GatewayPublicKey",
+                    "description": "The gateway public key"
+                },
+                "gatewayStatus": {
+                    "type": "string",
+                    "description": "The gateway connectivity status"
+                }
+            }
+        },
+        "PublishDatasourceToGatewayRequest": {
+            "description": "A publish datasource to gateway request",
+            "properties": {
+                "dataSourceType": {
+                    "type": "string",
+                    "description": "The datasource type"
+                },
+                "connectionDetails": {
+                    "type": "string",
+                    "description": "The connection details"
+                },
+                "credentialDetails": {
+                    "$ref": "#/definitions/CredentialDetails"
+                },
+                "dataSourceName": {
+                    "type": "string",
+                    "description": "The datasource name"
+                }
+            }
+        },
+        "CredentialDetails": {
+            "description": "The credential details",
+            "properties": {
+                "credentials": {
+                    "type": "string",
+                    "description": "The credentials. Depends on the 'credentialType' value. See [Update Datasource Examples](/rest/api/power-bi/gateways/updatedatasource#examples)."
+                },
+                "credentialType": {
+                    "type": "string",
+                    "description": "The credential type",
+                    "enum": [
+                        "Basic",
+                        "Windows",
+                        "Anonymous",
+                        "OAuth2",
+                        "Key"
+                    ],
+                    "x-ms-enum": {
+                        "name": "credentialTypeEnum",
+                        "modelAsString": true
+                    }
+                },
+                "encryptedConnection": {
+                    "type": "string",
+                    "description": "Should Power BI allow fallback to unencrypted if the target server doesn't support encryption",
+                    "enum": [
+                        "Encrypted",
+                        "NotEncrypted"
+                    ],
+                    "x-ms-enum": {
+                        "name": "encryptedConnectionEnum",
+                        "modelAsString": true
+                    }
+                },
+                "encryptionAlgorithm": {
+                    "type": "string",
+                    "description": "The encryption algorithm. For cloud datasource, use 'None'. For on-premises datasource, use gateway public key with 'RSA-OAEP' algorithm.",
+                    "enum": [
+                        "None",
+                        "RSA-OAEP"
+                    ],
+                    "x-ms-enum": {
+                        "name": "encryptionAlgorithmEnum",
+                        "modelAsString": true
+                    }
+                },
+                "privacyLevel": {
+                    "type": "string",
+                    "description": "The privacy level. Relevant when combining data from multiple sources.",
+                    "enum": [
+                        "None",
+                        "Public",
+                        "Organizational",
+                        "Private"
+                    ],
+                    "x-ms-enum": {
+                        "name": "privacyLevelEnum",
+                        "modelAsString": true
+                    }
+                },
+                "useCallerAADIdentity": {
+                    "type": "boolean",
+                    "description": "Should the caller's AAD identity be used for OAuth2 credentials configuration"
+                },
+                "useEndUserOAuth2Credentials": {
+                    "type": "boolean",
+                    "description": "Should the end-user OAuth2 credentials be used for connecting to the datasource in DirectQuery mode. Only supported for Direct Query to SQL Azure."
+                }
+            }
+        },
+        "UpdateDatasourceRequest": {
+            "description": "An update datasource to gateway request",
+            "properties": {
+                "credentialDetails": {
+                    "$ref": "#/definitions/CredentialDetails"
+                }
+            }
+        },
+        "BindToGatewayRequest": {
+            "description": "The bind dataset to gateway request",
+            "properties": {
+                "gatewayObjectId": {
+                    "type": "string",
+                    "description": "The gateway id"
+                }
+            }
+        },
+        "ConnectionDetails": {
+            "description": "Connection string wrapper.",
+            "properties": {
+                "connectionString": {
+                    "type": "string",
+                    "description": "A dataset connection string."
+                }
+            }
+        },
+        "Refresh": {
+            "description": "A Power BI refresh history entry",
+            "properties": {
+                "refreshType": {
+                    "type": "string",
+                    "description": "Type of refresh request",
+                    "enum": [
+                        "Scheduled",
+                        "OnDemand",
+                        "ViaApi"
+                    ],
+                    "x-ms-enum": {
+                        "name": "RefreshTypeEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "Scheduled",
+                                "description": "Refresh was triggered by the dataset refresh schedule setting"
+                            },
+                            {
+                                "value": "OnDemand",
+                                "description": "Refresh was triggered interactively threw Power BI portal"
+                            },
+                            {
+                                "value": "ViaApi",
+                                "description": "Refresh was triggered by an Api call"
+                            }
+                        ]
+                    }
+                },
+                "startTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "DateTime of start"
+                },
+                "endTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "DateTime of termination (may be empty if refresh is progress)"
+                },
+                "serviceExceptionJson": {
+                    "type": "string",
+                    "description": "Failure exception details in json format. Includes cluster, time, Request, and Activity IDs (only on error)."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "'Unknown' - Unknown completion state or refresh is in progress. endTime will be empty with this status. <br/>'Completed' - refresh completed successfully <br/> 'Failed' - Refresh failed. serviceExceptionJson will contain the error. <br/>'Disabled' - Refresh disabled by Selective Refresh."
+                }
+            }
+        },
+        "RefreshRequest": {
+            "description": "Power BI refresh request",
+            "properties": {
+                "notifyOption": {
+                    "type": "string",
+                    "description": "Mail notification options (success and/or failure, or none)",
+                    "enum": [
+                        "NoNotification",
+                        "MailOnFailure",
+                        "MailOnCompletion"
+                    ],
+                    "x-ms-enum": {
+                        "name": "NotifyOption",
+                        "values": [
+                            {
+                                "value": "NoNotification",
+                                "description": "No notification will be sent"
+                            },
+                            {
+                                "value": "MailOnFailure",
+                                "description": "Mail notification will be sent on refresh failure"
+                            },
+                            {
+                                "value": "MailOnCompletion",
+                                "description": "Mail notification will be sent on refresh completion, including either failure and success"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "notifyOption"
+            ]
+        },
+        "DatasetParameter": {
+            "description": "Power BI dataset parameter",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The parameter name"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The parameter type"
+                },
+                "currentValue": {
+                    "type": "string",
+                    "description": "The parameter current value"
+                },
+                "isRequired": {
+                    "type": "boolean",
+                    "description": "Is dataset parameter required"
+                }
+            },
+            "required": [
+                "name",
+                "type",
+                "isRequired"
+            ]
+        },
+        "UpdateDatasetParameterDetails": {
+            "description": "Power BI dataset parameter update details",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The parameter name"
+                },
+                "newValue": {
+                    "type": "string",
+                    "description": "The parameter new value"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "UpdateDatasetParametersRequest": {
+            "description": "Power BI dataset parameter update request",
+            "properties": {
+                "updateDetails": {
+                    "type": "array",
+                    "description": "The dataset parameter list to update",
+                    "items": {
+                        "$ref": "#/definitions/UpdateDatasetParameterDetails"
+                    }
+                }
+            },
+            "required": [
+                "updateDetails"
+            ]
+        },
+        "ODataResponse[List[DatasetParameter]]": {
+            "description": "Odata response wrapper for a Power BI dataset parameter list",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The dataset parameter List",
+                    "items": {
+                        "$ref": "#/definitions/DatasetParameter"
+                    }
+                }
+            }
+        },
+        "UserAccessRight": {
+            "description": "A Power BI user access right entry for datasource",
+            "properties": {
+                "datasourceAccessRight": {
+                    "type": "string",
+                    "description": "The user access rights for the datasource. <br/>Only Read permission is supported.",
+                    "enum": [
+                        "None",
+                        "Read",
+                        "Write",
+                        "Admin",
+                        "ReadWrite"
+                    ],
+                    "x-ms-enum": {
+                        "name": "UserAccessRightEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "None",
+                                "description": "Removes permission to access the datasource. Only applies when updating user permissions."
+                            },
+                            {
+                                "value": "Read",
+                                "description": "Indicates that datasets owned by the user has read access to this datasource."
+                            },
+                            {
+                                "value": "Write",
+                                "description": "Not Supported"
+                            },
+                            {
+                                "value": "Admin",
+                                "description": "Not Supported"
+                            },
+                            {
+                                "value": "ReadWrite",
+                                "description": "Not Supported"
+                            }
+                        ]
+                    }
+                },
+                "emailAddress": {
+                    "type": "string",
+                    "description": "Email address of the user"
+                }
+            }
+        },
+        "GroupUserAccessRight": {
+            "description": "A Power BI user access right entry for workspace",
+            "properties": {
+                "groupUserAccessRight": {
+                    "type": "string",
+                    "description": "Access rights user has for the workspace",
+                    "enum": [
+                        "None",
+                        "Member",
+                        "Admin",
+                        "Contributor"
+                    ],
+                    "x-ms-enum": {
+                        "name": "GroupUserAccessRightEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "None",
+                                "description": "Removes permission to content in workspace"
+                            },
+                            {
+                                "value": "Member",
+                                "description": "Grants read access to content in workspace"
+                            },
+                            {
+                                "value": "Admin",
+                                "description": "Grants administrator rights to workspace"
+                            },
+                            {
+                                "value": "Contributor",
+                                "description": "Grants read and write access to content in group"
+                            }
+                        ]
+                    }
+                },
+                "emailAddress": {
+                    "type": "string",
+                    "description": "Email address of the user"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Display name of the principal"
+                },
+                "identifier": {
+                    "type": "string",
+                    "description": "Identifier of the principal"
+                },
+                "principalType": {
+                    "type": "string",
+                    "description": "The principal type",
+                    "enum": [
+                        "User",
+                        "Group"
+                    ],
+                    "x-ms-enum": {
+                        "name": "PrincipalType",
+                        "modelAsString": true,
+                        "values": 
+                        [
+                            {
+                                "value": "User",
+                                "description": "User principal type"
+                            },
+                            {
+                                "value": "Group",
+                                "description": "Group principal type"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "CloneReportRequest": {
+            "description": "Power BI clone report request",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The new report name"
+                },
+                "targetWorkspaceId": {
+                    "type": "string",
+                    "description": "Optional parameter for specifying the target workspace id. Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided, the new report will be cloned within the same workspace as the source report."
+                },
+                "targetModelId": {
+                    "type": "string",
+                    "description": "Optional parameter for specifying the target associated dataset id. <br/>If not provided, the new report will be associated with the same dataset as the source report."
+                }
+            }
+        },
+        "RebindReportRequest": {
+            "description": "Power BI rebind report request",
+            "properties": {
+                "datasetId": {
+                    "type": "string",
+                    "description": "The new dataset of the rebinded report"
+                }
+            }
+        },
+        "GroupCreationRequest": {
+            "description": "Power BI create a new group request",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the newly created group"
+                }
+            }
+        },
+        "GroupRestoreRequest": {
+            "description": "Power BI request to restore a deleted group",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the group to be restored."
+                },
+                "emailAddress": {
+                    "type": "string",
+                    "description": "The email address of the owner of the group to be restored."
+                }
+            },
+            "required": [
+                "emailAddress"
+            ]
+        },
+        "EffectiveIdentity": {
+            "required": [
+                "username",
+                "datasets"
+            ],
+            "description": "The identity the generated token should reflect, for more details see this [article](https://docs.microsoft.com/power-bi/developer/embedded-row-level-security)",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "description": "The effective username reflected by a token for applying RLS rules (For OnPrem model, username can be composed of alpha-numerical characters or any of the following characters  '.', '-', '_', '!', '#', '^', '~', '\\\\', '@', also username cannot contain spaces. For Cloud model, username can be composed of all ASCII characters. username must be up to 256 characters)"
+                },
+                "roles": {
+                    "type": "array",
+                    "description": "An array of roles reflected by a token when applying RLS rules (identity can contain up to 50 roles, role can be composed of any character besides ',' and must be up to 50 characters)",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "datasets": {
+                    "type": "array",
+                    "description": "An array of datasets for which this identity applies",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "customData": {
+                    "type": "string",
+                    "description": "The value of customdata to be used for applying RLS rules. Only supported for live connections to Azure Analysis Services."
+                }
+            }
+        },
+        "GenerateTokenRequest": {
+            "description": "Power BI Generate Token Request",
+            "properties": {
+                "accessLevel": {
+                    "type": "string",
+                    "description": "Required access level for EmbedToken generation",
+                    "enum": [
+                        "View",
+                        "Edit",
+                        "Create"
+                    ],
+                    "x-ms-enum": {
+                        "name": "TokenAccessLevel",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "View",
+                                "description": "Indicates that the generated EmbedToken should grant only Viewing permissions"
+                            },
+                            {
+                                "value": "Edit",
+                                "description": "Indicates that the generated EmbedToken should grant Viewing and Editing permissions, only applies when generating EmbedToken for report embedding"
+                            },
+                            {
+                                "value": "Create",
+                                "description": "Indicates that the generated EmbedToken should grant Creation permissions, only applies when generating EmbedToken for report creation"
+                            }
+                        ]
+                    }
+                },
+                "datasetId": {
+                    "type": "string",
+                    "description": "Dataset id for report creation. Only applies when generating EmbedToken for report creation."
+                },
+                "allowSaveAs": {
+                    "type": "boolean",
+                    "description": "Indicates an embedded report can be saved as a new report. Default value is 'false'. Only applies when generating EmbedToken for report embedding."
+                },
+                "identities": {
+                    "type": "array",
+                    "description": "List of identities to use for RLS rules. Specifying identities is not supported when generating EmbedToken for dataset embedding.",
+                    "items": {
+                        "$ref": "#/definitions/EffectiveIdentity"
+                    }
+                }
+            }
+        },
+        "EmbedToken": {
+            "description": "Power BI embed token",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "Embed token"
+                },
+                "tokenId": {
+                    "type": "string",
+                    "description": "Unique token Id. Can be used to correlate operations that use this token with the generate operation through audit logs."
+                },
+                "expiration": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Expiration time of token. In UTC."
+                }
+            }
+        },
+        "CloneTileRequest": {
+            "description": "Power BI clone tile request",
+            "properties": {
+                "targetDashboardId": {
+                    "type": "string",
+                    "description": "The target dashboard id"
+                },
+                "targetWorkspaceId": {
+                    "type": "string",
+                    "description": "Optional parameter for specifying the target workspace id. Empty Guid (00000000-0000-0000-0000-000000000000) indicates 'My Workspace'. <br/>If not provided, tile will be cloned within the same workspace as the source tile."
+                },
+                "targetReportId": {
+                    "type": "string",
+                    "description": "Optional parameter <br/>When cloning a tile linked to a report, pass the target report id to rebind the new tile to a different report."
+                },
+                "targetModelId": {
+                    "type": "string",
+                    "description": "Optional parameter <br/>When cloning a tile linked to a dataset, pass the target model id to rebind the new tile to a different dataset."
+                },
+                "positionConflictAction": {
+                    "type": "string",
+                    "description": "Optional parameter for specifying the action in case of position conflict. <br/>If not provided, 'Tail' is used. <br/>If there is no conflict, clone tile to same position as in source.",
+                    "enum": [
+                        "Tail",
+                        "Abort"
+                    ],
+                    "x-ms-enum": {
+                        "name": "positionConflictActionEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "Tail",
+                                "description": "Tile will be added at the end of the chosen dashboard"
+                            },
+                            {
+                                "value": "Abort",
+                                "description": "In a case of position conflict, the request will be aborted"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "AddDashboardRequest": {
+            "description": "Power BI add dashboard request",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the new dashboard"
+                }
+            }
+        },
+        "SourceReport": {
+            "description": "Source from existing report",
+            "properties": {
+                "sourceReportId": {
+                    "type": "string",
+                    "description": "source report id"
+                },
+                "sourceWorkspaceId": {
+                    "type": "string",
+                    "description": "source worksapce id"
+                }
+            }
+        },
+        "UpdateReportContentRequest": {
+            "description": "Power BI update report content request",
+            "properties": {
+                "sourceType": {
+                    "type": "string",
+                    "description": "The source type for the content update"
+                },
+                "sourceReport": {
+                    "$ref": "#/definitions/SourceReport"
+                }
+            }
+        },
+        "Capacity": {
+            "description": "A Power BI capacity",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The capacity id"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "The capacity display name"
+                },
+                "admins": {
+                    "type": "array",
+                    "description": "An array of capacity admins.",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sku": {
+                    "type": "string",
+                    "description": "The capacity SKU."
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The capacity state",
+                    "enum": [
+                        "NotActivated",
+                        "Active",
+                        "Provisioning",
+                        "ProvisionFailed",
+                        "PreSuspended",
+                        "Suspended",
+                        "Deleting",
+                        "Deleted",
+                        "Invalid",
+                        "UpdatingSku"
+                    ],
+                    "x-ms-enum": {
+                        "name": "stateEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "NotActivated",
+                                "description": "Not Supported"
+                            },
+                            {
+                                "value": "Active",
+                                "description": "Capacity ready for use"
+                            },
+                            {
+                                "value": "Provisioning",
+                                "description": "Capacity in activation process"
+                            },
+                            {
+                                "value": "ProvisionFailed",
+                                "description": "Capacity failed to provisioned"
+                            },
+                            {
+                                "value": "Suspended",
+                                "description": "Capacity suspended for use"
+                            },
+                            {
+                                "value": "PreSuspended",
+                                "description": "Not Supported"
+                            },
+                            {
+                                "value": "Deleting",
+                                "description": "Capacity in process of being deleted"
+                            },
+                            {
+                                "value": "Deleted",
+                                "description": "Capacity has been deleted and is not available"
+                            },
+                            {
+                                "value": "Invalid",
+                                "description": "Capacity can not be used"
+                            },
+                            {
+                                "value": "UpdatingSku",
+                                "description": "Capacity Sku change is in progress"
+                            }
+                        ]
+                    }
+                },
+                "capacityUserAccessRight": {
+                    "type": "string",
+                    "description": "Access right user has on the capacity",
+                    "enum": [
+                        "None",
+                        "Assign",
+                        "Admin"
+                    ],
+                    "x-ms-enum": {
+                        "name": "capacityUserAccessRightEnum",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "None",
+                                "description": "User doesn't have access to the capacity"
+                            },
+                            {
+                                "value": "Assign",
+                                "description": "User can assign workspaces to the capacity"
+                            },
+                            {
+                                "value": "Admin",
+                                "description": "User has administrator rights on the capacity"
+                            }
+                        ]
+                    }
+                },
+                "region": {
+                    "type": "string",
+                    "description": "The Azure region where the capacity is provisioned"
+                }
+            }
+        },
+        "ODataResponse[List[Capacity]]": {
+            "description": "Odata response wrapper for a Power BI capacity list",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "description": "The Capacity List",
+                    "items": {
+                        "$ref": "#/definitions/Capacity"
+                    }
+                }
+            }
+        },
+        "ODataResponse[List[AvailableFeature]]": {
+            "description": "Odata response wrapper for a Power BI available features list",
+            "properties": {
+                "odata.context": {
+                    "type": "string"
+                },
+                "features": {
+                    "type": "array",
+                    "description": "The available features list",
+                    "items": {
+                        "$ref": "#/definitions/AvailableFeature"
+                    }
+                }
+            }
+        },
+        "AvailableFeature": {
+            "description": "Power BI available feature",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The feature name"
+                },
+                "state": {
+                    "type": "string",
+                    "enum": [
+                        "Enabled",
+                        "Disabled"
+                    ],
+                    "x-ms-enum": {
+                        "name": "FeatureState",
+                        "modelAsString": false
+                    },
+                    "description": "The feature state"
+                },
+                "extendedState": {
+                    "type": "string",
+                    "enum": [
+                        "Enabled",
+                        "DisabledByAdmin",
+                        "UserNotLicensed"
+                    ],
+                    "x-ms-enum": {
+                        "name": "FeatureExtendedState",
+                        "modelAsString": false
+                    },
+                    "description": "The feature extended state"
+                },
+                "additionalInfo": {
+                    "description": "Additional feature information",
+                    "$ref": "#/definitions/AdditionalFeatureInfo"
+                }
+            }
+        },
+        "AdditionalFeatureInfo": {
+            "description": "Additional feature information",
+            "properties": {
+                "Usage": {
+                    "type": "integer",
+                    "description": "The token generation usage (in %) from the limitation on shared capacity"
+                }
+            }
+        },
+        "AssignToCapacityRequest": {
+            "description": "Power BI assign to capacity request",
+            "properties": {
+                "capacityId": {
+                    "type": "string",
+                    "description": "The capacity id. To unassign from capacity, use Empty Guid (00000000-0000-0000-0000-000000000000)."
+                }
+            }
+        },
+        "TemporaryUploadLocation": {
+            "description": "Power BI update report content request",
+            "properties": {
+                "Url": {
+                    "type": "string",
+                    "description": "The shared access signature (SAS) url for the temporary blob storage"
+                },
+                "ExpirationTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The expiration time of the shared access signature (SAS) url"
+                }
+            }
+        }
+    },
+    "parameters": {
+
+    },
+    "responses": {
+
+    },
+    "security": [
+    ],
+    "tags": [
+
+    ]
+}
