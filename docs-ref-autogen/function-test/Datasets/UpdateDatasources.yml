@@ -20,8 +20,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Object
 requestBody:
 - name: default
   parameters:
@@ -45,9 +43,6 @@ definitions:
     description: ''
     types:
     - uid: Datasource
-- name: Object
-  kind: object
-  properties: []
 - name: UpdateDatasourcesRequest
   description: ''
   kind: object

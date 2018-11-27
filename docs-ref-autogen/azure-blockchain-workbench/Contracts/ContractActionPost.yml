@@ -21,8 +21,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: LedgerActionOutput
 - name: 204 No Content
   description: No Content
 requestBody:
@@ -49,13 +47,6 @@ definitions:
     types:
     - uid: string
   - name: value
-    description: ''
-    types:
-    - uid: string
-- name: LedgerActionOutput
-  kind: object
-  properties:
-  - name: transactionID
     description: ''
     types:
     - uid: string

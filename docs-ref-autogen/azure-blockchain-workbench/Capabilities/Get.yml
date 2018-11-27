@@ -13,31 +13,10 @@ uriParameters: []
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Capabilities
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: Capabilities
-  kind: object
-  properties:
-  - name: canUploadApplication
-    description: ''
-    types:
-    - uid: boolean
-  - name: canUploadContractCode
-    description: ''
-    types:
-    - uid: boolean
-  - name: canModifyRoleAssignments
-    description: ''
-    types:
-    - uid: boolean
-  - name: canProvisionUser
-    description: ''
-    types:
-    - uid: boolean
+definitions: []
 examples: []
 security: []
 metadata:

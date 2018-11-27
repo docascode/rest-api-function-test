@@ -20,31 +20,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Connection
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: Connection
-  kind: object
-  properties:
-  - name: connectionID
-    description: ''
-    types:
-    - uid: integer
-  - name: ledgerID
-    description: ''
-    types:
-    - uid: integer
-  - name: endpointURL
-    description: ''
-    types:
-    - uid: string
-  - name: fundingAccount
-    description: ''
-    types:
-    - uid: string
+definitions: []
 examples: []
 security: []
 metadata:

@@ -19,27 +19,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: ContentResult
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: ContentResult
-  kind: object
-  properties:
-  - name: content
-    description: ''
-    types:
-    - uid: string
-  - name: contentType
-    description: ''
-    types:
-    - uid: string
-  - name: statusCode
-    description: ''
-    types:
-    - uid: integer
+definitions: []
 examples: []
 security: []
 metadata:

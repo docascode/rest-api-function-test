@@ -24,8 +24,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: integer
 - name: 204 No Content
   description: No Content
 requestBody:

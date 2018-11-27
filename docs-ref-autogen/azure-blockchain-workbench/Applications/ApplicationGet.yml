@@ -20,63 +20,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Application
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: Application
-  kind: object
-  properties:
-  - name: id
-    description: ''
-    types:
-    - uid: integer
-  - name: name
-    description: ''
-    types:
-    - uid: string
-  - name: description
-    description: ''
-    types:
-    - uid: string
-  - name: displayName
-    description: ''
-    types:
-    - uid: string
-  - name: createdByUserId
-    description: ''
-    types:
-    - uid: integer
-  - name: createdDtTm
-    description: ''
-    types:
-    - uid: string
-  - name: enabled
-    description: ''
-    types:
-    - uid: boolean
-  - name: applicationRoles
-    description: ''
-    types:
-    - uid: ApplicationRole
-      isArray: true
-- name: ApplicationRole
-  kind: object
-  properties:
-  - name: id
-    description: ''
-    types:
-    - uid: integer
-  - name: name
-    description: ''
-    types:
-    - uid: string
-  - name: description
-    description: ''
-    types:
-    - uid: string
+definitions: []
 examples: []
 security: []
 metadata:

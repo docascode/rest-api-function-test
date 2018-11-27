@@ -20,8 +20,6 @@ uriParameters:
 responses:
 - name: 202 Accepted
   description: Accepted
-  types:
-  - uid: Object
 requestBody:
 - name: default
   parameters:
@@ -33,9 +31,6 @@ requestBody:
     - uid: NotifyOption
 requestHeader: []
 definitions:
-- name: Object
-  kind: object
-  properties: []
 - name: RefreshRequest
   description: Power BI refresh request
   kind: object

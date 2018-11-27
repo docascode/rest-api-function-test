@@ -34,47 +34,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: BlockList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: BlockList
-  kind: object
-  properties:
-  - name: nextLink
-    description: ''
-    types:
-    - uid: string
-  - name: blocks
-    description: ''
-    types:
-    - uid: Block
-      isArray: true
-- name: Block
-  kind: object
-  properties:
-  - name: id
-    description: ''
-    types:
-    - uid: integer
-  - name: connectionId
-    description: ''
-    types:
-    - uid: integer
-  - name: timestamp
-    description: ''
-    types:
-    - uid: string
-  - name: blockNumber
-    description: ''
-    types:
-    - uid: integer
-  - name: blockHash
-    description: ''
-    types:
-    - uid: string
+definitions: []
 examples: []
 security: []
 metadata:

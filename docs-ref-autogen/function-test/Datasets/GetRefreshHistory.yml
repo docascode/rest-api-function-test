@@ -27,63 +27,8 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: ODataResponse[List[Refresh]]
 requestHeader: []
-definitions:
-- name: ODataResponse[List[Refresh]]
-  description: Odata response wrapper for a Power BI refresh history
-  kind: object
-  properties:
-  - name: odata.context
-    description: ''
-    types:
-    - uid: string
-  - name: value
-    description: The Refresh history list
-    types:
-    - uid: Refresh
-      isArray: true
-- name: Refresh
-  description: A Power BI refresh history entry
-  kind: object
-  properties:
-  - name: refreshType
-    description: Type of refresh request
-    types:
-    - uid: RefreshTypeEnum
-  - name: startTime
-    description: DateTime of start
-    types:
-    - uid: string
-  - name: endTime
-    description: DateTime of termination (may be empty if refresh is progress)
-    types:
-    - uid: string
-  - name: serviceExceptionJson
-    description: Failure exception details in json format. Includes cluster, time, Request, and Activity IDs (only on error).
-    types:
-    - uid: string
-  - name: status
-    description: "'Unknown' - Unknown completion state or refresh is in progress. endTime will be empty with this status. <br/>'Completed' - refresh completed successfully <br/> 'Failed' - Refresh failed. serviceExceptionJson will contain the error. <br/>'Disabled' - Refresh disabled by Selective Refresh."
-    types:
-    - uid: string
-- name: RefreshTypeEnum
-  description: Type of refresh request
-  kind: enum
-  properties:
-  - name: Scheduled
-    description: Refresh was triggered by the dataset refresh schedule setting
-    types:
-    - uid: string
-  - name: OnDemand
-    description: Refresh was triggered interactively threw Power BI portal
-    types:
-    - uid: string
-  - name: ViaApi
-    description: Refresh was triggered by an Api call
-    types:
-    - uid: string
+definitions: []
 examples:
 - name: in progress refresh example
   request:

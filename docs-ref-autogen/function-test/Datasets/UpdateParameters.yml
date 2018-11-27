@@ -20,8 +20,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Object
 requestBody:
 - name: default
   parameters:
@@ -46,9 +44,6 @@ definitions:
     description: The parameter new value
     types:
     - uid: string
-- name: Object
-  kind: object
-  properties: []
 - name: UpdateDatasetParametersRequest
   description: Power BI dataset parameter update request
   kind: object

@@ -20,8 +20,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: boolean
 - name: 204 No Content
   description: No Content
 requestHeader: []

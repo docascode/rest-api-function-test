@@ -20,67 +20,8 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: ODataResponse[List[Datasource]]
 requestHeader: []
-definitions:
-- name: ODataResponse[List[Datasource]]
-  description: Odata response wrapper for a Power BI datasource collection
-  kind: object
-  properties:
-  - name: odata.context
-    description: OData context
-    types:
-    - uid: string
-  - name: value
-    description: The datasource collection
-    types:
-    - uid: Datasource
-      isArray: true
-- name: Datasource
-  description: A Power BI datasource
-  kind: object
-  properties:
-  - name: name
-    description: The datasource name. Available only for DirectQuery.
-    types:
-    - uid: string
-  - name: connectionString
-    description: The datasource connection string. Available only for DirectQuery.
-    types:
-    - uid: string
-  - name: datasourceType
-    description: The datasource type
-    types:
-    - uid: string
-  - name: connectionDetails
-    description: The datasource connection details
-    types:
-    - uid: DatasourceConnectionDetails
-  - name: gatewayId
-    description: The bound gateway id. Empty when not bound to a gateway.
-    types:
-    - uid: string
-  - name: datasourceId
-    description: The bound datasource id. Empty when not bound to a gateway.
-    types:
-    - uid: string
-- name: DatasourceConnectionDetails
-  description: A Power BI datasource connection details
-  kind: object
-  properties:
-  - name: server
-    description: The connection server
-    types:
-    - uid: string
-  - name: database
-    description: The connection database
-    types:
-    - uid: string
-  - name: url
-    description: The connection url
-    types:
-    - uid: string
+definitions: []
 examples:
 - name: direct query model example
   request:

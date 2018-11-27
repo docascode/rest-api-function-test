@@ -27,43 +27,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: ConnectionList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: ConnectionList
-  kind: object
-  properties:
-  - name: nextLink
-    description: ''
-    types:
-    - uid: string
-  - name: connection
-    description: ''
-    types:
-    - uid: Connection
-      isArray: true
-- name: Connection
-  kind: object
-  properties:
-  - name: connectionID
-    description: ''
-    types:
-    - uid: integer
-  - name: ledgerID
-    description: ''
-    types:
-    - uid: integer
-  - name: endpointURL
-    description: ''
-    types:
-    - uid: string
-  - name: fundingAccount
-    description: ''
-    types:
-    - uid: string
+definitions: []
 examples: []
 security: []
 metadata:

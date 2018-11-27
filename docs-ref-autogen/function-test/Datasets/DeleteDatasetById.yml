@@ -19,13 +19,8 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Object
 requestHeader: []
-definitions:
-- name: Object
-  kind: object
-  properties: []
+definitions: []
 examples:
 - name: example
   request:

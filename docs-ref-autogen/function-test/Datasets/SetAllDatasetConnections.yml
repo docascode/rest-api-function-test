@@ -20,8 +20,6 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: Object
 requestBody:
 - name: default
   parameters:
@@ -32,9 +30,6 @@ requestBody:
     - uid: string
 requestHeader: []
 definitions:
-- name: Object
-  kind: object
-  properties: []
 - name: ConnectionDetails
   description: Connection string wrapper.
   kind: object

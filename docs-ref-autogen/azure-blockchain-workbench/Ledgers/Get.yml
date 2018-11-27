@@ -27,39 +27,10 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
-  types:
-  - uid: LedgerList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions:
-- name: LedgerList
-  kind: object
-  properties:
-  - name: nextLink
-    description: ''
-    types:
-    - uid: string
-  - name: ledgers
-    description: ''
-    types:
-    - uid: Ledger
-      isArray: true
-- name: Ledger
-  kind: object
-  properties:
-  - name: id
-    description: ''
-    types:
-    - uid: integer
-  - name: name
-    description: ''
-    types:
-    - uid: string
-  - name: displayName
-    description: ''
-    types:
-    - uid: string
+definitions: []
 examples: []
 security: []
 metadata:
