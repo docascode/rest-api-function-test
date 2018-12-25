@@ -29,6 +29,9 @@
           "swagger_files": [
             {
               "source": "test/test_files/swagger.yaml"
+            },
+            {
+              "source": "test/test_files/Localization.swagger.json"
             }
           ]
         }
