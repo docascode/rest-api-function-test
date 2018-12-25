@@ -20,6 +20,8 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: boolean
 - name: 204 No Content
   description: No Content
 requestHeader: []
@@ -28,3 +30,4 @@ examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L733
+errorCodes: []

@@ -40,11 +40,45 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: ContractCodeList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions: []
+definitions:
+- name: ContractCodeList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: contractCodes
+    description: ''
+    types:
+    - uid: ContractCode
+      isArray: true
+- name: ContractCode
+  kind: object
+  properties:
+  - name: contractCodeID
+    description: ''
+    types:
+    - uid: integer
+  - name: ledgerID
+    description: ''
+    types:
+    - uid: integer
+  - name: createdByUserId
+    description: ''
+    types:
+    - uid: integer
+  - name: createdDtTm
+    description: ''
+    types:
+    - uid: string
 examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L541
+errorCodes: []
