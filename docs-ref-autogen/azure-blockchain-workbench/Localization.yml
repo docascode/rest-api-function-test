@@ -1,0 +1,9 @@
+### YamlMime:RESTOperationGroup
+uid: titleid.playfabapi.com.azure-blockchain-workbench.localization
+name: Localization
+summary: https://api.playfab.com/documentation/Localization#Localization
+apiVersion: "181129"
+service: Azure Blockchain Workbench
+operations:
+- uid: titleid.playfabapi.com.azure-blockchain-workbench.localization.getlanguagelist
+  summary: Retrieves the list of allowed languages, only accessible by title entities

@@ -1,0 +1,80 @@
+### YamlMime:RESTOperation
+uid: titleid.playfabapi.com.azure-blockchain-workbench.localization.getlanguagelist
+name: Get Language List
+service: Azure Blockchain Workbench
+groupName: Localization
+apiVersion: "181129"
+summary: Retrieves the list of allowed languages, only accessible by title entities
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+- content: POST https://titleId.playfabapi.com/Locale/GetLanguageList
+uriParameters: []
+responses:
+- name: 200 OK
+  description: ''
+  types:
+  - uid: GetLanguageListResponse
+- name: 400 Bad Request
+  description: This is the outer-wrapper for all responses with errors
+  types:
+  - uid: ApiErrorWrapper
+requestHeader: []
+definitions:
+- name: GetLanguageListResponse
+  kind: object
+  properties:
+  - name: LanguageList
+    description: The list of allowed languages, in BCP47 two-letter format
+    types:
+    - uid: string
+      isArray: true
+- name: ApiErrorWrapper
+  description: The basic wrapper around every failed API response
+  kind: object
+  properties:
+  - name: code
+    description: Numerical HTTP code
+    types:
+    - uid: number
+  - name: status
+    description: String HTTP code
+    types:
+    - uid: string
+  - name: error
+    description: Playfab error code
+    types:
+    - uid: string
+  - name: errorCode
+    description: Numerical Playfab error code
+    types:
+    - uid: number
+  - name: errorMessage
+    description: Description for the Playfab errorCode
+    types:
+    - uid: string
+  - name: errorDetails
+    description: Detailed description of individual issues with the request object
+    types:
+    - uid: object
+- name: GetLanguageListRequest
+  kind: object
+  properties: []
+examples: []
+security:
+- name: EntityToken
+  type: apiKey
+  description: This API requires an Entity Session Token, available from the Entity GetEntityToken method.
+  in: header
+metadata:
+  source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/Localization.swagger.json#L29
+errorCodes:
+- name: Success
+- name: NotAuthenticated
+  code: "1074"
+- name: NotAuthorized
+  code: "1089"
+- name: ProfileDoesNotExist
+  code: "1298"

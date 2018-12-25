@@ -44,6 +44,8 @@
 #### [](azure-blockchain-workbench/Health/.yml)
 ### [Ledgers](azure-blockchain-workbench/Ledgers.yml)
 #### [Get](azure-blockchain-workbench/Ledgers/Get.yml)
+### [Localization](azure-blockchain-workbench/Localization.yml)
+#### [Get Language List](azure-blockchain-workbench/Localization/GetLanguageList.yml)
 ### [Users](azure-blockchain-workbench/Users.yml)
 #### [Get](azure-blockchain-workbench/Users/Get.yml)
 #### [Me Get](azure-blockchain-workbench/Users/MeGet.yml)

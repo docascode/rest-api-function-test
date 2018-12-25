@@ -42,6 +42,9 @@
   "Users/UserGet.yml": "https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1586"
 }
 {
+  "Localization/GetLanguageList.yml": "https://github.com/docascode/rest-api-function-test/blob/master/test_files/Localization.swagger.json#L29"
+}
+{
   "Datasets/BindToGateway.yml": "https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L682",
   "Datasets/DeleteDatasetById.yml": "https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L129",
   "Datasets/DiscoverGateways.yml": "https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L793",
