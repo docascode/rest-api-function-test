@@ -3,7 +3,7 @@
     {
       "docset_name": "rest-api-function-test",
       "build_source_folder": ".",
-      "build_output_subfolder": "prest-api-function-test",
+      "build_output_subfolder": "rest-api-function-test",
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
