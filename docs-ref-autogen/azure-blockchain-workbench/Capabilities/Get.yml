@@ -13,11 +13,33 @@ uriParameters: []
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: Capabilities
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions: []
+definitions:
+- name: Capabilities
+  kind: object
+  properties:
+  - name: canUploadApplication
+    description: ''
+    types:
+    - uid: boolean
+  - name: canUploadContractCode
+    description: ''
+    types:
+    - uid: boolean
+  - name: canModifyRoleAssignments
+    description: ''
+    types:
+    - uid: boolean
+  - name: canProvisionUser
+    description: ''
+    types:
+    - uid: boolean
 examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L709
+errorCodes: []

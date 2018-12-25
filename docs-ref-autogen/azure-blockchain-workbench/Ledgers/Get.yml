@@ -27,11 +27,41 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: LedgerList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions: []
+definitions:
+- name: LedgerList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: ledgers
+    description: ''
+    types:
+    - uid: Ledger
+      isArray: true
+- name: Ledger
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: name
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
 examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1449
+errorCodes: []

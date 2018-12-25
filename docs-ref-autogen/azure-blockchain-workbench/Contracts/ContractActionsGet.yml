@@ -34,11 +34,67 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: WorkflowStateTransitionList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions: []
+definitions:
+- name: WorkflowStateTransitionList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: workflowStateTransitions
+    description: ''
+    types:
+    - uid: WorkflowStateTransition
+      isArray: true
+- name: WorkflowStateTransition
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: workflowFunctionId
+    description: ''
+    types:
+    - uid: integer
+  - name: currStateId
+    description: ''
+    types:
+    - uid: integer
+  - name: allowedRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: allowedInstanceRoles
+    description: ''
+    types:
+    - uid: string
+      isArray: true
+  - name: description
+    description: ''
+    types:
+    - uid: string
+  - name: function
+    description: ''
+    types:
+    - uid: string
+  - name: currentState
+    description: ''
+    types:
+    - uid: string
+  - name: displayName
+    description: ''
+    types:
+    - uid: string
 examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L1260
+errorCodes: []

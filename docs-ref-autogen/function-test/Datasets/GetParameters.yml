@@ -20,8 +20,43 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: ODataResponse[List[DatasetParameter]]
 requestHeader: []
-definitions: []
+definitions:
+- name: ODataResponse[List[DatasetParameter]]
+  description: Odata response wrapper for a Power BI dataset parameter list
+  kind: object
+  properties:
+  - name: odata.context
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: The dataset parameter List
+    types:
+    - uid: DatasetParameter
+      isArray: true
+- name: DatasetParameter
+  description: Power BI dataset parameter
+  kind: object
+  properties:
+  - name: name
+    description: The parameter name
+    types:
+    - uid: string
+  - name: type
+    description: The parameter type
+    types:
+    - uid: string
+  - name: currentValue
+    description: The parameter current value
+    types:
+    - uid: string
+  - name: isRequired
+    description: Is dataset parameter required
+    types:
+    - uid: boolean
 examples:
 - name: example
   request:
@@ -72,3 +107,4 @@ examples:
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L307
+errorCodes: []

@@ -20,8 +20,63 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: ODataResponse[List[Gateway]]
 requestHeader: []
-definitions: []
+definitions:
+- name: ODataResponse[List[Gateway]]
+  description: Odata response wrapper for a Power BI gateways list
+  kind: object
+  properties:
+  - name: odata.context
+    description: ''
+    types:
+    - uid: string
+  - name: value
+    description: The gateways
+    types:
+    - uid: Gateway
+      isArray: true
+- name: Gateway
+  description: A Power BI gateway
+  kind: object
+  properties:
+  - name: id
+    description: The gateway id
+    types:
+    - uid: string
+  - name: name
+    description: The gateway name
+    types:
+    - uid: string
+  - name: type
+    description: The gateway type
+    types:
+    - uid: string
+  - name: gatewayAnnotation
+    description: Gateway metadata in json format
+    types:
+    - uid: string
+  - name: publicKey
+    description: The gateway public key
+    types:
+    - uid: GatewayPublicKey
+  - name: gatewayStatus
+    description: The gateway connectivity status
+    types:
+    - uid: string
+- name: GatewayPublicKey
+  description: A Power BI gateway public key
+  kind: object
+  properties:
+  - name: exponent
+    description: The public key exponent
+    types:
+    - uid: string
+  - name: modulus
+    description: The public key  modulus
+    types:
+    - uid: string
 examples:
 - name: example
   request:
@@ -45,3 +100,4 @@ examples:
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/test-remove-tag.json#L793
+errorCodes: []

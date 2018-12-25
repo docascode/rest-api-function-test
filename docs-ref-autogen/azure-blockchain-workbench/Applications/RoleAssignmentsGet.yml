@@ -40,11 +40,96 @@ uriParameters:
 responses:
 - name: 200 OK
   description: OK
+  types:
+  - uid: RoleAssignmentList
 - name: 204 No Content
   description: No Content
 requestHeader: []
-definitions: []
+definitions:
+- name: RoleAssignmentList
+  kind: object
+  properties:
+  - name: nextLink
+    description: ''
+    types:
+    - uid: string
+  - name: roleAssignments
+    description: ''
+    types:
+    - uid: RoleAssignment
+      isArray: true
+- name: RoleAssignment
+  kind: object
+  properties:
+  - name: id
+    description: ''
+    types:
+    - uid: integer
+  - name: applicationRoleId
+    description: ''
+    types:
+    - uid: integer
+  - name: user
+    description: ''
+    types:
+    - uid: User
+- name: User
+  kind: object
+  properties:
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: provisioningStatus
+    description: ''
+    types:
+    - uid: integer
+  - name: externalID
+    description: ''
+    types:
+    - uid: string
+  - name: firstName
+    description: ''
+    types:
+    - uid: string
+  - name: lastName
+    description: ''
+    types:
+    - uid: string
+  - name: emailAddress
+    description: ''
+    types:
+    - uid: string
+  - name: userChainMappings
+    description: ''
+    types:
+    - uid: UserChainMapping
+      isArray: true
+- name: UserChainMapping
+  kind: object
+  properties:
+  - name: userChainMappingID
+    description: ''
+    types:
+    - uid: integer
+  - name: userID
+    description: ''
+    types:
+    - uid: integer
+  - name: connectionID
+    description: ''
+    types:
+    - uid: integer
+  - name: chainIdentifier
+    description: ''
+    types:
+    - uid: string
+  - name: chainBalance
+    description: ''
+    types:
+    - uid: number
 examples: []
 security: []
 metadata:
   source_url: https://github.com/docascode/rest-api-function-test/blob/master/test_files/swagger.json#L221
+errorCodes: []
